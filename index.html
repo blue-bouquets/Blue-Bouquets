@@ -322,6 +322,49 @@
     font-weight: 500;
   }
 
+  /* Selector de colores por unidad (BOMBACHAS) */
+  .colors-per-unit {
+    background: var(--blanco-verdoso);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .unit-color-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .unit-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--verde);
+    min-width: 35px;
+    text-transform: uppercase;
+  }
+  .unit-color-grid {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  .unit-color-btn {
+    border: 1.5px solid var(--turquesa);
+    background: white;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .unit-color-btn:hover { border-color: var(--verde); color: var(--verde); }
+  .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; font-weight: 500; }
+  .unit-color-btn.agotado { opacity: 0.35; cursor: not-allowed; }
+
   /* Botón agregar */
   .add-btn {
     margin-top: auto;
@@ -443,6 +486,7 @@
     font-size: 0.75rem;
     color: var(--text-light);
     margin-top: 2px;
+    line-height: 1.4;
   }
   .cart-item-bottom {
     display: flex;
@@ -647,7 +691,6 @@
 <script>
 // ══════════════════════════════════════════════════════
 //  BASE DE DATOS DE PRODUCTOS
-//  Para agregar/editar productos, modificá este array
 // ══════════════════════════════════════════════════════
 const productos = [
   {
@@ -690,7 +733,7 @@ const productos = [
     categoria: "bombacha",
     emoji: "🌿",
     esNuevo: true,
-    tipo: "cantidad-escalonada",
+    tipo: "cantidad-multiple",
     talleUnico: "XXL",
     descripcion: "Bombachas talles grandes. Comodidad real.",
     precios: [
@@ -731,8 +774,8 @@ function renderCatalogo(filtro = 'todos') {
 
     if (p.tipo === 'variantes') {
       card.innerHTML = buildCardVariante(p);
-    } else if (p.tipo === 'cantidad-escalonada') {
-      card.innerHTML = buildCardEscalonada(p);
+    } else if (p.tipo === 'cantidad-multiple') {
+      card.innerHTML = buildCardMultiple(p);
     }
     cat.appendChild(card);
   });
@@ -766,12 +809,12 @@ function buildCardVariante(p) {
     </div>`;
 }
 
-function buildCardEscalonada(p) {
+function buildCardMultiple(p) {
   const coloresHTML = p.coloresStock.map(c =>
     `<button class="variant-btn ${c.stock === 0 ? 'agotado' : ''}"
       onclick="selectColor(${p.id}, '${c.color}', this)"
       ${c.stock === 0 ? 'disabled' : ''}>
-      ${c.color}
+      ${c.color} (${c.stock})
     </button>`
   ).join('');
 
@@ -795,24 +838,105 @@ function buildCardEscalonada(p) {
         <span class="precio-detalle">2 x $7.000 · 3 x $10.000</span>
       </div>
       <div class="variant-section">
-        <label>Color</label>
-        <div class="variant-grid" id="colores-${p.id}">${coloresHTML}</div>
-      </div>
-      <div class="variant-section">
         <label>Cantidad</label>
         <div class="variant-grid" id="cantidades-${p.id}">${preciosHTML}</div>
       </div>
-      <button class="add-btn" id="addBtn-${p.id}" onclick="agregarEscalonada(${p.id})" disabled>
-        Seleccioná color y cantidad
+      <div id="colores-selector-${p.id}" style="display:none;">
+        <div class="variant-section">
+          <label>Elige color para cada unidad</label>
+          <div class="colors-per-unit" id="colors-per-unit-${p.id}"></div>
+        </div>
+      </div>
+      <button class="add-btn" id="addBtn-${p.id}" onclick="agregarMultiple(${p.id})" disabled>
+        Seleccioná cantidad y colores
       </button>
     </div>`;
 }
 
 // ══════════════════════════════════════════════════════
-//  SELECCIÓN DE VARIANTES
+//  SELECCIÓN MULTIPLE (BOMBACHAS)
 // ══════════════════════════════════════════════════════
-const selecciones = {}; // { productoId: { variantId, color, cantidad } }
+const selecciones = {};
 
+function selectCantidad(prodId, cantidad, btn) {
+  document.querySelectorAll(`#cantidades-${prodId} .variant-btn`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (!selecciones[prodId]) selecciones[prodId] = {};
+  selecciones[prodId].cantidad = cantidad;
+  selecciones[prodId].colores = {}; // resetea colores cuando cambia cantidad
+
+  // Mostrar selector de colores
+  mostrarSelectoresDeColor(prodId, cantidad);
+}
+
+function mostrarSelectoresDeColor(prodId, cantidad) {
+  const prod = productos.find(p => p.id === prodId);
+  const container = document.getElementById(`colors-per-unit-${prodId}`);
+  const selectorDiv = document.getElementById(`colores-selector-${prodId}`);
+  
+  container.innerHTML = '';
+  
+  // Crear selector para cada unidad
+  for (let i = 1; i <= cantidad; i++) {
+    const coloresHTML = prod.coloresStock.map(c =>
+      `<button class="unit-color-btn ${c.stock === 0 ? 'agotado' : ''}"
+        onclick="selectColorPorUnidad(${prodId}, ${i}, '${c.color}', this)"
+        ${c.stock === 0 ? 'disabled' : ''}>
+        ${c.color}
+      </button>`
+    ).join('');
+    
+    const html = `
+      <div class="unit-color-selector">
+        <span class="unit-label">Unidad ${i}</span>
+        <div class="unit-color-grid">${coloresHTML}</div>
+      </div>
+    `;
+    container.innerHTML += html;
+  }
+  
+  selectorDiv.style.display = 'block';
+  actualizarAddBtnMultiple(prodId);
+}
+
+function selectColorPorUnidad(prodId, unitNum, color, btn) {
+  // Deselecciona otros colores en esta unidad
+  btn.parentElement.querySelectorAll('.unit-color-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  
+  if (!selecciones[prodId].colores) selecciones[prodId].colores = {};
+  selecciones[prodId].colores[unitNum] = color;
+  
+  actualizarAddBtnMultiple(prodId);
+}
+
+function actualizarAddBtnMultiple(prodId) {
+  const sel = selecciones[prodId] || {};
+  const addBtn = document.getElementById(`addBtn-${prodId}`);
+  const prod = productos.find(p => p.id === prodId);
+  
+  if (!sel.cantidad || !sel.colores) {
+    addBtn.disabled = true;
+    addBtn.textContent = 'Seleccioná cantidad y colores';
+    return;
+  }
+  
+  // Verificar que todas las unidades tengan color
+  const coloresSeleccionados = Object.keys(sel.colores).length;
+  if (coloresSeleccionados !== sel.cantidad) {
+    addBtn.disabled = true;
+    addBtn.textContent = `Falta elegir ${sel.cantidad - coloresSeleccionados} color(es)`;
+    return;
+  }
+  
+  const precio = prod.precios.find(pr => pr.cantidad === sel.cantidad).precio;
+  addBtn.disabled = false;
+  addBtn.textContent = `+ Agregar — $${precio.toLocaleString('es-AR')}`;
+}
+
+// ══════════════════════════════════════════════════════
+//  SELECCIÓN VARIANTES (CONJUNTOS)
+// ══════════════════════════════════════════════════════
 function selectVariant(prodId, varId, btn) {
   document.querySelectorAll(`#card-${prodId} .variant-btn`).forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
@@ -821,36 +945,6 @@ function selectVariant(prodId, varId, btn) {
   const addBtn = document.getElementById(`addBtn-${prodId}`);
   addBtn.disabled = false;
   addBtn.textContent = '+ Agregar al carrito';
-}
-
-function selectColor(prodId, color, btn) {
-  document.querySelectorAll(`#colores-${prodId} .variant-btn`).forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  if (!selecciones[prodId]) selecciones[prodId] = {};
-  selecciones[prodId].color = color;
-  actualizarAddBtnEscalonada(prodId);
-}
-
-function selectCantidad(prodId, cantidad, btn) {
-  document.querySelectorAll(`#cantidades-${prodId} .variant-btn`).forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  if (!selecciones[prodId]) selecciones[prodId] = {};
-  selecciones[prodId].cantidad = cantidad;
-  actualizarAddBtnEscalonada(prodId);
-}
-
-function actualizarAddBtnEscalonada(prodId) {
-  const sel = selecciones[prodId] || {};
-  const addBtn = document.getElementById(`addBtn-${prodId}`);
-  if (sel.color && sel.cantidad) {
-    const prod = productos.find(p => p.id === prodId);
-    const precio = prod.precios.find(pr => pr.cantidad === sel.cantidad).precio;
-    addBtn.disabled = false;
-    addBtn.textContent = `+ Agregar — $${precio.toLocaleString('es-AR')}`;
-  } else {
-    addBtn.disabled = true;
-    addBtn.textContent = 'Seleccioná color y cantidad';
-  }
 }
 
 // ══════════════════════════════════════════════════════
@@ -875,23 +969,28 @@ function agregarVariante(prodId) {
   showToast(`✓ ${prod.nombre} agregado`);
 }
 
-function agregarEscalonada(prodId) {
+function agregarMultiple(prodId) {
   const prod = productos.find(p => p.id === prodId);
   const sel = selecciones[prodId];
-  if (!sel?.color || !sel?.cantidad) return;
+  if (!sel?.cantidad || !sel?.colores) return;
+  
   const precio = prod.precios.find(pr => pr.cantidad === sel.cantidad).precio;
+  const coloresArray = Object.entries(sel.colores)
+    .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+    .map(([_, color]) => color);
+  const detalleColores = coloresArray.join(', ');
 
   carrito.push({
-    key: `${prodId}-${sel.color}-${sel.cantidad}-${Date.now()}`,
+    key: `${prodId}-${sel.cantidad}-${coloresArray.join('-')}-${Date.now()}`,
     nombre: prod.nombre,
-    detalle: `${sel.cantidad}x · ${sel.color} · XXL`,
+    detalle: `${sel.cantidad}x · ${detalleColores} · XXL`,
     precio: precio,
     emoji: prod.emoji,
   });
 
   flashBtn(prodId);
   actualizarCarrito();
-  showToast(`✓ ${prod.nombre} agregado`);
+  showToast(`✓ ${sel.cantidad}x ${prod.nombre} agregadas`);
 }
 
 function flashBtn(prodId) {
