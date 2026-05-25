@@ -6,7 +6,7 @@
 <title>Blue Bouquets — Lencería</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
- :root {
+  :root {
   --verde: #37757d;
   --turquesa: #01abbd;
   --menta: #edf5fe;
@@ -626,7 +626,7 @@
 <div class="hero">
   <div class="hero-tag">✦ Lencería para cada cuerpo</div>
   <h1>Comodidad y estilo<br><em>en tu talle</em></h1>
-  <p>Conjuntos, Bombachas, Boxers, Medias.</p>
+  <p>Conjuntos, bombachas, boxers y medias. Talles 85 al 100 y talles grandes XL · XXL.</p>
   <div class="hero-badges">
     <span class="badge">🚴 Envíos a domicilio</span>
     <span class="badge">💬 Pedido por WhatsApp</span>
