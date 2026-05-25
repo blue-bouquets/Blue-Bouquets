@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Bouquets — Lencería que te abraza</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #37757d;
+    --turquesa: #01abbd;
+    --menta: #edf5fe;
+    --blanco-verdoso: #018587;
+    --azul-noche: #11354b;
+    --crema: #edf5fd;
+    --arena: #D4B8A0;
+    --text: #017576;
+    --text-light: #5a7a82;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--crema);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--azul-noche);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    box-shadow: 0 2px 20px rgba(26,58,74,0.3);
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--menta);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+  .logo span { color: var(--turquesa); font-style: italic; }
+
+  .cart-btn {
+    background: var(--verde);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .cart-btn:hover { background: var(--turquesa); transform: scale(1.03); }
+  .cart-count {
+    background: var(--arena);
+    color: var(--azul-noche);
+    border-radius: 50%;
+    width: 20px; height: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%);
+    padding: 60px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(1,171,189,0.15) 0%, transparent 60%);
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(1,171,189,0.2);
+    border: 1px solid var(--turquesa);
+    color: var(--menta);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .hero h1 em { color: var(--turquesa); font-style: italic; }
+  .hero p {
+    color: var(--menta);
+    font-size: 0.95rem;
+    font-weight: 300;
+    max-width: 400px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+  }
+  .hero-badges {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    border-radius: 50px;
+  }
+
+  /* ── FILTROS ── */
+  .filters {
+    padding: 20px 24px 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .filter-btn {
+    background: white;
+    border: 1.5px solid var(--menta);
+    color: var(--verde);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--verde);
+    border-color: var(--verde);
+    color: white;
+  }
+
+  /* ── CATÁLOGO ── */
+  .catalog {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  /* ── PRODUCT CARD ── */
+  .product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(26,58,74,0.07);
+    transition: box-shadow 0.25s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card:hover {
+    box-shadow: 0 8px 30px rgba(26,58,74,0.14);
+    transform: translateY(-3px);
+  }
+  .product-card.sin-stock { opacity: 0.5; pointer-events: none; }
+
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--blanco-verdoso), var(--menta));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+  }
+  .card-img .sin-stock-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(26,58,74,0.85);
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 50px;
+    letter-spacing: 0.05em;
+  }
+  .card-img .new-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--turquesa);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 50px;
+    letter-spacing: 0.05em;
+  }
+
+  .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+
+  .card-category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--turquesa);
+    font-weight: 500;
+  }
+
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--azul-noche);
+    line-height: 1.2;
+  }
+
+  .card-price {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--verde);
+  }
+  .card-price .precio-detalle {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 400;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* Selector de variante */
+  .variant-section label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .variant-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .variant-btn {
+    border: 1.5px solid var(--menta);
+    background: white;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    padding: 5px 11px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .variant-btn:hover { border-color: var(--verde); color: var(--verde); }
+  .variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; font-weight: 500; }
+  .variant-btn.agotado { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
+
+  /* Selector de colores por unidad (BOMBACHAS) */
+  .colors-per-unit {
+    background: var(--blanco-verdoso);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .unit-color-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .unit-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--verde);
+    min-width: 35px;
+    text-transform: uppercase;
+  }
+  .unit-color-grid {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  .unit-color-btn {
+    border: 1.5px solid var(--turquesa);
+    background: white;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .unit-color-btn:hover { border-color: var(--verde); color: var(--verde); }
+  .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; font-weight: 500; }
+  .unit-color-btn.agotado { opacity: 0.35; cursor: not-allowed; }
+
+  /* Botón agregar */
+  .add-btn {
+    margin-top: auto;
+    background: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .add-btn:hover { background: var(--turquesa); transform: scale(1.02); }
+  .add-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+  .add-btn.agregado { background: var(--turquesa); }
+
+  /* ── CARRITO PANEL ── */
+  .cart-overlay {
+    position: fixed; inset: 0;
+    background: rgba(26,58,74,0.5);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+
+  .cart-panel {
+    position: fixed;
+    top: 0; right: 0;
+    width: min(420px, 100vw);
+    height: 100vh;
+    background: var(--crema);
+    z-index: 201;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    box-shadow: -8px 0 40px rgba(26,58,74,0.15);
+  }
+  .cart-panel.open { transform: translateX(0); }
+
+  .cart-header {
+    background: var(--azul-noche);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+  }
+  .cart-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--menta);
+  }
+  .close-btn {
+    background: none; border: none;
+    color: var(--menta); font-size: 1.5rem;
+    cursor: pointer; line-height: 1;
+    transition: color 0.2s;
+  }
+  .close-btn:hover { color: white; }
+
+  .cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cart-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px;
+  }
+  .cart-empty .empty-icon { font-size: 3rem; opacity: 0.5; }
+
+  .cart-item {
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    box-shadow: 0 1px 6px rgba(26,58,74,0.06);
+  }
+  .cart-item-icon {
+    width: 48px; height: 48px;
+    background: var(--blanco-verdoso);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .cart-item-info { flex: 1; }
+  .cart-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--azul-noche);
+    line-height: 1.2;
+  }
+  .cart-item-variant {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+  .cart-item-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .cart-item-price {
+    font-weight: 600;
+    color: var(--verde);
+    font-size: 0.95rem;
+  }
+  .remove-item {
+    background: none; border: none;
+    color: var(--arena); font-size: 1rem;
+    cursor: pointer; transition: color 0.2s;
+  }
+  .remove-item:hover { color: #c0392b; }
+
+  .cart-footer {
+    padding: 16px 20px;
+    background: white;
+    border-top: 1px solid var(--menta);
+  }
+  .cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .cart-total-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+  .cart-total-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--azul-noche);
+  }
+  .envio-note {
+    font-size: 0.75rem;
+    color: var(--turquesa);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .whatsapp-btn {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .whatsapp-btn:hover { background: #1da851; transform: scale(1.02); }
+  .whatsapp-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+  /* ── BANNER ENVÍOS ── */
+  .envios-banner {
+    background: var(--verde);
+    padding: 20px 24px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 0;
+  }
+  .envios-banner h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 6px;
+  }
+  .envios-banner p {
+    font-size: 0.82rem;
+    color: var(--menta);
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--azul-noche);
+    padding: 28px 24px;
+    text-align: center;
+    color: var(--menta);
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+  footer a { color: var(--turquesa); text-decoration: none; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--verde);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    z-index: 999;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 480px) {
+    .catalog { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card-img { height: 150px; }
+    .card-body { padding: 12px; }
+    .card-name { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">Blue <span>Bouquets</span></a>
+  <button class="cart-btn" onclick="toggleCart()">
+    🛒 Mi carrito
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">✦ Lencería para cada cuerpo</div>
+  <h1>Comodidad y estilo<br><em>en tu talle</em></h1>
+  <p>Conjuntos, bombachas, boxers y medias. Talles 85 al 100 y talles grandes XL · XXL.</p>
+  <div class="hero-badges">
+    <span class="badge">🚴 Envíos a domicilio</span>
+    <span class="badge">💬 Pedido por WhatsApp</span>
+    <span class="badge">✨ Sin comisiones</span>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<div class="filters">
+  <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
+  <button class="filter-btn" onclick="filtrar('conjunto', this)">Conjuntos</button>
+  <button class="filter-btn" onclick="filtrar('bombacha', this)">Bombachas</button>
+  <button class="filter-btn" onclick="filtrar('talle-grande', this)">Talles grandes</button>
+</div>
+
+<!-- CATÁLOGO -->
+<div class="catalog" id="catalog"></div>
+
+<!-- BANNER ENVÍOS -->
+<div class="envios-banner">
+  <h3>🚴 Envíos a domicilio disponibles</h3>
+  <p>Realizamos envíos en moto · A partir de cierto monto puede ser sin cargo<br>Zona y horario a convenir por WhatsApp · No salimos con mal clima</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--menta);">Blue Bouquets</strong><br>
+  Lencería cómoda, bonita y en tu talle 🌿<br>
+  <a href="https://wa.me/5492944589885">💬 Consultanos por WhatsApp</a><br>
+  <span style="color:var(--text-light);font-size:0.72rem;">📍 Feria presencial los fines de semana</span>
+</footer>
+
+<!-- CARRITO OVERLAY + PANEL -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>Tu carrito ✦</h2>
+    <button class="close-btn" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="empty-icon">🛒</div>
+      <p>Tu carrito está vacío.<br>¡Agregá algo para empezar!</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total estimado</span>
+      <span class="cart-total-value" id="cartTotal">$0</span>
+    </div>
+    <p class="envio-note">🚴 El costo de envío se coordina por WhatsApp</p>
+    <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()" disabled>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.535 5.867L0 24l6.289-1.516A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.798 9.798 0 01-5.003-1.368l-.36-.214-3.732.9.93-3.636-.235-.374A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+      Pedir por WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const productos = [
+  {
+    id: 1,
+    nombre: "Conjunto Calvin Klein",
+    categoria: "conjunto",
+    emoji: "🩱",
+    esNuevo: false,
+    precio: 10000,
+    descripcion: "Conjunto corpiño + bombacha. Cómodo y básico.",
+    tipo: "variantes",
+    variantes: [
+      { id: "ck-100-blanco", label: "T.100 · Blanco", talle: "100", color: "Blanco", stock: 1 },
+      { id: "ck-95-negro",   label: "T.95 · Negro",  talle: "95",  color: "Negro",  stock: 1 },
+      { id: "ck-95-gris",    label: "T.95 · Gris",   talle: "95",  color: "Gris",   stock: 1 },
+      { id: "ck-85-negro",   label: "T.85 · Negro",  talle: "85",  color: "Negro",  stock: 1 },
+    ]
+  },
+  {
+    id: 2,
+    nombre: "Conjunto Kim",
+    categoria: "conjunto",
+    emoji: "🌸",
+    esNuevo: true,
+    precio: 10000,
+    descripcion: "Diseño femenino con opciones de color.",
+    tipo: "variantes",
+    variantes: [
+      { id: "kim-85-negro",   label: "T.85 · Negro",  talle: "85",  color: "Negro",  stock: 1 },
+      { id: "kim-90-negro",   label: "T.90 · Negro",  talle: "90",  color: "Negro",  stock: 1 },
+      { id: "kim-90-blanco",  label: "T.90 · Blanco", talle: "90",  color: "Blanco", stock: 1 },
+      { id: "kim-95-rojo",    label: "T.95 · Rojo",   talle: "95",  color: "Rojo",   stock: 1 },
+      { id: "kim-100-rojo",   label: "T.100 · Rojo",  talle: "100", color: "Rojo",   stock: 1 },
+      { id: "kim-100-blanco", label: "T.100 · Blanco",talle: "100", color: "Blanco", stock: 1 },
+    ]
+  },
+  {
+    id: 3,
+    nombre: "Bombachas XXL",
+    categoria: "bombacha",
+    emoji: "🌿",
+    esNuevo: true,
+    tipo: "cantidad-multiple",
+    talleUnico: "XXL",
+    descripcion: "Bombachas talles grandes. Comodidad real.",
+    precios: [
+      { cantidad: 1, precio: 4000,  label: "1 unidad" },
+      { cantidad: 2, precio: 7000,  label: "2 unidades" },
+      { cantidad: 3, precio: 10000, label: "3 unidades" },
+    ],
+    coloresStock: [
+      { color: "Gris",   stock: 1 },
+      { color: "Negro",  stock: 3 },
+      { color: "Crema",  stock: 2 },
+      { color: "Marrón", stock: 2 },
+      { color: "Rojo",   stock: 2 },
+      { color: "Blanco", stock: 2 },
+    ]
+  },
+];
+
+let carrito = [];
+
+function renderCatalogo(filtro = 'todos') {
+  const cat = document.getElementById('catalog');
+  cat.innerHTML = '';
+  const filtrados = filtro === 'todos' ? productos
+    : filtro === 'talle-grande' ? productos.filter(p => p.categoria === 'bombacha' && p.talleUnico === 'XXL')
+    : productos.filter(p => p.categoria === filtro);
+
+  filtrados.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.id = 'card-' + p.id;
+
+    if (p.tipo === 'variantes') {
+      card.innerHTML = buildCardVariante(p);
+    } else if (p.tipo === 'cantidad-multiple') {
+      card.innerHTML = buildCardMultiple(p);
+    }
+    cat.appendChild(card);
+  });
+}
+
+function buildCardVariante(p) {
+  const variantesHTML = p.variantes.map(v =>
+    '<button class="variant-btn ' + (v.stock === 0 ? 'agotado' : '') + '"' +
+    'onclick="selectVariant(' + p.id + ', \'' + v.id + '\', this)"' +
+    'data-vid="' + v.id + '"' + (v.stock === 0 ? ' disabled' : '') + '>' +
+    v.label + '</button>'
+  ).join('');
+
+  return '<div class="card-img">' + p.emoji +
+    (p.esNuevo ? '<span class="new-badge">Nuevo</span>' : '') +
+    '</div><div class="card-body">' +
+    '<span class="card-category">' + p.categoria + '</span>' +
+    '<div class="card-name">' + p.nombre + '</div>' +
+    '<div class="card-price">$' + p.precio.toLocaleString('es-AR') + '</div>' +
+    '<div class="variant-section"><label>Elegí talle y color</label>' +
+    '<div class="variant-grid">' + variantesHTML + '</div></div>' +
+    '<button class="add-btn" id="addBtn-' + p.id + '" onclick="agregarVariante(' + p.id + ')" disabled>' +
+    'Seleccioná una variante</button></div>';
+}
+
+function buildCardMultiple(p) {
+  const coloresHTML = p.coloresStock.map(c =>
+    '<button class="variant-btn ' + (c.stock === 0 ? 'agotado' : '') + '"' +
+    'onclick="selectColor(' + p.id + ', \'' + c.color + '\', this)"' +
+    (c.stock === 0 ? ' disabled' : '') + '>' + c.color + ' (' + c.stock + ')</button>'
+  ).join('');
+
+  const preciosHTML = p.precios.map(pr =>
+    '<button class="variant-btn" onclick="selectCantidad(' + p.id + ', ' + pr.cantidad + ', this)">' +
+    pr.label + ' — $' + pr.precio.toLocaleString('es-AR') + '</button>'
+  ).join('');
+
+  return '<div class="card-img">' + p.emoji +
+    (p.esNuevo ? '<span class="new-badge">Nuevo</span>' : '') +
+    '</div><div class="card-body">' +
+    '<span class="card-category">Talle Grande · XXL</span>' +
+    '<div class="card-name">' + p.nombre + '</div>' +
+    '<div class="card-price">$4.000 c/u<span class="precio-detalle">2 x $7.000 · 3 x $10.000</span></div>' +
+    '<div class="variant-section"><label>Cantidad</label>' +
+    '<div class="variant-grid" id="cantidades-' + p.id + '">' + preciosHTML + '</div></div>' +
+    '<div id="colores-selector-' + p.id + '" style="display:none;">' +
+    '<div class="variant-section"><label>Elige color para cada unidad</label>' +
+    '<div class="colors-per-unit" id="colors-per-unit-' + p.id + '"></div></div></div>' +
+    '<button class="add-btn" id="addBtn-' + p.id + '" onclick="agregarMultiple(' + p.id + ')" disabled>' +
+    'Seleccioná cantidad y colores</button></div>';
+}
+
+const selecciones = {};
+
+function selectVariant(prodId, varId, btn) {
+  document.querySelectorAll('#card-' + prodId + ' .variant-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (!selecciones[prodId]) selecciones[prodId] = {};
+  selecciones[prodId].variantId = varId;
+  const addBtn = document.getElementById('addBtn-' + prodId);
+  addBtn.disabled = false;
+  addBtn.textContent = '+ Agregar al carrito';
+}
+
+function selectCantidad(prodId, cantidad, btn) {
+  document.querySelectorAll('#cantidades-' + prodId + ' .variant-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (!selecciones[prodId]) selecciones[prodId] = {};
+  selecciones[prodId].cantidad = cantidad;
+  selecciones[prodId].colores = {};
+  mostrarSelectoresDeColor(prodId, cantidad);
+}
+
+function mostrarSelectoresDeColor(prodId, cantidad) {
+  const prod = productos.find(p => p.id === prodId);
+  const container = document.getElementById('colors-per-unit-' + prodId);
+  const selectorDiv = document.getElementById('colores-selector-' + prodId);
+  
+  container.innerHTML = '';
+  
+  for (let i = 1; i <= cantidad; i++) {
+    const coloresHTML = prod.coloresStock.map(c =>
+      '<button class="unit-color-btn ' + (c.stock === 0 ? 'agotado' : '') + '"' +
+      'onclick="selectColorPorUnidad(' + prodId + ', ' + i + ', \'' + c.color + '\', this)"' +
+      (c.stock === 0 ? ' disabled' : '') + '>' + c.color + '</button>'
+    ).join('');
+    
+    const html = '<div class="unit-color-selector">' +
+      '<span class="unit-label">Unidad ' + i + '</span>' +
+      '<div class="unit-color-grid">' + coloresHTML + '</div></div>';
+    container.innerHTML += html;
+  }
+  
+  selectorDiv.style.display = 'block';
+  actualizarAddBtnMultiple(prodId);
+}
+
+function selectColorPorUnidad(prodId, unitNum, color, btn) {
+  btn.parentElement.querySelectorAll('.unit-color-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  
+  if (!selecciones[prodId].colores) selecciones[prodId].colores = {};
+  selecciones[prodId].colores[unitNum] = color;
+  
+  actualizarAddBtnMultiple(prodId);
+}
+
+function actualizarAddBtnMultiple(prodId) {
+  const sel = selecciones[prodId] || {};
+  const addBtn = document.getElementById('addBtn-' + prodId);
+  const prod = productos.find(p => p.id === prodId);
+  
+  if (!sel.cantidad || !sel.colores) {
+    addBtn.disabled = true;
+    addBtn.textContent = 'Seleccioná cantidad y colores';
+    return;
+  }
+  
+  const coloresSeleccionados = Object.keys(sel.colores).length;
+  if (coloresSeleccionados !== sel.cantidad) {
+    addBtn.disabled = true;
+    addBtn.textContent = 'Falta elegir ' + (sel.cantidad - coloresSeleccionados) + ' color(es)';
+    return;
+  }
+  
+  const precio = prod.precios.find(pr => pr.cantidad === sel.cantidad).precio;
+  addBtn.disabled = false;
+  addBtn.textContent = '+ Agregar — $' + precio.toLocaleString('es-AR');
+}
+
+function agregarVariante(prodId) {
+  const prod = productos.find(p => p.id === prodId);
+  const sel = selecciones[prodId];
+  if (!sel || !sel.variantId) return;
+  const variante = prod.variantes.find(v => v.id === sel.variantId);
+
+  carrito.push({
+    key: prodId + '-' + sel.variantId + '-' + Date.now(),
+    nombre: prod.nombre,
+    detalle: variante.label,
+    precio: prod.precio,
+    emoji: prod.emoji,
+  });
+
+  flashBtn(prodId);
+  actualizarCarrito();
+  showToast('✓ ' + prod.nombre + ' agregado');
+}
+
+function agregarMultiple(prodId) {
+  const prod = productos.find(p => p.id === prodId);
+  const sel = selecciones[prodId];
+  if (!sel || !sel.cantidad || !sel.colores) return;
+  
+  const precio = prod.precios.find(pr => pr.cantidad === sel.cantidad).precio;
+  const coloresArray = Object.entries(sel.colores)
+    .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+    .map(e => e[1]);
+  const detalleColores = coloresArray.join(', ');
+
+  carrito.push({
+    key: prodId + '-' + sel.cantidad + '-' + coloresArray.join('-') + '-' + Date.now(),
+    nombre: prod.nombre,
+    detalle: sel.cantidad + 'x · ' + detalleColores + ' · XXL',
+    precio: precio,
+    emoji: prod.emoji,
+  });
+
+  flashBtn(prodId);
+  actualizarCarrito();
+  showToast('✓ ' + sel.cantidad + 'x ' + prod.nombre + ' agregadas');
+}
+
+function flashBtn(prodId) {
+  const btn = document.getElementById('addBtn-' + prodId);
+  btn.classList.add('agregado');
+  btn.textContent = '✓ Agregado';
+  setTimeout(() => {
+    btn.classList.remove('agregado');
+    btn.textContent = '+ Agregar al carrito';
+  }, 1500);
+}
+
+function actualizarCarrito() {
+  const count = document.getElementById('cartCount');
+  const itemsEl = document.getElementById('cartItems');
+  const totalEl = document.getElementById('cartTotal');
+  const waBtn = document.getElementById('waBtn');
+
+  count.textContent = carrito.length;
+
+  if (carrito.length === 0) {
+    itemsEl.innerHTML = '<div class="cart-empty"><div class="empty-icon">🛒</div><p>Tu carrito está vacío.<br>¡Agregá algo para empezar!</p></div>';
+    totalEl.textContent = '$0';
+    waBtn.disabled = true;
+    return;
+  }
+
+  waBtn.disabled = false;
+  const total = carrito.reduce((s, i) => s + i.precio, 0);
+  totalEl.textContent = '$' + total.toLocaleString('es-AR');
+
+  itemsEl.innerHTML = carrito.map(item =>
+    '<div class="cart-item">' +
+    '<div class="cart-item-icon">' + item.emoji + '</div>' +
+    '<div class="cart-item-info">' +
+    '<div class="cart-item-name">' + item.nombre + '</div>' +
+    '<div class="cart-item-variant">' + item.detalle + '</div>' +
+    '<div class="cart-item-bottom">' +
+    '<span class="cart-item-price">$' + item.precio.toLocaleString('es-AR') + '</span>' +
+    '<button class="remove-item" onclick="quitarItem(\'' + item.key + '\')">🗑</button>' +
+    '</div></div></div>'
+  ).join('');
+}
+
+function quitarItem(key) {
+  carrito = carrito.filter(i => i.key !== key);
+  actualizarCarrito();
+}
+
+function finalizarPedido() {
+  if (carrito.length === 0) return;
+  const total = carrito.reduce((s, i) => s + i.precio, 0);
+  const lineas = carrito.map(i => '• ' + i.nombre + ' (' + i.detalle + ') — $' + i.precio.toLocaleString('es-AR')).join('\n');
+  const msg = '¡Hola Blue Bouquets! 🌿 Quiero hacer este pedido:\n\n' + lineas + '\n\n*TOTAL: $' + total.toLocaleString('es-AR') + '*\n\n¿Cómo coordinamos el envío? 🚴';
+  const url = 'https://wa.me/5492944589885?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+}
+
+function toggleCart() {
+  document.getElementById('cartPanel').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+
+function filtrar(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCatalogo(cat);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+renderCatalogo();
+actualizarCarrito();
+</script>
+</body>
+</html>
