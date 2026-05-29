@@ -573,6 +573,16 @@ function cardVar(p) {
   return `<div class="product-card"><div class="card-img">${p.emoji}</div><div class="card-body"><div class="card-category">${p.cat}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.px.toLocaleString('es-AR')}</div><label>Talle y color</label><div class="variant-grid">${vars}</div><button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" disabled>Selecciona</button></div></div>`;
 }
 
+  function cardVar(p) {
+  return `
+    <div class="card">
+      <h2>${p.name}</h2>
+      <img src="${p.img}" alt="${p.name}" />
+      <p>Precio: $${p.px}</p>
+    </div>
+  `;
+}
+
 function cardMulti(p) {
   const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty('${p.id}',${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
   return `<div class="product-card"><div class="card-img">${p.emoji}</div><div class="card-body"><div class="card-category">${p.talle}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div><label>Cantidad</label><div class="variant-grid">${qtys}</div><div id="cols${p.id}" style="display:none"><label>Color por unidad</label><div id="colslist${p.id}"></div></div><button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>Selecciona</button></div></div>`;
