@@ -6,621 +6,110 @@
 <title>Blue Bouquets — Lencería</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --verde: #37757d;
-    --turquesa: #01abbd;
-    --menta: #edf5fe;
-    --blanco-verdoso: #018587;
-    --azul-noche: #11354b;
-    --crema: #edf5fd;
-    --arena: #D4B8A0;
-    --text: #017576;
-    --text-light: #5a7a82;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--crema);
-    color: var(--text);
-    min-height: 100vh;
-  }
-
-  /* ── HEADER ── */
-  header {
-    background: var(--azul-noche);
-    padding: 0 24px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    box-shadow: 0 2px 20px rgba(26,58,74,0.3);
-  }
-
-  .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 300;
-    color: var(--menta);
-    letter-spacing: 0.08em;
-    text-decoration: none;
-  }
-  .logo span { color: var(--turquesa); font-style: italic; }
-
-  .cart-btn {
-    background: var(--verde);
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    color: white;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .cart-btn:hover { background: var(--turquesa); transform: scale(1.03); }
-  .cart-count {
-    background: var(--arena);
-    color: var(--azul-noche);
-    border-radius: 50%;
-    width: 20px; height: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%);
-    padding: 60px 24px 48px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(1,171,189,0.15) 0%, transparent 60%);
-  }
-  .hero-tag {
-    display: inline-block;
-    background: rgba(1,171,189,0.2);
-    border: 1px solid var(--turquesa);
-    color: var(--menta);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 50px;
-    margin-bottom: 16px;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 6vw, 3.5rem);
-    font-weight: 300;
-    color: white;
-    line-height: 1.15;
-    margin-bottom: 12px;
-  }
-  .hero h1 em { color: var(--turquesa); font-style: italic; }
-  .hero p {
-    color: var(--menta);
-    font-size: 0.95rem;
-    font-weight: 300;
-    max-width: 400px;
-    margin: 0 auto 24px;
-    line-height: 1.6;
-  }
-  .hero-badges {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .badge {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    font-size: 0.78rem;
-    padding: 6px 14px;
-    border-radius: 50px;
-  }
-
-  /* ── FILTROS ── */
-  .filters {
-    padding: 20px 24px 0;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .filter-btn {
-    background: white;
-    border: 1.5px solid var(--menta);
-    color: var(--verde);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 500;
-    padding: 7px 16px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    background: var(--verde);
-    border-color: var(--verde);
-    color: white;
-  }
-
-  /* ── CATÁLOGO ── */
-  .catalog {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 16px 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-  }
-
-  /* ── PRODUCT CARD ── */
-  .product-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(26,58,74,0.07);
-    transition: box-shadow 0.25s, transform 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-  .product-card:hover {
-    box-shadow: 0 8px 30px rgba(26,58,74,0.14);
-    transform: translateY(-3px);
-  }
-  .product-card.sin-stock { opacity: 0.5; pointer-events: none; }
-
-  .card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background: linear-gradient(135deg, var(--blanco-verdoso), var(--menta));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    position: relative;
-  }
-  .card-img .sin-stock-badge {
-    position: absolute; top: 12px; right: 12px;
-    background: rgba(26,58,74,0.85);
-    color: white;
-    font-size: 0.7rem;
-    padding: 4px 10px;
-    border-radius: 50px;
-    letter-spacing: 0.05em;
-  }
-  .card-img .new-badge {
-    position: absolute; top: 12px; left: 12px;
-    background: var(--turquesa);
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 50px;
-    letter-spacing: 0.05em;
-  }
-
-  .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-
-  .card-category {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--turquesa);
-    font-weight: 500;
-  }
-
-  .card-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--azul-noche);
-    line-height: 1.2;
-  }
-
-  .card-price {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--verde);
-  }
-  .card-price .precio-detalle {
-    font-size: 0.75rem;
-    color: var(--text-light);
-    font-weight: 400;
-    display: block;
-    margin-top: 2px;
-  }
-
-  /* Selector de variante */
-  .variant-section label {
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--text-light);
-    display: block;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .variant-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .variant-btn {
-    border: 1.5px solid var(--menta);
-    background: white;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.78rem;
-    padding: 5px 11px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .variant-btn:hover { border-color: var(--verde); color: var(--verde); }
-  .variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; font-weight: 500; }
-  .variant-btn.agotado { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
-
-  /* Selector de colores por unidad (BOMBACHAS) */
-  .colors-per-unit {
-    background: var(--blanco-verdoso);
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .unit-color-selector {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .unit-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--verde);
-    min-width: 35px;
-    text-transform: uppercase;
-  }
-  .unit-color-grid {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    flex: 1;
-  }
-  .unit-color-btn {
-    border: 1.5px solid var(--turquesa);
-    background: white;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.7rem;
-    padding: 4px 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .unit-color-btn:hover { border-color: var(--verde); color: var(--verde); }
-  .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; font-weight: 500; }
-  .unit-color-btn.agotado { opacity: 0.35; cursor: not-allowed; }
-
-  /* Botón agregar */
-  .add-btn {
-    margin-top: auto;
-    background: var(--verde);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-  .add-btn:hover { background: var(--turquesa); transform: scale(1.02); }
-  .add-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-  .add-btn.agregado { background: var(--turquesa); }
-
-  /* ── CARRITO PANEL ── */
-  .cart-overlay {
-    position: fixed; inset: 0;
-    background: rgba(26,58,74,0.5);
-    z-index: 200;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s;
-  }
-  .cart-overlay.open { opacity: 1; pointer-events: all; }
-
-  .cart-panel {
-    position: fixed;
-    top: 0; right: 0;
-    width: min(420px, 100vw);
-    height: 100vh;
-    background: var(--crema);
-    z-index: 201;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
-    box-shadow: -8px 0 40px rgba(26,58,74,0.15);
-  }
-  .cart-panel.open { transform: translateX(0); }
-
-  .cart-header {
-    background: var(--azul-noche);
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-  }
-  .cart-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: var(--menta);
-  }
-  .close-btn {
-    background: none; border: none;
-    color: var(--menta); font-size: 1.5rem;
-    cursor: pointer; line-height: 1;
-    transition: color 0.2s;
-  }
-  .close-btn:hover { color: white; }
-
-  .cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .cart-empty {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    color: var(--text-light);
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 40px;
-  }
-  .cart-empty .empty-icon { font-size: 3rem; opacity: 0.5; }
-
-  .cart-item {
-    background: white;
-    border-radius: 12px;
-    padding: 14px;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    box-shadow: 0 1px 6px rgba(26,58,74,0.06);
-  }
-  .cart-item-icon {
-    width: 48px; height: 48px;
-    background: var(--blanco-verdoso);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem;
-    flex-shrink: 0;
-  }
-  .cart-item-info { flex: 1; }
-  .cart-item-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--azul-noche);
-    line-height: 1.2;
-  }
-  .cart-item-variant {
-    font-size: 0.75rem;
-    color: var(--text-light);
-    margin-top: 2px;
-    line-height: 1.4;
-  }
-  .cart-item-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 8px;
-  }
-  .cart-item-price {
-    font-weight: 600;
-    color: var(--verde);
-    font-size: 0.95rem;
-  }
-  .remove-item {
-    background: none; border: none;
-    color: var(--arena); font-size: 1rem;
-    cursor: pointer; transition: color 0.2s;
-  }
-  .remove-item:hover { color: #c0392b; }
-
-  .cart-footer {
-    padding: 16px 20px;
-    background: white;
-    border-top: 1px solid var(--menta);
-  }
-  .cart-total-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-  }
-  .cart-total-label {
-    font-size: 0.85rem;
-    color: var(--text-light);
-  }
-  .cart-total-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--azul-noche);
-  }
-  .envio-note {
-    font-size: 0.75rem;
-    color: var(--turquesa);
-    margin-bottom: 14px;
-    text-align: center;
-  }
-  .whatsapp-btn {
-    width: 100%;
-    background: #25D366;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 15px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .whatsapp-btn:hover { background: #1da851; transform: scale(1.02); }
-  .whatsapp-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-
-  /* ── BANNER ENVÍOS ── */
-  .envios-banner {
-    background: var(--verde);
-    padding: 20px 24px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto 0;
-  }
-  .envios-banner h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: white;
-    margin-bottom: 6px;
-  }
-  .envios-banner p {
-    font-size: 0.82rem;
-    color: var(--menta);
-    line-height: 1.5;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--azul-noche);
-    padding: 28px 24px;
-    text-align: center;
-    color: var(--menta);
-    font-size: 0.8rem;
-    line-height: 1.8;
-  }
-  footer a { color: var(--turquesa); text-decoration: none; }
-
-  /* ── TOAST ── */
-  .toast {
-    position: fixed;
-    bottom: 24px; left: 50%;
-    transform: translateX(-50%) translateY(80px);
-    background: var(--verde);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    z-index: 999;
-    transition: transform 0.3s ease;
-    pointer-events: none;
-    white-space: nowrap;
-  }
-  .toast.show { transform: translateX(-50%) translateY(0); }
-
-  @media (max-width: 480px) {
-    .catalog { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .card-img { height: 150px; }
-    .card-body { padding: 12px; }
-    .card-name { font-size: 1rem; }
-  }
+:root {
+  --verde: #37757d;
+  --turquesa: #01abbd;
+  --menta: #edf5fe;
+  --azul-noche: #11354b;
+  --crema: #edf5fd;
+  --arena: #D4B8A0;
+  --text: #017576;
+  --text-light: #5a7a82;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; }
+header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--menta); text-decoration: none; }
+.logo span { color: var(--turquesa); font-style: italic; }
+.cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 10px 20px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 20px; height: 20px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 60px 24px 48px; text-align: center; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 300; color: white; margin-bottom: 12px; }
+.hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; }
+.filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+.filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; }
+.filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
+.catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.product-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(26,58,74,0.07); display: flex; flex-direction: column; }
+.card-img { width: 100%; height: 200px; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+.card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.card-category { font-size: 0.7rem; color: var(--turquesa); font-weight: 500; }
+.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--azul-noche); }
+.card-price { font-size: 1.1rem; font-weight: 500; color: var(--verde); }
+label { font-size: 0.75rem; font-weight: 500; color: var(--text-light); display: block; margin-bottom: 6px; }
+.variant-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.variant-btn { border: 1.5px solid var(--menta); background: white; color: var(--text); padding: 5px 11px; border-radius: 8px; cursor: pointer; font-size: 0.78rem; }
+.variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
+.variant-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
+.unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
+.unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
+.unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 500; }
+.add-btn:hover { background: var(--turquesa); }
+.add-btn:disabled { background: #ccc; cursor: not-allowed; }
+.cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
+.cart-overlay.open { opacity: 1; pointer-events: all; }
+.cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
+.cart-panel.open { transform: translateX(0); }
+.cart-header { background: var(--azul-noche); padding: 20px 24px; display: flex; justify-content: space-between; color: white; }
+.cart-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--menta); }
+.close-btn { background: none; border: none; color: var(--menta); font-size: 1.5rem; cursor: pointer; }
+.cart-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.cart-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-light); font-size: 0.9rem; }
+.cart-item { background: white; border-radius: 12px; padding: 14px; display: flex; gap: 12px; box-shadow: 0 1px 6px rgba(26,58,74,0.06); }
+.cart-item-icon { width: 48px; height: 48px; background: #018587; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+.cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--azul-noche); }
+.cart-item-variant { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
+.cart-item-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+.remove-item { background: none; border: none; color: var(--arena); cursor: pointer; }
+.cart-footer { padding: 16px 20px; background: white; border-top: 1px solid var(--menta); }
+.cart-total-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--azul-noche); }
+.whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; border-radius: 12px; padding: 15px; cursor: pointer; font-weight: 600; margin-top: 10px; }
+.envios-banner { background: var(--verde); padding: 20px 24px; text-align: center; max-width: 900px; margin: 0 auto; }
+.envios-banner h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: white; }
+footer { background: var(--azul-noche); padding: 28px 24px; text-align: center; color: var(--menta); font-size: 0.8rem; }
+footer a { color: var(--turquesa); text-decoration: none; }
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
+.toast.show { transform: translateX(-50%) translateY(0); }
+@media (max-width: 480px) {
+  .catalog { grid-template-columns: 1fr 1fr; gap: 12px; }
+}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <a class="logo" href="#">Blue <span>Bouquets</span></a>
-  <button class="cart-btn" onclick="toggleCart()">
-    🛒 Mi carrito
-    <span class="cart-count" id="cartCount">0</span>
-  </button>
+  <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
 </header>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">✦ Lencería para todas </div>
-  <h1>Comodidad y estilo<br><em>A tu medida</em></h1>
-  <p>Conjuntos, bombachas, boxers, medias, y más...</p>
-  <div class="hero-badges">
-    <span class="badge">🚴 Envíos a domicilio</span>
-    <span class="badge">💬 Pedidos por WhatsApp</span>
-    <span class="badge">✨ Basicos ideales</span>
-  </div>
+  <h1>Comodidad y estilo<br><em style="color: var(--turquesa); font-style: italic;">A tu medida</em></h1>
+  <p>Bombachas, medias, conjuntos y más...</p>
 </div>
 
-<!-- FILTROS -->
 <div class="filters">
   <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
-  <button class="filter-btn" onclick="filtrar('conjunto', this)">Conjuntos</button>
-  <button class="filter-btn" onclick="filtrar('bombacha', this)">Bombachas</button>
-  <button class="filter-btn" onclick="filtrar('boxers', this)">Boxers</button>
+  <button class="filter-btn" onclick="filtrar('bombachas', this)">Bombachas</button>
   <button class="filter-btn" onclick="filtrar('medias', this)">Medias</button>
+  <button class="filter-btn" onclick="filtrar('conjuntos', this)">Conjuntos</button>
 </div>
 
-<!-- CATÁLOGO -->
 <div class="catalog" id="catalog"></div>
 
-<!-- BANNER ENVÍOS -->
 <div class="envios-banner">
   <h3>🚴 Envíos a domicilio disponibles</h3>
-  <p>Realizamos envíos · A convenir según zona<br>Dias y horario a convenir por WhatsApp · Envíos gratis a partir de $25.000</p>
+  <p>Realizamos envíos · Dias y horario a convenir por WhatsApp</p>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <strong style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--menta);">Blue Bouquets 💙</strong><br>
-  Lencería pensada para tu comodidad 🌿<br>
-  <a href="https://wa.me/5492944589885">💬 Consultanos por WhatsApp</a><br>
-  <span style="color:var(--text-light);font-size:0.80rem;">📍 Feria presencial los fines de semana</span>
+  <strong style="font-family:'Cormorant Garamond',serif;">Blue Bouquets 💙</strong><br>
+  <a href="https://wa.me/5492944589885">💬 Consultanos por WhatsApp</a>
 </footer>
 
-<!-- CARRITO OVERLAY + PANEL -->
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <div class="cart-panel" id="cartPanel">
   <div class="cart-header">
@@ -628,333 +117,488 @@
     <button class="close-btn" onclick="toggleCart()">✕</button>
   </div>
   <div class="cart-items" id="cartItems">
-    <div class="cart-empty">
-      <div class="empty-icon">🛒</div>
-      <p>Tu carrito está vacío.<br>¡Agregá algo para empezar!</p>
-    </div>
+    <div class="cart-empty"><p>Tu carrito está vacío</p></div>
   </div>
   <div class="cart-footer">
-    <div class="cart-total-row">
-      <span class="cart-total-label">Total estimado</span>
+    <div style="display:flex; justify-content:space-between;">
+      <span>Total:</span>
       <span class="cart-total-value" id="cartTotal">$0</span>
     </div>
-    <p class="envio-note">🚴 El costo de envío se coordina por WhatsApp</p>
-    <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()" disabled>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.133.558 4.133 1.535 5.867L0 24l6.289-1.516A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.798 9.798 0 01-5.003-1.368l-.36-.214-3.732.9.93-3.636-.235-.374A9.794 9.794 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
-      Pedir por WhatsApp
-    </button>
+    <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()" disabled>Pedir por WhatsApp</button>
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
 const productos = [
+{
+  id: "vclassic",
+  sku: "MUL Vedetinas MyL x12 11700",
+  cat: "bombachas",
+  name: "Vedetinas M y L",
+  emoji: "🌿",
+  tipo: "multi",
+  talle: "Regular",
+  precios: [
+    { qty: 1, px: 3000 },
+    { qty: 2, px: 5500 },
+    { qty: 3, px: 7000 }
+  ],
+  colores: [
+    { c: "Negra L", s: 1 },
+    { c: "Blanca L", s: 1 },
+    { c: "Verde L", s: 1 },
+    { c: "Roja L", s: 1 },
+    { c: "Gris L", s: 1 },
+    { c: "Crema L", s: 1 },
+    { c: "Negra M", s: 1 },
+    { c: "Blanca M", s: 1 },
+    { c: "Verde M", s: 1 },
+    { c: "Roja M", s: 1 },
+    { c: "Gris M", s: 1 },
+    { c: "Crema M", s: 1 },
+  ]
+},
   {
-    id: 1,
-    nombre: "Conjunto Calvin Klein",
-    categoria: "conjunto",
-    emoji: "🩱",
-    esNuevo: false,
-    precio: 10000,
-    descripcion: "Conjunto corpiño + bombacha. Cómodo y básico.",
-    tipo: "variantes",
-    variantes: [
-      { id: "ck-100-blanco", label: "T.100 · Blanco", talle: "100", color: "Blanco", stock: 1 },
-      { id: "ck-95-negro",   label: "T.95 · Negro",  talle: "95",  color: "Negro",  stock: 1 },
-      { id: "ck-95-gris",    label: "T.95 · Gris",   talle: "95",  color: "Gris",   stock: 1 },
-      { id: "ck-85-negro",   label: "T.85 · Negro",  talle: "85",  color: "Negro",  stock: 1 },
-    ]
+    id:"vmorley",
+    sku: "RI Vedetinas classic estampadas 13500",
+   cat:"bombachas",
+   name:"Vedetinas de Morley Estampadas",
+   emoji:"🌸",
+   tipo:"multi",
+   talle:"Regular",
+   precios:[
+     {qty:1,px:3000},
+     {qty:2,px:5500},
+     {qty:3,px:7000}
+   ],
+   colores:[
+     {c:"Piel Cerezas",s:3},
+     {c:"Blanca Moños",s:3},
+     {c:"Rosa Cerezas",s:3},
+     {c:"Negra",s:0}
+   ]
   },
   {
-    id: 2,
-    nombre: "Conjunto Kim",
-    categoria: "conjunto",
-    emoji: "🌸",
-    esNuevo: true,
-    precio: 10000,
-    descripcion: "Diseño femenino con opciones de color.",
-    tipo: "variantes",
-    variantes: [
-      { id: "kim-85-negro",   label: "T.85 · Negro",  talle: "85",  color: "Negro",  stock: 1 },
-      { id: "kim-90-negro",   label: "T.90 · Negro",  talle: "90",  color: "Negro",  stock: 1 },
-      { id: "kim-90-blanco",  label: "T.90 · Blanco", talle: "90",  color: "Blanco", stock: 1 },
-      { id: "kim-95-rojo",    label: "T.95 · Rojo",   talle: "95",  color: "Rojo",   stock: 1 },
-      { id: "kim-100-rojo",   label: "T.100 · Rojo",  talle: "100", color: "Rojo",   stock: 1 },
-      { id: "kim-100-blanco", label: "T.100 · Blanco",talle: "100", color: "Blanco", stock: 1 },
-    ]
-  },
-  {
-    id: 3,
-    nombre: "Bombachas XXL",
-    categoria: "bombacha",
-    emoji: "🌿",
-    esNuevo: true,
-    tipo: "cantidad-multiple",
-    talleUnico: "XXL",
-    descripcion: "Bombachas talles grandes. Comodidad real.",
-    precios: [
-      { cantidad: 1, precio: 4000,  label: "1 unidad" },
-      { cantidad: 2, precio: 7000,  label: "2 unidades" },
-      { cantidad: 3, precio: 10000, label: "3 unidades" },
+    id:"lessanchas",
+    sku: "RI: Less Anchas Morley 15900",
+    cat:"bombachas",
+    name:"Less Anchas Morley",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"Regular",
+    precios:[
+      {qty:1,px:3000},
+      {qty:2,px:5500},
+      {qty:3,px:7000}
     ],
-    coloresStock: [
-      { color: "Gris",   stock: 1 },
-      { color: "Negro",  stock: 3 },
-      { color: "Crema",  stock: 2 },
-      { color: "Marrón", stock: 2 },
-      { color: "Rojo",   stock: 2 },
-      { color: "Blanco", stock: 2 },
+    colores:[
+      {c:"Roja",s:1},
+      {c:"Beige",s:1},
+      {c:"Negra",s:0},
+      {c:"Blanca",s:0},
     ]
   },
+  {
+    id:"lessred",
+    sku: "RI Less Anchas Red 15900",
+    cat:"bombachas",
+    name:"Less Anchas de Red",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"Regular",
+    precios:[
+      {qty:1,px:3000},
+      {qty:2,px:5500},
+      {qty:3,px:7000}
+    ],
+    colores:[
+      {c:"Negra",s:5},
+      {c:"Blanca",s:4},
+      {c:"Negra",s:0},
+    ]
+  },
+  {
+    id:"lessencaje",
+    sku: "RI Less Regu Encaje 13900",
+    cat:"bombachas",
+    name:"Less Regulables de Encaje",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"Regular",
+    precios:[
+      {qty:1,px:3000},
+      {qty:2,px:5500},
+      {qty:3,px:7000}
+    ],
+    colores:[
+      {c:"Blanca",s:4},
+      {c:"Crema",s:1},
+      {c:"Roja",s:0}
+    ]
+  },
+  {
+    id:"lessclassic",
+    sku: "RI Less Classic 12900",
+    cat:"bombachas",
+    name:"Colaless Classic",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"Regular",
+    precios:[
+      {qty:1,px:3000},
+      {qty:2,px:5500},
+      {qty:3,px:7000}
+    ],
+    colores:[
+      {c:"Negra",s:1},
+      {c:"Blanca",s:4},
+      {c:"Beige",s:4}
+    ]
+  },
+  {
+    id:"colalessfrente",
+    sku: "MUL Colaless Frente Puntilla x12 13140",
+    cat:"bombachas",
+    name:"Colaless de Puntilla",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"Regular",
+    precios:[
+      {qty:1,px:3000},
+      {qty:2,px:5500},
+      {qty:3,px:7000}
+    ],
+    colores:[
+      {c:"Negra",s:3},
+      {c:"Blanca",s:3},
+      {c:"Gris",s:3},
+      {c:"Beige",s:3}
+    ]
+  },
+  {
+    id:"coquette",
+    Sku: "MUL Regulables Coquette 12600",
+    cat:"bombachas",
+    name:"Regulables Coquette",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"Regular",
+    precios:[
+      {qty:1,px:3000},
+      {qty:2,px:5500},
+      {qty:3,px:7000}
+    ],
+    colores:[
+      {c:"Blanco",s:4},
+      {c:"Negro",s:4},
+      {c:"Beige",s:4}
+    ]
+  },
+  {
+    id:"lessxl",
+    sku: "MUL Colaless XL BELLA MARIE X12 16200",
+    cat:"bombachas",
+    name:"Less XL",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"XL",
+    precios:[
+      {qty:1,px:4000},
+      {qty:2,px:7500},
+      {qty:3,px:10000}
+    ],
+    colores:[
+      {c:"Rojo",s:6},
+      {c:"Negra",s:6},
+      {c:"Blanco",s:4},
+      {c:"Beige",s:4},
+      {c:"Gris",s:4}
+    ]
+  },
+  {
+    id:"lessxxlencaje",
+    sku: "MUL Less XXL Luna c/puntilla x12 24800",
+    cat:"bombachas",
+    name:"Less XXL con Encaje",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"XXL",
+    precios:[
+      {qty:1,px:4000},
+      {qty:2,px:7500},
+      {qty:3,px:10000}
+    ],
+    colores:[
+      {c:"Gris",s:1},
+      {c:"Negra",s:2},
+      {c:"Roja",s:2},
+      {c:"Beige",s:2},
+      {c:"Blanca",s:2},
+      {c:"Marrón",s:2}
+    ]
+  },
+  {
+    id:"lessxxl",
+    sku: "MUL Less Especiales Luna x12 17740",
+    cat:"bombachas",
+    name:"Less XXL",
+    emoji:"🌿",
+    tipo:"multi",
+    talle:"XXL",
+    precios:[
+      {qty:1,px:4000},
+      {qty:2,px:7500},
+      {qty:3,px:10000}
+    ],
+    colores:[
+      {c:"Gris",s:4},
+      {c:"Negro",s:4},
+      {c:"Crema",s:2},
+      {c:"Rojo",s:2},
+      {c:"Blanco",s:2}
+    ]
+  },
+  {
+    id:"mediasmd", 
+    sku: "RI Medias MD 3DOC 14500",
+   cat:"medias",
+    name:"Medias MD (3 pares)",
+    emoji:"🧦",
+    tipo:"simple",
+    px:3500,s:12
+  },
+  {
+    id:"mediasplush",
+    sku: "RI Medias Plush basicas 11500",
+    cat:"medias",
+    name:"Medias Plush (2 pares)",
+    emoji:"🧦",
+    tipo:"simple",
+    px:3000,s:6
+  },
+  {
+    id:"Begonia",
+    sku: "RI Alice 23500",
+    cat:"Begonia",
+    name:"Alice",
+    emoji:"🩱",
+    tipo:"var",
+    px:9990,
+    var:[
+      {id:"a85b",l:"T.85 · Blanco",s:1},
+      {id:"a85n",l:"T.85 · Negro",s:1},
+      {id:"a100b",l:"T.100 · Blanco",s:1}
+    ]
+  },
+  {
+    id:"Coral",
+    SKU: "RI Marie Reg 22500",
+    cat:"conjuntos",
+    name:"Coral",
+    emoji:"🌸",
+    tipo:"var",
+    px:9990,
+    var:[
+      {id:"m90b",l:"T.90 · Beige",s:1}
+    ]
+  },
+  {
+    id:"Lavanda",
+    sku: "RI Agatha 23500",
+    cat:"conjuntos",
+    name:"Lavanda",
+    emoji:"🌸",
+    tipo:"var",
+    px:9990,
+    var:[
+      {id:"ag95n",l:"T.95 · Negro",s:1},
+      {id:"ag100b",l:"T.100 · Blanco",s:1}
+    ]
+  },
+  {
+    id:"Cala",
+   sku: "RI Pia 25400",
+   cat:"conjuntos",
+   name:"Cala",
+   emoji:"🌸",
+   tipo:"var",
+    px:9990,
+    var:[
+      {id:"p90b",l:"T.90 · Blanco",s:1},
+      {id:"p85be",l:"T.85 · Beige",s:1},
+      {id:"p95n",l:"T.95 · Negro",s:2}
+    ]
+  },
+  {
+    id:"Verbena",
+    sku: "RI Diana 41500",
+    cat:"conjuntos",
+    name:"Verbena",
+    emoji:"🌸",
+    tipo:"var",
+    px: 11990,
+    var:[
+      {id:"d85b",l:"T.85 · Blanco",s:1}
+    ]
+  },
+  {
+    id:"Alyssum",
+    sku: "RI Vilma 23500",
+    cat:"conjuntos",
+    name:"Alyssum",
+    emoji:"🌸",
+    tipo:"var",
+    px:9990,
+    var:[
+      {id:"v85n1",l:"T.85 · Negro",s:1},
+      {id:"v85n2",l:"T.85 · Negro (2)",s:1},
+      {id:"v95g",l:"T.95 · Gris",s:1}
+    ]
+  },
+  {
+    id:"Gardenia",
+    sku: "RI Kim 35400",
+    cat:"conjuntos",
+    name:"Gardenia",
+    emoji:"🌸",
+    tipo:"var",
+    px:11490,
+    var:[
+      {id:"k85n",l:"T.85 · Negro",s:1},
+      {id:"k90n",l:"T.90 · Negro",s:1},
+      {id:"k90b",l:"T.90 · Blanca",s:1},
+      {id:"k95r",l:"T.95 · Rojo",s:1},
+      {id:"k100r",l:"T.100 · Rojo",s:1},
+      {id:"k100b",l:"T.100 · Blanco",s:1}
+    ]
+  },
+  {id:"andy",cat:"conjuntos",name:"Andy",emoji:"🌸",tipo:"var",px:9500,var:[{id:"an90n",l:"T.90 · Negro",s:1},{id:"an90b",l:"T.90 · Blanco",s:1}]},
+  {id:"grecia",cat:"conjuntos",name:"Grecia",emoji:"👑",tipo:"var",px:13000,var:[{id:"gr85b",l:"T.85 · Blanco",s:1},{id:"gr85n",l:"T.85 · Negro",s:1}]},
+  {id:"valentina",cat:"conjuntos",name:"Valentina",emoji:"👑",tipo:"var",px:14000,var:[{id:"val110r",l:"T.110 · Rosa",s:1},{id:"val115r",l:"T.115 · Rosa",s:1},{id:"val120b",l:"T.120 · Blanco",s:1}]},
+  {id:"theodora",cat:"conjuntos",name:"Theodora",emoji:"👑",tipo:"var",px:13500,var:[{id:"th85bo",l:"T.85 · Bordo",s:1},{id:"th85be",l:"T.85 · Beige",s:1},{id:"th90r",l:"T.90 · Rosa",s:1},{id:"th90b",l:"T.90 · Blanco",s:1},{id:"th95n",l:"T.95 · Negro",s:1},{id:"th95be",l:"T.95 · Beige",s:1}]},
+  {id:"fay",cat:"conjuntos",name:"Fay",emoji:"✨",tipo:"var",px:10750,var:[{id:"f90a",l:"T.90 · Amarillo",s:1},{id:"f95v",l:"T.95 · Violeta",s:1},{id:"f95c",l:"T.95 · Celeste",s:1},{id:"f100a",l:"T.100 · Amarillo",s:1},{id:"f100v",l:"T.100 · Violeta",s:1}]},
+  {id:"boxertommy",cat:"conjuntos",name:"Boxer Tommy",emoji:"🩳",tipo:"var",px:4500,var:[{id:"bt1",l:"Azul",s:3},{id:"bt2",l:"Blanco",s:4},{id:"bt3",l:"Gris",s:5}]},
 ];
 
 let carrito = [];
+let sel = {};
 
-function renderCatalogo(filtro = 'todos') {
-  const cat = document.getElementById('catalog');
-  cat.innerHTML = '';
-  const filtrados = filtro === 'todos' ? productos
-    : filtro === 'talle-grande' ? productos.filter(p => p.categoria === 'bombacha' && p.talleUnico === 'XXL')
-    : productos.filter(p => p.categoria === filtro);
+function cardSimple(p) {
+  return `<div class="product-card"><div class="card-img">${p.emoji}</div><div class="card-body"><div class="card-category">${p.cat}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.px.toLocaleString('es-AR')}</div><button class="add-btn" onclick="addSimple('${p.id}')" ${p.s>0?'':'disabled'}>+ Agregar</button></div></div>`;
+}
 
-  filtrados.forEach(p => {
-    const card = document.createElement('div');
-    card.className = 'product-card';
-    card.id = 'card-' + p.id;
+function cardVar(p) {
+  const vars = p.var.map(v => `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`).join('');
+  return `<div class="product-card"><div class="card-img">${p.emoji}</div><div class="card-body"><div class="card-category">${p.cat}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.px.toLocaleString('es-AR')}</div><label>Talle y color</label><div class="variant-grid">${vars}</div><button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" disabled>Selecciona</button></div></div>`;
+}
 
-    if (p.tipo === 'variantes') {
-      card.innerHTML = buildCardVariante(p);
-    } else if (p.tipo === 'cantidad-multiple') {
-      card.innerHTML = buildCardMultiple(p);
+function cardMulti(p) {
+  const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty('${p.id}',${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
+  return `<div class="product-card"><div class="card-img">${p.emoji}</div><div class="card-body"><div class="card-category">${p.talle}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div><label>Cantidad</label><div class="variant-grid">${qtys}</div><div id="cols${p.id}" style="display:none"><label>Color por unidad</label><div id="colslist${p.id}"></div></div><button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>Selecciona</button></div></div>`;
+}
+
+function selVar(pid,vid,btn) {
+  const p = productos.find(x=>x.id===pid);
+  document.querySelectorAll(`#catalog .product-card`).forEach((card,i)=>{
+    if(productos[i].id===pid) {
+      card.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
     }
-    cat.appendChild(card);
   });
-}
-
-function buildCardVariante(p) {
-  const variantesHTML = p.variantes.map(v =>
-    '<button class="variant-btn ' + (v.stock === 0 ? 'agotado' : '') + '"' +
-    'onclick="selectVariant(' + p.id + ', \'' + v.id + '\', this)"' +
-    'data-vid="' + v.id + '"' + (v.stock === 0 ? ' disabled' : '') + '>' +
-    v.label + '</button>'
-  ).join('');
-
-  return '<div class="card-img">' + p.emoji +
-    (p.esNuevo ? '<span class="new-badge">Nuevo</span>' : '') +
-    '</div><div class="card-body">' +
-    '<span class="card-category">' + p.categoria + '</span>' +
-    '<div class="card-name">' + p.nombre + '</div>' +
-    '<div class="card-price">$' + p.precio.toLocaleString('es-AR') + '</div>' +
-    '<div class="variant-section"><label>Elegí talle y color</label>' +
-    '<div class="variant-grid">' + variantesHTML + '</div></div>' +
-    '<button class="add-btn" id="addBtn-' + p.id + '" onclick="agregarVariante(' + p.id + ')" disabled>' +
-    'Seleccioná una variante</button></div>';
-}
-
-function buildCardMultiple(p) {
-  const coloresHTML = p.coloresStock.map(c =>
-    '<button class="variant-btn ' + (c.stock === 0 ? 'agotado' : '') + '"' +
-    'onclick="selectColor(' + p.id + ', \'' + c.color + '\', this)"' +
-    (c.stock === 0 ? ' disabled' : '') + '>' + c.color + ' (' + c.stock + ')</button>'
-  ).join('');
-
-  const preciosHTML = p.precios.map(pr =>
-    '<button class="variant-btn" onclick="selectCantidad(' + p.id + ', ' + pr.cantidad + ', this)">' +
-    pr.label + ' — $' + pr.precio.toLocaleString('es-AR') + '</button>'
-  ).join('');
-
-  return '<div class="card-img">' + p.emoji +
-    (p.esNuevo ? '<span class="new-badge">Nuevo</span>' : '') +
-    '</div><div class="card-body">' +
-    '<span class="card-category">Talle Grande · XXL</span>' +
-    '<div class="card-name">' + p.nombre + '</div>' +
-    '<div class="card-price">$4.000 c/u<span class="precio-detalle">2 x $7.000 · 3 x $10.000</span></div>' +
-    '<div class="variant-section"><label>Cantidad</label>' +
-    '<div class="variant-grid" id="cantidades-' + p.id + '">' + preciosHTML + '</div></div>' +
-    '<div id="colores-selector-' + p.id + '" style="display:none;">' +
-    '<div class="variant-section"><label>Elige color para cada unidad</label>' +
-    '<div class="colors-per-unit" id="colors-per-unit-' + p.id + '"></div></div></div>' +
-    '<button class="add-btn" id="addBtn-' + p.id + '" onclick="agregarMultiple(' + p.id + ')" disabled>' +
-    'Seleccioná cantidad y colores</button></div>';
-}
-
-const selecciones = {};
-
-function selectVariant(prodId, varId, btn) {
-  document.querySelectorAll('#card-' + prodId + ' .variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
-  if (!selecciones[prodId]) selecciones[prodId] = {};
-  selecciones[prodId].variantId = varId;
-  const addBtn = document.getElementById('addBtn-' + prodId);
-  addBtn.disabled = false;
-  addBtn.textContent = '+ Agregar al carrito';
+  sel[pid] = {var:vid};
+  document.getElementById(`btn${pid}`).disabled = false;
 }
 
-function selectCantidad(prodId, cantidad, btn) {
-  document.querySelectorAll('#cantidades-' + prodId + ' .variant-btn').forEach(b => b.classList.remove('selected'));
+function selQty(pid,qty,btn) {
+  const p = productos.find(x=>x.id===pid);
+  document.querySelectorAll(`#catalog .product-card`).forEach((card,i)=>{
+    if(productos[i].id===pid) {
+      card.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
+    }
+  });
   btn.classList.add('selected');
-  if (!selecciones[prodId]) selecciones[prodId] = {};
-  selecciones[prodId].cantidad = cantidad;
-  selecciones[prodId].colores = {};
-  mostrarSelectoresDeColor(prodId, cantidad);
-}
-
-function mostrarSelectoresDeColor(prodId, cantidad) {
-  const prod = productos.find(p => p.id === prodId);
-  const container = document.getElementById('colors-per-unit-' + prodId);
-  const selectorDiv = document.getElementById('colores-selector-' + prodId);
-  
-  container.innerHTML = '';
-  
-  for (let i = 1; i <= cantidad; i++) {
-    const coloresHTML = prod.coloresStock.map(c =>
-      '<button class="unit-color-btn ' + (c.stock === 0 ? 'agotado' : '') + '"' +
-      'onclick="selectColorPorUnidad(' + prodId + ', ' + i + ', \'' + c.color + '\', this)"' +
-      (c.stock === 0 ? ' disabled' : '') + '>' + c.color + '</button>'
-    ).join('');
-    
-    const html = '<div class="unit-color-selector">' +
-      '<span class="unit-label">Unidad ' + i + '</span>' +
-      '<div class="unit-color-grid">' + coloresHTML + '</div></div>';
-    container.innerHTML += html;
+  sel[pid] = {qty,cols:{}};
+  document.getElementById(`cols${pid}`).style.display='block';
+  let html='';
+  for(let i=1;i<=qty;i++) {
+    html += `<div class="unit-color-selector"><span class="unit-label">U${i}</span><div class="unit-color-grid">`;
+    p.colores.forEach(c => {
+      html += `<button class="unit-color-btn" onclick="selCol('${pid}',${i},'${c.c}',this)" ${c.s?'':'disabled'}>${c.c}</button>`;
+    });
+    html += '</div></div>';
   }
-  
-  selectorDiv.style.display = 'block';
-  actualizarAddBtnMultiple(prodId);
+  document.getElementById(`colslist${pid}`).innerHTML = html;
+  upQty(pid);
 }
 
-function selectColorPorUnidad(prodId, unitNum, color, btn) {
+function selCol(pid,u,col,btn) {
   btn.parentElement.querySelectorAll('.unit-color-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
-  
-  if (!selecciones[prodId].colores) selecciones[prodId].colores = {};
-  selecciones[prodId].colores[unitNum] = color;
-  
-  actualizarAddBtnMultiple(prodId);
+  sel[pid].cols[u] = col;
+  upQty(pid);
 }
 
-function actualizarAddBtnMultiple(prodId) {
-  const sel = selecciones[prodId] || {};
-  const addBtn = document.getElementById('addBtn-' + prodId);
-  const prod = productos.find(p => p.id === prodId);
-  
-  if (!sel.cantidad || !sel.colores) {
-    addBtn.disabled = true;
-    addBtn.textContent = 'Seleccioná cantidad y colores';
+function upQty(pid) {
+  const s = sel[pid];
+  const btn = document.getElementById(`btn${pid}`);
+  const p = productos.find(x=>x.id===pid);
+  if(!s||!s.qty||Object.keys(s.cols).length !== s.qty) {
+    btn.disabled = true;
+    btn.textContent = 'Elige colores';
     return;
   }
-  
-  const coloresSeleccionados = Object.keys(sel.colores).length;
-  if (coloresSeleccionados !== sel.cantidad) {
-    addBtn.disabled = true;
-    addBtn.textContent = 'Falta elegir ' + (sel.cantidad - coloresSeleccionados) + ' color(es)';
-    return;
-  }
-  
-  const precio = prod.precios.find(pr => pr.cantidad === sel.cantidad).precio;
-  addBtn.disabled = false;
-  addBtn.textContent = '+ Agregar — $' + precio.toLocaleString('es-AR');
+  const px = p.precios.find(x=>x.qty===s.qty).px;
+  btn.disabled = false;
+  btn.textContent = `+ Agregar $${px.toLocaleString('es-AR')}`;
 }
 
-function agregarVariante(prodId) {
-  const prod = productos.find(p => p.id === prodId);
-  const sel = selecciones[prodId];
-  if (!sel || !sel.variantId) return;
-  const variante = prod.variantes.find(v => v.id === sel.variantId);
-
-  carrito.push({
-    key: prodId + '-' + sel.variantId + '-' + Date.now(),
-    nombre: prod.nombre,
-    detalle: variante.label,
-    precio: prod.precio,
-    emoji: prod.emoji,
-  });
-
-  flashBtn(prodId);
-  actualizarCarrito();
-  showToast('✓ ' + prod.nombre + ' agregado');
+function addSimple(pid) {
+  const p = productos.find(x=>x.id===pid);
+  carrito.push({name:p.name,det:`x1`,px:p.px,emoji:p.emoji});
+  upCart();
+  toast(`✓ ${p.name}`);
 }
 
-function agregarMultiple(prodId) {
-  const prod = productos.find(p => p.id === prodId);
-  const sel = selecciones[prodId];
-  if (!sel || !sel.cantidad || !sel.colores) return;
-  
-  const precio = prod.precios.find(pr => pr.cantidad === sel.cantidad).precio;
-  const coloresArray = Object.entries(sel.colores)
-    .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
-    .map(e => e[1]);
-  const detalleColores = coloresArray.join(', ');
-
-  carrito.push({
-    key: prodId + '-' + sel.cantidad + '-' + coloresArray.join('-') + '-' + Date.now(),
-    nombre: prod.nombre,
-    detalle: sel.cantidad + 'x · ' + detalleColores + ' · XXL',
-    precio: precio,
-    emoji: prod.emoji,
-  });
-
-  flashBtn(prodId);
-  actualizarCarrito();
-  showToast('✓ ' + sel.cantidad + 'x ' + prod.nombre + ' agregadas');
+function addVar(pid) {
+  const p = productos.find(x=>x.id===pid);
+  const v = sel[pid];
+  if(!v||!v.var) return;
+  const var_label = p.var.find(x=>x.id===v.var).l;
+  carrito.push({name:p.name,det:var_label,px:p.px,emoji:p.emoji});
+  upCart();
+  toast(`✓ ${p.name}`);
 }
 
-function flashBtn(prodId) {
-  const btn = document.getElementById('addBtn-' + prodId);
-  btn.classList.add('agregado');
-  btn.textContent = '✓ Agregado';
-  setTimeout(() => {
-    btn.classList.remove('agregado');
-    btn.textContent = '+ Agregar al carrito';
-  }, 1500);
+function addMulti(pid) {
+  const p = productos.find(x=>x.id===pid);
+  const s = sel[pid];
+  if(!s||!s.qty) return;
+  const px = p.precios.find(x=>x.qty===s.qty).px;
+  const cols = Object.entries(s.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
+  carrito.push({name:p.name,det:`${s.qty}x ${p.talle} - ${cols}`,px,emoji:p.emoji});
+  upCart();
+  toast(`✓ ${s.qty}x ${p.name}`);
 }
 
-function actualizarCarrito() {
-  const count = document.getElementById('cartCount');
-  const itemsEl = document.getElementById('cartItems');
-  const totalEl = document.getElementById('cartTotal');
-  const waBtn = document.getElementById('waBtn');
-
-  count.textContent = carrito.length;
-
-  if (carrito.length === 0) {
-    itemsEl.innerHTML = '<div class="cart-empty"><div class="empty-icon">🛒</div><p>Tu carrito está vacío.<br>¡Agregá algo para empezar!</p></div>';
-    totalEl.textContent = '$0';
-    waBtn.disabled = true;
-    return;
-  }
-
-  waBtn.disabled = false;
-  const total = carrito.reduce((s, i) => s + i.precio, 0);
-  totalEl.textContent = '$' + total.toLocaleString('es-AR');
-
-  itemsEl.innerHTML = carrito.map(item =>
-    '<div class="cart-item">' +
-    '<div class="cart-item-icon">' + item.emoji + '</div>' +
-    '<div class="cart-item-info">' +
-    '<div class="cart-item-name">' + item.nombre + '</div>' +
-    '<div class="cart-item-variant">' + item.detalle + '</div>' +
-    '<div class="cart-item-bottom">' +
-    '<span class="cart-item-price">$' + item.precio.toLocaleString('es-AR') + '</span>' +
-    '<button class="remove-item" onclick="quitarItem(\'' + item.key + '\')">🗑</button>' +
-    '</div></div></div>'
+function upCart() {
+  const cnt = carrito.length;
+  document.getElementById('cartCount').textContent = cnt;
+  const total = carrito.reduce((a,b)=>a+b.px,0);
+  let html = cnt===0 ? '<div class="cart-empty"><p>Carrito vacío</p></div>' : carrito.map((item,i) => 
+    `<div class="cart-item"><div class="cart-item-icon">${item.emoji}</div><div style="flex:1"><div class="cart-item-name">${item.name}</div><div class="cart-item-variant">${item.det}</div><div class="cart-item-bottom"><span>$${item.px.toLocaleString('es-AR')}</span><button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button></div></div></div>`
   ).join('');
-}
-
-function quitarItem(key) {
-  carrito = carrito.filter(i => i.key !== key);
-  actualizarCarrito();
+  document.getElementById('cartItems').innerHTML = html;
+  document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
+  document.getElementById('waBtn').disabled = cnt===0;
 }
 
 function finalizarPedido() {
-  if (carrito.length === 0) return;
-  const total = carrito.reduce((s, i) => s + i.precio, 0);
-  const lineas = carrito.map(i => '• ' + i.nombre + ' (' + i.detalle + ') — $' + i.precio.toLocaleString('es-AR')).join('\n');
-  const msg = '¡Hola Blue Bouquets! 🌿 Quiero hacer este pedido:\n\n' + lineas + '\n\n*TOTAL: $' + total.toLocaleString('es-AR') + '*\n\n¿Cómo coordinamos el envío? 🚴';
-  const url = 'https://wa.me/5492944589885?text=' + encodeURIComponent(msg);
-  window.open(url, '_blank');
+  if(carrito.length===0) return;
+  const total = carrito.reduce((a,b)=>a+b.px,0);
+  const msg = '¡Hola!\nQuiero comprar:\n\n' + carrito.map(i => `• ${i.name} (${i.det}) - $${i.px.toLocaleString('es-AR')}`).join('\n') + `\n\nTOTAL: $${total.toLocaleString('es-AR')}`;
+  window.open(`https://wa.me/5492944589885?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
 function toggleCart() {
@@ -962,21 +606,36 @@ function toggleCart() {
   document.getElementById('cartOverlay').classList.toggle('open');
 }
 
-function filtrar(cat, btn) {
+function filtrar(cat,btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  renderCatalogo(cat);
+  const filtrados = cat === 'todos' ? productos : productos.filter(p => p.cat === cat);
+  const html = filtrados.map(p => {
+    if(p.tipo === 'simple') return cardSimple(p);
+    if(p.tipo === 'var') return cardVar(p);
+    if(p.tipo === 'multi') return cardMulti(p);
+  }).join('');
+  document.getElementById('catalog').innerHTML = html;
 }
 
-function showToast(msg) {
+function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-renderCatalogo();
-actualizarCarrito();
+function init() {
+  const html = productos.map(p => {
+    if(p.tipo === 'simple') return cardSimple(p);
+    if(p.tipo === 'var') return cardVar(p);
+    if(p.tipo === 'multi') return cardMulti(p);
+  }).join('');
+  document.getElementById('catalog').innerHTML = html;
+  upCart();
+}
+
+init();
 </script>
 </body>
 </html>
