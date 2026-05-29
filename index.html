@@ -131,14 +131,18 @@ footer a { color: var(--turquesa); text-decoration: none; }
 
 <script>
 function renderImg(p) {
-  if(p.img.startsWith('images/')) return `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">`;
+  // Si el campo 'img' incluye un punto (ej: .jpeg, .jpg, .png), es un archivo de imagen
+  if (p.img.includes('.')) {
+    return `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">`;
+  }
+  // Si no, asumimos que es un emoji o texto alternativo
   return p.img;
 }
 
 const productos = [
 {id:"vclassic",sku:"MUL Vedetinas MyL x12 11700",cat:"bombachas",name:"Vedetinas M y L",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Negra L",s:1},{c:"Blanca L",s:1},{c:"Verde L",s:1},{c:"Roja L",s:1},{c:"Gris L",s:1},{c:"Crema L",s:1},{c:"Negra M",s:1},{c:"Blanca M",s:1},{c:"Verde M",s:1},{c:"Roja M",s:1},{c:"Gris M",s:1},{c:"Crema M",s:1}]},
-{id:"vmorley",sku:"RI Vedetinas classic estampadas 13500",cat:"bombachas",name:"Vedetinas de Morley Estampadas", img:"https://raw.githubusercontent.com/blue-bouquets/Blue-Bouquets/main/images/lessancahmorley.jpeg",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Piel Cerezas",s:3},{c:"Blanca Moños",s:3},{c:"Rosa Cerezas",s:3},{c:"Negra",s:0}]},
-{id:"lessanchas",sku:"RI: Less Anchas Morley 15900",cat:"bombachas",name:"Less Anchas Morley",img: "https://raw.githubusercontent.com/blue-bouquets/Blue-Bouquets/main/images/lessancahmorley.jpeg",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Roja",s:1},{c:"Beige",s:1},{c:"Negra",s:0},{c:"Blanca",s:0}]},
+{id:"vmorley",sku:"RI Vedetinas classic estampadas 13500",cat:"bombachas",name:"Vedetinas de Morley Estampadas", img:"images/vedetinaestampadamorley.jpeg",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Piel Cerezas",s:3},{c:"Blanca Moños",s:3},{c:"Rosa Cerezas",s:3},{c:"Negra",s:0}]},
+{id:"lessanchas",sku:"RI: Less Anchas Morley 15900",cat:"bombachas",name:"Less Anchas Morley",img: "images/lessancahmorley.jpeg",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Roja",s:1},{c:"Beige",s:1},{c:"Negra",s:0},{c:"Blanca",s:0}]},
 {id:"lessred",sku:"RI Less Anchas Red 15900",cat:"bombachas",name:"Less Anchas de Red",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Negra",s:5},{c:"Blanca",s:4},{c:"Negra",s:0}]},
 {id:"lessencaje",sku:"RI Less Regu Encaje 13900",cat:"bombachas",name:"Less Regulables de Encaje",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Blanca",s:4},{c:"Crema",s:1},{c:"Roja",s:0}]},
 {id:"lessclassic",sku:"RI Less Classic 12900",cat:"bombachas",name:"Colaless Classic",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Negra",s:1},{c:"Blanca",s:4},{c:"Beige",s:4}]},
@@ -163,7 +167,7 @@ const productos = [
 {id:"anemona",sku:"MUL fay x6 25400",cat:"conjuntos",name:"Anemona",img:"✨",tipo:"var",px:11490,var:[{id:"f90a",l:"T.90 · Amarillo",s:1},{id:"f95v",l:"T.95 · Violeta",s:1},{id:"f95c",l:"T.95 · Celeste",s:1},{id:"f100a",l:"T.100 · Amarillo",s:1},{id:"f100v",l:"T.100 · Violeta",s:1}]},
 {id:"boxertommy",cat:"conjuntos",name:"Boxer Tommy",img:"🩳",tipo:"var",px:7500,var:[{id:"bt1",l:"Azul",s:3},{id:"bt2",l:"Blanco",s:4},{id:"bt3",l:"Gris",s:5}]}
 ];
-
+  
 let carrito = [];
 let sel = {};
 
@@ -234,7 +238,7 @@ function upQty(pid) {
 
 function addSimple(pid) {
   const p = productos.find(x=>x.id===pid);
-  const icon = p.img.startsWith('images/')?'📦':p.img;
+  const icon = p.img.includes('.') ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img;
   carrito.push({name:p.name,det:`x1`,px:p.px,emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
@@ -245,7 +249,7 @@ function addVar(pid) {
   const v = sel[pid];
   if(!v||!v.var) return;
   const var_label = p.var.find(x=>x.id===v.var).l;
-  const icon = p.img.startsWith('images/')?'📦':p.img;
+  const icon = p.img.includes('.') ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img;
   carrito.push({name:p.name,det:var_label,px:p.px,emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
@@ -257,12 +261,12 @@ function addMulti(pid) {
   if(!s||!s.qty) return;
   const px = p.precios.find(x=>x.qty===s.qty).px;
   const cols = Object.entries(s.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
-  const icon = p.img.startsWith('images/')?'📦':p.img;
+  const icon = p.img.includes('.') ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img;
   carrito.push({name:p.name,det:`${s.qty}x ${p.talle} - ${cols}`,px,emoji:icon});
   upCart();
   toast(`✓ ${s.qty}x ${p.name}`);
 }
-
+  
 function upCart() {
   const cnt = carrito.length;
   document.getElementById('cartCount').textContent = cnt;
