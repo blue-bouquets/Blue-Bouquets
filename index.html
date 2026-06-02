@@ -31,6 +31,7 @@ header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 
 .filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
 .catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
 .product-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(26,58,74,0.07); display: flex; flex-direction: column; }
+.card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
 .card-img { width: 100%; height: 200px; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
 .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
@@ -45,10 +46,10 @@ label { font-size: 0.75rem; font-weight: 500; color: var(--text-light); display:
 .unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
 .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
-.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
+.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7gram; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 .unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 500; }
+.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 500; width: 100%; }
 .add-btn:hover { background: var(--turquesa); }
 .add-btn:disabled { background: #ccc; cursor: not-allowed; }
 .cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
@@ -61,7 +62,7 @@ label { font-size: 0.75rem; font-weight: 500; color: var(--text-light); display:
 .cart-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
 .cart-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-light); font-size: 0.9rem; }
 .cart-item { background: white; border-radius: 12px; padding: 14px; display: flex; gap: 12px; box-shadow: 0 1px 6px rgba(26,58,74,0.06); }
-.cart-item-icon { width: 48px; height: 48px; background: #018587; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+.cart-item-icon { width: 48px; height: 48px; background: #018587; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; overflow: hidden; }
 .cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--azul-noche); }
 .cart-item-variant { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
 .cart-item-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
@@ -75,13 +76,19 @@ footer { background: var(--azul-noche); padding: 28px 24px; text-align: center; 
 footer a { color: var(--turquesa); text-decoration: none; }
 .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
 .toast.show { transform: translateX(-50%) translateY(0); }
+
+/* Estilo para el Administrador de Stock Oculto */
+.admin-stock-section { max-width: 900px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 12px; border: 1px dashed var(--text-light); }
+.admin-stock-section textarea { width: 100%; height: 100px; margin: 10px 0; padding: 10px; font-family: monospace; }
+.admin-stock-section pre { background: #222; color: #fff; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.8rem; margin-top: 10px; max-height: 250px; }
+
 @media (max-width: 480px) { .catalog { grid-template-columns: 1fr 1fr; gap: 12px; } }
 </style>
 </head>
 <body>
 
 <header>
-  <a class="logo" href="#">Blue <span>Bouquets</span></a>
+  <a class="logo" href="index.html">Blue <span>Bouquets</span></a>
   <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
 </header>
 
@@ -102,6 +109,17 @@ footer a { color: var(--turquesa); text-decoration: none; }
 <div class="envios-banner">
   <h3>🚴 Envíos a domicilio disponibles</h3>
   <p>Realizamos envíos · Dias y horario a convenir por WhatsApp</p>
+</div>
+
+<div class="admin-stock-section">
+  <h4>⚙️ Descontar Stock desde WhatsApp (Uso Interno)</h4>
+  <p style="font-size:0.8rem; color:var(--text-light)">Pegá acá abajo el renglón del mensaje de WhatsApp recibido para restar el stock automáticamente:</p>
+  <textarea id="whatsappInput" placeholder="Ejemplo: • Vedetinas M y L (3x Regular - Negra L, Blanca M, Roja L)"></textarea>
+  <button class="filter-btn" style="background:var(--azul-noche); color:white;" onclick="procesarStockManual()">Calcular nuevo stock</button>
+  <div id="outputContainer" style="display:none;">
+    <p style="font-size:0.8rem; margin-top:10px; color: green; font-weight: bold;">¡Stock Restado! Reemplazá la lista 'productos' de tu código por esta:</p>
+    <pre id="stockOutput"></pre>
+  </div>
 </div>
 
 <footer>
@@ -129,81 +147,85 @@ footer a { color: var(--turquesa); text-decoration: none; }
 
 <div class="toast" id="toast"></div>
 
+<script src="productos-data.js"></script>
+
 <script>
 function renderImg(p) {
-  // Si el campo 'img' incluye un punto (ej: .jpeg, .jpg, .png), es un archivo de imagen
-  if (p.img.includes('.')) {
-    return `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;">`;
+  // Tomamos siempre la primera imagen si es un array
+  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+  if (imgSrc.includes('.')) {
+    return `<img src="${imgSrc}" alt="${p.name}">`;
   }
-  // Si no, asumimos que es un emoji o texto alternativo
-  return p.img;
+  return imgSrc;
 }
 
-const productos = [
-{id:"vclassic",sku:"MUL Vedetinas MyL x12 11700",cat:"bombachas",name:"Vedetinas M y L",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Negra L",s:1},{c:"Blanca L",s:1},{c:"Verde L",s:1},{c:"Roja L",s:1},{c:"Gris L",s:1},{c:"Crema L",s:1},{c:"Negra M",s:1},{c:"Blanca M",s:1},{c:"Verde M",s:1},{c:"Roja M",s:1},{c:"Gris M",s:1},{c:"Crema M",s:1}]},
-{id:"vmorley",sku:"RI Vedetinas classic estampadas 13500",cat:"bombachas",name:"Vedetinas de Morley Estampadas", img:"images/vedetinaestampadamorley.jpeg",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Piel Cerezas",s:3},{c:"Blanca Moños",s:3},{c:"Rosa Cerezas",s:3},{c:"Negra",s:0}]},
-{id:"lessanchas",sku:"RI: Less Anchas Morley 15900",cat:"bombachas",name:"Less Anchas Morley",img: "images/lessancahmorley.jpeg",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Roja",s:1},{c:"Beige",s:1},{c:"Negra",s:0},{c:"Blanca",s:0}]},
-{id:"lessred",sku:"RI Less Anchas Red 15900",cat:"bombachas",name:"Less Anchas de Red",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Negra",s:5},{c:"Blanca",s:4},{c:"Negra",s:0}]},
-{id:"lessencaje",sku:"RI Less Regu Encaje 13900",cat:"bombachas",name:"Less Regulables de Encaje",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Blanca",s:4},{c:"Crema",s:1},{c:"Roja",s:0}]},
-{id:"lessclassic",sku:"RI Less Classic 12900",cat:"bombachas",name:"Colaless Classic",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Negra",s:1},{c:"Blanca",s:4},{c:"Beige",s:4}]},
-{id:"colalessfrente",sku:"MUL Colaless Frente Puntilla x12 13140",cat:"bombachas",name:"Colaless de Puntilla",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Negra",s:3},{c:"Blanca",s:3},{c:"Gris",s:3},{c:"Beige",s:3}]},
-{id:"coquette",sku:"MUL Regulables Coquette 12600",cat:"bombachas",name:"Regulables Coquette",img:"🌿",tipo:"multi",talle:"Regular",precios:[{qty:1,px:3000},{qty:2,px:5500},{qty:3,px:7000}],colores:[{c:"Blanco",s:4},{c:"Negro",s:4},{c:"Beige",s:4}]},
-{id:"lessxl",sku:"MUL Colaless XL BELLA MARIE X12 16200",cat:"bombachas",name:"Less XL",img:"🌿",tipo:"multi",talle:"XL",precios:[{qty:1,px:4000},{qty:2,px:7500},{qty:3,px:10000}],colores:[{c:"Rojo",s:6},{c:"Negra",s:6},{c:"Blanco",s:4},{c:"Beige",s:4},{c:"Gris",s:4}]},
-{id:"lessxxlencaje",sku:"MUL Less XXL Luna c/puntilla x12 24800",cat:"bombachas",name:"Less XXL con Encaje",img:"🌿",tipo:"multi",talle:"XXL",precios:[{qty:1,px:4000},{qty:2,px:7500},{qty:3,px:10000}],colores:[{c:"Gris",s:1},{c:"Negra",s:2},{c:"Roja",s:2},{c:"Beige",s:2},{c:"Blanca",s:2},{c:"Marrón",s:2}]},
-{id:"lessxxl",sku:"MUL Less Especiales Luna x12 17740",cat:"bombachas",name:"Less XXL",img:"🌿",tipo:"multi",talle:"XXL",precios:[{qty:1,px:4000},{qty:2,px:7500},{qty:3,px:10000}],colores:[{c:"Gris",s:4},{c:"Negro",s:4},{c:"Crema",s:2},{c:"Rojo",s:2},{c:"Blanco",s:2}]},
-{id:"mediasmd",sku:"RI Medias MD 3DOC 14500",cat:"medias",name:"Medias MD (3 pares)",img:"🧦",tipo:"simple",px:3500,s:12},
-{id:"mediasplush",sku:"RI Medias Plush basicas 11500",cat:"medias",name:"Medias Plush (2 pares)",img:"🧦",tipo:"simple",px:3000,s:6},
-{id:"alice",sku:"RI Alice 23500",cat:"conjuntos",name:"Alice",img:"🩱",tipo:"var",px:9990,var:[{id:"a85b",l:"T.85 · Blanco",s:1},{id:"a85n",l:"T.85 · Negro",s:1},{id:"a100b",l:"T.100 · Blanco",s:1}]},
-{id:"coral",sku:"RI Marie Reg 22500",cat:"conjuntos",name:"Coral",img:"🌸",tipo:"var",px:9990,var:[{id:"m90b",l:"T.90 · Beige",s:1}]},
-{id:"lavanda",sku:"RI Agatha 23500",cat:"conjuntos",name:"Lavanda",img:"🌸",tipo:"var",px:9990,var:[{id:"ag95n",l:"T.95 · Negro",s:1},{id:"ag100b",l:"T.100 · Blanco",s:1}]},
-{id:"cala",sku:"RI Pia 25400",cat:"conjuntos",name:"Cala",img:"🌸",tipo:"var",px:9990,var:[{id:"p90b",l:"T.90 · Blanco",s:1},{id:"p85be",l:"T.85 · Beige",s:1},{id:"p95n",l:"T.95 · Negro",s:2}]},
-{id:"verbena",sku:"RI Diana 41500",cat:"conjuntos",name:"Verbena",img:"🌸",tipo:"var",px:11990,var:[{id:"d85b",l:"T.85 · Blanco",s:1}]},
-{id:"alyssum",sku:"RI Vilma 23500",cat:"conjuntos",name:"Alyssum",img:"🌸",tipo:"var",px:9990,var:[{id:"v85n1",l:"T.85 · Negro",s:1},{id:"v85n2",l:"T.85 · Negro (2)",s:1},{id:"v95g",l:"T.95 · Gris",s:1}]},
-{id:"gardenia",sku:"RI Kim 35400",cat:"conjuntos",name:"Gardenia",img:"🌸",tipo:"var",px:11490,var:[{id:"k85n",l:"T.85 · Negro",s:1},{id:"k90n",l:"T.90 · Negro",s:1},{id:"k90b",l:"T.90 · Blanca",s:1},{id:"k95r",l:"T.95 · Rojo",s:1},{id:"k100r",l:"T.100 · Rojo",s:1},{id:"k100b",l:"T.100 · Blanco",s:1}]},
-{id:"fressia",sku:"RI Andy reg 23500",cat:"conjuntos",name:"Fressia",img:"🌸",tipo:"var",px:9990,var:[{id:"an90n",l:"T.90 · Negro",s:1},{id:"an90b",l:"T.90 · Blanco",s:1}]},
-{id:"clavel",sku:"RI Grecia 31500",cat:"conjuntos",name:"Clavel",img:"👑",tipo:"var",px:11490,var:[{id:"gr85b",l:"T.85 · Blanco",s:1},{id:"gr85n",l:"T.85 · Negro",s:1}]},
-{id:"dahlia",sku:"RI Valentina Vedetina 31500",cat:"conjuntos",name:"Dahlia",img:"👑",tipo:"var",px:11990,var:[{id:"val110r",l:"T.110 · Marron",s:0},{id:"val115r",l:"T.115 · Rosa",s:1},{id:"val120b",l:"T.120 · Blanco",s:1}]},
-{id:"camelia",sku:"MUL Theodora x6 32300",cat:"conjuntos",name:"Camelia",img:"👑",tipo:"var",px:11490,var:[{id:"th85bo",l:"T.85 · Bordo",s:1},{id:"th85be",l:"T.85 · Beige",s:1},{id:"th90r",l:"T.90 · Rosa",s:1},{id:"th90b",l:"T.90 · Blanco",s:1},{id:"th95n",l:"T.95 · Negro",s:1},{id:"th95be",l:"T.95 · Beige",s:1}]},
-{id:"anemona",sku:"MUL fay x6 25400",cat:"conjuntos",name:"Anemona",img:"✨",tipo:"var",px:11490,var:[{id:"f90a",l:"T.90 · Amarillo",s:1},{id:"f95v",l:"T.95 · Violeta",s:1},{id:"f95c",l:"T.95 · Celeste",s:1},{id:"f100a",l:"T.100 · Amarillo",s:1},{id:"f100v",l:"T.100 · Violeta",s:1}]},
-{id:"boxertommy",cat:"conjuntos",name:"Boxer Tommy",img:"🩳",tipo:"var",px:7500,var:[{id:"bt1",l:"Azul",s:3},{id:"bt2",l:"Blanco",s:4},{id:"bt3",l:"Gris",s:5}]}
-];
-  
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
 let sel = {};
 
 function cardSimple(p) {
-  return `<div class="product-card"><div class="card-img">${renderImg(p)}</div><div class="card-body"><div class="card-category">${p.cat}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.px.toLocaleString('es-AR')}</div><button class="add-btn" onclick="addSimple('${p.id}')" ${p.s>0?'':'disabled'}>+ Agregar</button></div></div>`;
+  return `<div class="product-card">
+    <a class="card-link" href="producto.html?id=${p.id}">
+      <div class="card-img">${renderImg(p)}</div>
+    </a>
+    <div class="card-body">
+      <div class="card-category">${p.cat}</div>
+      <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
+      <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
+      <button class="add-btn" onclick="addSimple('${p.id}')" ${p.s>0?'':'disabled'}>${p.s>0?'+ Agregar':'Sin Stock'}</button>
+    </div>
+  </div>`;
 }
 
 function cardVar(p) {
   const vars = p.var.map(v => `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`).join('');
-  return `<div class="product-card"><div class="card-img">${renderImg(p)}</div><div class="card-body"><div class="card-category">${p.cat}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.px.toLocaleString('es-AR')}</div><label>Talle y color</label><div class="variant-grid">${vars}</div><button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" disabled>Selecciona</button></div></div>`;
+  return `<div class="product-card">
+    <a class="card-link" href="producto.html?id=${p.id}">
+      <div class="card-img">${renderImg(p)}</div>
+    </a>
+    <div class="card-body">
+      <div class="card-category">${p.cat}</div>
+      <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
+      <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
+      <label>Talle y color</label>
+      <div class="variant-grid">${vars}</div>
+      <button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" disabled>Selecciona</button>
+    </div>
+  </div>`;
 }
 
 function cardMulti(p) {
   const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty('${p.id}',${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
-  return `<div class="product-card"><div class="card-img">${renderImg(p)}</div><div class="card-body"><div class="card-category">${p.talle}</div><div class="card-name">${p.name}</div><div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div><label>Cantidad</label><div class="variant-grid">${qtys}</div><div id="cols${p.id}" style="display:none"><label>Color por unidad</label><div id="colslist${p.id}"></div></div><button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>Selecciona</button></div></div>`;
+  return `<div class="product-card">
+    <a class="card-link" href="producto.html?id=${p.id}">
+      <div class="card-img">${renderImg(p)}</div>
+    </a>
+    <div class="card-body">
+      <div class="card-category">${p.talle}</div>
+      <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
+      <div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div>
+      <label>Cantidad</label>
+      <div class="variant-grid">${qtys}</div>
+      <div id="cols${p.id}" style="display:none"><label>Color por unidad</label><div id="colslist${p.id}"></div></div>
+      <button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>Selecciona</button>
+    </div>
+  </div>`;
 }
 
 function selVar(pid,vid,btn) {
-  const p = productos.find(x=>x.id===pid);
-  document.querySelectorAll(`#catalog .product-card`).forEach((card,i)=>{
-    if(productos[i].id===pid) card.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
-  });
+  btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   sel[pid] = {var:vid};
   document.getElementById(`btn${pid}`).disabled = false;
+  document.getElementById(`btn${pid}`).textContent = "+ Agregar";
 }
 
 function selQty(pid,qty,btn) {
-  const p = productos.find(x=>x.id===pid);
-  document.querySelectorAll(`#catalog .product-card`).forEach((card,i)=>{
-    if(productos[i].id===pid) card.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
-  });
+  btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   sel[pid] = {qty,cols:{}};
   document.getElementById(`cols${pid}`).style.display='block';
   let html='';
+  const p = productos.find(x=>x.id===pid);
   for(let i=1;i<=qty;i++) {
     html += `<div class="unit-color-selector"><span class="unit-label">U${i}</span><div class="unit-color-grid">`;
     p.colores.forEach(c => {
@@ -238,8 +260,9 @@ function upQty(pid) {
 
 function addSimple(pid) {
   const p = productos.find(x=>x.id===pid);
-  const icon = p.img.includes('.') ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img;
-  carrito.push({name:p.name,det:`x1`,px:p.px,emoji:icon});
+  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
+  carrito.push({id:p.id, tipo:p.tipo, name:p.name, det:`x1`, px:p.px, emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
 }
@@ -248,9 +271,10 @@ function addVar(pid) {
   const p = productos.find(x=>x.id===pid);
   const v = sel[pid];
   if(!v||!v.var) return;
-  const var_label = p.var.find(x=>x.id===v.var).l;
-  const icon = p.img.includes('.') ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img;
-  carrito.push({name:p.name,det:var_label,px:p.px,emoji:icon});
+  const variant = p.var.find(x=>x.id===v.var);
+  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
+  carrito.push({id:p.id, tipo:p.tipo, varId:v.var, name:p.name, det:variant.l, px:p.px, emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
 }
@@ -261,13 +285,15 @@ function addMulti(pid) {
   if(!s||!s.qty) return;
   const px = p.precios.find(x=>x.qty===s.qty).px;
   const cols = Object.entries(s.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
-  const icon = p.img.includes('.') ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img;
-  carrito.push({name:p.name,det:`${s.qty}x ${p.talle} - ${cols}`,px,emoji:icon});
+  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
+  carrito.push({id:p.id, tipo:p.tipo, qty:s.qty, coloresSelected:Object.values(s.cols), name:p.name, det:`${s.qty}x ${p.talle} - ${cols}`, px, emoji:icon});
   upCart();
   toast(`✓ ${s.qty}x ${p.name}`);
 }
   
 function upCart() {
+  localStorage.setItem('bb_cart', JSON.stringify(carrito));
   const cnt = carrito.length;
   document.getElementById('cartCount').textContent = cnt;
   const total = carrito.reduce((a,b)=>a+b.px,0);
@@ -295,7 +321,11 @@ function filtrar(cat,btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   const filtrados = cat === 'todos' ? productos : productos.filter(p => p.cat === cat);
-  const html = filtrados.map(p => {
+  renderCatalog(filtrados);
+}
+
+function renderCatalog(lista) {
+  const html = lista.map(p => {
     if(p.tipo === 'simple') return cardSimple(p);
     if(p.tipo === 'var') return cardVar(p);
     if(p.tipo === 'multi') return cardMulti(p);
@@ -310,13 +340,56 @@ function toast(msg) {
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
+// LOGICA AUXILIAR PARA ADMINISTRAR TU STOCK MANUALMENTE DESDE WHATSAPP
+function procesarStockManual() {
+  const input = document.getElementById('whatsappInput').value;
+  if(!input.trim()) return;
+  
+  // Clonamos el listado original para modificarlo
+  let copiaProductos = JSON.parse(JSON.stringify(productos));
+  const lineas = input.split('\n');
+
+  lineas.forEach(linea => {
+    if(!linea.startsWith('•')) return;
+    
+    // Buscar qué producto coincide con el nombre
+    copiaProductos.forEach(p => {
+      if(linea.includes(`• ${p.name}`)) {
+        if(p.tipo === 'simple') {
+          if(p.s > 0) p.s -= 1;
+        } 
+        else if(p.tipo === 'var') {
+          p.var.forEach(v => {
+            if(linea.includes(v.l)) {
+              if(v.s > 0) v.s -= 1;
+            }
+          });
+        } 
+        else if(p.tipo === 'multi') {
+          // Extrae los colores listados entre guiones/paréntesis
+          p.colores.forEach(c => {
+            // Contar cuántas veces se menciona este color específico en la línea de pedido
+            const regex = new RegExp(c.c, "g");
+            const matches = (linea.match(regex) || []).length;
+            if(matches > 0) {
+              p.colores.forEach(colEst => {
+                if(colEst.c === c.c) {
+                  colEst.s = Math.max(0, colEst.s - matches);
+                }
+              });
+            }
+          });
+        }
+      }
+    });
+  });
+
+  document.getElementById('stockOutput').textContent = "const productos = " + JSON.stringify(copiaProductos, null, 2) + ";";
+  document.getElementById('outputContainer').style.display = 'block';
+}
+
 function init() {
-  const html = productos.map(p => {
-    if(p.tipo === 'simple') return cardSimple(p);
-    if(p.tipo === 'var') return cardVar(p);
-    if(p.tipo === 'multi') return cardMulti(p);
-  }).join('');
-  document.getElementById('catalog').innerHTML = html;
+  renderCatalog(productos);
   upCart();
 }
 
