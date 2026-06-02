@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalle del Producto — Blue Bouquets</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #37757d;
+  --turquesa: #01abbd;
+  --menta: #edf5fe;
+  --azul-noche: #11354b;
+  --crema: #edf5fd;
+  --arena: #D4B8A0;
+  --text: #017576;
+  --text-light: #5a7a82;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; padding-bottom: 60px; }
+header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--menta); text-decoration: none; }
+.logo span { color: var(--turquesa); font-style: italic; }
+.cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 10px 20px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 20px; height: 20px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+/* Contenedor PDP */
+.pdp-container { max-width: 900px; margin: 30px auto; padding: 0 16px; display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+/* Galería de imágenes modernas */
+.gallery-section { display: flex; flex-direction: column; gap: 12px; }
+.main-img-box { width: 100%; height: 380px; background: linear-gradient(135deg, #018587, var(--menta)); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 5rem; box-shadow: 0 4px 15px rgba(26,58,74,0.05); }
+.main-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.thumbs-container { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; }
+.thumb-box { width: 70px; height: 70px; background: white; border-radius: 8px; overflow: hidden; border: 2px solid transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+.thumb-box.active { border-color: var(--turquesa); }
+.thumb-box img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Detalles e Info */
+.info-section { background: white; padding: 24px; border-radius: 16px; box-shadow: 0 2px 12px rgba(26,58,74,0.04); display: flex; flex-direction: column; gap: 16px; }
+.prod-cat { font-size: 0.8rem; color: var(--turquesa); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.prod-name { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--azul-noche); line-height: 1.1; }
+.prod-price { font-size: 1.6rem; font-weight: 500; color: var(--verde); }
+.prod-desc { font-size: 0.95rem; color: var(--text-light); line-height: 1.5; border-top: 1px solid var(--menta); padding-top: 14px; }
+
+label { font-size: 0.8rem; font-weight: 600; color: var(--azul-noche); display: block; margin-bottom: 8px; margin-top: 5px;}
+.variant-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;}
+.variant-btn { border: 1.5px solid var(--menta); background: white; color: var(--text); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
+.variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
+.variant-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; background: var(--crema); padding: 8px; border-radius: 8px; }
+.unit-label { font-size: 0.75rem; font-weight: 600; color: var(--verde); min-width: 35px; }
+.unit-color-grid { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; }
+.unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
+
+.add-btn { background: var(--verde); color: white; border: none; border-radius: 12px; padding: 16px; cursor: pointer; font-weight: 600; font-size: 1rem; margin-top: 10px; width: 100%; transition: background 0.2s; }
+.add-btn:hover { background: var(--turquesa); }
+.add-btn:disabled { background: #ccc; cursor: not-allowed; }
+.back-link { display: inline-flex; align-items: center; gap: 5px; color: var(--verde); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 10px; }
+
+/* Carrito Side Panel */
+.cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
+.cart-overlay.open { opacity: 1; pointer-events: all; }
+.cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
+.cart-panel.open { transform: translateX(0); }
+.cart-header { background: var(--azul-noche); padding: 20px 24px; display: flex; justify-content: space-between; color: white; }
+.cart-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--menta); }
+.close-btn { background: none; border: none; color: var(--menta); font-size: 1.5rem; cursor: pointer; }
+.cart-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.cart-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-light); font-size: 0.9rem; }
+.cart-item { background: white; border-radius: 12px; padding: 14px; display: flex; gap: 12px; box-shadow: 0 1px 6px rgba(26,58,74,0.06); }
+.cart-item-icon { width: 48px; height: 48px; background: #018587; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; overflow: hidden; }
+.cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--azul-noche); }
+.cart-item-variant { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
+.cart-item-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+.remove-item { background: none; border: none; color: var(--arena); cursor: pointer; }
+.cart-footer { padding: 16px 20px; background: white; border-top: 1px solid var(--menta); }
+.cart-total-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--azul-noche); }
+.whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; border-radius: 12px; padding: 15px; cursor: pointer; font-weight: 600; margin-top: 10px; }
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+@media (min-width: 768px) { .pdp-container { grid-template-columns: 1.1fr 0.9fr; margin: 50px auto; } }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">Blue <span>Bouquets</span></a>
+  <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
+</header>
+
+<div class="pdp-container">
+  <div class="gallery-section">
+    <a href="index.html" class="back-link">← Volver al catálogo</a>
+    <div class="main-img-box" id="mainImgBox"></div>
+    <div class="thumbs-container" id="thumbsContainer"></div>
+  </div>
+
+  <div class="info-section" id="infoSection">
+    </div>
+</div>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>Tu carrito ✦</h2>
+    <button class="close-btn" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div style="display:flex; justify-content:space-between;">
+      <span>Total:</span>
+      <span class="cart-total-value" id="cartTotal">$0</span>
+    </div>
+    <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()" disabled>Pedir por WhatsApp</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="productos-data.js"></script>
+
+<script>
+// Obtener el ID del producto desde la URL (ej: producto.html?id=alice)
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id');
+const p = productos.find(x => x.id === productId);
+
+let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
+let sel = {};
+
+function cambiarImagen(src) {
+  const box = document.getElementById('mainImgBox');
+  if (src.includes('.')) {
+    box.innerHTML = `<img src="${src}" alt="${p.name}">`;
+  } else {
+    box.innerHTML = src;
+  }
+  // Cambiar clase activa en las miniaturas
+  document.querySelectorAll('.thumb-box').forEach(t => {
+    t.classList.remove('active');
+    if(t.dataset.src === src) t.classList.add('active');
+  });
+}
+
+function renderPaginaDetalle() {
+  if (!p) {
+    document.querySelector('.pdp-container').innerHTML = `<h2>Producto no encontrado</h2><br><a href="index.html">Volver al catálogo</a>`;
+    return;
+  }
+
+  // 1. Renderizar Imágenes Galería
+  const mainSrc = p.img[0];
+  cambiarImagen(mainSrc);
+
+  if (p.img.length > 1) {
+    let thumbsHtml = p.img.map((imgSrc, index) => {
+      let content = imgSrc.includes('.') ? `<img src="${imgSrc}">` : imgSrc;
+      return `<div class="thumb-box ${index===0?'active':''}" data-src="${imgSrc}" onclick="cambiarImagen('${imgSrc}')">${content}</div>`;
+    }).join('');
+    document.getElementById('thumbsContainer').innerHTML = thumbsHtml;
+  }
+
+  // 2. Renderizar Formulario de compra según tipo de producto
+  let interactivoHtml = '';
+  if (p.tipo === 'simple') {
+    interactivoHtml = `<button class="add-btn" onclick="addSimple()" ${p.s>0?'':'disabled'}>${p.s>0?'+ Agregar al carrito':'Sin Stock'}</button>`;
+  } 
+  else if (p.tipo === 'var') {
+    const vars = p.var.map(v => `<button class="variant-btn" onclick="selVar('${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`).join('');
+    interactivoHtml = `<label>Selecciona Talle y color</label>
+      <div class="variant-grid">${vars}</div>
+      <button class="add-btn" id="btnAction" onclick="addVar()" disabled>Selecciona una opción</button>`;
+  } 
+  else if (p.tipo === 'multi') {
+    const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty(${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
+    interactivoHtml = `<label>Cantidad</label>
+      <div class="variant-grid">${qtys}</div>
+      <div id="colsContainer" style="display:none"><label>Color por unidad</label><div id="colslist"></div></div>
+      <button class="add-btn" id="btnAction" onclick="addMulti()" disabled>Selecciona cantidad</button>`;
+  }
+
+  // 3. Renderizar Estructura de Texto e Información Técnica
+  document.getElementById('infoSection').innerHTML = `
+    <div class="prod-cat">${p.cat || 'Lencería'}</div>
+    <div class="prod-name">${p.name}</div>
+    <div class="prod-price">$${(p.px || p.precios[0].px).toLocaleString('es-AR')} ${p.tipo==='multi'?'c/u':''}</div>
+    <div class="prod-desc">
+      <strong>Especificaciones Técnicas:</strong><br>
+      ${p.desc || 'No hay descripción técnica disponible todavía para este artículo.'}
+    </div>
+    <div style="margin-top:15px;">
+      ${interactivoHtml}
+    </div>
+  `;
+}
+
+// FUNCIONES DE SELECCIÓN Y AGREGADO (Adaptadas al LocalStorage)
+function selVar(vid,btn) {
+  btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  sel = { var: vid };
+  const btnAct = document.getElementById('btnAction');
+  btnAct.disabled = false;
+  btnAct.textContent = "+ Agregar al carrito";
+}
+
+function selQty(qty,btn) {
+  btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  sel = { qty, cols: {} };
+  document.getElementById('colsContainer').style.display = 'block';
+  let html = '';
+  for(let i = 1; i <= qty; i++) {
+    html += `<div class="unit-color-selector"><span class="unit-label">U${i}</span><div class="unit-color-grid">`;
+    p.colores.forEach(c => {
+      html += `<button class="unit-color-btn" onclick="selCol(${i},'${c.c}',this)" ${c.s?'':'disabled'}>${c.c}</button>`;
+    });
+    html += '</div></div>';
+  }
+  document.getElementById('colslist').innerHTML = html;
+  upQty();
+}
+
+function selCol(u,col,btn) {
+  btn.parentElement.querySelectorAll('.unit-color-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  sel.cols[u] = col;
+  upQty();
+}
+
+function upQty() {
+  const btnAct = document.getElementById('btnAction');
+  if(!sel || !sel.qty || Object.keys(sel.cols).length !== sel.qty) {
+    btnAct.disabled = true;
+    btnAct.textContent = 'Elige los colores';
+    return;
+  }
+  const px = p.precios.find(x => x.qty === sel.qty).px;
+  btnAct.disabled = false;
+  btnAct.textContent = `+ Agregar al carrito $${px.toLocaleString('es-AR')}`;
+}
+
+function addSimple() {
+  const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
+  carrito.push({id:p.id, tipo:p.tipo, name:p.name, det:`x1`, px:p.px, emoji:icon});
+  upCart();
+  toggleCart();
+  toast(`✓ ${p.name}`);
+}
+
+function addVar() {
+  const variant = p.var.find(x => x.id === sel.var);
+  const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
+  carrito.push({id:p.id, tipo:p.tipo, varId:sel.var, name:p.name, det:variant.l, px:p.px, emoji:icon});
+  upCart();
+  toggleCart();
+  toast(`✓ ${p.name}`);
+}
+
+function addMulti() {
+  const px = p.precios.find(x => x.qty === sel.qty).px;
+  const cols = Object.entries(sel.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
+  const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
+  carrito.push({id:p.id, tipo:p.tipo, qty:sel.qty, coloresSelected:Object.values(sel.cols), name:p.name, det:`${sel.qty}x ${p.talle} - ${cols}`, px, emoji:icon});
+  upCart();
+  toggleCart();
+  toast(`✓ ${sel.qty}x ${p.name}`);
+}
+
+function upCart() {
+  localStorage.setItem('bb_cart', JSON.stringify(carrito));
+  const cnt = carrito.length;
+  document.getElementById('cartCount').textContent = cnt;
+  const total = carrito.reduce((a,b)=>a+b.px,0);
+  let html = cnt===0 ? '<div class="cart-empty"><p>Carrito vacío</p></div>' : carrito.map((item,i) => 
+    `<div class="cart-item"><div class="cart-item-icon">${item.emoji}</div><div style="flex:1"><div class="cart-item-name">${item.name}</div><div class="cart-item-variant">${item.det}</div><div class="cart-item-bottom"><span>$${item.px.toLocaleString('es-AR')}</span><button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button></div></div></div>`
+  ).join('');
+  document.getElementById('cartItems').innerHTML = html;
+  document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
+  document.getElementById('waBtn').disabled = cnt===0;
+}
+
+function finalizarPedido() {
+  if(carrito.length===0) return;
+  const total = carrito.reduce((a,b)=>a+b.px,0);
+  const msg = '¡Hola!\nQuiero comprar:\n\n' + carrito.map(i => `• ${i.name} (${i.det}) - $${i.px.toLocaleString('es-AR')}`).join('\n') + `\n\nTOTAL: $${total.toLocaleString('es-AR')}`;
+  window.open(`https://wa.me/5492944589885?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+function toggleCart() {
+  document.getElementById('cartPanel').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+renderPaginaDetalle();
+upCart();
+</script>
+</body>
+</html>
