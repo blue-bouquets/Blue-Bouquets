@@ -111,15 +111,16 @@ footer a { color: var(--turquesa); text-decoration: none; }
   <p>Realizamos envíos · Dias y horario a convenir por WhatsApp</p>
 </div>
 
-<div class="admin-stock-section">
-  <h4>⚙️ Descontar Stock desde WhatsApp (Uso Interno)</h4>
-  <p style="font-size:0.8rem; color:var(--text-light)">Pegá acá abajo el renglón del mensaje de WhatsApp recibido para restar el stock automáticamente:</p>
-  <textarea id="whatsappInput" placeholder="Ejemplo: • Vedetinas M y L (3x Regular - Negra L, Blanca M, Roja L)"></textarea>
-  <button class="filter-btn" style="background:var(--azul-noche); color:white;" onclick="procesarStockManual()">Calcular nuevo stock</button>
-  <div id="outputContainer" style="display:none;">
-    <p style="font-size:0.8rem; margin-top:10px; color: green; font-weight: bold;">¡Stock Restado! Reemplazá la lista 'productos' de tu código por esta:</p>
-    <pre id="stockOutput"></pre>
-  </div>
+<!-- Sección de administración oculta para los clientes -->
+<div class="admin-stock-section" style="display: none;">
+    <h4>⚙️ Descontar Stock desde WhatsApp (Uso Interno)</h4>
+    <p style="font-size:0.8rem; color:var(--text-light)">Pegá acá abajo el renglón del mensaje de WhatsApp recibido para restar el stock automáticamente:</p>
+    <textarea id="whatsappInput" placeholder="Ejemplo: • Vedetinas M y L (3x Regular - Negra L, Blanca M, Roja L)"></textarea>
+    <button class="filter-btn" style="background:var(--azul-noche); color:white;" onclick="procesarStockManual()">Calcular nuevo stock</button>
+    <div id="outputContainer" style="display:none;">
+        <p style="font-size:0.8rem; margin-top:10px; color: green; font-weight: bold;">¡Stock Restado! Reemplazá la lista 'productos' de tu código por esta:</p>
+        <pre id="stockOutput"></pre>
+    </div>
 </div>
 
 <footer>
