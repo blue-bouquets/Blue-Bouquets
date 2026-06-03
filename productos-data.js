@@ -299,7 +299,7 @@ const productos = [
     id: "boxertommy",
     cat: "conjuntos",
     name: "Boxer Tommy",
-    img: ["images/boxertommy.jpg"], // <-- Cambiado de "imágenes/" a "images/"
+    img: ["images/boxertommy.jpeg"], // <-- Cambiado de "imágenes/" a "images/"
     desc: "Bóxer clásico de algodón premium con elástico personalizado Tommy.",
     tipo: "var",
     px: 7500,
