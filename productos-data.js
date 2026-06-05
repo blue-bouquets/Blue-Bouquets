@@ -164,11 +164,11 @@ const productos = [
     s: 6
   },
   {
-    id: "alice",
+    id: "begonia",
     sku: "RI Alice 23500",
     cat: "conjuntos",
-    name: "Alice",
-    img: ["🩱"],
+    name: "Begonia",
+    img: ["images/begonia.jpeg", "images/begonia2.jpeg"],
     desc: "Conjunto de taza soft armada con aro, breteles rasados regulables.",
     tipo: "var",
     px: 9990,
@@ -179,7 +179,7 @@ const productos = [
     sku: "RI Marie Reg 22500",
     cat: "conjuntos",
     name: "Coral",
-    img: ["🌸"],
+    img: ["images/coral.jpeg"],
     desc: "Microfibra satinada premium y detalles de encaje elastizado.",
     tipo: "var",
     px: 9990,
