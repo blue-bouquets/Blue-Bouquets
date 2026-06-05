@@ -295,11 +295,22 @@ const productos = [
     px: 11490,
     var: [{ id: "f90a", l: "T.90 · Amarillo", s: 1 }, { id: "f95v", l: "T.95 · Violeta", s: 1 }, { id: "f95c", l: "T.95 · Celeste", s: 1 }, { id: "f100a", l: "T.100 · Amarillo", s: 1 }, { id: "f100v", l: "T.100 · Violeta", s: 1 }]
   },
+  {
+    id: "Rosa",
+    sku: "MUL rosetta x6 21600",
+    cat: "conjuntos",
+    name: "Rosa",
+    img: ["images/Rosa.jpeg"],
+    desc: "Conjunto de algodón deportivo cómodo y elástico con estampa.",
+    tipo: "var",
+    px: 9990,
+    var: [{ id: "ro85r", l: "T.85 · Rojo", s: 1 }, { id: "ro85n", l: "T.85 · Negro", s: 1 }, { id: "ro90r", l: "T.90 · Rojo", s: 1 }, { id: "ro90b", l: "T.90 · Blanco", s: 1 }, { id: "ro95n", l: "T.95 · Negro", s: 1 }, ( id: "ro100b", 1: "T.100 · Blanco]
+  },
  {
     id: "boxertommy",
     cat: "conjuntos",
     name: "Boxer Tommy",
-    img: ["images/boxertommy.jpeg"], // <-- Cambiado de "imágenes/" a "images/"
+    img: ["images/boxertommy.jpeg"],
     desc: "Bóxer clásico de algodón premium con elástico personalizado Tommy.",
     tipo: "var",
     px: 7500,
