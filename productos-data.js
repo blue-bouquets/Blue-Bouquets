@@ -36,7 +36,7 @@ const productos = [
     sku: "RI: Less Anchas Morley 15900",
     cat: "bombachas",
     name: "Less Anchas de Morley",
-    img: ["images/lessanchamorley1.jpeg", "image/lessanchamorley2", "images/lessanchamorley3", "images/lessanchamorley4"],
+    img: ["images/lessanchamorley1.jpeg", "images/lessanchamorley2.jpeg", "images/lessanchamorley3.jpeg", "images/lessanchamorley4.jpeg"],
     desc: "Diseño tiro medio-alto con banda ancha regulable en morley de algodón. No aprieta los laterales y acentúa las curvas de forma natural.",
     tipo: "multi",
     talle: "Regular",
