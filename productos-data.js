@@ -22,7 +22,7 @@ const productos = [
     sku: "RI Vedetinas classic estampadas 13500",
     cat: "bombachas",
     name: "Vedetinas de Morley Estampadas", 
-    img: ["images/vedetinaestampadamorley.jpeg"], 
+    img: ["images/vedetinasestampadamorley1.jpeg", "images/vedetinasestampadamorley2.jpeg", "images/vedetinasestampadamorley3.jpeg", "images/vedetinasestampadamorley4.jpeg"], 
     desc: "Hermosas vedetinas de morley ultra suave con estampados delicados en tendencia (cerezas y moños). Posee puntilla fina perimetral elástica.",
     tipo: "multi",
     talle: "Regular",
