@@ -304,7 +304,7 @@ const productos = [
     desc: "Conjunto de algodón deportivo cómodo y elástico con estampa.",
     tipo: "var",
     px: 9990,
-    var: [{ id: "ro85r", l: "T.85 · Rojo", s: 1 }, { id: "ro85n", l: "T.85 · Negro", s: 1 }, { id: "ro90r", l: "T.90 · Rojo", s: 1 }, { id: "ro90b", l: "T.90 · Blanco", s: 1 }, { id: "ro95n", l: "T.95 · Negro", s: 1 }, ( id: "ro100b", 1: "T.100 · Blanco]
+    var: [{ id: "ro85r", l: "T.85 · Rojo", s: 1 }, { id: "ro85n", l: "T.85 · Negro", s: 1 }, { id: "ro90r", l: "T.90 · Rojo", s: 1 }, { id: "ro90b", l: "T.90 · Blanco", s: 1 }, { id: "ro95n", l: "T.95 · Negro", s: 1 }, { id: "ro100b", 1: "T.100 · Blanco}]
   },
  {
     id: "boxertommy",
@@ -319,5 +319,5 @@ const productos = [
       { id: "bt2", l: "Talle 4 · Azul", s: 0 },
       { id: "bt3", l: "Talle 4 · Gris", s: 0 }
     ]
-  }
+  },
 ];
