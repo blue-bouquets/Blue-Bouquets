@@ -35,8 +35,8 @@ const productos = [
     id: "lessanchas",
     sku: "RI: Less Anchas Morley 15900",
     cat: "bombachas",
-    name: "Less Anchas Morley",
-    img: ["images/lessancahmorley.jpeg"],
+    name: "Less Anchas de Morley",
+    img: ["images/lessanchamorley1.jpeg", "image/lessanchamorley2", "images/lessanchamorley3", "images/lessanchamorley4"],
     desc: "Diseño tiro medio-alto con banda ancha regulable en morley de algodón. No aprieta los laterales y acentúa las curvas de forma natural.",
     tipo: "multi",
     talle: "Regular",
@@ -55,14 +55,14 @@ const productos = [
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [{ c: "Negra", s: 5 }, { c: "Blanca", s: 4 }, { c: "Negra", s: 0 }]
+    colores: [{ c: "Negra", s: 5 }, { c: "Blanca", s: 4 }, { c: "Roja", s: 0 }]
   },
   {
     id: "lessencaje",
     sku: "RI Less Regu Encaje 13900",
     cat: "bombachas",
     name: "Less Regulables de Encaje",
-    img: ["🌿"],
+    img: ["images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg"],
     desc: "Encaje floral importado transparente con breteles laterales regulables.",
     tipo: "multi",
     talle: "Regular",
