@@ -50,7 +50,7 @@ const productos = [
     sku: "RI Less Anchas Red 15900",
     cat: "bombachas",
     name: "Less Anchas de Red",
-    img: ["🌿"],
+    img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "lessred3.jpeg"],
     desc: "Material premium texturizado tipo red. Elástica y cómoda.",
     tipo: "multi",
     talle: "Regular",
