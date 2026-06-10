@@ -98,7 +98,6 @@ footer a { color: var(--turquesa); text-decoration: none; }
   <p>Bombachas, medias, conjuntos y más...</p>
 </div>
 
-<!-- Se actualizaron los botones para incluir las 5 categorías requeridas y el filtro de talle -->
 <div class="filters">
   <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
   <button class="filter-btn" onclick="filtrar('bombachas', this)">Bombachas</button>
@@ -194,11 +193,9 @@ function cardSimple(p) {
 }
 
 function cardVar(p) {
-  // Aquí se evalúa si hay un filtro de talle de conjuntos activo para destacar u ocultar variantes sin stock
   const talleFiltrado = document.getElementById('sizeFilter').value;
   
   const vars = p.var.map(v => {
-    // Si hay un talle filtrado y esta variante no pertenece a ese talle, la salteamos o deshabilitamos
     let ocultarPorTalle = false;
     if (p.cat === 'conjuntos' && talleFiltrado !== 'todos') {
       if (talleFiltrado === '4' && !v.l.includes('Talle 4')) ocultarPorTalle = true;
@@ -252,7 +249,6 @@ function selVar(pid,vid,btn) {
 }
 
 function selQty(pid,qty,btn) {
-  // Ajuste para permitir desmarcar si hace clic en la opción ya seleccionada
   if (btn.classList.contains('selected')) {
     btn.classList.remove('selected');
     delete sel[pid];
@@ -366,13 +362,12 @@ function filtrar(cat,btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  // Mostrar u ocultar el selector de talle dependiendo de si tiene sentido usarlo
   const talleWrapper = document.getElementById('sizeFilterWrapper');
   if(cat === 'todos' || cat === 'conjuntos') {
     talleWrapper.style.display = 'flex';
   } else {
     talleWrapper.style.display = 'none';
-    document.getElementById('sizeFilter').value = 'todos'; // Reseteamos el valor si va a otra sección
+    document.getElementById('sizeFilter').value = 'todos';
   }
 
   aplicarFiltroTalle();
@@ -381,16 +376,12 @@ function filtrar(cat,btn) {
 function aplicarFiltroTalle() {
   const talleSeleccionado = document.getElementById('sizeFilter').value;
   
-  // 1. Filtrar por categoría base
   let productosFiltrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.cat === categoriaActual);
   
-  // 2. Si hay talle específico seleccionado (Aplica principalmente a conjuntos)
   if (talleSeleccionado !== 'todos') {
     productosFiltrados = productosFiltrados.filter(p => {
-      // Si no es un conjunto, no lo filtramos por talle numérico (ej: medias o calzas)
       if (p.cat !== 'conjuntos') return true; 
       
-      // Verificamos si tiene al menos una variante de ese talle con stock > 0
       return p.var.some(v => {
         if (talleSeleccionado === '4') {
           return v.l.includes('Talle 4') && v.s > 0;
@@ -409,7 +400,7 @@ function renderCatalog(lista) {
     if(p.tipo === 'simple') return cardSimple(p);
     if(p.tipo === 'var') return cardVar(p);
     if(p.tipo === 'multi') return cardMulti(p);
-  ).join('');
+  }).join('');
   document.getElementById('catalog').innerHTML = html;
 }
 
@@ -464,6 +455,7 @@ function procesarStockManual() {
 }
 
 function init() {
+  document.getElementById('sizeFilter').value = 'todos';
   renderCatalog(productos);
   upCart();
 }
