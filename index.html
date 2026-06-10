@@ -26,9 +26,11 @@ header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 
 .hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 60px 24px 48px; text-align: center; }
 .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 300; color: white; margin-bottom: 12px; }
 .hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; }
-.filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; }
+.filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
 .filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; }
 .filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
+.size-filter-container { display: flex; align-items: center; gap: 6px; }
+.size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 12px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
 .catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
 .product-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(26,58,74,0.07); display: flex; flex-direction: column; }
 .card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
@@ -46,7 +48,7 @@ label { font-size: 0.75rem; font-weight: 500; color: var(--text-light); display:
 .unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
 .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
-.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7gram; }
+.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 .unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 .add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 500; width: 100%; }
@@ -77,7 +79,6 @@ footer a { color: var(--turquesa); text-decoration: none; }
 .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* Estilo para el Administrador de Stock Oculto */
 .admin-stock-section { max-width: 900px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 12px; border: 1px dashed var(--text-light); }
 .admin-stock-section textarea { width: 100%; height: 100px; margin: 10px 0; padding: 10px; font-family: monospace; }
 .admin-stock-section pre { background: #222; color: #fff; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.8rem; margin-top: 10px; max-height: 250px; }
@@ -97,11 +98,27 @@ footer a { color: var(--turquesa); text-decoration: none; }
   <p>Bombachas, medias, conjuntos y más...</p>
 </div>
 
+<!-- Se actualizaron los botones para incluir las 5 categorías requeridas y el filtro de talle -->
 <div class="filters">
   <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
   <button class="filter-btn" onclick="filtrar('bombachas', this)">Bombachas</button>
   <button class="filter-btn" onclick="filtrar('medias', this)">Medias</button>
   <button class="filter-btn" onclick="filtrar('conjuntos', this)">Conjuntos</button>
+  <button class="filter-btn" onclick="filtrar('boxers', this)">Bóxers</button>
+  <button class="filter-btn" onclick="filtrar('ropa', this)">Ropa</button>
+  
+  <div class="size-filter-container" id="sizeFilterWrapper">
+    <label for="sizeFilter" style="margin-bottom:0; color:var(--verde);">Talle:</label>
+    <select id="sizeFilter" class="size-select" onchange="aplicarFiltroTalle()">
+      <option value="todos">Todos</option>
+      <option value="85">85</option>
+      <option value="90">90</option>
+      <option value="95">95</option>
+      <option value="100">100</option>
+      <option value="115">115</option>
+      <option value="4">Juvenil (T.4)</option>
+    </select>
+  </div>
 </div>
 
 <div class="catalog" id="catalog"></div>
@@ -111,7 +128,6 @@ footer a { color: var(--turquesa); text-decoration: none; }
   <p>Realizamos envíos · Dias y horario a convenir por WhatsApp</p>
 </div>
 
-<!-- Sección de administración oculta para los clientes -->
 <div class="admin-stock-section" style="display: none;">
     <h4>⚙️ Descontar Stock desde WhatsApp (Uso Interno)</h4>
     <p style="font-size:0.8rem; color:var(--text-light)">Pegá acá abajo el renglón del mensaje de WhatsApp recibido para restar el stock automáticamente:</p>
@@ -152,7 +168,6 @@ footer a { color: var(--turquesa); text-decoration: none; }
 
 <script>
 function renderImg(p) {
-  // Tomamos siempre la primera imagen si es un array
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
   if (imgSrc.includes('.')) {
     return `<img src="${imgSrc}" alt="${p.name}">`;
@@ -162,6 +177,7 @@ function renderImg(p) {
 
 let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
 let sel = {};
+let categoriaActual = 'todos';
 
 function cardSimple(p) {
   return `<div class="product-card">
@@ -169,7 +185,7 @@ function cardSimple(p) {
       <div class="card-img">${renderImg(p)}</div>
     </a>
     <div class="card-body">
-      <div class="card-category">${p.cat}</div>
+      <div class="card-category">${p.cat.toUpperCase()}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
       <button class="add-btn" onclick="addSimple('${p.id}')" ${p.s>0?'':'disabled'}>${p.s>0?'+ Agregar':'Sin Stock'}</button>
@@ -178,13 +194,28 @@ function cardSimple(p) {
 }
 
 function cardVar(p) {
-  const vars = p.var.map(v => `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`).join('');
+  // Aquí se evalúa si hay un filtro de talle de conjuntos activo para destacar u ocultar variantes sin stock
+  const talleFiltrado = document.getElementById('sizeFilter').value;
+  
+  const vars = p.var.map(v => {
+    // Si hay un talle filtrado y esta variante no pertenece a ese talle, la salteamos o deshabilitamos
+    let ocultarPorTalle = false;
+    if (p.cat === 'conjuntos' && talleFiltrado !== 'todos') {
+      if (talleFiltrado === '4' && !v.l.includes('Talle 4')) ocultarPorTalle = true;
+      if (talleFiltrado !== '4' && !v.l.includes(`T.${talleFiltrado} `) && !v.l.includes(`T.${talleFiltrado}·`)) ocultarPorTalle = true;
+    }
+    
+    if (ocultarPorTalle) return '';
+    
+    return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`;
+  }).join('');
+
   return `<div class="product-card">
     <a class="card-link" href="producto.html?id=${p.id}">
       <div class="card-img">${renderImg(p)}</div>
     </a>
     <div class="card-body">
-      <div class="card-category">${p.cat}</div>
+      <div class="card-category">${p.cat.toUpperCase()}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
       <label>Talle y color</label>
@@ -195,7 +226,7 @@ function cardVar(p) {
 }
 
 function cardMulti(p) {
-  const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty('${p.id}',${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
+  const qtys = p.precios.map(pr => `<button class="variant-btn qty-btn-${p.id}" onclick="selQty('${p.id}',${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
   return `<div class="product-card">
     <a class="card-link" href="producto.html?id=${p.id}">
       <div class="card-img">${renderImg(p)}</div>
@@ -206,7 +237,7 @@ function cardMulti(p) {
       <div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div>
       <label>Cantidad</label>
       <div class="variant-grid">${qtys}</div>
-      <div id="cols${p.id}" style="display:none"><label>Color por unidad</label><div id="colslist${p.id}"></div></div>
+      <div id="cols${p.id}" style="display:none; margin-top: 8px;"><label>Color por unidad</label><div id="colslist${p.id}"></div></div>
       <button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>Selecciona</button>
     </div>
   </div>`;
@@ -221,6 +252,18 @@ function selVar(pid,vid,btn) {
 }
 
 function selQty(pid,qty,btn) {
+  // Ajuste para permitir desmarcar si hace clic en la opción ya seleccionada
+  if (btn.classList.contains('selected')) {
+    btn.classList.remove('selected');
+    delete sel[pid];
+    document.getElementById(`cols${pid}`).style.display = 'none';
+    document.getElementById(`colslist${pid}`).innerHTML = '';
+    const mainBtn = document.getElementById(`btn${pid}`);
+    mainBtn.disabled = true;
+    mainBtn.textContent = 'Selecciona';
+    return;
+  }
+
   btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   sel[pid] = {qty,cols:{}};
@@ -319,10 +362,46 @@ function toggleCart() {
 }
 
 function filtrar(cat,btn) {
+  categoriaActual = cat;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  const filtrados = cat === 'todos' ? productos : productos.filter(p => p.cat === cat);
-  renderCatalog(filtrados);
+  
+  // Mostrar u ocultar el selector de talle dependiendo de si tiene sentido usarlo
+  const talleWrapper = document.getElementById('sizeFilterWrapper');
+  if(cat === 'todos' || cat === 'conjuntos') {
+    talleWrapper.style.display = 'flex';
+  } else {
+    talleWrapper.style.display = 'none';
+    document.getElementById('sizeFilter').value = 'todos'; // Reseteamos el valor si va a otra sección
+  }
+
+  aplicarFiltroTalle();
+}
+
+function aplicarFiltroTalle() {
+  const talleSeleccionado = document.getElementById('sizeFilter').value;
+  
+  // 1. Filtrar por categoría base
+  let productosFiltrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.cat === categoriaActual);
+  
+  // 2. Si hay talle específico seleccionado (Aplica principalmente a conjuntos)
+  if (talleSeleccionado !== 'todos') {
+    productosFiltrados = productosFiltrados.filter(p => {
+      // Si no es un conjunto, no lo filtramos por talle numérico (ej: medias o calzas)
+      if (p.cat !== 'conjuntos') return true; 
+      
+      // Verificamos si tiene al menos una variante de ese talle con stock > 0
+      return p.var.some(v => {
+        if (talleSeleccionado === '4') {
+          return v.l.includes('Talle 4') && v.s > 0;
+        } else {
+          return (v.l.includes(`T.${talleSeleccionado} `) || v.l.includes(`T.${talleSeleccionado}·`)) && v.s > 0;
+        }
+      });
+    });
+  }
+  
+  renderCatalog(productosFiltrados);
 }
 
 function renderCatalog(lista) {
@@ -330,7 +409,7 @@ function renderCatalog(lista) {
     if(p.tipo === 'simple') return cardSimple(p);
     if(p.tipo === 'var') return cardVar(p);
     if(p.tipo === 'multi') return cardMulti(p);
-  }).join('');
+  ).join('');
   document.getElementById('catalog').innerHTML = html;
 }
 
@@ -341,19 +420,16 @@ function toast(msg) {
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-// LOGICA AUXILIAR PARA ADMINISTRAR TU STOCK MANUALMENTE DESDE WHATSAPP
 function procesarStockManual() {
   const input = document.getElementById('whatsappInput').value;
   if(!input.trim()) return;
   
-  // Clonamos el listado original para modificarlo
   let copiaProductos = JSON.parse(JSON.stringify(productos));
   const lineas = input.split('\n');
 
   lineas.forEach(linea => {
     if(!linea.startsWith('•')) return;
     
-    // Buscar qué producto coincide con el nombre
     copiaProductos.forEach(p => {
       if(linea.includes(`• ${p.name}`)) {
         if(p.tipo === 'simple') {
@@ -367,9 +443,7 @@ function procesarStockManual() {
           });
         } 
         else if(p.tipo === 'multi') {
-          // Extrae los colores listados entre guiones/paréntesis
           p.colores.forEach(c => {
-            // Contar cuántas veces se menciona este color específico en la línea de pedido
             const regex = new RegExp(c.c, "g");
             const matches = (linea.match(regex) || []).length;
             if(matches > 0) {
