@@ -58,6 +58,18 @@ const productos = [
     ]
   },
   {
+    id: "less_regulable_encaje",
+    cat: "bombachas",
+    tipo: "multi",
+    name: "Less Regulable de Encaje",
+    talle: "Único (Regulable)",
+    img: ["images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg"],
+    precios: [{ qty: 1, px: 3200 }, { qty: 2, px: 5500 }, { qty: 3, px: 7800 }],
+    colores: [
+      { c: "Blanca", s: 3 }, { c: "Roja", s: 0 }, { c: "Negra", s: 0 }, { c: "Crema", s: 0 }
+    ]
+  },
+  {
     id: "colalessdealgodon",
     sku: "Colaless de algodon",
     cat: "bombachas",
