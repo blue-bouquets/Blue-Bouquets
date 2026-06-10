@@ -453,7 +453,7 @@ const productos = [
     sku: "Rosa",
     cat: "conjuntos",
     name: "Rosa",
-    img: ["images/rosa.jpeg"],
+    img: ["images/Rosa.jpeg"],
     desc: "Conjunto de algodón cómodo y elástico de uso diario.",
     tipo: "var",
     px: 9990,
