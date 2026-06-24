@@ -6,7 +6,7 @@ const productos = [
     sku: "Vedetinas de Algodon",
     cat: "bombachas",
     name: "Vedetinas de Algodón",
-    img: ["images/vedetinasdealgodon1.jpeg", "images/vedetinasdealgodon2.jpeg"],
+    img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
     desc: "Confeccionadas en algodón elástico de alta calidad, ideales para el uso diario aportando máxima comodidad.",
     tipo: "multi",
     talle: "Regular",
@@ -40,7 +40,7 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Beige", s: 1 }, { c: "Rojo", s: 0 }, { c: "Blanco", s: 0 }
+      { c: "Beige", s: 0 }, { c: "Rojo", s: 0 }, { c: "Blanco", s: 0 }
     ]
   },
   {
@@ -63,7 +63,7 @@ const productos = [
     tipo: "multi",
     name: "Less Regulable de Encaje",
     talle: "Único (Regulable)",
-    img: ["images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg"],
+    img: ["images/lessencaje4.jpeg", "images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg", "images/lessencaje.jpeg"],
     precios: [{ qty: 1, px: 3200 }, { qty: 2, px: 5500 }, { qty: 3, px: 7800 }],
     colores: [
       { c: "Blanca", s: 3 }, { c: "Roja", s: 0 }, { c: "Negra", s: 0 }, { c: "Crema", s: 0 }
@@ -74,7 +74,7 @@ const productos = [
     sku: "Colaless de algodon",
     cat: "bombachas",
     name: "Colaless de Algodón",
-    img: ["images/colalessdealgodon1.jpeg"],
+    img: ["images/lessalgodon1.jpeg", "images/lessalgodon2.jpeg", "images/lessalgodon3.jpeg"],
     desc: "Algodón clásico con lycra. Un básico infaltable y súper cómodo.",
     tipo: "multi",
     talle: "Regular",
@@ -88,7 +88,7 @@ const productos = [
     sku: "Colaless con puntilla",
     cat: "bombachas",
     name: "Colaless con Puntilla",
-    img: ["images/colalessconpuntilla1.jpeg"],
+    img: ["images/lesspuntilla4.jpeg", "images/lesspuntilla1.jpeg", "images/lesspuntilla3.jpeg", "images/lesspuntilla2.jpeg"],
     desc: "Detalle de puntilla sutil combinado con la suavidad del algodón.",
     tipo: "multi",
     talle: "Regular",
@@ -102,7 +102,7 @@ const productos = [
     sku: "Less fru fru",
     cat: "bombachas",
     name: "Less Fru Fru",
-    img: ["images/lessfrufru1.jpeg"],
+    img: ["images/lessfrufru1.jpeg", "images/lessfrufru2.jpeg", "images/lessfrufru3.jpeg"],
     desc: "Diseño romántico con terminaciones elásticas fruncidas delicadas.",
     tipo: "multi",
     talle: "Regular",
@@ -115,8 +115,8 @@ const productos = [
     id: "lessxl",
     sku: "Less XL",
     cat: "bombachas",
-    name: "Less XL",
-    img: ["images/lessxl1.jpeg"],
+    name: "Colaless XL",
+    img: ["images/lessxl1.jpeg", "images/lessxl2.jpeg", "images/lessxl3.jpeg"],
     desc: "Corte ergonómico especial en talle grande que garantiza confort total.",
     tipo: "multi",
     talle: "XL",
@@ -130,13 +130,13 @@ const productos = [
     sku: "Less XXL con encaje",
     cat: "bombachas",
     name: "Less XXL con Encaje",
-    img: ["images/lessxxlconencaje1.jpeg"],
+    img: ["images/lessxxlencaje1.jpeg"],
     desc: "Talle especial con excelente soporte y delicados detalles de encaje lateral.",
     tipo: "multi",
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Negra", s: 1 }, { c: "Roja", s: 2 }, { c: "Beige", s: 2 }, { c: "Blanca", s: 2 }, { c: "Crema", s: 1 }
+      { c: "Negra", s: 0 }, { c: "Roja", s: 0 }, { c: "Beige", s: 0 }, { c: "Blanca", s: 0 }, { c: "Crema", s: 0 }
     ]
   },
   {
@@ -144,7 +144,7 @@ const productos = [
     sku: "Less XXL de algodon",
     cat: "bombachas",
     name: "Less XXL de Algodón",
-    img: ["images/lessxxldealgodon1.jpeg"],
+    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje.jpeg"],
     desc: "Línea clásica de algodón modelador en talles grandes, tiro alto confortable.",
     tipo: "multi",
     talle: "XXL",
