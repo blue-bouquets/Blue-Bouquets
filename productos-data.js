@@ -16,6 +16,24 @@ const productos = [
     ]
   },
   {
+    id: "vedetinas_xl",
+    sku: "Vedetinas XL",
+    cat: "bombachas",
+    name: "Vedetinas XL",
+    img: ["images/vedetinasxl1.jpeg", "images/vedetinasxl2.jpeg"],
+    desc: "Confeccionadas en algodón elástico de alta calidad en talles especiales, ideales para el uso diario aportando máxima comodidad.",
+    tipo: "multi",
+    talle: "XL",
+    precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
+    colores: [
+      { c: "Negra XL", s: 2 }, 
+      { c: "Beige XL", s: 3 }, 
+      { c: "Gris XL", s: 3 }, 
+      { c: "Blanca XL", s: 2 }, 
+      { c: "Roja XL", s: 2 }
+    ]
+  },
+  {
     id: "vedetinasmorleyestampadas",
     sku: "Vedetinas morley estampadas",
     cat: "bombachas",
