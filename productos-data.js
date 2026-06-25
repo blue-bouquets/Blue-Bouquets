@@ -148,7 +148,7 @@ const productos = [
     sku: "Less XXL con encaje",
     cat: "bombachas",
     name: "Less XXL con Encaje",
-    img: ["images/lessxxlencaje1.jpeg"],
+    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
     desc: "Talle especial con excelente soporte y delicados detalles de encaje lateral.",
     tipo: "multi",
     talle: "XXL",
@@ -162,13 +162,95 @@ const productos = [
     sku: "Less XXL de algodon",
     cat: "bombachas",
     name: "Less XXL de Algodón",
-    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje.jpeg"],
+    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
     desc: "Línea clásica de algodón modelador en talles grandes, tiro alto confortable.",
     tipo: "multi",
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
       { c: "Blanca", s: 4 }, { c: "Beige", s: 6 }, { c: "Negra", s: 4 }, { c: "Crema", s: 2 }, { c: "Rojo", s: 4 }, { c: "Gris", s: 4 }
+    ]
+  },
+  {
+    id: "culotconencaje",
+    sku: "Culot con encaje",
+    cat: "bombachas",
+    name: "Culot con Encaje",
+    img: ["images/culotencaje1.jpeg", "images/culotencaje2.jpeg", "images/culotencaje2.jpeg"],
+    desc: "Línea clásica con detalles de encaje modelador en talles grandes, tiro alto confortable.",
+    tipo: "multi",
+    talle: "regular",
+    precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
+    colores: [
+      { c: "Roja", s: 3 }, 
+      { c: "Beige", s: 3 }, 
+      { c: "Blanca", s: 3 }, 
+      { c: "Negra", s: 2 }
+    ]
+  },
+  {
+    id: "colalesscoquette",
+    sku: "Colaless Coquette",
+    cat: "bombachas",
+    name: "Colaless Coquette",
+    img: ["images/colalesscoquette1.jpeg", "images/colalesscoquete2.jpeg"],
+    desc: "Confeccionadas en morley elástico de alta calidad con detalles románticos, ideales para el uso diario aportando máxima comodidad.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    colores: [
+      { c: "Blanca", s: 3 }, 
+      { c: "Negra", s: 1 }, 
+      { c: "Beige", s: 3 }, 
+      { c: "Rosa", s: 2 }
+    ]
+  },
+  {
+    id: "regulables_coquette",
+    sku: "Regulables Coquette",
+    cat: "bombachas",
+    name: "Regulables Coquette",
+    img: ["images/regulablescoquette1.jpeg", "images/regulablescoquette2.jpeg"],
+    desc: "Confeccionadas en morley elástico con detalles coquette y breteles regulables, adaptándose perfectamente.",
+    tipo: "multi",
+    talle: "Único (Regulable)",
+    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    colores: [
+      { c: "Beige", s: 2 },
+      { c: "Blanca", s: 1 },
+      { c: "Negra", s: 1 }
+    ]
+  },
+  {
+    id: "less_lovely",
+    sku: "Less Lovely",
+    cat: "bombachas",
+    name: "Less Lovely",
+    img: ["images/lesslovely1.jpeg", "images/lesslovely2.jpeg"],
+    desc: "Confeccionadas en algodón elástico de alta calidad, ideales para el uso diario aportando máxima comodidad.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    colores: [
+      { c: "Beige", s: 3 },
+      { c: "Blanca", s: 4 },
+      { c: "Rosa", s: 5 }
+    ]
+  },
+  {
+    id: "less_rosa",
+    sku: "Less Rosa",
+    cat: "bombachas",
+    name: "Less Rosa",
+    img: ["images/lessrosa1.jpeg", "images/lessrosa2.jpeg"],
+    desc: "Confeccionadas en algodón elástico de alta calidad, ideales para el uso diario aportando máxima comodidad.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    colores: [
+      { c: "Violeta", s: 4 },
+      { c: "Roja", s: 4 },
+      { c: "Negra", s: 4 }
     ]
   },
 
