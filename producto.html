@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Detalle del Producto — Blue Bouquets</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --verde: #37757d;
@@ -24,19 +24,17 @@ header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 
 .cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 10px 20px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; }
 .cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 20px; height: 20px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 
-/* Contenedor PDP */
 .pdp-container { max-width: 900px; margin: 30px auto; padding: 0 16px; display: grid; grid-template-columns: 1fr; gap: 30px; }
 
-/* Galería de imágenes modernas */
+/* NUEVA GALERÍA: Respeta Imagen Completa Sin Recortes */
 .gallery-section { display: flex; flex-direction: column; gap: 12px; }
-.main-img-box { width: 100%; height: 380px; background: linear-gradient(135deg, #018587, var(--menta)); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 5rem; box-shadow: 0 4px 15px rgba(26,58,74,0.05); }
-.main-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.main-img-box { width: 100%; height: auto; min-height: 350px; background: white; border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 5rem; box-shadow: 0 4px 15px rgba(26,58,74,0.05); padding: 10px; }
+.main-img-box img { width: 100%; height: auto; max-height: 500px; object-fit: contain; }
 .thumbs-container { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; }
 .thumb-box { width: 70px; height: 70px; background: white; border-radius: 8px; overflow: hidden; border: 2px solid transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
 .thumb-box.active { border-color: var(--turquesa); }
 .thumb-box img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Detalles e Info */
 .info-section { background: white; padding: 24px; border-radius: 16px; box-shadow: 0 2px 12px rgba(26,58,74,0.04); display: flex; flex-direction: column; gap: 16px; }
 .prod-cat { font-size: 0.8rem; color: var(--turquesa); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 .prod-name { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--azul-noche); line-height: 1.1; }
@@ -47,20 +45,20 @@ label { font-size: 0.8rem; font-weight: 600; color: var(--azul-noche); display: 
 .variant-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;}
 .variant-btn { border: 1.5px solid var(--menta); background: white; color: var(--text); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; }
 .variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
-.variant-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.variant-btn:disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
 
 .unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; background: var(--crema); padding: 8px; border-radius: 8px; }
 .unit-label { font-size: 0.75rem; font-weight: 600; color: var(--verde); min-width: 35px; }
 .unit-color-grid { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
 .unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 0.75rem; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
+.unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 .add-btn { background: var(--verde); color: white; border: none; border-radius: 12px; padding: 16px; cursor: pointer; font-weight: 600; font-size: 1rem; margin-top: 10px; width: 100%; transition: background 0.2s; }
 .add-btn:hover { background: var(--turquesa); }
 .add-btn:disabled { background: #ccc; cursor: not-allowed; }
 .back-link { display: inline-flex; align-items: center; gap: 5px; color: var(--verde); text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-bottom: 10px; }
 
-/* Carrito Side Panel */
 .cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
 .cart-overlay.open { opacity: 1; pointer-events: all; }
 .cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
@@ -99,8 +97,7 @@ label { font-size: 0.8rem; font-weight: 600; color: var(--azul-noche); display: 
     <div class="thumbs-container" id="thumbsContainer"></div>
   </div>
 
-  <div class="info-section" id="infoSection">
-    </div>
+  <div class="info-section" id="infoSection"></div>
 </div>
 
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
@@ -124,7 +121,6 @@ label { font-size: 0.8rem; font-weight: 600; color: var(--azul-noche); display: 
 <script src="productos-data.js"></script>
 
 <script>
-// Obtener el ID del producto desde la URL (ej: producto.html?id=alice)
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 const p = productos.find(x => x.id === productId);
@@ -139,7 +135,6 @@ function cambiarImagen(src) {
   } else {
     box.innerHTML = src;
   }
-  // Cambiar clase activa en las miniaturas
   document.querySelectorAll('.thumb-box').forEach(t => {
     t.classList.remove('active');
     if(t.dataset.src === src) t.classList.add('active');
@@ -152,7 +147,6 @@ function renderPaginaDetalle() {
     return;
   }
 
-  // 1. Renderizar Imágenes Galería
   const mainSrc = p.img[0];
   cambiarImagen(mainSrc);
 
@@ -164,26 +158,27 @@ function renderPaginaDetalle() {
     document.getElementById('thumbsContainer').innerHTML = thumbsHtml;
   }
 
-  // 2. Renderizar Formulario de compra según tipo de producto
   let interactivoHtml = '';
   if (p.tipo === 'simple') {
-    interactivoHtml = `<button class="add-btn" onclick="addSimple()" ${p.s>0?'':'disabled'}>${p.s>0?'+ Agregar al carrito':'Sin Stock'}</button>`;
+    const tieneStock = p.s > 0;
+    interactivoHtml = `<button class="add-btn" onclick="addSimple()" ${tieneStock?'':'disabled'}>${tieneStock?'+ Agregar al carrito':'Sin Stock'}</button>`;
   } 
   else if (p.tipo === 'var') {
+    const tieneStockGlobal = p.var.some(v => v.s > 0);
     const vars = p.var.map(v => `<button class="variant-btn" onclick="selVar('${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`).join('');
     interactivoHtml = `<label>Selecciona Talle y color</label>
       <div class="variant-grid">${vars}</div>
-      <button class="add-btn" id="btnAction" onclick="addVar()" disabled>Selecciona una opción</button>`;
+      <button class="add-btn" id="btnAction" onclick="addVar()" disabled>${tieneStockGlobal?'Selecciona una opción':'Sin Stock'}</button>`;
   } 
   else if (p.tipo === 'multi') {
-    const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty(${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
+    const tieneStockGlobal = p.colores.some(c => c.s > 0);
+    const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty(${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
     interactivoHtml = `<label>Cantidad</label>
       <div class="variant-grid">${qtys}</div>
-      <div id="colsContainer" style="display:none"><label>Color por unidad</label><div id="colslist"></div></div>
-      <button class="add-btn" id="btnAction" onclick="addMulti()" disabled>Selecciona cantidad</button>`;
+      <div id="colsContainer" style="display:none"><label>Color por unidad (¡Podés combinar modelos del mismo tipo en el carrito!)</label><div id="colslist"></div></div>
+      <button class="add-btn" id="btnAction" onclick="addMulti()" disabled>${tieneStockGlobal?'Selecciona cantidad':'Sin Stock'}</button>`;
   }
 
-  // 3. Renderizar Estructura de Texto e Información Técnica
   document.getElementById('infoSection').innerHTML = `
     <div class="prod-cat">${p.cat || 'Lencería'}</div>
     <div class="prod-name">${p.name}</div>
@@ -198,7 +193,6 @@ function renderPaginaDetalle() {
   `;
 }
 
-// FUNCIONES DE SELECCIÓN Y AGREGADO (Adaptadas al LocalStorage)
 function selVar(vid,btn) {
   btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
@@ -246,7 +240,7 @@ function upQty() {
 
 function addSimple() {
   const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
-  carrito.push({id:p.id, tipo:p.tipo, name:p.name, det:`x1`, px:p.px, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, name:p.name, det:`x1`, px:p.px, emoji:icon});
   upCart();
   toggleCart();
   toast(`✓ ${p.name}`);
@@ -255,30 +249,86 @@ function addSimple() {
 function addVar() {
   const variant = p.var.find(x => x.id === sel.var);
   const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
-  carrito.push({id:p.id, tipo:p.tipo, varId:sel.var, name:p.name, det:variant.l, px:p.px, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:sel.var, name:p.name, det:variant.l, px:p.px || variant.px || 9990, emoji:icon});
   upCart();
   toggleCart();
   toast(`✓ ${p.name}`);
 }
 
 function addMulti() {
-  const px = p.precios.find(x => x.qty === sel.qty).px;
-  const cols = Object.entries(sel.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
   const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
-  carrito.push({id:p.id, tipo:p.tipo, qty:sel.qty, coloresSelected:Object.values(sel.cols), name:p.name, det:`${sel.qty}x ${p.talle} - ${cols}`, px, emoji:icon});
+  for(let i=1; i<=sel.qty; i++) {
+    carrito.push({
+      id: p.id,
+      tipo: 'multi_item',
+      ofertaGrupo: p.cat,
+      name: p.name,
+      det: `1x (${p.talle}) - Color: ${sel.cols[i]}`,
+      pxBase: p.precios[0].px,
+      emoji: icon
+    });
+  }
   upCart();
   toggleCart();
-  toast(`✓ ${sel.qty}x ${p.name}`);
+  toast(`✓ Combo Agregado`);
+}
+
+function calcularEstructuraCarrito() {
+  let total = 0;
+  let itemsNormales = [];
+  let itemsMulti = {};
+
+  carrito.forEach(item => {
+    if (item.tipo === 'multi_item') {
+      if (!itemsMulti[item.ofertaGrupo]) itemsMulti[item.ofertaGrupo] = [];
+      itemsMulti[item.ofertaGrupo].push(item);
+    } else {
+      itemsNormales.push(item);
+      total += item.px;
+    }
+  });
+
+  Object.keys(itemsMulti).forEach(grupo => {
+    const list = itemsMulti[grupo];
+    const cant = list.length;
+    const prodBase = productos.find(x => x.cat === grupo && x.tipo === 'multi');
+    
+    if (prodBase && prodBase.precios) {
+      const reglas = [...prodBase.precios].sort((a,b) => b.qty - a.qty);
+      let resto = cant;
+      let costoGrupo = 0;
+
+      while (resto > 0) {
+        const reglaAplicable = reglas.find(r => resto >= r.qty);
+        if (reglaAplicable) {
+          costoGrupo += reglaAplicable.px;
+          resto -= reglaAplicable.qty;
+        } else {
+          costoGrupo += resto * list[0].pxBase;
+          resto = 0;
+        }
+      }
+      total += costoGrupo;
+    } else {
+      list.forEach(i => total += i.pxBase);
+    }
+  });
+
+  return { total, itemsMulti, itemsNormales };
 }
 
 function upCart() {
   localStorage.setItem('bb_cart', JSON.stringify(carrito));
   const cnt = carrito.length;
   document.getElementById('cartCount').textContent = cnt;
-  const total = carrito.reduce((a,b)=>a+b.px,0);
-  let html = cnt===0 ? '<div class="cart-empty"><p>Carrito vacío</p></div>' : carrito.map((item,i) => 
-    `<div class="cart-item"><div class="cart-item-icon">${item.emoji}</div><div style="flex:1"><div class="cart-item-name">${item.name}</div><div class="cart-item-variant">${item.det}</div><div class="cart-item-bottom"><span>$${item.px.toLocaleString('es-AR')}</span><button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button></div></div></div>`
-  ).join('');
+  
+  const { total } = calcularEstructuraCarrito();
+
+  let html = cnt===0 ? '<div class="cart-empty"><p>Carrito vacío</p></div>' : carrito.map((item,i) => {
+    const pstr = item.tipo === 'multi_item' ? `$${item.pxBase.toLocaleString('es-AR')}` : `$${item.px.toLocaleString('es-AR')}`;
+    return `<div class="cart-item"><div class="cart-item-icon">${item.emoji}</div><div style="flex:1"><div class="cart-item-name">${item.name}</div><div class="cart-item-variant">${item.det}</div><div class="cart-item-bottom"><span>${pstr}</span><button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button></div></div></div>`;
+  }).join('');
+  
   document.getElementById('cartItems').innerHTML = html;
   document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
   document.getElementById('waBtn').disabled = cnt===0;
@@ -286,8 +336,31 @@ function upCart() {
 
 function finalizarPedido() {
   if(carrito.length===0) return;
-  const total = carrito.reduce((a,b)=>a+b.px,0);
-  const msg = '¡Hola!\nQuiero comprar:\n\n' + carrito.map(i => `• ${i.name} (${i.det}) - $${i.px.toLocaleString('es-AR')}`).join('\n') + `\n\nTOTAL: $${total.toLocaleString('es-AR')}`;
+  const { total, itemsNormales, itemsMulti } = calcularEstructuraCarrito();
+  
+  let msg = '✨ *NUEVO PEDIDO - BLUE BOUQUETS* ✨\n\n';
+  msg += 'Hola! Quiero encargar las siguientes prendas:\n';
+  msg += '────────────────────\n';
+
+  if (itemsNormales.length > 0) {
+    itemsNormales.forEach(i => {
+      msg += `🛍️ *${i.name}*\n  └ ${i.det} → $${i.px.toLocaleString('es-AR')}\n\n`;
+    });
+  }
+
+  Object.keys(itemsMulti).forEach(grupo => {
+    const list = itemsMulti[grupo];
+    msg += `📦 *PROMO COMBINABLE (${grupo.toUpperCase()})*:\n`;
+    list.forEach(i => {
+      msg += `  • ${i.name} — ${i.det}\n`;
+    });
+    msg += `\n`;
+  });
+
+  msg += '────────────────────\n';
+  msg += `💰 *TOTAL ESTIMADO:* $${total.toLocaleString('es-AR')}\n\n`;
+  msg += '¿Me confirmás el stock y las condiciones de envío? ¡Muchas gracias! 💙';
+
   window.open(`https://wa.me/5492944589885?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
