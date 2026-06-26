@@ -15,6 +15,7 @@
   --arena: #D4B8A0;
   --text: #017576;
   --text-light: #5a7a82;
+  --tarjeta-bg: #e2eef8; /* Fondo más oscuro para contraste */
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; }
@@ -23,37 +24,56 @@ header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 
 .logo span { color: var(--turquesa); font-style: italic; }
 .cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 10px 20px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; }
 .cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 20px; height: 20px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
 .hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 60px 24px 48px; text-align: center; }
 .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 300; color: white; margin-bottom: 12px; }
 .hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; }
+
 .filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
 .filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; }
 .filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
 .size-filter-container { display: flex; align-items: center; gap: 6px; }
 .size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 12px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
-.catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-.product-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(26,58,74,0.07); display: flex; flex-direction: column; }
+
+/* Catálogo con Fotos Verticales 4:5 */
+.catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.product-card { background: var(--tarjeta-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(26,58,74,0.08); display: flex; flex-direction: column; }
 .card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
-.card-img { width: 100%; height: 200px; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; }
+.card-img { width: 100%; aspect-ratio: 4 / 5; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
 .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-.card-category { font-size: 0.7rem; color: var(--turquesa); font-weight: 500; }
-.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--azul-noche); }
-.card-price { font-size: 1.1rem; font-weight: 500; color: var(--verde); }
-label { font-size: 0.75rem; font-weight: 500; color: var(--text-light); display: block; margin-bottom: 6px; }
+.card-category { font-size: 0.7rem; color: var(--azul-noche); font-weight: 700; letter-spacing: 0.5px; }
+.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--azul-noche); }
+.card-price { font-size: 1.15rem; font-weight: 600; color: var(--verde); }
+
+label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display: block; margin-bottom: 4px; }
 .variant-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-.variant-btn { border: 1.5px solid var(--menta); background: white; color: var(--text); padding: 5px 11px; border-radius: 8px; cursor: pointer; font-size: 0.78rem; }
+.variant-btn { border: 1.5px solid white; background: white; color: var(--text); padding: 5px 11px; border-radius: 8px; cursor: pointer; font-size: 0.78rem; }
 .variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
-.variant-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.variant-btn:disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
+
 .unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
 .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
 .unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 .unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
-.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 500; width: 100%; }
+
+.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 600; width: 100%; transition: background 0.2s; }
 .add-btn:hover { background: var(--turquesa); }
-.add-btn:disabled { background: #ccc; cursor: not-allowed; }
+.add-btn:disabled { background: #b0c2c4; cursor: not-allowed; }
+
+/* Nueva sección Informativa "Sobre Mí" */
+.about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); }
+.about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left; }
+.about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--azul-noche); margin-bottom: 12px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 4px; }
+.about-col p, .about-col ul { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; list-style: none; }
+.about-col ul li { margin-bottom: 6px; }
+.about-col a { color: var(--turquesa); text-decoration: none; font-weight: 500; }
+
+footer { background: var(--azul-noche); padding: 24px; text-align: center; color: var(--menta); font-size: 0.85rem; }
+
+/* Carrito */
 .cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
 .cart-overlay.open { opacity: 1; pointer-events: all; }
 .cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
@@ -72,16 +92,8 @@ label { font-size: 0.75rem; font-weight: 500; color: var(--text-light); display:
 .cart-footer { padding: 16px 20px; background: white; border-top: 1px solid var(--menta); }
 .cart-total-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--azul-noche); }
 .whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; border-radius: 12px; padding: 15px; cursor: pointer; font-weight: 600; margin-top: 10px; }
-.envios-banner { background: var(--verde); padding: 20px 24px; text-align: center; max-width: 900px; margin: 0 auto; }
-.envios-banner h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: white; }
-footer { background: var(--azul-noche); padding: 28px 24px; text-align: center; color: var(--menta); font-size: 0.8rem; }
-footer a { color: var(--turquesa); text-decoration: none; }
 .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
 .toast.show { transform: translateX(-50%) translateY(0); }
-
-.admin-stock-section { max-width: 900px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 12px; border: 1px dashed var(--text-light); }
-.admin-stock-section textarea { width: 100%; height: 100px; margin: 10px 0; padding: 10px; font-family: monospace; }
-.admin-stock-section pre { background: #222; color: #fff; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.8rem; margin-top: 10px; max-height: 250px; }
 
 @media (max-width: 480px) { .catalog { grid-template-columns: 1fr 1fr; gap: 12px; } }
 </style>
@@ -122,25 +134,32 @@ footer a { color: var(--turquesa); text-decoration: none; }
 
 <div class="catalog" id="catalog"></div>
 
-<div class="envios-banner">
-  <h3>🚴 Envíos a domicilio disponibles</h3>
-  <p>Realizamos envíos · Dias y horario a convenir por WhatsApp</p>
-</div>
-
-<div class="admin-stock-section" style="display: none;">
-    <h4>⚙️ Descontar Stock desde WhatsApp (Uso Interno)</h4>
-    <p style="font-size:0.8rem; color:var(--text-light)">Pegá acá abajo el renglón del mensaje de WhatsApp recibido para restar el stock automáticamente:</p>
-    <textarea id="whatsappInput" placeholder="Ejemplo: • Vedetinas M y L (3x Regular - Negra L, Blanca M, Roja L)"></textarea>
-    <button class="filter-btn" style="background:var(--azul-noche); color:white;" onclick="procesarStockManual()">Calcular nuevo stock</button>
-    <div id="outputContainer" style="display:none;">
-        <p style="font-size:0.8rem; margin-top:10px; color: green; font-weight: bold;">¡Stock Restado! Reemplazá la lista 'productos' de tu código por esta:</p>
-        <pre id="stockOutput"></pre>
+<!-- NUEVA SECCIÓN: SOBRE MÍ & CONDICIONES -->
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-col">
+      <h3>Sobre Mí ✦</h3>
+      <p>¡Hola! Bienvenidos a Blue Bouquets. Nos apasiona ofrecerte prendas pensadas para tu comodidad diaria sin perder el diseño y la delicadeza. Cada artículo de nuestro catálogo está seleccionado con amor para asegurar la mejor calidad a tu medida.</p>
     </div>
-</div>
+    <div class="about-col">
+      <h3>Envíos y Entregas 🚴</h3>
+      <ul>
+        <li>• <strong>Envíos a domicilio:</strong> Coordinamos días y bandas horarias personalizadas según tu disponibilidad.</li>
+        <li>• <strong>Puntos de encuentro:</strong> Consultanos por zonas céntricas de retiro sin cargo adicional.</li>
+        <li>• Las condiciones finales se terminan de pactar de manera directa al enviar tu carrito por WhatsApp.</li>
+      </ul>
+    </div>
+    <div class="about-col">
+      <h3>Comunidad 💬</h3>
+      <p>Seguinos en nuestras redes para no perderte ningún ingreso, sorteo o promoción exclusiva:</p><br>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/bluebouquets_" target="_blank">@bluebouquets_</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5492944589885" target="_blank">+54 9 294 458-9885</a></p>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <strong style="font-family:'Cormorant Garamond',serif;">Blue Bouquets 💙</strong><br>
-  <a href="https://wa.me/5492944589885">💬 Consultanos por WhatsApp</a>
+  <strong style="font-family:'Cormorant Garamond',serif;">Blue Bouquets 💙</strong> — Tienda de Lencería
 </footer>
 
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
@@ -149,12 +168,10 @@ footer a { color: var(--turquesa); text-decoration: none; }
     <h2>Tu carrito ✦</h2>
     <button class="close-btn" onclick="toggleCart()">✕</button>
   </div>
-  <div class="cart-items" id="cartItems">
-    <div class="cart-empty"><p>Tu carrito está vacío</p></div>
-  </div>
+  <div class="cart-items" id="cartItems"></div>
   <div class="cart-footer">
     <div style="display:flex; justify-content:space-between;">
-      <span>Total:</span>
+      <span>Total Estimado:</span>
       <span class="cart-total-value" id="cartTotal">$0</span>
     </div>
     <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()" disabled>Pedir por WhatsApp</button>
@@ -168,10 +185,10 @@ footer a { color: var(--turquesa); text-decoration: none; }
 <script>
 function renderImg(p) {
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  if (imgSrc.includes('.')) {
+  if (imgSrc && imgSrc.includes('.')) {
     return `<img src="${imgSrc}" alt="${p.name}">`;
   }
-  return imgSrc;
+  return imgSrc || '';
 }
 
 let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
@@ -179,7 +196,8 @@ let sel = {};
 let categoriaActual = 'todos';
 
 function cardSimple(p) {
-  return `<div class="product-card">
+  const tieneStock = p.s > 0;
+  return `<div class="product-card" style="${!tieneStock ? 'opacity: 0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
       <div class="card-img">${renderImg(p)}</div>
     </a>
@@ -187,55 +205,58 @@ function cardSimple(p) {
       <div class="card-category">${p.cat.toUpperCase()}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
-      <button class="add-btn" onclick="addSimple('${p.id}')" ${p.s>0?'':'disabled'}>${p.s>0?'+ Agregar':'Sin Stock'}</button>
+      <button class="add-btn" onclick="addSimple('${p.id}')" ${tieneStock?'':'disabled'}>${tieneStock?'+ Agregar':'Sin Stock'}</button>
     </div>
   </div>`;
 }
 
 function cardVar(p) {
   const talleFiltrado = document.getElementById('sizeFilter').value;
+  const precioRender = p.px ? p.px.toLocaleString('es-AR') : (p.var[0] && p.var[0].px ? p.var[0].px.toLocaleString('es-AR') : 'Consultar');
   
+  const tieneStockGlobal = p.var.some(v => v.s > 0);
+
   const vars = p.var.map(v => {
     let ocultarPorTalle = false;
     if (p.cat === 'conjuntos' && talleFiltrado !== 'todos') {
       if (talleFiltrado === '4' && !v.l.includes('Talle 4')) ocultarPorTalle = true;
       if (talleFiltrado !== '4' && !v.l.includes(`T.${talleFiltrado} `) && !v.l.includes(`T.${talleFiltrado}·`)) ocultarPorTalle = true;
     }
-    
     if (ocultarPorTalle) return '';
-    
     return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`;
   }).join('');
 
-  return `<div class="product-card">
+  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
       <div class="card-img">${renderImg(p)}</div>
     </a>
     <div class="card-body">
       <div class="card-category">${p.cat.toUpperCase()}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
-      <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
+      <div class="card-price">$${precioRender}</div>
       <label>Talle y color</label>
       <div class="variant-grid">${vars}</div>
-      <button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" disabled>Selecciona</button>
+      <button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" disabled>${tieneStockGlobal?'Selecciona':'Sin Stock'}</button>
     </div>
   </div>`;
 }
 
 function cardMulti(p) {
-  const qtys = p.precios.map(pr => `<button class="variant-btn qty-btn-${p.id}" onclick="selQty('${p.id}',${pr.qty},this)">${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
-  return `<div class="product-card">
+  const tieneStockGlobal = p.colores.some(c => c.s > 0);
+  const qtys = p.precios.map(pr => `<button class="variant-btn qty-btn-${p.id}" onclick="selQty('${p.id}',${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
+  
+  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
       <div class="card-img">${renderImg(p)}</div>
     </a>
     <div class="card-body">
-      <div class="card-category">${p.talle}</div>
+      <div class="card-category">${(p.talle || 'Especial').toUpperCase()}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div>
-      <label>Cantidad</label>
+      <label>Cantidad (Promoción)</label>
       <div class="variant-grid">${qtys}</div>
       <div id="cols${p.id}" style="display:none; margin-top: 8px;"><label>Color por unidad</label><div id="colslist${p.id}"></div></div>
-      <button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>Selecciona</button>
+      <button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>${tieneStockGlobal?'Selecciona':'Sin Stock'}</button>
     </div>
   </div>`;
 }
@@ -302,7 +323,7 @@ function addSimple(pid) {
   const p = productos.find(x=>x.id===pid);
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
   const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, name:p.name, det:`x1`, px:p.px, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, name:p.name, det:`x1`, px:p.px, emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
 }
@@ -314,7 +335,7 @@ function addVar(pid) {
   const variant = p.var.find(x=>x.id===v.var);
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
   const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, varId:v.var, name:p.name, det:variant.l, px:p.px, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:v.var, name:p.name, det:variant.l, px:p.px || variant.px || 9990, emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
 }
@@ -327,28 +348,132 @@ function addMulti(pid) {
   const cols = Object.entries(s.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
   const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, qty:s.qty, coloresSelected:Object.values(s.cols), name:p.name, det:`${s.qty}x ${p.talle} - ${cols}`, px, emoji:icon});
+  
+  // Guardamos como individuales para permitir combinaciones cruzadas limpias
+  for(let i=1; i<=s.qty; i++) {
+    carrito.push({
+      id: p.id,
+      tipo: 'multi_item',
+      ofertaGrupo: p.cat, // Agrupa por categoría (ej: bombachas)
+      name: p.name,
+      det: `1x (${p.talle}) - Color: ${s.cols[i]}`,
+      pxBase: p.precios[0].px, // Precio unitario base
+      emoji: icon
+    });
+  }
   upCart();
-  toast(`✓ ${s.qty}x ${p.name}`);
+  toast(`✓ Combo agregado`);
+}
+
+// NUEVA FUNCIÓN PARA CALCULAR TOTAL CON COMBOS MIXTOS COMBINABLES
+function calcularEstructuraCarrito() {
+  let total = 0;
+  let itemsNormales = [];
+  let itemsMulti = {};
+
+  carrito.forEach(item => {
+    if (item.tipo === 'multi_item') {
+      if (!itemsMulti[item.ofertaGrupo]) itemsMulti[item.ofertaGrupo] = [];
+      itemsMulti[item.ofertaGrupo].push(item);
+    } else {
+      itemsNormales.push(item);
+      total += item.px;
+    }
+  });
+
+  // Procesar los grupos combinables (ej: bombachas en oferta)
+  Object.keys(itemsMulti).forEach(grupo => {
+    const list = itemsMulti[grupo];
+    const cant = list.length;
+    
+    // Buscamos si en la DB hay un producto base para sacar la regla de precios de ese grupo
+    const prodBase = productos.find(x => x.cat === grupo && x.tipo === 'multi');
+    
+    if (prodBase && prodBase.precios) {
+      // Ordenar las reglas de mayor cantidad a menor (ej: 3, 2, 1)
+      const reglas = [...prodBase.precios].sort((a,b) => b.qty - a.qty);
+      let resto = cant;
+      let costoGrupo = 0;
+
+      while (resto > 0) {
+        const reglaAplicable = reglas.find(r => resto >= r.qty);
+        if (reglaAplicable) {
+          costoGrupo += reglaAplicable.px;
+          resto -= reglaAplicable.qty;
+        } else {
+          // Si sobra suelta, va a precio unitario base
+          costoGrupo += resto * list[0].pxBase;
+          resto = 0;
+        }
+      }
+      total += costoGrupo;
+    } else {
+      // Fallback si no hay regla: sumar unitarios
+      list.forEach(i => total += i.pxBase);
+    }
+  });
+
+  return { total, itemsMulti, itemsNormales };
 }
   
 function upCart() {
   localStorage.setItem('bb_cart', JSON.stringify(carrito));
   const cnt = carrito.length;
   document.getElementById('cartCount').textContent = cnt;
-  const total = carrito.reduce((a,b)=>a+b.px,0);
-  let html = cnt===0 ? '<div class="cart-empty"><p>Carrito vacío</p></div>' : carrito.map((item,i) => 
-    `<div class="cart-item"><div class="cart-item-icon">${item.emoji}</div><div style="flex:1"><div class="cart-item-name">${item.name}</div><div class="cart-item-variant">${item.det}</div><div class="cart-item-bottom"><span>$${item.px.toLocaleString('es-AR')}</span><button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button></div></div></div>`
-  ).join('');
+  
+  const { total } = calcularEstructuraCarrito();
+
+  let html = cnt===0 ? '<div class="cart-empty"><p>Tu carrito está vacío</p></div>' : carrito.map((item,i) => {
+    const pstr = item.tipo === 'multi_item' ? `$${item.pxBase.toLocaleString('es-AR')}` : `$${item.px.toLocaleString('es-AR')}`;
+    return `<div class="cart-item">
+      <div class="cart-item-icon">${item.emoji}</div>
+      <div style="flex:1">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-variant">${item.det}</div>
+        <div class="cart-item-bottom">
+          <span>${pstr}</span>
+          <button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  
   document.getElementById('cartItems').innerHTML = html;
   document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
   document.getElementById('waBtn').disabled = cnt===0;
 }
 
+// CORRECCIÓN Y NUEVA ESTRUCTURACIÓN DEL PEDIDO DE WHATSAPP
 function finalizarPedido() {
   if(carrito.length===0) return;
-  const total = carrito.reduce((a,b)=>a+b.px,0);
-  const msg = '¡Hola!\nQuiero comprar:\n\n' + carrito.map(i => `• ${i.name} (${i.det}) - $${i.px.toLocaleString('es-AR')}`).join('\n') + `\n\nTOTAL: $${total.toLocaleString('es-AR')}`;
+  
+  const { total, itemsNormales, itemsMulti } = calcularEstructuraCarrito();
+  
+  let msg = '✨ *NUEVO PEDIDO - BLUE BOUQUETS* ✨\n\n';
+  msg += 'Hola! Quiero encargar las siguientes prendas:\n';
+  msg += '────────────────────\n';
+
+  // Añadir prendas comunes
+  if (itemsNormales.length > 0) {
+    itemsNormales.forEach(i => {
+      msg += `🛍️ *${i.name}*\n  └ ${i.det} → $${i.px.toLocaleString('es-AR')}\n\n`;
+    });
+  }
+
+  // Añadir ofertas combinadas agrupadas
+  Object.keys(itemsMulti).forEach(grupo => {
+    const list = itemsMulti[grupo];
+    msg += `📦 *PROMO COMBINABLE (${grupo.toUpperCase()})*:\n`;
+    list.forEach(i => {
+      msg += `  • ${i.name} — ${i.det}\n`;
+    });
+    msg += `\n`;
+  });
+
+  msg += '────────────────────\n';
+  msg += `💰 *TOTAL ESTIMADO:* $${total.toLocaleString('es-AR')}\n\n`;
+  msg += '¿Me confirmás el stock y las condiciones de envío? ¡Muchas gracias! 💙';
+
   window.open(`https://wa.me/5492944589885?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
@@ -375,23 +500,20 @@ function filtrar(cat,btn) {
 
 function aplicarFiltroTalle() {
   const talleSeleccionado = document.getElementById('sizeFilter').value;
-  
   let productosFiltrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.cat === categoriaActual);
   
   if (talleSeleccionado !== 'todos') {
     productosFiltrados = productosFiltrados.filter(p => {
       if (p.cat !== 'conjuntos') return true; 
-      
       return p.var.some(v => {
         if (talleSeleccionado === '4') {
-          return v.l.includes('Talle 4') && v.s > 0;
+          return v.l.includes('Talle 4');
         } else {
-          return (v.l.includes(`T.${talleSeleccionado} `) || v.l.includes(`T.${talleSeleccionado}·`)) && v.s > 0;
+          return (v.l.includes(`T.${talleSeleccionado} `) || v.l.includes(`T.${talleSeleccionado}·`));
         }
       });
     });
   }
-  
   renderCatalog(productosFiltrados);
 }
 
@@ -409,49 +531,6 @@ function toast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), 2200);
-}
-
-function procesarStockManual() {
-  const input = document.getElementById('whatsappInput').value;
-  if(!input.trim()) return;
-  
-  let copiaProductos = JSON.parse(JSON.stringify(productos));
-  const lineas = input.split('\n');
-
-  lineas.forEach(linea => {
-    if(!linea.startsWith('•')) return;
-    
-    copiaProductos.forEach(p => {
-      if(linea.includes(`• ${p.name}`)) {
-        if(p.tipo === 'simple') {
-          if(p.s > 0) p.s -= 1;
-        } 
-        else if(p.tipo === 'var') {
-          p.var.forEach(v => {
-            if(linea.includes(v.l)) {
-              if(v.s > 0) v.s -= 1;
-            }
-          });
-        } 
-        else if(p.tipo === 'multi') {
-          p.colores.forEach(c => {
-            const regex = new RegExp(c.c, "g");
-            const matches = (linea.match(regex) || []).length;
-            if(matches > 0) {
-              p.colores.forEach(colEst => {
-                if(colEst.c === c.c) {
-                  colEst.s = Math.max(0, colEst.s - matches);
-                }
-              });
-            }
-          });
-        }
-      }
-    });
-  });
-
-  document.getElementById('stockOutput').textContent = "const productos = " + JSON.stringify(copiaProductos, null, 2) + ";";
-  document.getElementById('outputContainer').style.display = 'block';
 }
 
 function init() {
