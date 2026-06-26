@@ -162,7 +162,7 @@ const productos = [
     sku: "Less XXL de algodon",
     cat: "bombachas",
     name: "Less XXL de Algodón",
-    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
+    img: ["images/lessxxl1.jpeg", "images/lessxxl2.jpeg"],
     desc: "Línea clásica de algodón modelador en talles grandes, tiro alto confortable.",
     tipo: "multi",
     talle: "XXL",
@@ -581,6 +581,112 @@ const productos = [
       { id: "mv100c", l: "T.100 · Crema", s: 1 }
     ]
   },
+  {
+    id: "lunaria",
+    sku: "Lunaria Star",
+    cat: "conjuntos",
+    name: "Lunaria",
+    img: ["images/lunaria1.jpeg", "images/lunaria2.jpeg"], // Reemplazá por tus imágenes reales
+    desc: "Conjunto taza soft línea Star, diseñado para un calce cómodo y perfecto.", // Editá la descripción a tu gusto
+    tipo: "var",
+    px: 9990,
+    var: [
+      { id: "ln85be", l: "T.85 · Beige", s: 1 },
+      { id: "ln90b", l: "T.90 · Blanco", s: 1 },
+      { id: "ln95n", l: "T.95 · Negro", s: 1 },
+      { id: "ln95g", l: "T.95 · Gris", s: 1 },
+      { id: "ln100b", l: "T.100 · Blanco", s: 1 },
+      { id: "ln100be", l: "T.100 · Beige", s: 1 }
+    ]
+  },
+  {
+    id: "belladona",
+    sku: "Belladona Martha",
+    cat: "conjuntos",
+    name: "Belladona",
+    img: ["images/belladona1.jpeg", "images/belladona2.jpeg"], // Reemplazá por tus imágenes reales
+    desc: "Conjunto línea Martha confeccionado con materiales premium para un calce ideal.", // Editá la descripción a tu gusto
+    tipo: "var",
+    px: 11490,
+    var: [
+      { id: "bd85be", l: "T.85 · Beige", s: 1 },
+      { id: "bd85b", l: "T.85 · Blanco", s: 1 },
+      { id: "bd90be", l: "T.90 · Beige", s: 1 },
+      { id: "bd95b", l: "T.95 · Blanco", s: 1 },
+      { id: "bd100g", l: "T.100 · Gris", s: 1 },
+      { id: "bd100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
+  // --- NUEVOS CONJUNTOS ---
+  {
+    id: "azalea",
+    sku: "Azalea Penny",
+    cat: "conjuntos",
+    name: "Azalea",
+    img: ["images/azalea1.jpeg", "images/azalea2.jpeg", "images/azalea3.jpeg"],
+    desc: "Conjunto línea Penny, excelente calce y comodidad.",
+    tipo: "var",
+    px: 11490,
+    var: [
+      { id: "az85r", l: "T.85 · Rosa", s: 1 },
+      { id: "az90bo", l: "T.90 · Bordó", s: 1 },
+      { id: "az90be", l: "T.90 · Beige", s: 1 },
+      { id: "az95r", l: "T.95 · Rosa", s: 1 },
+      { id: "az95b", l: "T.95 · Blanco", s: 1 },
+      { id: "az100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
+  {
+    id: "jacinto",
+    sku: "Jacinto Ximena",
+    cat: "conjuntos",
+    name: "Jacinto",
+    img: ["images/jacinto1.jpeg", "images/jacinto2.jpeg", "images/jacinto3.jpeg"],
+    desc: "Conjunto línea Ximena con diseño delicado y confortable.",
+    tipo: "var",
+    px: 10990,
+    var: [
+      { id: "jc85c", l: "T.85 · Celeste", s: 1 },
+      { id: "jc90b", l: "T.90 · Blanco", s: 1 },
+      { id: "jc95c", l: "T.95 · Celeste", s: 1 },
+      { id: "jc95n", l: "T.95 · Negro", s: 1 },
+      { id: "jc100bo", l: "T.100 · Bordó", s: 1 }
+    ]
+  },
+  {
+    id: "amapola",
+    sku: "Amapola Loretta",
+    cat: "conjuntos",
+    name: "Amapola",
+    img: ["images/amapola1.jpeg", "images/amapola2.jpeg", "images/amapola3.jpeg"],
+    desc: "Conjunto línea Loretta, estilo único y gran soporte.",
+    tipo: "var",
+    px: 10990,
+    var: [
+      { id: "am85m", l: "T.85 · Marrón", s: 1 },
+      { id: "am85n", l: "T.85 · Negro", s: 1 },
+      { id: "am90r", l: "T.90 · Rojo", s: 1 },
+      { id: "am90n", l: "T.90 · Negro", s: 1 },
+      { id: "am95m", l: "T.95 · Marrón", s: 1 },
+      { id: "am100r", l: "T.100 · Rojo", s: 1 }
+    ]
+  },
+  {
+    id: "iris",
+    sku: "Iris Corina",
+    cat: "conjuntos",
+    name: "Iris",
+    img: ["images/iris1.jpeg", "images/iris2.jpeg", "images/iris3.jpeg", "images/iris4.jpeg"],
+    desc: "Conjunto línea Corina, detalles exclusivos y ajuste perfecto.",
+    tipo: "var",
+    px: 11490,
+    var: [
+      { id: "ir85n", l: "T.85 · Negro", s: 1 },
+      { id: "ir95bc", l: "T.95 · Blanco y Celeste", s: 1 },
+      { id: "ir100r", l: "T.100 · Rosa", s: 1 }
+      { id: "ir100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
 
   // --- BOXERS ---
   {
@@ -594,6 +700,28 @@ const productos = [
     px: 7490,
     var: [
       { id: "bt4b", l: "Talle 4 · Blanco", s: 0 }
+    ]
+  },
+  {
+    id: "boxerdufour",
+    sku: "Boxer Dufour",
+    cat: "boxers",
+    name: "Bóxer Dufour",
+    img: ["images/boxerdufour1.jpeg"], // Reemplazá por la ruta de tu imagen real
+    desc: "Bóxer clásico de algodón y lycra marca Dufour, diseñado para un calce cómodo y duradero.",
+    tipo: "var",
+    px: 7490,
+    var: [
+      // Talle M
+      { id: "dfmn", l: "Talle M · Negro", s: 1 },
+      { id: "dfmr", l: "Talle M · Rojo", s: 3 },
+      { id: "dfmg", l: "Talle M · Gris", s: 2 },
+      // Talle L
+      { id: "dflg", l: "Talle L · Gris", s: 1 },
+      { id: "dflr", l: "Talle L · Rojo", s: 2 },
+      // Talle XL
+      { id: "dfxlr", l: "Talle XL · Rojo", s: 1 },
+      { id: "dfxlg", l: "Talle XL · Gris", s: 1 }
     ]
   },
 
