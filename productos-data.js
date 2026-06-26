@@ -446,7 +446,7 @@ const productos = [
     sku: "Clavel",
     cat: "conjuntos",
     name: "Clavel",
-    img: ["images/clavel1.jpeg", "images/clavel2.jpeg", "images/clavel3,jpeg", "images/clavel4.jpeg"],
+    img: ["images/clavel1.jpeg", "images/clavel2.jpeg", "images/clavel3.jpeg", "images/clavel4.jpeg"],
     desc: "Edición especial confeccionada en delicado encaje bordado de alta calidad.",
     tipo: "var",
     px: 11490,
@@ -723,7 +723,6 @@ const productos = [
       { id: "dfxlr", l: "Talle XL · Rojo", s: 1 },
       { id: "dfxlg", l: "Talle XL · Gris", s: 1 }
     ]
-  },
 
   // --- ROPA ---
   {
