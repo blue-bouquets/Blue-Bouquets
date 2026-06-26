@@ -12,8 +12,14 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca M", s: 1 }, { c: "Roja M", s: 1 }, { c: "Gris M", s: 1 }, { c: "Crema M", s: 1 }, { c: "Negra M", s: 1 }
-    ]
+    { c: "Blanca M", s: 1 },
+    { c: "Roja M", s: 1 },
+    { c: "Beige M", s: 2 },
+    { c: "Crema M", s: 2 },
+    { c: "Beige L", s: 1 },
+    { c: "Negra L", s: 1 },
+    { c: "Blanca L", s: 1 }
+  ]
   },
   {
     id: "vedetinas_xl",
@@ -27,10 +33,10 @@ const productos = [
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
       { c: "Negra XL", s: 2 }, 
-      { c: "Beige XL", s: 3 }, 
+      { c: "Beige XL", s: 2 }, 
       { c: "Gris XL", s: 3 }, 
-      { c: "Blanca XL", s: 2 }, 
-      { c: "Roja XL", s: 2 }
+      { c: "Blanca XL", s: 1 }, 
+      { c: "Roja XL", s: 1 }
     ]
   },
   {
@@ -44,7 +50,9 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Piel", s: 2 }, { c: "Blanca", s: 2 }, { c: "Rosa", s: 1 }
+      { c: "Piel", s: 2 }, 
+      { c: "Blanca", s: 2 }, 
+      { c: "Rosa", s: 1 }
     ]
   },
   {
@@ -58,7 +66,9 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Beige", s: 0 }, { c: "Rojo", s: 0 }, { c: "Blanco", s: 0 }
+      { c: "Beige", s: 0 }, 
+      { c: "Rojo", s: 0 }, 
+      { c: "Blanco", s: 0 }
     ]
   },
   {
@@ -72,7 +82,9 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Negro", s: 3 }, { c: "Blanco", s: 2 }, { c: "Rojo", s: 0 }
+      { c: "Negro", s: 3 }, 
+      { c: "Blanco", s: 2 }, 
+      { c: "Rojo", s: 0 }
     ]
   },
   {
@@ -84,7 +96,10 @@ const productos = [
     img: ["images/lessencaje4.jpeg", "images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg", "images/lessencaje.jpeg"],
     precios: [{ qty: 1, px: 3200 }, { qty: 2, px: 5500 }, { qty: 3, px: 7800 }],
     colores: [
-      { c: "Blanca", s: 3 }, { c: "Roja", s: 0 }, { c: "Negra", s: 0 }, { c: "Crema", s: 0 }
+      { c: "Blanca", s: 7 }, 
+      { c: "Bordo", s: 1 }, 
+      { c: "Negra", s: 5 }, 
+      { c: "Crema", s: 3 }
     ]
   },
   {
@@ -98,7 +113,9 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 2 }, { c: "Negro", s: 0 }, { c: "Beige", s: 0 }
+      { c: "Blanca", s: 3 }, 
+      { c: "Negro", s: 0 }, 
+      { c: "Beige", s: 1 }
     ]
   },
   {
@@ -112,7 +129,10 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Negra", s: 1 }, { c: "Blanca", s: 3 }, { c: "Gris", s: 1 }, { c: "Beige", s: 0 }
+      { c: "Negra", s: 0 }, 
+      { c: "Blanca", s: 2 }, 
+      { c: "Gris", s: 4 }, 
+      { c: "Beige", s: 1 }
     ]
   },
   {
@@ -126,7 +146,9 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 3 }, { c: "Roja", s: 2 }, { c: "Negra", s: 5 }
+      { c: "Blanca", s: 2 }, 
+      { c: "Roja", s: 1 }, 
+      { c: "Negra", s: 1 }
     ]
   },
   {
@@ -140,7 +162,11 @@ const productos = [
     talle: "XL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Rojo", s: 3 }, { c: "Negra", s: 2 }, { c: "Blanco", s: 4 }, { c: "Beige", s: 3 }, { c: "Gris", s: 3 }
+      { c: "Rojo", s: 0 }, 
+      { c: "Negra", s: 0 }, 
+      { c: "Blanco", s: 2 }, 
+      { c: "Beige", s: 0 }, 
+      { c: "Gris", s: 0 }
     ]
   },
   {
@@ -168,7 +194,12 @@ const productos = [
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Blanca", s: 4 }, { c: "Beige", s: 6 }, { c: "Negra", s: 4 }, { c: "Crema", s: 2 }, { c: "Rojo", s: 4 }, { c: "Gris", s: 4 }
+      { c: "Blanca", s: 4 }, 
+      { c: "Beige", s: 6 }, 
+      { c: "Negra", s: 0 }, 
+      { c: "Crema", s: 2 }, 
+      { c: "Rojo", s: 3 }, 
+      { c: "Gris", s: 2 }
     ]
   },
   {
@@ -183,9 +214,9 @@ const productos = [
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
       { c: "Roja", s: 3 }, 
-      { c: "Beige", s: 3 }, 
-      { c: "Blanca", s: 3 }, 
-      { c: "Negra", s: 2 }
+      { c: "Beige", s: 2 }, 
+      { c: "Blanca", s: 2 }, 
+      { c: "Negra", s: 1 }
     ]
   },
   {
@@ -200,9 +231,9 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Blanca", s: 3 }, 
-      { c: "Negra", s: 1 }, 
+      { c: "Negra", s: 0 }, 
       { c: "Beige", s: 3 }, 
-      { c: "Rosa", s: 2 }
+      { c: "Rosa", s: 1 }
     ]
   },
   {
@@ -217,8 +248,8 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Beige", s: 2 },
-      { c: "Blanca", s: 1 },
-      { c: "Negra", s: 1 }
+      { c: "Blanca", s: 0 },
+      { c: "Negra", s: 0 }
     ]
   },
   {
@@ -248,9 +279,9 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Violeta", s: 4 },
-      { c: "Roja", s: 4 },
-      { c: "Negra", s: 4 }
+      { c: "Violeta", s: 3 },
+      { c: "Roja", s: 2 },
+      { c: "Negra", s: 2 }
     ]
   },
 
@@ -264,7 +295,7 @@ const productos = [
     desc: "Súper abrigadas con puño elástico suave que no aprieta.",
     tipo: "simple",
     px: 3000,
-    s: 11
+    s: 5
   },
   {
     id: "mediasdeplush",
@@ -276,9 +307,7 @@ const productos = [
     tipo: "var",
     px: 3000,
     var: [
-      { id: "mpn", l: "Pack Negro", s: 2 },
-      { id: "mpb", l: "Pack Beige", s: 1 },
-      { id: "mpc", l: "Pack Combinado", s: 1 }
+      { id: "mpn", 2: "Pack Surtido", s: 2 },
     ]
   },
 
@@ -294,8 +323,6 @@ const productos = [
     px: 9990,
     var: [
       { id: "bg85b", l: "T.85 · Blanco", s: 1 },
-      { id: "bg85n", l: "T.85 · Negro", s: 2 },
-      { id: "bg100b", l: "T.100 · Blanco", s: 1 }
     ]
   },
   {
@@ -350,9 +377,8 @@ const productos = [
     tipo: "var",
     px: 9990,
     var: [
-      { id: "al85n1", l: "T.85 · Negro (Unidad 1)", s: 1 },
-      { id: "al85n2", l: "T.85 · Negro (Unidad 2)", s: 1 },
-      { id: "al95g", l: "T.95 · Gris", s: 1 }
+      { id: "al85n1", l: "T.85 · Negro", s: 2 },
+      { id: "al90g", l: "T.90 · Gris", s: 1 }
     ]
   },
   {
@@ -365,8 +391,6 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "gd85n", l: "T.85 · Negro", s: 1 },
-      { id: "gd95r", l: "T.95 · Rojo", s: 1 },
       { id: "gd100r", l: "T.100 · Rojo", s: 1 },
       { id: "gd100b", l: "T.100 · Blanco", s: 1 }
     ]
@@ -382,7 +406,6 @@ const productos = [
     px: 9990,
     var: [
       { id: "fr90n", l: "T.90 · Negro", s: 1 },
-      { id: "fr90b", l: "T.90 · Blanco", s: 1 }
     ]
   },
   {
@@ -422,7 +445,6 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "cm90b", l: "T.90 · Blanco", s: 1 },
       { id: "cm95be", l: "T.95 · Beige", s: 1 }
     ]
   },
@@ -436,7 +458,6 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "an95v", l: "T.95 · Violeta", s: 1 },
       { id: "an100a", l: "T.100 · Amarillo", s: 1 },
       { id: "an100v", l: "T.100 · Violeta", s: 1 }
     ]
@@ -451,7 +472,7 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "cv90b", l: "T.90 · Blanco", s: 1 }
+      { id: "cv90b", l: "T.90 · Blanco", s: 0 }
     ]
   },
   {
@@ -464,9 +485,7 @@ const productos = [
     tipo: "var",
     px: 8990, // Conserva precio base general de conjuntos comunes
     var: [
-      { id: "lr4m", l: "Talle 4 · Marrón", s: 1 },
       { id: "lr4b", l: "Talle 4 · Blanco", s: 1 },
-      { id: "lr4r", l: "Talle 4 · Rosa", s: 2 },
       { id: "lr4a", l: "Talle 4 · Amarillo", s: 2 }
     ]
   },
@@ -480,7 +499,6 @@ const productos = [
     tipo: "var",
     px: 9900,
     var: [
-      { id: "ck95n", l: "T.95 · Negro", s: 1 },
       { id: "ck95g", l: "T.95 · Gris", s: 1 },
       { id: "ck100b", l: "T.100 · Blanco", s: 1 }
     ]
@@ -543,9 +561,9 @@ const productos = [
     tipo: "var",
     px: 11990,
     var: [
-      { id: "gs85r", l: "T.85 · Rosa", s: 1 },
-      { id: "gs90b", l: "T.90 · Blanco", s: 1 },
-      { id: "gs100r", l: "T.100 · Rosa", s: 1 }
+      { id: "gs85r", l: "T.85 · Rosa", s: 0 },
+      { id: "gs90b", l: "T.90 · Blanco", s: 0 },
+      { id: "gs100r", l: "T.100 · Rosa", s: 0 }
     ]
   },
   {
@@ -559,7 +577,6 @@ const productos = [
     px: 9990,
     var: [
       { id: "rs85r", l: "T.85 · Rojo", s: 1 },
-      { id: "rs90b", l: "T.90 · Blanco", s: 1 },
       { id: "rs90r", l: "T.90 · Rojo", s: 1 },
       { id: "rs95n", l: "T.95 · Negro", s: 1 }
     ]
@@ -629,9 +646,7 @@ const productos = [
     px: 11490,
     var: [
       { id: "az85r", l: "T.85 · Rosa", s: 1 },
-      { id: "az90bo", l: "T.90 · Bordó", s: 1 },
       { id: "az90be", l: "T.90 · Beige", s: 1 },
-      { id: "az95r", l: "T.95 · Rosa", s: 1 },
       { id: "az95b", l: "T.95 · Blanco", s: 1 },
       { id: "az100n", l: "T.100 · Negro", s: 1 }
     ]
@@ -718,7 +733,7 @@ const productos = [
       { id: "dfmg", l: "Talle M · Gris", s: 2 },
       // Talle L
       { id: "dflg", l: "Talle L · Gris", s: 1 },
-      { id: "dflr", l: "Talle L · Rojo", s: 2 },
+      { id: "dflr", l: "Talle L · Rojo", s: 1 },
       // Talle XL
       { id: "dfxlr", l: "Talle XL · Rojo", s: 1 },
       { id: "dfxlg", l: "Talle XL · Gris", s: 1 }
@@ -735,6 +750,6 @@ const productos = [
     desc: "Calzas con frisa interior premium, ideales para mantener el calor corporal con total comodidad.",
     tipo: "simple",
     px: 7490,
-    s: 3
+    s: 1
   }
 ];
