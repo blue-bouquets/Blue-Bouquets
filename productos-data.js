@@ -723,6 +723,7 @@ const productos = [
       { id: "dfxlr", l: "Talle XL · Rojo", s: 1 },
       { id: "dfxlg", l: "Talle XL · Gris", s: 1 }
     ]
+  },
 
   // --- ROPA ---
   {
