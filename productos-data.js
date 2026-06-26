@@ -66,7 +66,7 @@ const productos = [
     sku: "Less anchas red",
     cat: "bombachas",
     name: "Less Anchas de Red",
-    img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "mages/lessred3.jpeg"],
+    img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "images/lessred3.jpeg"],
     desc: "Material texturizado tipo red, elástica y de excelente calce.",
     tipo: "multi",
     talle: "Regular",
@@ -446,7 +446,7 @@ const productos = [
     sku: "Clavel",
     cat: "conjuntos",
     name: "Clavel",
-    img: ["images/clavel1.jpeg", "images/clavel2,jpeg", "images/clavel3,jpeg", "images/clavel4.jpeg"],
+    img: ["images/clavel1.jpeg", "images/clavel2.jpeg", "images/clavel3,jpeg", "images/clavel4.jpeg"],
     desc: "Edición especial confeccionada en delicado encaje bordado de alta calidad.",
     tipo: "var",
     px: 11490,
@@ -683,7 +683,7 @@ const productos = [
     var: [
       { id: "ir85n", l: "T.85 · Negro", s: 1 },
       { id: "ir95bc", l: "T.95 · Blanco y Celeste", s: 1 },
-      { id: "ir100r", l: "T.100 · Rosa", s: 1 }
+      { id: "ir100r", l: "T.100 · Rosa", s: 1 },
       { id: "ir100n", l: "T.100 · Negro", s: 1 }
     ]
   },
