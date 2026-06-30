@@ -1,545 +1,524 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blue Bouquets — Lencería</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --verde: #37757d;
-  --turquesa: #01abbd;
-  --menta: #edf5fe;
-  --azul-noche: #11354b;
-  --crema: #edf5fd;
-  --arena: #D4B8A0;
-  --text: #017576;
-  --text-light: #5a7a82;
-  --tarjeta-bg: #e2eef8; /* Fondo más oscuro para contraste */
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; }
-header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--menta); text-decoration: none; }
-.logo span { color: var(--turquesa); font-style: italic; }
-.cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 10px 20px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; }
-.cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 20px; height: 20px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Bouquets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #37757d;
+      --turquesa: #01abbd;
+      --menta: #edf5fe;
+      --azul-noche: #11354b;
+      --crema: #edf5fd;
+      --arena: #D4B8A0;
+      --text: #017576;
+      --text-light: #5a7a82;
+      --tarjeta-bg: #e2eef8; 
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; }
 
-.hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 60px 24px 48px; text-align: center; }
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 300; color: white; margin-bottom: 12px; }
-.hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; }
+    header { background: var(--azul-noche); padding: 0 16px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--menta); text-decoration: none; letter-spacing: 0.5px; }
+    .logo span { color: var(--turquesa); font-style: italic; }
 
-.filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
-.filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; }
-.filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
-.size-filter-container { display: flex; align-items: center; gap: 6px; }
-.size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 12px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
+    .cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 8px 16px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+    .cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 
-/* Catálogo con Fotos Verticales 4:5 */
-.catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-.product-card { background: var(--tarjeta-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(26,58,74,0.08); display: flex; flex-direction: column; }
-.card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
-.card-img { width: 100%; aspect-ratio: 4 / 5; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; }
-.card-img img { width: 100%; height: 100%; object-fit: cover; }
-.card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-.card-category { font-size: 0.7rem; color: var(--azul-noche); font-weight: 700; letter-spacing: 0.5px; }
-.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--azul-noche); }
-.card-price { font-size: 1.15rem; font-weight: 600; color: var(--verde); }
+    .hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 60px 24px 48px; text-align: center; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 300; color: white; margin-bottom: 12px; }
+    .hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; }
 
-label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display: block; margin-bottom: 4px; }
-.variant-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-.variant-btn { border: 1.5px solid white; background: white; color: var(--text); padding: 5px 11px; border-radius: 8px; cursor: pointer; font-size: 0.78rem; }
-.variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
-.variant-btn:disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
+    .filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
+    .filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; }
+    .filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
+    .size-filter-container { display: flex; align-items: center; gap: 6px; }
+    .size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 12px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
 
-.unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-.unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
-.unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
-.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
-.unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
-.unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    .catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .product-card { background: var(--tarjeta-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(26,58,74,0.08); display: flex; flex-direction: column; }
+    .card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
+    .card-img { width: 100%; aspect-ratio: 4 / 5; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .card-category { font-size: 0.7rem; color: var(--azul-noche); font-weight: 700; letter-spacing: 0.5px; }
+    .card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--azul-noche); }
+    .card-price { font-size: 1.15rem; font-weight: 600; color: var(--verde); }
 
-.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 600; width: 100%; transition: background 0.2s; }
-.add-btn:hover { background: var(--turquesa); }
-.add-btn:disabled { background: #b0c2c4; cursor: not-allowed; }
+    label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display: block; margin-bottom: 4px; }
+    .promo-label { font-size: 0.75rem; font-weight: 500; color: var(--text-light); display: block; margin-bottom: 4px; }
 
-/* Nueva sección Informativa "Sobre Mí" */
-.about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); }
-.about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left; }
-.about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--azul-noche); margin-bottom: 12px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 4px; }
-.about-col p, .about-col ul { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; list-style: none; }
-.about-col ul li { margin-bottom: 6px; }
-.about-col a { color: var(--turquesa); text-decoration: none; font-weight: 500; }
+    .variant-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .variant-btn { border: 1.5px solid white; background: white; color: var(--text); padding: 5px 11px; border-radius: 8px; cursor: pointer; font-size: 0.78rem; }
+    .variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
+    .variant-btn:disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
 
-footer { background: var(--azul-noche); padding: 24px; text-align: center; color: var(--menta); font-size: 0.85rem; }
+    .unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
+    .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+    .unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
+    .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
+    .unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
-/* Carrito */
-.cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
-.cart-overlay.open { opacity: 1; pointer-events: all; }
-.cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
-.cart-panel.open { transform: translateX(0); }
-.cart-header { background: var(--azul-noche); padding: 20px 24px; display: flex; justify-content: space-between; color: white; }
-.cart-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--menta); }
-.close-btn { background: none; border: none; color: var(--menta); font-size: 1.5rem; cursor: pointer; }
-.cart-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-.cart-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-light); font-size: 0.9rem; }
-.cart-item { background: white; border-radius: 12px; padding: 14px; display: flex; gap: 12px; box-shadow: 0 1px 6px rgba(26,58,74,0.06); }
-.cart-item-icon { width: 48px; height: 48px; background: #018587; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; overflow: hidden; }
-.cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--azul-noche); }
-.cart-item-variant { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
-.cart-item-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
-.remove-item { background: none; border: none; color: var(--arena); cursor: pointer; }
-.cart-footer { padding: 16px 20px; background: white; border-top: 1px solid var(--menta); }
-.cart-total-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--azul-noche); }
-.whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; border-radius: 12px; padding: 15px; cursor: pointer; font-weight: 600; margin-top: 10px; }
-.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
-.toast.show { transform: translateX(-50%) translateY(0); }
+    .add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 600; width: 100%; transition: background 0.2s; }
+    .add-btn:hover { background: var(--turquesa); }
+    .add-btn:disabled { background: #b0c2c4; cursor: not-allowed; }
 
-@media (max-width: 480px) { .catalog { grid-template-columns: 1fr 1fr; gap: 12px; } }
-</style>
+    /* SECCIÓN EDITABLE DESDE GITHUB (Textos e información de abajo) */
+    .about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); }
+    .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left; }
+    .about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--azul-noche); margin-bottom: 12px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 4px; }
+    .about-col p, .about-col ul { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; list-style: none; }
+    .about-col ul li { margin-bottom: 6px; }
+    .about-col a { color: var(--turquesa); text-decoration: none; font-weight: 500; }
+
+    footer { background: var(--azul-noche); padding: 24px; text-align: center; color: var(--menta); font-size: 0.85rem; }
+
+    .cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
+    .cart-overlay.open { opacity: 1; pointer-events: all; }
+    .cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
+    .cart-panel.open { transform: translateX(0); }
+    .cart-header { background: var(--azul-noche); padding: 20px 24px; display: flex; justify-content: space-between; color: white; }
+    .cart-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--menta); }
+    .close-btn { background: none; border: none; color: var(--menta); font-size: 1.5rem; cursor: pointer; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .cart-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-light); font-size: 0.9rem; }
+    .cart-item { background: white; border-radius: 12px; padding: 14px; display: flex; gap: 12px; box-shadow: 0 1px 6px rgba(26,58,74,0.06); }
+    .cart-item-icon { width: 48px; height: 48px; background: #018587; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; overflow: hidden; }
+    .cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--azul-noche); }
+    .cart-item-variant { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
+    .cart-item-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+    .remove-item { background: none; border: none; color: var(--arena); cursor: pointer; }
+    .cart-footer { padding: 16px 20px; background: white; border-top: 1px solid var(--menta); }
+    .cart-total-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--azul-noche); }
+    .whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; border-radius: 12px; padding: 15px; cursor: pointer; font-weight: 600; margin-top: 10px; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 480px) { .catalog { grid-template-columns: 1fr 1fr; gap: 12px; } }
+  </style>
 </head>
 <body>
 
-<header>
-  <a class="logo" href="index.html">Blue <span>Bouquets</span></a>
-  <button class="cart-btn" onclick="toggleCart()">🛒 <span class="cart-count" id="cartCount">0</span></button>
-</header>
+  <header>
+    <a href="#" class="logo">Blue <span>Bouquets</span></a>
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
 
-<div class="hero">
-  <h1>Comodidad y estilo<br><em style="color: var(--turquesa); font-style: italic;">A tu medida</em></h1>
-  <p>Bombachas, medias, conjuntos y más...</p>
-</div>
+  <section class="hero">
+    <h1>Blue Bouquets</h1>
+    <p>Lencería de diseño & prendas pensadas para tu comodidad</p>
+  </section>
 
-<div class="filters">
-  <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
-  <button class="filter-btn" onclick="filtrar('bombachas', this)">Bombachas</button>
-  <button class="filter-btn" onclick="filtrar('medias', this)">Medias</button>
-  <button class="filter-btn" onclick="filtrar('conjuntos', this)">Conjuntos</button>
-  <button class="filter-btn" onclick="filtrar('boxers', this)">Bóxers</button>
-  <button class="filter-btn" onclick="filtrar('ropa', this)">Ropa</button>
-  
-  <div class="size-filter-container" id="sizeFilterWrapper">
-    <label for="sizeFilter" style="margin-bottom:0; color:var(--verde);">Talle:</label>
-    <select id="sizeFilter" class="size-select" onchange="aplicarFiltroTalle()">
-      <option value="todos">Todos</option>
-      <option value="85">85</option>
-      <option value="90">90</option>
-      <option value="95">95</option>
-      <option value="100">100</option>
-      <option value="115">115</option>
-      <option value="4">Juvenil (T.4)</option>
-    </select>
-  </div>
-</div>
-
-<div class="catalog" id="catalog"></div>
-
-<!-- NUEVA SECCIÓN: SOBRE MÍ & CONDICIONES -->
-<section class="about-section">
-  <div class="about-container">
-    <div class="about-col">
-      <h3>Sobre Mí ✦</h3>
-      <p>¡Hola! Bienvenidos a Blue Bouquets. Nos apasiona ofrecerte prendas pensadas para tu comodidad diaria sin perder el diseño y la delicadeza. Cada artículo de nuestro catálogo está seleccionado con amor para asegurar la mejor calidad a tu medida.</p>
-    </div>
-    <div class="about-col">
-      <h3>Envíos y Entregas 🚴</h3>
-      <ul>
-        <li>• <strong>Envíos a domicilio:</strong> Coordinamos días y bandas horarias personalizadas según tu disponibilidad.</li>
-        <li>• <strong>Puntos de encuentro:</strong> Consultanos por zonas céntricas de retiro sin cargo adicional.</li>
-        <li>• Las condiciones finales se terminan de pactar de manera directa al enviar tu carrito por WhatsApp.</li>
-      </ul>
-    </div>
-    <div class="about-col">
-      <h3>Comunidad 💬</h3>
-      <p>Seguinos en nuestras redes para no perderte ningún ingreso, sorteo o promoción exclusiva:</p><br>
-      <p><strong>Instagram:</strong> <a href="https://instagram.com/bluebouquets_" target="_blank">@bluebouquets_</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5492944589885" target="_blank">+54 9 294 458-9885</a></p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <strong style="font-family:'Cormorant Garamond',serif;">Blue Bouquets 💙</strong> — Tienda de Lencería
-</footer>
-
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-header">
-    <h2>Tu carrito ✦</h2>
-    <button class="close-btn" onclick="toggleCart()">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems"></div>
-  <div class="cart-footer">
-    <div style="display:flex; justify-content:space-between;">
-      <span>Total Estimado:</span>
-      <span class="cart-total-value" id="cartTotal">$0</span>
-    </div>
-    <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()" disabled>Pedir por WhatsApp</button>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
-
-<script src="productos-data.js"></script>
-
-<script>
-function renderImg(p) {
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  if (imgSrc && imgSrc.includes('.')) {
-    return `<img src="${imgSrc}" alt="${p.name}">`;
-  }
-  return imgSrc || '';
-}
-
-let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
-let sel = {};
-let categoriaActual = 'todos';
-
-function cardSimple(p) {
-  const tieneStock = p.s > 0;
-  return `<div class="product-card" style="${!tieneStock ? 'opacity: 0.75;' : ''}">
-    <a class="card-link" href="producto.html?id=${p.id}">
-      <div class="card-img">${renderImg(p)}</div>
-    </a>
-    <div class="card-body">
-      <div class="card-category">${p.cat.toUpperCase()}</div>
-      <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
-      <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
-      <button class="add-btn" onclick="addSimple('${p.id}')" ${tieneStock?'':'disabled'}>${tieneStock?'+ Agregar':'Sin Stock'}</button>
-    </div>
-  </div>`;
-}
-
-function cardVar(p) {
-  const talleFiltrado = document.getElementById('sizeFilter').value;
-  const precioRender = p.px ? p.px.toLocaleString('es-AR') : (p.var[0] && p.var[0].px ? p.var[0].px.toLocaleString('es-AR') : 'Consultar');
-  
-  const tieneStockGlobal = p.var.some(v => v.s > 0);
-
-  const vars = p.var.map(v => {
-    let ocultarPorTalle = false;
-    if (p.cat === 'conjuntos' && talleFiltrado !== 'todos') {
-      if (talleFiltrado === '4' && !v.l.includes('Talle 4')) ocultarPorTalle = true;
-      if (talleFiltrado !== '4' && !v.l.includes(`T.${talleFiltrado} `) && !v.l.includes(`T.${talleFiltrado}·`)) ocultarPorTalle = true;
-    }
-    if (ocultarPorTalle) return '';
-    return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`;
-  }).join('');
-
-  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
-    <a class="card-link" href="producto.html?id=${p.id}">
-      <div class="card-img">${renderImg(p)}</div>
-    </a>
-    <div class="card-body">
-      <div class="card-category">${p.cat.toUpperCase()}</div>
-      <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
-      <div class="card-price">$${precioRender}</div>
-      <label>Talle y color</label>
-      <div class="variant-grid">${vars}</div>
-      <button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" disabled>${tieneStockGlobal?'Selecciona':'Sin Stock'}</button>
-    </div>
-  </div>`;
-}
-
-function cardMulti(p) {
-  const tieneStockGlobal = p.colores.some(c => c.s > 0);
-  const qtys = p.precios.map(pr => `<button class="variant-btn qty-btn-${p.id}" onclick="selQty('${p.id}',${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
-  
-  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
-    <a class="card-link" href="producto.html?id=${p.id}">
-      <div class="card-img">${renderImg(p)}</div>
-    </a>
-    <div class="card-body">
-      <div class="card-category">${(p.talle || 'Especial').toUpperCase()}</div>
-      <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
-      <div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div>
-      <label>Cantidad (Promoción)</label>
-      <div class="variant-grid">${qtys}</div>
-      <div id="cols${p.id}" style="display:none; margin-top: 8px;"><label>Color por unidad</label><div id="colslist${p.id}"></div></div>
-      <button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>${tieneStockGlobal?'Selecciona':'Sin Stock'}</button>
-    </div>
-  </div>`;
-}
-
-function selVar(pid,vid,btn) {
-  btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  sel[pid] = {var:vid};
-  document.getElementById(`btn${pid}`).disabled = false;
-  document.getElementById(`btn${pid}`).textContent = "+ Agregar";
-}
-
-function selQty(pid,qty,btn) {
-  if (btn.classList.contains('selected')) {
-    btn.classList.remove('selected');
-    delete sel[pid];
-    document.getElementById(`cols${pid}`).style.display = 'none';
-    document.getElementById(`colslist${pid}`).innerHTML = '';
-    const mainBtn = document.getElementById(`btn${pid}`);
-    mainBtn.disabled = true;
-    mainBtn.textContent = 'Selecciona';
-    return;
-  }
-
-  btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  sel[pid] = {qty,cols:{}};
-  document.getElementById(`cols${pid}`).style.display='block';
-  let html='';
-  const p = productos.find(x=>x.id===pid);
-  for(let i=1;i<=qty;i++) {
-    html += `<div class="unit-color-selector"><span class="unit-label">U${i}</span><div class="unit-color-grid">`;
-    p.colores.forEach(c => {
-      html += `<button class="unit-color-btn" onclick="selCol('${pid}',${i},'${c.c}',this)" ${c.s?'':'disabled'}>${c.c}</button>`;
-    });
-    html += '</div></div>';
-  }
-  document.getElementById(`colslist${pid}`).innerHTML = html;
-  upQty(pid);
-}
-
-function selCol(pid,u,col,btn) {
-  btn.parentElement.querySelectorAll('.unit-color-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  sel[pid].cols[u] = col;
-  upQty(pid);
-}
-
-function upQty(pid) {
-  const s = sel[pid];
-  const btn = document.getElementById(`btn${pid}`);
-  const p = productos.find(x=>x.id===pid);
-  if(!s||!s.qty||Object.keys(s.cols).length !== s.qty) {
-    btn.disabled = true;
-    btn.textContent = 'Elige colores';
-    return;
-  }
-  const px = p.precios.find(x=>x.qty===s.qty).px;
-  btn.disabled = false;
-  btn.textContent = `+ Agregar $${px.toLocaleString('es-AR')}`;
-}
-
-function addSimple(pid) {
-  const p = productos.find(x=>x.id===pid);
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, name:p.name, det:`x1`, px:p.px, emoji:icon});
-  upCart();
-  toast(`✓ ${p.name}`);
-}
-
-function addVar(pid) {
-  const p = productos.find(x=>x.id===pid);
-  const v = sel[pid];
-  if(!v||!v.var) return;
-  const variant = p.var.find(x=>x.id===v.var);
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:v.var, name:p.name, det:variant.l, px:p.px || variant.px || 9990, emoji:icon});
-  upCart();
-  toast(`✓ ${p.name}`);
-}
-
-function addMulti(pid) {
-  const p = productos.find(x=>x.id===pid);
-  const s = sel[pid];
-  if(!s||!s.qty) return;
-  const px = p.precios.find(x=>x.qty===s.qty).px;
-  const cols = Object.entries(s.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  
-  // Guardamos como individuales para permitir combinaciones cruzadas limpias
-  for(let i=1; i<=s.qty; i++) {
-    carrito.push({
-      id: p.id,
-      tipo: 'multi_item',
-      ofertaGrupo: p.cat, // Agrupa por categoría (ej: bombachas)
-      name: p.name,
-      det: `1x (${p.talle}) - Color: ${s.cols[i]}`,
-      pxBase: p.precios[0].px, // Precio unitario base
-      emoji: icon
-    });
-  }
-  upCart();
-  toast(`✓ Combo agregado`);
-}
-
-// NUEVA FUNCIÓN PARA CALCULAR TOTAL CON COMBOS MIXTOS COMBINABLES
-function calcularEstructuraCarrito() {
-  let total = 0;
-  let itemsNormales = [];
-  let itemsMulti = {};
-
-  carrito.forEach(item => {
-    if (item.tipo === 'multi_item') {
-      if (!itemsMulti[item.ofertaGrupo]) itemsMulti[item.ofertaGrupo] = [];
-      itemsMulti[item.ofertaGrupo].push(item);
-    } else {
-      itemsNormales.push(item);
-      total += item.px;
-    }
-  });
-
-  // Procesar los grupos combinables (ej: bombachas en oferta)
-  Object.keys(itemsMulti).forEach(grupo => {
-    const list = itemsMulti[grupo];
-    const cant = list.length;
+  <div class="filters">
+    <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
+    <button class="filter-btn" onclick="filtrar('conjuntos', this)">Conjuntos</button>
+    <button class="filter-btn" onclick="filtrar('bombachas', this)">Bombachas</button>
+    <button class="filter-btn" onclick="filtrar('medias', this)">Medias</button>
     
-    // Buscamos si en la DB hay un producto base para sacar la regla de precios de ese grupo
-    const prodBase = productos.find(x => x.cat === grupo && x.tipo === 'multi');
-    
-    if (prodBase && prodBase.precios) {
-      // Ordenar las reglas de mayor cantidad a menor (ej: 3, 2, 1)
-      const reglas = [...prodBase.precios].sort((a,b) => b.qty - a.qty);
-      let resto = cant;
-      let costoGrupo = 0;
+    <div class="size-filter-container">
+      <select id="sizeFilter" class="size-select" onchange="aplicarFiltroTalle()">
+        <option value="todos">Talle: Todos</option>
+        <option value="85">T.85</option>
+        <option value="90">T.90</option>
+        <option value="95">T.95</option>
+        <option value="100">T.100</option>
+        <option value="M">Talle M</option>
+        <option value="L">Talle L</option>
+        <option value="4">Talle 4</option>
+      </select>
+    </div>
+  </div>
 
-      while (resto > 0) {
-        const reglaAplicable = reglas.find(r => resto >= r.qty);
-        if (reglaAplicable) {
-          costoGrupo += reglaAplicable.px;
-          resto -= reglaAplicable.qty;
-        } else {
-          // Si sobra suelta, va a precio unitario base
-          costoGrupo += resto * list[0].pxBase;
-          resto = 0;
-        }
-      }
-      total += costoGrupo;
-    } else {
-      // Fallback si no hay regla: sumar unitarios
-      list.forEach(i => total += i.pxBase);
-    }
-  });
+  <main class="catalog" id="catalog"></main>
 
-  return { total, itemsMulti, itemsNormales };
-}
-  
-function upCart() {
-  localStorage.setItem('bb_cart', JSON.stringify(carrito));
-  const cnt = carrito.length;
-  document.getElementById('cartCount').textContent = cnt;
-  
-  const { total } = calcularEstructuraCarrito();
-
-  let html = cnt===0 ? '<div class="cart-empty"><p>Tu carrito está vacío</p></div>' : carrito.map((item,i) => {
-    const pstr = item.tipo === 'multi_item' ? `$${item.pxBase.toLocaleString('es-AR')}` : `$${item.px.toLocaleString('es-AR')}`;
-    return `<div class="cart-item">
-      <div class="cart-item-icon">${item.emoji}</div>
-      <div style="flex:1">
-        <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-variant">${item.det}</div>
-        <div class="cart-item-bottom">
-          <span>${pstr}</span>
-          <button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button>
-        </div>
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-col">
+        <h3>Sobre Mi</h3>
+        <p>¡Hola! Bienvenidos a Blue Bouquets. Ofrecemos lencería artesanal y prendas seleccionadas con dedicación para brindar el calce perfecto, confort y diseños únicos que te acompañen todos los días.</p>
       </div>
-    </div>`;
-  }).join('');
-  
-  document.getElementById('cartItems').innerHTML = html;
-  document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
-  document.getElementById('waBtn').disabled = cnt===0;
-}
+      <div class="about-col">
+        <h3>Envíos & Retiros</h3>
+        <p>📍 Retiros sin cargo en showroom coordinando previamente.<br>🚚 Envíos a todo el país a través de Correo Argentino. Una vez despachado el pedido, te enviaremos el número de seguimiento por WhatsApp.</p>
+      </div>
+    </div>
+  </section>
 
-// CORRECCIÓN Y NUEVA ESTRUCTURACIÓN DEL PEDIDO DE WHATSAPP
-function finalizarPedido() {
-  if(carrito.length===0) return;
-  
-  const { total, itemsNormales, itemsMulti } = calcularEstructuraCarrito();
-  
-  let msg = '✨ *NUEVO PEDIDO - BLUE BOUQUETS* ✨\n\n';
-  msg += 'Hola! Quiero encargar las siguientes prendas:\n';
-  msg += '────────────────────\n';
+  <footer>
+    <p>&copy; 2026 Blue Bouquets. Todos los derechos reservados.</p>
+  </footer>
 
-  // Añadir prendas comunes
-  if (itemsNormales.length > 0) {
-    itemsNormales.forEach(i => {
-      msg += `🛍️ *${i.name}*\n  └ ${i.det} → $${i.px.toLocaleString('es-AR')}\n\n`;
-    });
-  }
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Tu Pedido</h2>
+      <button class="close-btn" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <span style="font-size:1rem; color:var(--text-light);">Total estimado:</span>
+        <span class="cart-total-value" id="cartTotal">$0</span>
+      </div>
+      <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()">Enviar Pedido por WhatsApp</button>
+    </div>
+  </div>
 
-  // Añadir ofertas combinadas agrupadas
-  Object.keys(itemsMulti).forEach(grupo => {
-    const list = itemsMulti[grupo];
-    msg += `📦 *PROMO COMBINABLE (${grupo.toUpperCase()})*:\n`;
-    list.forEach(i => {
-      msg += `  • ${i.name} — ${i.det}\n`;
-    });
-    msg += `\n`;
-  });
+  <div class="toast" id="toast"></div>
 
-  msg += '────────────────────\n';
-  msg += `💰 *TOTAL ESTIMADO:* $${total.toLocaleString('es-AR')}\n\n`;
-  msg += '¿Me confirmás el stock y las condiciones de envío? ¡Muchas gracias! 💙';
+  <script src="productos-data.js"></script>
+  <script>
+    function renderImg(p) {
+      const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+      if (imgSrc && imgSrc.includes('.')) {
+        return `<img src="${imgSrc}" alt="${p.name}">`;
+      }
+      return imgSrc || '';
+    }
 
-  window.open(`https://wa.me/5492944589885?text=${encodeURIComponent(msg)}`,'_blank');
-}
+    let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
+    let sel = {};
+    let categoriaActual = 'todos';
 
-function toggleCart() {
-  document.getElementById('cartPanel').classList.toggle('open');
-  document.getElementById('cartOverlay').classList.toggle('open');
-}
+    function cardSimple(p) {
+      const tieneStock = p.s > 0;
+      return `<div class="product-card" style="${!tieneStock ? 'opacity: 0.75;' : ''}">
+        <a class="card-link" href="producto.html?id=${p.id}">
+          <div class="card-img">${renderImg(p)}</div>
+        </a>
+        <div class="card-body">
+          <div class="card-category">${p.cat.toUpperCase()}</div>
+          <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
+          <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
+          <button class="add-btn" onclick="addSimple('${p.id}')" ${tieneStock?'':'disabled'}>${tieneStock?'+ Agregar':'Sin Stock'}</button>
+        </div>
+      </div>`;
+    }
 
-function filtrar(cat,btn) {
-  categoriaActual = cat;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  
-  const talleWrapper = document.getElementById('sizeFilterWrapper');
-  if(cat === 'todos' || cat === 'conjuntos') {
-    talleWrapper.style.display = 'flex';
-  } else {
-    talleWrapper.style.display = 'none';
-    document.getElementById('sizeFilter').value = 'todos';
-  }
+    function cardVar(p) {
+      const talleFiltrado = document.getElementById('sizeFilter').value;
+      const precioRender = p.px ? p.px.toLocaleString('es-AR') : (p.var[0] && p.var[0].px ? p.var[0].px.toLocaleString('es-AR') : 'Consultar');
+      const tieneStockGlobal = p.var.some(v => v.s > 0);
 
-  aplicarFiltroTalle();
-}
+      // Solución al bug undefined cambiado por "Surtido" si no hay variantes de talle complejas
+      const vars = (p.var && p.var.length > 0 && p.var[0].id !== undefined) ? p.var.map(v => {
+        let ocultarPorTalle = false;
+        if (talleFiltrado !== 'todos') {
+          if (talleFiltrado === '4' && !v.l.includes('Talle 4')) ocultarPorTalle = true;
+          if (talleFiltrado !== '4' && !v.l.includes(`T.${talleFiltrado} `) && !v.l.includes(`T.${talleFiltrado}·`)) ocultarPorTalle = true;
+        }
+        if (ocultarPorTalle) return '';
+        return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`;
+      }).join('') : '';
 
-function aplicarFiltroTalle() {
-  const talleSeleccionado = document.getElementById('sizeFilter').value;
-  let productosFiltrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.cat === categoriaActual);
-  
-  if (talleSeleccionado !== 'todos') {
-    productosFiltrados = productosFiltrados.filter(p => {
-      if (p.cat !== 'conjuntos') return true; 
-      return p.var.some(v => {
-        if (talleSeleccionado === '4') {
-          return v.l.includes('Talle 4');
+      const labelYGrid = vars !== '' ? `<label>Talle y color</label><div class="variant-grid">${vars}</div>` : `<label>Variante disponible</label><div class="variant-grid"><button class="variant-btn selected" disabled>Surtido</button></div>`;
+
+      return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
+        <a class="card-link" href="producto.html?id=${p.id}">
+          <div class="card-img">${renderImg(p)}</div>
+        </a>
+        <div class="card-body">
+          <div class="card-category">${p.cat.toUpperCase()}</div>
+          <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
+          <div class="card-price">$${precioRender}</div>
+          ${labelYGrid}
+          <button class="add-btn" id="btn${p.id}" onclick="addVar('${p.id}')" ${vars === '' ? '' : 'disabled'}>${tieneStockGlobal ? '+ Agregar' : 'Sin Stock'}</button>
+        </div>
+      </div>`;
+    }
+
+    function cardMulti(p) {
+      const tieneStockGlobal = p.colores.some(c => c.s > 0);
+      const qtys = p.precios.map(pr => `<button class="variant-btn qty-btn-${p.id}" onclick="selQty('${p.id}',${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
+      
+      const talleMostrar = (!p.talle || p.talle.toLowerCase() === 'regular') ? 'Talle 36-44' : p.talle;
+
+      return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
+        <a class="card-link" href="producto.html?id=${p.id}">
+          <div class="card-img">${renderImg(p)}</div>
+        </a>
+        <div class="card-body">
+          <div class="card-category">${talleMostrar.toUpperCase()}</div>
+          <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
+          <div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div>
+          <div class="promo-label">Promo combinable</div>
+          <div class="variant-grid">${qtys}</div>
+          <div id="cols${p.id}" style="display:none; margin-top: 8px;"><label>Color por unidad</label><div id="colslist${p.id}"></div></div>
+          <button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>${tieneStockGlobal?'Selecciona':'Sin Stock'}</button>
+        </div>
+      </div>`;
+    }
+
+    function selVar(pid,vid,btn) {
+      btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      sel[pid] = {var:vid};
+      document.getElementById(`btn${pid}`).disabled = false;
+      document.getElementById(`btn${pid}`).textContent = "+ Agregar";
+    }
+
+    function selQty(pid,qty,btn) {
+      if (btn.classList.contains('selected')) {
+        btn.classList.remove('selected');
+        delete sel[pid];
+        document.getElementById(`cols${pid}`).style.display = 'none';
+        document.getElementById(`colslist${pid}`).innerHTML = '';
+        const mainBtn = document.getElementById(`btn${pid}`);
+        mainBtn.disabled = true;
+        mainBtn.textContent = 'Selecciona';
+        return;
+      }
+
+      btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      sel[pid] = {qty,cols:{}};
+      document.getElementById(`cols${pid}`).style.display='block';
+      let html='';
+      const p = productos.find(x=>x.id===pid);
+      for(let i=1;i<=qty;i++) {
+        html += `<div class="unit-color-selector"><span class="unit-label">U${i}</span><div class="unit-color-grid">`;
+        p.colores.forEach(c => {
+          html += `<button class="unit-color-btn" onclick="selCol('${pid}',${i},'${c.c}',this)" ${c.s?'':'disabled'}>${c.c}</button>`;
+        });
+        html += '</div></div>';
+      }
+      document.getElementById(`colslist${pid}`).innerHTML = html;
+      upQty(pid);
+    }
+
+    function selCol(pid,u,col,btn) {
+      btn.parentElement.querySelectorAll('.unit-color-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      sel[pid].cols[u] = col;
+      upQty(pid);
+    }
+
+    function upQty(pid) {
+      const s = sel[pid];
+      const btn = document.getElementById(`btn${pid}`);
+      const p = productos.find(x=>x.id===pid);
+      if(!s||!s.qty||Object.keys(s.cols).length !== s.qty) {
+        btn.disabled = true;
+        btn.textContent = 'Elige colores';
+        return;
+      }
+      const px = p.precios.find(x=>x.qty===s.qty).px;
+      btn.disabled = false;
+      btn.textContent = `+ Agregar $${px.toLocaleString('es-AR')}`;
+    }
+
+    function addSimple(pid) {
+      const p = productos.find(x=>x.id===pid);
+      const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+      const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
+      carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, name:p.name, det:`x1`, px:p.px, emoji:icon});
+      upCart();
+      toast(`✓ ${p.name}`);
+    }
+
+    function addVar(pid) {
+      const p = productos.find(x=>x.id===pid);
+      const v = sel[pid];
+      const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+      const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
+
+      if(!v || !v.var) {
+        carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, name:p.name, det:`Surtido`, px:p.px || 3000, emoji:icon});
+      } else {
+        const variant = p.var.find(x=>x.id===v.var);
+        carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:v.var, name:p.name, det:variant.l, px:p.px || variant.px || 9990, emoji:icon});
+      }
+      upCart();
+      toast(`✓ ${p.name}`);
+    }
+
+    function addMulti(pid) {
+      const p = productos.find(x=>x.id===pid);
+      const s = sel[pid];
+      if(!s||!s.qty) return;
+      const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+      const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
+      
+      const talleMostrar = (!p.talle || p.talle.toLowerCase() === 'regular') ? 'Talle 36-44' : p.talle;
+
+      for(let i=1; i<=s.qty; i++) {
+        carrito.push({
+          id: p.id,
+          tipo: 'multi_item',
+          ofertaGrupo: p.cat, 
+          name: p.name,
+          det: `1x (${talleMostrar}) - Color: ${s.cols[i]}`,
+          pxBase: p.precios[0].px, 
+          emoji: icon
+        });
+      }
+      upCart();
+      toast(`✓ Combo agregado`);
+    }
+
+    function calcularEstructuraCarrito() {
+      let total = 0;
+      let itemsNormales = [];
+      let itemsMulti = {};
+
+      carrito.forEach(item => {
+        if (item.tipo === 'multi_item') {
+          if (!itemsMulti[item.ofertaGrupo]) itemsMulti[item.ofertaGrupo] = [];
+          itemsMulti[item.ofertaGrupo].push(item);
         } else {
-          return (v.l.includes(`T.${talleSeleccionado} `) || v.l.includes(`T.${talleSeleccionado}·`));
+          itemsNormales.push(item);
+          total += item.px;
         }
       });
-    });
-  }
-  renderCatalog(productosFiltrados);
-}
 
-function renderCatalog(lista) {
-  const html = lista.map(p => {
-    if(p.tipo === 'simple') return cardSimple(p);
-    if(p.tipo === 'var') return cardVar(p);
-    if(p.tipo === 'multi') return cardMulti(p);
-  }).join('');
-  document.getElementById('catalog').innerHTML = html;
-}
+      Object.keys(itemsMulti).forEach(grupo => {
+        const list = itemsMulti[grupo];
+        const cant = list.length;
+        const prodBase = productos.find(x => x.cat === grupo && x.tipo === 'multi');
+        
+        if (prodBase && prodBase.precios) {
+          const reglas = [...prodBase.precios].sort((a,b) => b.qty - a.qty);
+          let resto = cant;
+          let costoGrupo = 0;
 
-function toast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
-}
+          while (resto > 0) {
+            const reglaAplicable = reglas.find(r => resto >= r.qty);
+            if (reglaAplicable) {
+              costoGrupo += reglaAplicable.px;
+              resto -= reglaAplicable.qty;
+            } else {
+              costoGrupo += resto * list[0].pxBase;
+              resto = 0;
+            }
+          }
+          total += costoGrupo;
+        } else {
+          list.forEach(i => total += i.pxBase);
+        }
+      });
 
-function init() {
-  document.getElementById('sizeFilter').value = 'todos';
-  renderCatalog(productos);
-  upCart();
-}
+      return { total, itemsMulti, itemsNormales };
+    }
+      
+    function upCart() {
+      localStorage.setItem('bb_cart', JSON.stringify(carrito));
+      const cnt = carrito.length;
+      document.getElementById('cartCount').textContent = cnt;
+      
+      const { total } = calcularEstructuraCarrito();
 
-init();
-</script>
+      let html = cnt===0 ? '<div class="cart-empty"><p>Tu carrito está vacío</p></div>' : carrito.map((item,i) => {
+        const pstr = item.tipo === 'multi_item' ? `$${item.pxBase.toLocaleString('es-AR')}` : `$${item.px.toLocaleString('es-AR')}`;
+        return `<div class="cart-item">
+          <div class="cart-item-icon">${item.emoji}</div>
+          <div style="flex:1">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-variant">${item.det}</div>
+            <div class="cart-item-bottom">
+              <span>${pstr}</span>
+              <button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+      
+      document.getElementById('cartItems').innerHTML = html;
+      document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
+      document.getElementById('waBtn').disabled = cnt===0;
+    }
+
+    // NUEVA ESTRUCTURA DE MENSAJE DE WHATSAPP SOLICITADA (Con corazones azules y textos concisos)
+    function finalizarPedido() {
+      if(carrito.length===0) return;
+      const { total, itemsNormales, itemsMulti } = calcularEstructuraCarrito();
+      
+      let msg = '¡Hola Blue Bouquets! 🌿 Quiero hacer este pedido:\n\n';
+
+      if (itemsNormales.length > 0) {
+        itemsNormales.forEach(i => {
+          msg += `💙 *${i.name}* (${i.det}) — $${i.px.toLocaleString('es-AR')}\n`;
+        });
+      }
+
+      Object.keys(itemsMulti).forEach(grupo => {
+        const list = itemsMulti[grupo];
+        msg += `📦 *PROMO COMBINABLE (${grupo.toUpperCase()})*:\n`;
+        list.forEach(i => {
+          msg += `  • ${i.name} — ${i.det}\n`;
+        });
+      });
+
+      msg += `\n*TOTAL: $${total.toLocaleString('es-AR')}*\n\n`;
+      msg += 'Espero confirmación de stock. ¿Cómo coordinamos el envío? 💙';
+
+      window.open(`https://wa.me/5492944589885?text=${encodeURIComponent(msg)}`,'_blank');
+    }
+
+    function toggleCart() {
+      document.getElementById('cartPanel').classList.toggle('open');
+      document.getElementById('cartOverlay').classList.toggle('open');
+    }
+
+    function filtrar(cat,btn) {
+      categoriaActual = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      aplicarFiltroTalle();
+    }
+
+    function aplicarFiltroTalle() {
+      const talleSeleccionado = document.getElementById('sizeFilter').value;
+      let productosFiltrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.cat === categoriaActual);
+      
+      if (talleSeleccionado !== 'todos') {
+        productosFiltrados = productosFiltrados.filter(p => {
+          if (p.var && p.var.length > 0 && p.var[0].l) {
+            return p.var.some(v => {
+              if (talleSeleccionado === '4') return v.l.includes('Talle 4');
+              return (v.l.includes(`T.${talleSeleccionado} `) || v.l.includes(`T.${talleSeleccionado}·`));
+            });
+          }
+          if (p.tipo === 'multi') {
+            const talleLimpio = p.talle ? p.talle.toLowerCase() : '';
+            if (talleSeleccionado === 'todos') return true;
+            return talleLimpio.includes(talleSeleccionado.toLowerCase()) || talleLimpio === 'regular' || talleLimpio === '';
+          }
+          return false; 
+        });
+      }
+      renderCatalog(productosFiltrados);
+    }
+
+    function renderCatalog(lista) {
+      const html = lista.map(p => {
+        if(p.tipo === 'simple') return cardSimple(p);
+        if(p.tipo === 'var') return cardVar(p);
+        if(p.tipo === 'multi') return cardMulti(p);
+      }).join('');
+      document.getElementById('catalog').innerHTML = html;
+    }
+
+    function toast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    function init() {
+      document.getElementById('sizeFilter').value = 'todos';
+      renderCatalog(productos);
+      upCart();
+    }
+
+    init();
+  </script>
 </body>
 </html>
