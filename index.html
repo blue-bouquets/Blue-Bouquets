@@ -62,7 +62,7 @@ label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display:
 .unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
 .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
-.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
+.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7ºrem; font-size: 0.7rem; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 .unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
@@ -233,7 +233,13 @@ function cardVar(p) {
       if (talleFiltrado !== '4' && !v.l.includes(`T.${talleFiltrado} `) && !v.l.includes(`T.${talleFiltrado}·`)) ocultarPorTalle = true;
     }
     if (ocultarPorTalle) return '';
-    return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l}</button>`;
+    
+    // Corrección para evitar "undefined" o etiquetas rotas en medias/accesorios sin variante limpia
+    let labelVariante = v.l;
+    if (!labelVariante || labelVariante.toLowerCase().includes('undefined')) {
+      labelVariante = "Surtido";
+    }
+    return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${labelVariante}</button>`;
   }).join('');
 
   return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
@@ -354,7 +360,13 @@ function addVar(pid) {
   const variant = p.var.find(x=>x.id===v.var);
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
   const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:v.var, name:p.name, det:variant.l, px:p.px || variant.px || 9990, emoji:icon});
+  
+  let labelDetalle = variant.l;
+  if (!labelDetalle || labelDetalle.toLowerCase().includes('undefined')) {
+    labelDetalle = "Surtido";
+  }
+
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:v.var, name:p.name, det:labelDetalle, px:p.px || variant.px || 9990, emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
 }
@@ -363,8 +375,6 @@ function addMulti(pid) {
   const p = productos.find(x=>x.id===pid);
   const s = sel[pid];
   if(!s||!s.qty) return;
-  const px = p.precios.find(x=>x.qty===s.qty).px;
-  const cols = Object.entries(s.cols).sort((a,b)=>a[0]-b[0]).map(e=>e[1]).join(', ');
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
   const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
   
@@ -374,7 +384,7 @@ function addMulti(pid) {
     carrito.push({
       id: p.id,
       tipo: 'multi_item',
-      ofertaGrupo: p.id, // Agrupa de forma independiente por id único del producto para que las promos no se mezclen
+      ofertaGrupo: p.precios[0].px, // Corrección crítica: Agrupamos por precio base unitario (3000 o 4000) para permitir surtidos perfectos
       promoNombre: p.name,
       talleDisplay: talleFormateado,
       name: p.name,
@@ -402,10 +412,12 @@ function calcularEstructuraCarrito() {
     }
   });
 
-  Object.keys(itemsMulti).forEach(grupoId => {
-    const list = itemsMulti[grupoId];
+  Object.keys(itemsMulti).forEach(precioGrupo => {
+    const list = itemsMulti[precioGrupo];
     const cant = list.length;
-    const prodBase = productos.find(x => x.id === grupoId);
+    
+    // Buscamos dinámicamente cualquier producto que contenga la matriz de reglas de precio para este nivel de valor unitario
+    const prodBase = productos.find(x => x.precios && x.precios[0] && x.precios[0].px === parseInt(precioGrupo));
     
     if (prodBase && prodBase.precios) {
       const reglas = [...prodBase.precios].sort((a,b) => b.qty - a.qty);
@@ -473,9 +485,9 @@ function finalizarPedido() {
     });
   }
 
-  Object.keys(itemsMulti).forEach(grupoId => {
-    const list = itemsMulti[grupoId];
-    const prodBase = productos.find(x => x.id === grupoId);
+  Object.keys(itemsMulti).forEach(precioGrupo => {
+    const list = itemsMulti[precioGrupo];
+    const prodBase = productos.find(x => x.precios && x.precios[0] && x.precios[0].px === parseInt(precioGrupo));
     
     let subtotalPromo = 0;
     if (prodBase && prodBase.precios) {
@@ -512,7 +524,6 @@ function filtrar(cat,btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  // Ahora el contenedor del filtro de talle siempre estará visible en "todo" y "conjuntos"
   const talleWrapper = document.getElementById('sizeFilterWrapper');
   if(cat === 'todos' || cat === 'conjuntos') {
     talleWrapper.style.display = 'flex';
@@ -530,7 +541,6 @@ function aplicarFiltroTalle() {
   
   if (talleSeleccionado !== 'todos') {
     productosFiltrados = productosFiltrados.filter(p => {
-      // Si el producto no es de la categoría conjuntos, se sigue mostrando al filtrar por talle globalmente
       if (p.cat !== 'conjuntos') return true; 
       return p.var.some(v => {
         if (talleSeleccionado === '4') {
