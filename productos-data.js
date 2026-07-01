@@ -7,7 +7,7 @@ const productos = [
     cat: "bombachas",
     name: "Vedetinas de Algodón",
     img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
-    desc: "Confeccionadas en algodón elástico de alta calidad, ideales para el uso diario aportando máxima comodidad.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -27,7 +27,7 @@ const productos = [
     cat: "bombachas",
     name: "Vedetinas XL",
     img: ["images/vedetinasxl1.jpeg", "images/vedetinasxl2.jpeg"],
-    desc: "Confeccionadas en algodón elástico de alta calidad en talles especiales, ideales para el uso diario aportando máxima comodidad.",
+    desc: "...",
     tipo: "multi",
     talle: "XL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
@@ -45,7 +45,7 @@ const productos = [
     cat: "bombachas",
     name: "Vedetinas de Morley Estampadas",
     img: ["images/vedetinasestampadasmorley1.jpeg", "images/vedetinasestampadasmorley2.jpeg", "images/vedetinasestampadasmorley3.jpeg", "images/vedetinasestampadasmorley4.jpeg"],
-    desc: "Hermosas vedetinas de morley suave con estampados delicados en tendencia.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -61,7 +61,7 @@ const productos = [
     cat: "bombachas",
     name: "Less Anchas de Morley",
     img: ["images/lessanchamorley1.jpeg", "images/lessanchamorley2.jpeg", "images/lessanchamorley3.jpeg", "images/lessanchamorley4.jpeg"],
-    desc: "Diseño tiro medio-alto con banda ancha regulable en morley. Comodidad absoluta.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -77,7 +77,7 @@ const productos = [
     cat: "bombachas",
     name: "Less Anchas de Red",
     img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "images/lessred3.jpeg"],
-    desc: "Material texturizado tipo red, elástica y de excelente calce.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -108,7 +108,7 @@ const productos = [
     cat: "bombachas",
     name: "Colaless de Algodón",
     img: ["images/lessalgodon1.jpeg", "images/lessalgodon2.jpeg", "images/lessalgodon3.jpeg"],
-    desc: "Algodón clásico con lycra. Un básico infaltable y súper cómodo.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -124,7 +124,7 @@ const productos = [
     cat: "bombachas",
     name: "Colaless con Puntilla",
     img: ["images/lesspuntilla4.jpeg", "images/lesspuntilla1.jpeg", "images/lesspuntilla3.jpeg", "images/lesspuntilla2.jpeg"],
-    desc: "Detalle de puntilla sutil combinado con la suavidad del algodón.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -141,7 +141,7 @@ const productos = [
     cat: "bombachas",
     name: "Less Fru Fru",
     img: ["images/lessfrufru1.jpeg", "images/lessfrufru2.jpeg", "images/lessfrufru3.jpeg"],
-    desc: "Diseño romántico con terminaciones elásticas fruncidas delicadas.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -157,7 +157,7 @@ const productos = [
     cat: "bombachas",
     name: "Colaless XL",
     img: ["images/lessxl1.jpeg", "images/lessxl2.jpeg", "images/lessxl3.jpeg"],
-    desc: "Corte ergonómico especial en talle grande que garantiza confort total.",
+    desc: "...",
     tipo: "multi",
     talle: "XL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
@@ -175,7 +175,7 @@ const productos = [
     cat: "bombachas",
     name: "Less XXL con Encaje",
     img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
-    desc: "Talle especial con excelente soporte y delicados detalles de encaje lateral.",
+    desc: "...",
     tipo: "multi",
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
@@ -189,7 +189,7 @@ const productos = [
     cat: "bombachas",
     name: "Less XXL de Algodón",
     img: ["images/lessxxl1.jpeg", "images/lessxxl2.jpeg"],
-    desc: "Línea clásica de algodón modelador en talles grandes, tiro alto confortable.",
+    desc: "...",
     tipo: "multi",
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
@@ -208,7 +208,7 @@ const productos = [
     cat: "bombachas",
     name: "Culot con Encaje",
     img: ["images/culotencaje1.jpeg", "images/culotencaje2.jpeg", "images/culotencaje2.jpeg"],
-    desc: "Línea clásica con detalles de encaje modelador en talles grandes, tiro alto confortable.",
+    desc: "...",
     tipo: "multi",
     talle: "regular",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
@@ -225,7 +225,7 @@ const productos = [
     cat: "bombachas",
     name: "Colaless Coquette",
     img: ["images/colalesscoquette1.jpeg", "images/colalesscoquette2.jpeg"],
-    desc: "Confeccionadas en morley elástico de alta calidad con detalles románticos, ideales para el uso diario aportando máxima comodidad.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -242,7 +242,7 @@ const productos = [
     cat: "bombachas",
     name: "Regulables Coquette",
     img: ["images/regulablescoquette1.jpeg", "images/regulablescoquette2.jpeg"],
-    desc: "Confeccionadas en morley elástico con detalles coquette y breteles regulables, adaptándose perfectamente.",
+    desc: "...",
     tipo: "multi",
     talle: "Único (Regulable)",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -258,7 +258,7 @@ const productos = [
     cat: "bombachas",
     name: "Less Lovely",
     img: ["images/lesslovely1.jpeg", "images/lesslovely2.jpeg"],
-    desc: "Confeccionadas en algodón elástico de alta calidad, ideales para el uso diario aportando máxima comodidad.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -274,7 +274,7 @@ const productos = [
     cat: "bombachas",
     name: "Less Rosa",
     img: ["images/lessrosa1.jpeg", "images/lessrosa2.jpeg"],
-    desc: "Confeccionadas en algodón elástico de alta calidad, ideales para el uso diario aportando máxima comodidad.",
+    desc: "...",
     tipo: "multi",
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
@@ -284,15 +284,13 @@ const productos = [
       { c: "Negra", s: 2 }
     ]
   },
-
-  // --- MEDIAS ---
   {
     id: "mediasmd",
     sku: "Medias MD",
     cat: "medias",
     name: "Medias MD (Pack x3 pares)",
     img: ["images/mediasmd1.jpeg"],
-    desc: "Súper abrigadas con puño elástico suave que no aprieta.",
+    desc: "...",
     tipo: "simple",
     px: 3000,
     s: 5
@@ -303,7 +301,7 @@ const productos = [
     cat: "medias",
     name: "Medias de Plush (Pack x2 pares)",
     img: ["images/mediasplush1.jpeg", "images/mediasplush2.jpeg", "images/mediasplush3.jpeg", "images/mediasplush4.jpeg"],
-    desc: "Textura extrasuave tipo peluche, ideales para el frío en el hogar.",
+    desc: "...",
     tipo: "var",
     px: 3000,
     var: [
@@ -318,7 +316,7 @@ const productos = [
     cat: "conjuntos",
     name: "Begonia",
     img: ["images/alice1.jpeg", "images/alice2.jpeg"],
-    desc: "Conjunto de taza soft armada con aro y breteles regulables.",
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -331,7 +329,7 @@ const productos = [
     cat: "conjuntos",
     name: "Coral",
     img: ["images/coral1.jpeg"],
-    desc: "Microfibra satinada premium con detalles finos de encaje.",
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -344,7 +342,7 @@ const productos = [
     cat: "conjuntos",
     name: "Lavanda",
     img: ["images/lavanda1.jpeg", "images/lavanda2.jpeg", "images/lavanda3.jpeg", "images/lavanda4.jpeg"],
-    desc: "Diseño elegante y cómodo que se adapta de forma natural.",
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -358,7 +356,7 @@ const productos = [
     cat: "conjuntos",
     name: "Cala",
     img: ["images/cala1.jpeg"],
-    desc: "Detalles románticos y calce delicado para destacar todos los días.",
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -373,7 +371,7 @@ const productos = [
     cat: "conjuntos",
     name: "Alyssum",
     img: ["images/alyssum.jpeg"],
-    desc: "Confección premium con texturas suaves y breteles reforzados.",
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -387,7 +385,7 @@ const productos = [
     cat: "conjuntos",
     name: "Gardenia",
     img: ["images/gardenia1.jpeg", "images/gardenia2.jpeg"],
-    desc: "Línea exclusiva armada que brinda excelente soporte y elegancia.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -401,7 +399,7 @@ const productos = [
     cat: "conjuntos",
     name: "Fressia",
     img: ["images/fressia1.jpeg", "images/fressia2.jpeg"],
-    desc: "Estilo juvenil y fresco en taza soft ligera.",
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -414,7 +412,7 @@ const productos = [
     cat: "conjuntos",
     name: "Loto",
     img: ["images/loto1.jpeg", "images/loto2.jpeg", "images/loto3.jpeg"],
-    desc: "Diseño sofisticado con finas terminaciones elásticas.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -428,7 +426,7 @@ const productos = [
     cat: "conjuntos",
     name: "Dahlia",
     img: ["images/dahlia1.jpeg", "images/dahlia2.jpeg", "images/dahlia3.jpeg"],
-    desc: "Modelo reductor sin copa armada para un calce perfecto y natural.",
+    desc: "...",
     tipo: "var",
     px: 11990,
     var: [
@@ -441,7 +439,7 @@ const productos = [
     cat: "conjuntos",
     name: "Camelia",
     img: ["images/camelia1.jpeg", "images/camelia2.jpeg", "images/camelia3.jpeg", "images/camelia4.jpeg"],
-    desc: "Hermosa combinación con microfibra y detalles importados suaves al tacto.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -454,7 +452,7 @@ const productos = [
     cat: "conjuntos",
     name: "Anemona",
     img: ["images/anemona1.jpeg", "images/anemona2.jpeg"],
-    desc: "Línea deportiva de algodón sumamente cómodo y elástico.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -468,7 +466,7 @@ const productos = [
     cat: "conjuntos",
     name: "Clavel",
     img: ["images/clavel1.jpeg", "images/clavel2.jpeg", "images/clavel3.jpeg", "images/clavel4.jpeg"],
-    desc: "Edición especial confeccionada en delicado encaje bordado de alta calidad.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -481,9 +479,9 @@ const productos = [
     cat: "conjuntos",
     name: "Lirio",
     img: ["images/lirio1.jpeg", "images/lirio2.jpeg", "images/lirio3.jpeg"],
-    desc: "Artículo juvenil que abarca hasta el talle 4. Excelente calce elástico.",
+    desc: "...",
     tipo: "var",
-    px: 8990, // Conserva precio base general de conjuntos comunes
+    px: 8990,
     var: [
       { id: "lr4b", l: "Talle 4 · Blanco", s: 1 },
       { id: "lr4a", l: "Talle 4 · Amarillo", s: 2 }
@@ -495,7 +493,7 @@ const productos = [
     cat: "conjuntos",
     name: "Calvin Klein",
     img: ["images/ck1.jpeg","images/ck2.jpeg"],
-    desc: "Conjunto clásico deportivo de algodón con elástico icónico de la marca.",
+    desc: "...",
     tipo: "var",
     px: 9900,
     var: [
@@ -509,7 +507,7 @@ const productos = [
     cat: "conjuntos",
     name: "Violeta",
     img: ["images/violeta1.jpeg", "images/violeta2.jpeg", "images/violeta3.jpeg", "images/violeta4.jpeg"],
-    desc: "Estilo sofisticado con excelente base de soporte y colores vivos.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -525,7 +523,7 @@ const productos = [
     cat: "conjuntos",
     name: "Azucena",
     img: ["images/azucena1.jpeg", "images/azucena2.jpeg", "images/azucena3.jpeg"],
-    desc: "Diseño romántico en tonos pasteles en tendencia.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -542,7 +540,7 @@ const productos = [
     cat: "conjuntos",
     name: "Peonía",
     img: ["images/peonia1.jpeg", "images/peonia2.jpeg"],
-    desc: "Encaje delicado y taza suave ideal para destacar tu figura.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -557,7 +555,7 @@ const productos = [
     cat: "conjuntos",
     name: "Girasol",
     img: ["images/girasol1.jpeg", "images/girasol2.jpeg", "images/girasol3.jpeg"],
-    desc: "Línea premium con detalles traslúcidos exclusivos.",
+    desc: "...",
     tipo: "var",
     px: 11990,
     var: [
@@ -572,7 +570,7 @@ const productos = [
     cat: "conjuntos",
     name: "Rosa",
     img: ["images/rosa1.jpeg", "images/rosa2.jpeg"],
-    desc: "Conjunto de algodón cómodo y elástico de uso diario.",
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -587,7 +585,7 @@ const productos = [
     cat: "conjuntos",
     name: "Malva",
     img: ["images/malva1.jpeg", "images/malva2.jpeg", "images/malva3.jpeg"],
-    desc: "Microfibra elástica ultrafina con hermosos detalles de puntilla.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -603,8 +601,8 @@ const productos = [
     sku: "Lunaria Star",
     cat: "conjuntos",
     name: "Lunaria",
-    img: ["images/lunaria1.jpeg", "images/lunaria2.jpeg"], // Reemplazá por tus imágenes reales
-    desc: "Conjunto taza soft línea Star, diseñado para un calce cómodo y perfecto.", // Editá la descripción a tu gusto
+    img: ["images/lunaria1.jpeg", "images/lunaria2.jpeg"],
+    desc: "...",
     tipo: "var",
     px: 9990,
     var: [
@@ -621,8 +619,8 @@ const productos = [
     sku: "Belladona Martha",
     cat: "conjuntos",
     name: "Belladona",
-    img: ["images/belladona1.jpeg", "images/belladona2.jpeg"], // Reemplazá por tus imágenes reales
-    desc: "Conjunto línea Martha confeccionado con materiales premium para un calce ideal.", // Editá la descripción a tu gusto
+    img: ["images/belladona1.jpeg", "images/belladona2.jpeg"],
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -634,14 +632,13 @@ const productos = [
       { id: "bd100n", l: "T.100 · Negro", s: 1 }
     ]
   },
-  // --- NUEVOS CONJUNTOS ---
   {
     id: "azalea",
     sku: "Azalea Penny",
     cat: "conjuntos",
     name: "Azalea",
     img: ["images/azalea1.jpeg", "images/azalea2.jpeg", "images/azalea3.jpeg"],
-    desc: "Conjunto línea Penny, excelente calce y comodidad.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -657,7 +654,7 @@ const productos = [
     cat: "conjuntos",
     name: "Jacinto",
     img: ["images/jacinto1.jpeg", "images/jacinto2.jpeg", "images/jacinto3.jpeg"],
-    desc: "Conjunto línea Ximena con diseño delicado y confortable.",
+    desc: "...",
     tipo: "var",
     px: 10990,
     var: [
@@ -674,7 +671,7 @@ const productos = [
     cat: "conjuntos",
     name: "Amapola",
     img: ["images/amapola1.jpeg", "images/amapola2.jpeg", "images/amapola3.jpeg"],
-    desc: "Conjunto línea Loretta, estilo único y gran soporte.",
+    desc: "...",
     tipo: "var",
     px: 10990,
     var: [
@@ -692,7 +689,7 @@ const productos = [
     cat: "conjuntos",
     name: "Iris",
     img: ["images/iris1.jpeg", "images/iris2.jpeg", "images/iris3.jpeg", "images/iris4.jpeg"],
-    desc: "Conjunto línea Corina, detalles exclusivos y ajuste perfecto.",
+    desc: "...",
     tipo: "var",
     px: 11490,
     var: [
@@ -702,15 +699,13 @@ const productos = [
       { id: "ir100n", l: "T.100 · Negro", s: 1 }
     ]
   },
-
-  // --- BOXERS ---
   {
     id: "boxertommy",
     sku: "Boxer Tommy",
     cat: "boxers",
     name: "Bóxer Tommy",
     img: ["images/boxertommy.jpeg"],
-    desc: "Bóxer clásico de algodón premium con elástico personalizado de la marca.",
+    desc: "...",
     tipo: "var",
     px: 7490,
     var: [
@@ -722,8 +717,8 @@ const productos = [
     sku: "Boxer Dufour",
     cat: "boxers",
     name: "Bóxer Dufour",
-    img: ["images/boxerdufour1.jpeg"], // Reemplazá por la ruta de tu imagen real
-    desc: "Bóxer clásico de algodón y lycra marca Dufour, diseñado para un calce cómodo y duradero.",
+    img: ["images/boxerdufour1.jpeg"],
+    desc: "...",
     tipo: "var",
     px: 7490,
     var: [
@@ -739,15 +734,13 @@ const productos = [
       { id: "dfxlg", l: "Talle XL · Gris", s: 0 }
     ]
   },
-
-  // --- ROPA ---
   {
     id: "calzastermicas",
     sku: "Calzas termicas",
-    cat: "ropa",
+    cat: "prendas",
     name: "Calzas Térmicas",
     img: ["images/termica1.jpeg", "images/termica2.jpeg", "images/termica3.jpeg"],
-    desc: "Calzas con frisa interior premium, ideales para mantener el calor corporal con total comodidad.",
+    desc: "...",
     tipo: "simple",
     px: 7490,
     s: 1
