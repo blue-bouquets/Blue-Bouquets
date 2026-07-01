@@ -305,11 +305,47 @@ const productos = [
     tipo: "var",
     px: 3000,
     var: [
-      { id: "mpn", 2: "Pack Surtido", s: 2 },
+      { id: "mpn", 14: "Pack Surtido", s: 2 },
     ]
   },
 
   // --- CONJUNTOS ---
+  {
+    id: "conjuntomimosa",
+    sku: "Mimosa",
+    cat: "conjuntos",
+    name: "Conjunto Mimosa",
+    img: ["images/mimosa1.jpeg", "images/mimosa2.jpeg"], // Reemplazá por tus imágenes reales
+    desc: "Conjunto Mimosa, un diseño único y confortable.",
+    tipo: "var",
+    var: [
+      { id: "mimosa_85_negro", l: "T.85 — Negro", s: 1 },
+      { id: "mimosa_85_celeste", l: "T.85 — Celeste", s: 1 },
+      { id: "mimosa_90_rosa", l: "T.90 — Rosa", s: 1 },
+      { id: "mimosa_90_celeste", l: "T.90 — Celeste", s: 1 },
+      { id: "mimosa_95_rosa", l: "T.95 — Rosa", s: 1 },
+      { id: "mimosa_100_blanco", l: "T.100 — Blanco", s: 1 }
+    ],
+    px: 11490
+  },
+  {
+    id: "conjuntocrisantemo",
+    sku: "Crisantemo",
+    cat: "conjuntos", // Clasificado en la categoría de conjuntos
+    name: "Conjunto Crisantemo",
+    img: ["images/crisantemo1.jpeg", "images/crisantemo2.jpeg"], // Reemplazá por tus imágenes reales
+    desc: "Conjunto Crisantemo, delicado y cómodo.",
+    tipo: "var",
+    var: [
+      { id: "crisantemo_85_celeste", l: "T.85 — Celeste", s: 1 },
+      { id: "crisantemo_85_negro", l: "T.85 — Negro", s: 1 },
+      { id: "crisantemo_90_beige", l: "T.90 — Beige", s: 1 },
+      { id: "crisantemo_95_blanco", l: "T.95 — Blanco", s: 1 },
+      { id: "crisantemo_100_celeste", l: "T.100 — Celeste", s: 1 },
+      { id: "crisantemo_100_negro", l: "T.100 — Negro", s: 1 }
+    ],
+    px: 11490
+  },
   {
     id: "begonia",
     sku: "Begonia",
@@ -628,7 +664,7 @@ const productos = [
       { id: "bd85b", l: "T.85 · Blanco", s: 1 },
       { id: "bd90be", l: "T.90 · Beige", s: 1 },
       { id: "bd95b", l: "T.95 · Blanco", s: 1 },
-      { id: "bd100g", l: "T.100 · Gris", s: 1 },
+      { id: "bd100g", l: "T.100 · Gris", s: 0 },
       { id: "bd100n", l: "T.100 · Negro", s: 1 }
     ]
   },
@@ -744,5 +780,37 @@ const productos = [
     tipo: "simple",
     px: 7490,
     s: 1
+  },
+  {
+    id: "pijama2piezas",
+    sku: "Pijama 2 piezas",
+    cat: "prendas", // Lo coloco en prendas, podés cambiarlo a "conjuntos" si preferís que filtre ahí
+    name: "Pijama 2 Piezas",
+    img: ["images/pijama1.jpeg", "images/pijama2.jpeg"], // Reemplazá por las rutas de tus fotos reales
+    desc: "Hermoso pijama de 2 piezas, súper cómodo.",
+    tipo: "var",
+    var: [
+      { id: "pijama_90_amarillo", l: "T.90 — Amarillo", s: 1 },
+      { id: "pijama_95_rojo", l: "T.95 — Rojo", s: 1 },
+      { id: "pijama_95_rosa", l: "T.95 — Rosa", s: 1 },
+      { id: "pijama_100_celeste", l: "T.100 — Celeste", s: 1 },
+      { id: "pijama_100_marron", l: "T.100 — Marrón", s: 1 }
+    ],
+    px: 13490
+  },
+  {
+    id: "calzasefectopiel",
+    sku: "Calzas efecto piel",
+    cat: "prendas",
+    name: "Calzas Efecto Piel",
+    img: ["images/piel1.jpeg", "images/piel2.jpeg"], // Reemplazá por los nombres de tus imágenes reales
+    desc: "Calzas con efecto piel, ideales para el invierno.",
+    tipo: "var",
+    var: [
+      { id: "calza_piel_s", l: "S", s: 1 },
+      { id: "calza_piel_m", l: "M", s: 3 },
+      { id: "calza_piel_l", l: "L", s: 1 }
+    ],
+    px: 12990
   }
 ];
