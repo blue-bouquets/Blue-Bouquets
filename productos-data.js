@@ -195,11 +195,11 @@ const productos = [
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
       { c: "Blanca", s: 4 }, 
-      { c: "Beige", s: 6 }, 
+      { c: "Beige", s: 5 }, 
       { c: "Negra", s: 0 }, 
       { c: "Crema", s: 2 }, 
       { c: "Rojo", s: 3 }, 
-      { c: "Gris", s: 2 }
+      { c: "Gris", s: 0 }
     ]
   },
   {
@@ -613,7 +613,7 @@ const productos = [
       { id: "ln95n", l: "T.95 · Negro", s: 1 },
       { id: "ln95g", l: "T.95 · Gris", s: 1 },
       { id: "ln100b", l: "T.100 · Blanco", s: 1 },
-      { id: "ln100be", l: "T.100 · Beige", s: 1 }
+      { id: "ln100be", l: "T.100 · Beige", s: 0 }
     ]
   },
   {
@@ -728,15 +728,15 @@ const productos = [
     px: 7490,
     var: [
       // Talle M
-      { id: "dfmn", l: "Talle M · Negro", s: 1 },
+      { id: "dfmn", l: "Talle M · Negro", s: 0 },
       { id: "dfmr", l: "Talle M · Rojo", s: 3 },
       { id: "dfmg", l: "Talle M · Gris", s: 2 },
       // Talle L
       { id: "dflg", l: "Talle L · Gris", s: 1 },
-      { id: "dflr", l: "Talle L · Rojo", s: 1 },
+      { id: "dflr", l: "Talle L · Rojo", s: 0 },
       // Talle XL
       { id: "dfxlr", l: "Talle XL · Rojo", s: 1 },
-      { id: "dfxlg", l: "Talle XL · Gris", s: 1 }
+      { id: "dfxlg", l: "Talle XL · Gris", s: 0 }
     ]
   },
 
