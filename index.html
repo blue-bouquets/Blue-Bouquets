@@ -22,6 +22,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; }
 
+    /* Header Unificado */
     header { background: var(--azul-noche); padding: 0 16px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 56px; }
     .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--menta); text-decoration: none; letter-spacing: 0.5px; }
     .logo span { color: var(--turquesa); font-style: italic; }
@@ -29,12 +30,14 @@
     .cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 8px 16px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
     .cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 18px; height: 18px; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 
+    /* Hero con Estilos de Marca Originales */
     .hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 60px 24px 48px; text-align: center; }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 300; color: white; margin-bottom: 12px; }
-    .hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 7vw, 4rem); font-weight: 600; color: var(--menta); margin-bottom: 12px; }
+    .hero h1 span { color: var(--turquesa); font-style: italic; }
+    .hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; max-width: 600px; line-height: 1.4; }
 
     .filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
-    .filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; }
+    .filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; font-weight: 500; }
     .filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
     .size-filter-container { display: flex; align-items: center; gap: 6px; }
     .size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 12px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
@@ -68,13 +71,11 @@
     .add-btn:hover { background: var(--turquesa); }
     .add-btn:disabled { background: #b0c2c4; cursor: not-allowed; }
 
-    /* SECCIÓN EDITABLE DESDE GITHUB (Textos e información de abajo) */
     .about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); }
     .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left; }
     .about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--azul-noche); margin-bottom: 12px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 4px; }
     .about-col p, .about-col ul { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; list-style: none; }
     .about-col ul li { margin-bottom: 6px; }
-    .about-col a { color: var(--turquesa); text-decoration: none; font-weight: 500; }
 
     footer { background: var(--azul-noche); padding: 24px; text-align: center; color: var(--menta); font-size: 0.85rem; }
 
@@ -112,14 +113,15 @@
   </header>
 
   <section class="hero">
-    <h1>Blue Bouquets</h1>
-    <p>Lencería de diseño & prendas pensadas para tu comodidad</p>
+    <h1>Blue <span>Bouquets</span></h1>
+    <p>Showroom de lencería. Conjuntos de puntilla, algodón y morley. Diseños regulables y para todos los cuerpos.</p>
   </section>
 
   <div class="filters">
     <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
     <button class="filter-btn" onclick="filtrar('conjuntos', this)">Conjuntos</button>
     <button class="filter-btn" onclick="filtrar('bombachas', this)">Bombachas</button>
+    <button class="filter-btn" onclick="filtrar('boxers', this)">Boxers</button>
     <button class="filter-btn" onclick="filtrar('medias', this)">Medias</button>
     
     <div class="size-filter-container">
@@ -207,7 +209,6 @@
       const precioRender = p.px ? p.px.toLocaleString('es-AR') : (p.var[0] && p.var[0].px ? p.var[0].px.toLocaleString('es-AR') : 'Consultar');
       const tieneStockGlobal = p.var.some(v => v.s > 0);
 
-      // Solución al bug undefined cambiado por "Surtido" si no hay variantes de talle complejas
       const vars = (p.var && p.var.length > 0 && p.var[0].id !== undefined) ? p.var.map(v => {
         let ocultarPorTalle = false;
         if (talleFiltrado !== 'todos') {
@@ -350,9 +351,10 @@
 
       for(let i=1; i<=s.qty; i++) {
         carrito.push({
-          id: p.id,
+          id: p.id, // ID ÚNICO DEL PRODUCTO (Crucial para separar las reglas de $7.000 de las de $10.000)
           tipo: 'multi_item',
-          ofertaGrupo: p.cat, 
+          ofertaGrupo: p.id, 
+          catGrupo: p.cat,
           name: p.name,
           det: `1x (${talleMostrar}) - Color: ${s.cols[i]}`,
           pxBase: p.precios[0].px, 
@@ -363,6 +365,7 @@
       toast(`✓ Combo agregado`);
     }
 
+    // SOLUCIÓN AL CÁLCULO CORECTO DE DISTINTAS PROMOS ($7.000 vs $10.000)
     function calcularEstructuraCarrito() {
       let total = 0;
       let itemsNormales = [];
@@ -378,10 +381,10 @@
         }
       });
 
-      Object.keys(itemsMulti).forEach(grupo => {
-        const list = itemsMulti[grupo];
+      Object.keys(itemsMulti).forEach(grupoId => {
+        const list = itemsMulti[grupoId];
         const cant = list.length;
-        const prodBase = productos.find(x => x.cat === grupo && x.tipo === 'multi');
+        const prodBase = productos.find(x => x.id === grupoId); // Vinculación directa al ID único del modelo
         
         if (prodBase && prodBase.precios) {
           const reglas = [...prodBase.precios].sort((a,b) => b.qty - a.qty);
@@ -434,7 +437,6 @@
       document.getElementById('waBtn').disabled = cnt===0;
     }
 
-    // NUEVA ESTRUCTURA DE MENSAJE DE WHATSAPP SOLICITADA (Con corazones azules y textos concisos)
     function finalizarPedido() {
       if(carrito.length===0) return;
       const { total, itemsNormales, itemsMulti } = calcularEstructuraCarrito();
@@ -447,9 +449,10 @@
         });
       }
 
-      Object.keys(itemsMulti).forEach(grupo => {
-        const list = itemsMulti[grupo];
-        msg += `📦 *PROMO COMBINABLE (${grupo.toUpperCase()})*:\n`;
+      Object.keys(itemsMulti).forEach(grupoId => {
+        const list = itemsMulti[grupoId];
+        const categoriaNombre = list[0].catGrupo ? list[0].catGrupo.toUpperCase() : 'BOMBACHAS';
+        msg += `📦 *PROMO COMBINABLE (${categoriaNombre})*:\n`;
         list.forEach(i => {
           msg += `  • ${i.name} — ${i.det}\n`;
         });
