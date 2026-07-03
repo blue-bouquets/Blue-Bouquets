@@ -769,7 +769,7 @@ const productos = [
   },
   {
     id: "boxerdufour",
-    sku: "Boxer Dufour",
+    sku: "Boxer Dufour de Poliester",
     cat: "boxers",
     name: "Bóxer Dufour",
     img: ["images/boxerdufour1.jpeg"],
