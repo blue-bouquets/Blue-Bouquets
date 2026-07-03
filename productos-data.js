@@ -414,7 +414,7 @@ const productos = [
   {
     id: "conjuntocrisantemo",
     sku: "Crisantemo",
-    cat: "conjuntos", // Clasificado en la categoría de conjuntos
+    cat: "conjuntos",
     name: "Crisantemo",
     img: ["images/crisantemo1.jpeg", "images/crisantemo2.jpeg"], // Reemplazá por tus imágenes reales
     desc: "Conjunto Crisantemo, delicado y cómodo.",
