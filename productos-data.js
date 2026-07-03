@@ -423,7 +423,7 @@ const productos = [
       { id: "crisantemo_85_celeste", l: "T.85 — Celeste", s: 1 },
       { id: "crisantemo_85_negro", l: "T.85 — Negro", s: 1 },
       { id: "crisantemo_90_beige", l: "T.90 — Beige", s: 1 },
-      { id: "crisantemo_95_blanco", l: "T.95 — Blanco", s: 1 },
+      { id: "crisantemo_95_blanco", l: "T.95 — Blanco", s: 0 },
       { id: "crisantemo_100_celeste", l: "T.100 — Celeste", s: 1 },
       { id: "crisantemo_100_negro", l: "T.100 — Negro", s: 1 }
     ],
