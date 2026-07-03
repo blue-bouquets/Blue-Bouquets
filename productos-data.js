@@ -21,6 +21,48 @@ const productos = [
     ]
   },
   {
+    id: "colalesslavanda",
+    sku: "Colaless Lavanda",
+    cat: "bombachas",
+    name: "Colaless Lavanda",
+    img: ["images/lesslavanda1.jpeg", "images/lesslavanda2.jpeg"],
+    desc: "Tela de algodón",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Rosa", s: 3 },
+      { c: "Negra", s: 3 },
+      { c: "Gris", s: 3 },
+      { c: "Blanca", s: 3 }
+    ]
+  },
+  {
+    id: "colalessazalea",
+    sku: "Colaless Azalea",
+    cat: "bombachas",
+    name: "Colaless Azalea",
+    img: ["images/lessazalea1.jpeg", "images/lessazalea2.jpeg"],
+    desc: "tela de algodón con puntilla.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 3 },
+      { c: "Negra", s: 3 },
+      { c: "Roja", s: 3 },
+      { c: "Gris", s: 3 }
+    ]
+  },
+  {
     id: "vedetinasdealgodon",
     sku: "Vedetinas de Algodon",
     cat: "bombachas",
@@ -152,6 +194,27 @@ const productos = [
       { c: "Blanca", s: 5 }, 
       { c: "Gris", s: 7 }, 
       { c: "Beige", s: 4 }
+    ]
+  },
+  {
+    id: "lesshilo",
+    sku: "Less Hilo",
+    cat: "bombachas",
+    name: "Less Hilo",
+    img: ["images/hilo1.jpeg", "images/hilo2.jpeg", "images/hilo3.jpeg"],
+    desc: "Less Hilo, cómodas y con excelente calce.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3500 },
+      { qty: 2, px: 6000 }
+    ],
+    colores: [
+      { c: "Roja", s: 0 },
+      { c: "Negra", s: 0 },
+      { c: "Gris", s: 0 },
+      { c: "Beige", s: 2 },
+      { c: "Blanca", s: 1 }
     ]
   },
   {
@@ -335,7 +398,7 @@ const productos = [
     cat: "conjuntos",
     name: "Conjunto Mimosa",
     img: ["images/mimosa1.jpeg", "images/mimosa2.jpeg"], // Reemplazá por tus imágenes reales
-    desc: "Conjunto Mimosa, un diseño único y confortable.",
+    desc: "Mimosa, un diseño único y confortable.",
     tipo: "var",
     var: [
       { id: "mimosa_85_negro", l: "T.85 — Negro", s: 1 },
@@ -351,7 +414,7 @@ const productos = [
     id: "conjuntocrisantemo",
     sku: "Crisantemo",
     cat: "conjuntos", // Clasificado en la categoría de conjuntos
-    name: "Conjunto Crisantemo",
+    name: "Crisantemo",
     img: ["images/crisantemo1.jpeg", "images/crisantemo2.jpeg"], // Reemplazá por tus imágenes reales
     desc: "Conjunto Crisantemo, delicado y cómodo.",
     tipo: "var",
@@ -765,6 +828,28 @@ const productos = [
     px: 7490,
     var: [
       { id: "bt4b", l: "Talle 4 · Blanco", s: 0 }
+    ]
+  },
+  {
+    id: "boxerdufouralgodon",
+    sku: "Boxer Dufour de Algodon",
+    cat: "boxers",
+    name: "Bóxer Dufour Algodón",
+    img: ["images/dufouralgodon1.jpeg", "images/dufouralgodon2.jpeg", "images/dufouralgodon3.jpeg"],
+    desc: "75% algodón",
+    tipo: "var",
+    px: 7990,
+    var: [
+      // Talle M
+      { id: "dfamg", l: "Talle M · Gris", s: 0 },
+      { id: "dfamb", l: "Talle M · Bordó", s: 0 },
+      // Talle L
+      { id: "dfalg", l: "Talle L · Gris", s: 0 },
+      // Talle XL
+      { id: "dfaxlg", l: "Talle XL · Gris", s: 0 },
+      { id: "dfaxln", l: "Talle XL · Negro", s: 0 },
+      // Talle XXL
+      { id: "dfaxxln", l: "Talle XXL · Negro", s: 1 }
     ]
   },
   {
