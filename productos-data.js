@@ -247,9 +247,9 @@ const productos = [
     talle: "Único (Regulable)",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Beige", s: 2 },
-      { c: "Blanca", s: 0 },
-      { c: "Negra", s: 0 }
+      { c: "Beige", s: 6 },
+      { c: "Blanca", s: 4 },
+      { c: "Negra", s: 4 }
     ]
   },
   {
@@ -300,7 +300,7 @@ const productos = [
     sku: "Medias de plush",
     cat: "medias",
     name: "Medias de Plush (Pack x2 pares)",
-    img: ["images/mediasplush1.jpeg", "images/mediasplush2.jpeg", "images/mediasplush3.jpeg", "images/mediasplush4.jpeg"],
+    img: ["images/mediasplush1.jpeg", "images/mediasplush2.jpeg", "images/mediasplush3.jpeg", "images/mediasplush4.jpeg", "images/mediasplush5.jpeg", "images/mediasplush6.jpeg", "images/mediasplush7.jpeg"],
     desc: "...",
     tipo: "var",
     px: 3000,
@@ -784,9 +784,9 @@ const productos = [
   {
     id: "pijama2piezas",
     sku: "Pijama 2 piezas",
-    cat: "prendas", // Lo coloco en prendas, podés cambiarlo a "conjuntos" si preferís que filtre ahí
+    cat: "prendas",
     name: "Pijama 2 Piezas",
-    img: ["images/pijama1.jpeg", "images/pijama2.jpeg"], // Reemplazá por las rutas de tus fotos reales
+    img: ["images/pijama1.jpeg", "images/pijama2.jpeg", "images/pijama3.jpeg", "images/pijama4.jpeg", "images/pijama5.jpeg", "images/pijama6.jpeg", "images/pijama7.jpeg"], // Reemplazá por las rutas de tus fotos reales
     desc: "Hermoso pijama de 2 piezas, súper cómodo.",
     tipo: "var",
     var: [
@@ -803,14 +803,14 @@ const productos = [
     sku: "Calzas efecto piel",
     cat: "prendas",
     name: "Calzas Efecto Piel",
-    img: ["images/piel1.jpeg", "images/piel2.jpeg"], // Reemplazá por los nombres de tus imágenes reales
+    img: ["images/calzapiel1.jpeg", "images/calzapiel2.jpeg", "images/calzapiel3.jpeg", "images/calzapiel4.jpeg"],
     desc: "Calzas con efecto piel, ideales para el invierno.",
     tipo: "var",
     var: [
       { id: "calza_piel_s", l: "S", s: 1 },
-      { id: "calza_piel_m", l: "M", s: 3 },
-      { id: "calza_piel_l", l: "L", s: 1 }
+      { id: "calza_piel_m", l: "M", s: 0 },
+      { id: "calza_piel_l", l: "L", s: 0 }
     ],
-    px: 12990
+    px: 13990
   }
 ];
