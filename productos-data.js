@@ -2,6 +2,25 @@
 const productos = [
   // --- BOMBACHAS ---
   {
+    id: "colalessargentina",
+    sku: "Colaless Argentina!",
+    cat: "bombachas",
+    name: "Colaless Argentina!",
+    img: ["images/argentina1.jpeg", "images/argentina2.jpeg"],
+    desc: "Colaless Argentina!, cómodas y con excelente calce.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 7 },
+      { c: "Celeste", s: 5 }
+    ]
+  },
+  {
     id: "vedetinasdealgodon",
     sku: "Vedetinas de Algodon",
     cat: "bombachas",
