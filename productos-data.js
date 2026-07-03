@@ -148,10 +148,10 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Negra", s: 0 }, 
-      { c: "Blanca", s: 2 }, 
-      { c: "Gris", s: 4 }, 
-      { c: "Beige", s: 1 }
+      { c: "Negra", s: 3 }, 
+      { c: "Blanca", s: 5 }, 
+      { c: "Gris", s: 7 }, 
+      { c: "Beige", s: 4 }
     ]
   },
   {
