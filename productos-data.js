@@ -57,9 +57,9 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 3 },
-      { c: "Negra", s: 2 },
-      { c: "Roja", s: 2 },
-      { c: "Gris", s: 3 }
+      { c: "Negra", s: 1 },
+      { c: "Roja", s: 1 },
+      { c: "Gris", s: 2 }
     ]
   },
   {
