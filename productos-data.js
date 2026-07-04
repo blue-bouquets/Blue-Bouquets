@@ -93,9 +93,9 @@ const productos = [
     talle: "XL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Negra XL", s: 2 }, 
-      { c: "Beige XL", s: 2 }, 
-      { c: "Gris XL", s: 3 }, 
+      { c: "Negra XL", s: 1 }, 
+      { c: "Beige XL", s: 1 }, 
+      { c: "Gris XL", s: 2 }, 
       { c: "Blanca XL", s: 1 }, 
       { c: "Roja XL", s: 1 }
     ]
