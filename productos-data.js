@@ -112,8 +112,8 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Piel", s: 2 }, 
-      { c: "Blanca", s: 2 }, 
-      { c: "Rosa", s: 1 }
+      { c: "Blanca", s: 1 }, 
+      { c: "Rosa", s: 0 }
     ]
   },
   {
