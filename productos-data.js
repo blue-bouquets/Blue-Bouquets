@@ -36,8 +36,8 @@ const productos = [
     ],
     colores: [
       { c: "Rosa", s: 3 },
-      { c: "Negra", s: 3 },
-      { c: "Gris", s: 3 },
+      { c: "Negra", s: 2 },
+      { c: "Gris", s: 2 },
       { c: "Blanca", s: 2}
     ]
   },
@@ -73,10 +73,10 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-    { c: "Blanca M", s: 1 },
+    { c: "Blanca M", s: 0 },
     { c: "Roja M", s: 1 },
     { c: "Beige M", s: 2 },
-    { c: "Crema M", s: 2 },
+    { c: "Crema M", s: 1 },
     { c: "Beige L", s: 0 },
     { c: "Negra L", s: 0 },
     { c: "Blanca L", s: 0 }
@@ -93,11 +93,11 @@ const productos = [
     talle: "XL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Negra XL", s: 1 }, 
-      { c: "Beige XL", s: 1 }, 
-      { c: "Gris XL", s: 2 }, 
-      { c: "Blanca XL", s: 1 }, 
-      { c: "Roja XL", s: 1 }
+      { c: "Negra XL", s: 0 }, 
+      { c: "Beige XL", s: 0 }, 
+      { c: "Gris XL", s: 0 }, 
+      { c: "Blanca XL", s: 0 }, 
+      { c: "Roja XL", s: 0 }
     ]
   },
   {
@@ -159,7 +159,7 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Blanca", s: 7 }, 
-      { c: "Bordo", s: 1 }, 
+      { c: "Bordo", s: 0 }, 
       { c: "Negra", s: 5 }, 
       { c: "Crema", s: 3 }
     ]
@@ -175,7 +175,7 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 3 }, 
+      { c: "Blanca", s: 2 }, 
       { c: "Negro", s: 0 }, 
       { c: "Beige", s: 1 }
     ]
@@ -315,7 +315,7 @@ const productos = [
     colores: [
       { c: "Blanca", s: 3 }, 
       { c: "Negra", s: 0 }, 
-      { c: "Beige", s: 3 }, 
+      { c: "Beige", s: 2 }, 
       { c: "Rosa", s: 1 }
     ]
   },
@@ -331,8 +331,8 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Beige", s: 6 },
-      { c: "Blanca", s: 4 },
-      { c: "Negra", s: 4 }
+      { c: "Blanca", s: 3 },
+      { c: "Negra", s: 3 }
     ]
   },
   {
@@ -346,7 +346,7 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Beige", s: 3 },
+      { c: "Beige", s: 2 },
       { c: "Blanca", s: 4 },
       { c: "Rosa", s: 5 }
     ]
@@ -363,8 +363,8 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Violeta", s: 3 },
-      { c: "Roja", s: 2 },
-      { c: "Negra", s: 2 }
+      { c: "Roja", s: 1 },
+      { c: "Negra", s: 1 }
     ]
   },
   {
@@ -388,7 +388,7 @@ const productos = [
     tipo: "var",
     px: 3000,
     var: [
-      { id: "mpn", 14: "Pack Surtido", s: 2 },
+      { id: "mpn", 14: "Pack Surtido", s: 9 },
     ]
   },
 
@@ -402,10 +402,10 @@ const productos = [
     desc: "Mimosa, un diseño único y confortable.",
     tipo: "var",
     var: [
-      { id: "mimosa_85_negro", l: "T.85 — Negro", s: 1 },
+      { id: "mimosa_85_negro", l: "T.85 — Negro", s: 0 },
       { id: "mimosa_85_celeste", l: "T.85 — Celeste", s: 1 },
       { id: "mimosa_90_rosa", l: "T.90 — Rosa", s: 0 },
-      { id: "mimosa_90_celeste", l: "T.90 — Celeste", s: 1 },
+      { id: "mimosa_90_celeste", l: "T.90 — Celeste", s: 0 },
       { id: "mimosa_95_rosa", l: "T.95 — Rosa", s: 1 },
       { id: "mimosa_100_blanco", l: "T.100 — Blanco", s: 1 }
     ],
@@ -813,7 +813,7 @@ const productos = [
     px: 11490,
     var: [
       { id: "ir85n", l: "T.85 · Negro", s: 1 },
-      { id: "ir95bc", l: "T.95 · Blanco y Celeste", s: 1 },
+      { id: "ir95bc", l: "T.95 · Blanco y Celeste", s: 0 },
       { id: "ir100r", l: "T.100 · Rosa", s: 1 },
       { id: "ir100n", l: "T.100 · Negro", s: 1 }
     ]
@@ -895,7 +895,7 @@ const productos = [
     desc: "Hermoso pijama de 2 piezas, súper cómodo.",
     tipo: "var",
     var: [
-      { id: "pijama_90_amarillo", l: "T.90 — Amarillo", s: 1 },
+      { id: "pijama_90_amarillo", l: "T.90 — Amarillo", s: 0 },
       { id: "pijama_95_rojo", l: "T.95 — Rojo", s: 1 },
       { id: "pijama_95_rosa", l: "T.95 — Rosa", s: 1 },
       { id: "pijama_100_celeste", l: "T.100 — Celeste", s: 1 },
