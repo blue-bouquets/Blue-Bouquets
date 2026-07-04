@@ -38,7 +38,7 @@ const productos = [
       { c: "Rosa", s: 3 },
       { c: "Negra", s: 3 },
       { c: "Gris", s: 3 },
-      { c: "Blanca", s: 3 }
+      { c: "Blanca", s: 2}
     ]
   },
   {
@@ -57,8 +57,8 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 3 },
-      { c: "Negra", s: 3 },
-      { c: "Roja", s: 3 },
+      { c: "Negra", s: 2 },
+      { c: "Roja", s: 2 },
       { c: "Gris", s: 3 }
     ]
   },
@@ -77,9 +77,9 @@ const productos = [
     { c: "Roja M", s: 1 },
     { c: "Beige M", s: 2 },
     { c: "Crema M", s: 2 },
-    { c: "Beige L", s: 1 },
-    { c: "Negra L", s: 1 },
-    { c: "Blanca L", s: 1 }
+    { c: "Beige L", s: 0 },
+    { c: "Negra L", s: 0 },
+    { c: "Blanca L", s: 0 }
   ]
   },
   {
