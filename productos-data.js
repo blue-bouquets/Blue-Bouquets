@@ -404,7 +404,7 @@ const productos = [
     var: [
       { id: "mimosa_85_negro", l: "T.85 — Negro", s: 1 },
       { id: "mimosa_85_celeste", l: "T.85 — Celeste", s: 1 },
-      { id: "mimosa_90_rosa", l: "T.90 — Rosa", s: 1 },
+      { id: "mimosa_90_rosa", l: "T.90 — Rosa", s: 0 },
       { id: "mimosa_90_celeste", l: "T.90 — Celeste", s: 1 },
       { id: "mimosa_95_rosa", l: "T.95 — Rosa", s: 1 },
       { id: "mimosa_100_blanco", l: "T.100 — Blanco", s: 1 }
