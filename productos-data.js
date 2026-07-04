@@ -796,8 +796,8 @@ const productos = [
     var: [
       { id: "am85m", l: "T.85 · Marrón", s: 1 },
       { id: "am85n", l: "T.85 · Negro", s: 1 },
-      { id: "am90r", l: "T.90 · Rojo", s: 1 },
-      { id: "am90n", l: "T.90 · Negro", s: 1 },
+      { id: "am90r", l: "T.90 · Rojo", s: 0 },
+      { id: "am90n", l: "T.90 · Negro", s: 0 },
       { id: "am95m", l: "T.95 · Marrón", s: 1 },
       { id: "am100r", l: "T.100 · Rojo", s: 1 }
     ]
