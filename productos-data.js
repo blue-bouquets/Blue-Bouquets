@@ -229,9 +229,9 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 2 }, 
-      { c: "Roja", s: 1 }, 
-      { c: "Negra", s: 1 }
+      { c: "Blanca", s: 1 }, 
+      { c: "Roja", s: 0 }, 
+      { c: "Negra", s: 0 }
     ]
   },
   {
@@ -421,7 +421,7 @@ const productos = [
     tipo: "var",
     var: [
       { id: "crisantemo_85_celeste", l: "T.85 — Celeste", s: 0 },
-      { id: "crisantemo_85_negro", l: "T.85 — Negro", s: 1 },
+      { id: "crisantemo_85_negro", l: "T.85 — Negro", s: 0 },
       { id: "crisantemo_100_celeste", l: "T.100 — Celeste", s: 1 },
       { id: "crisantemo_100_negro", l: "T.100 — Negro", s: 1 }
     ],
@@ -478,7 +478,7 @@ const productos = [
     px: 9990,
     var: [
       { id: "cl85be", l: "T.85 · Beige", s: 0 },
-      { id: "cl100be", l: "T.100 · Beige", s: 1 },
+      { id: "cl100be", l: "T.100 · Beige", s: 0},
       { id: "cl95n", l: "T.95 · Negro", s: 0 }
     ]
   },
@@ -506,7 +506,7 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "gd100r", l: "T.100 · Rojo", s: 1 },
+      { id: "gd100r", l: "T.100 · Rojo", s: 0 },
       { id: "gd100b", l: "T.100 · Blanco", s: 0 }
     ]
   },
