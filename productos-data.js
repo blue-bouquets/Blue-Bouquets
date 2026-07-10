@@ -158,10 +158,10 @@ const productos = [
     desc: "Tela de encaje. Talle 36-44",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 7 }, 
+      { c: "Blanca", s: 6 }, 
       { c: "Bordo", s: 0 }, 
-      { c: "Negra", s: 5 }, 
-      { c: "Crema", s: 3 }
+      { c: "Negra", s: 4 }, 
+      { c: "Crema", s: 2 }
     ]
   },
   {
@@ -280,8 +280,8 @@ const productos = [
       { c: "Blanca", s: 4 }, 
       { c: "Beige", s: 5 }, 
       { c: "Negra", s: 0 }, 
-      { c: "Crema", s: 2 }, 
-      { c: "Rojo", s: 3 }, 
+      { c: "Crema", s: 0 }, 
+      { c: "Rojo", s: 2}, 
       { c: "Gris", s: 0 }
     ]
   },
