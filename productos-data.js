@@ -17,7 +17,7 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 7 },
-      { c: "Celeste", s: 5 }
+      { c: "Celeste", s: 4 }
     ]
   },
   {
@@ -35,7 +35,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Rosa", s: 3 },
+      { c: "Rosa", s: 2 },
       { c: "Negra", s: 2 },
       { c: "Gris", s: 2 },
       { c: "Blanca", s: 2}
@@ -59,7 +59,7 @@ const productos = [
       { c: "Blanca", s: 3 },
       { c: "Negra", s: 0 },
       { c: "Roja", s: 0 },
-      { c: "Gris", s: 1 }
+      { c: "Gris", s: 0 }
     ]
   },
   {
@@ -74,9 +74,9 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
     { c: "Blanca M", s: 0 },
-    { c: "Roja M", s: 1 },
-    { c: "Beige M", s: 2 },
-    { c: "Crema M", s: 1 },
+    { c: "Roja M", s: 0 },
+    { c: "Beige M", s: 1 },
+    { c: "Crema M", s: 0 },
     { c: "Beige L", s: 0 },
     { c: "Negra L", s: 0 },
     { c: "Blanca L", s: 0 }
@@ -161,7 +161,7 @@ const productos = [
       { c: "Blanca", s: 6 }, 
       { c: "Bordo", s: 0 }, 
       { c: "Negra", s: 4 }, 
-      { c: "Crema", s: 2 }
+      { c: "Crema", s: 1 }
     ]
   },
   {
@@ -194,7 +194,7 @@ const productos = [
       { c: "Negra", s: 0 }, 
       { c: "Blanca", s: 4 }, 
       { c: "Gris", s: 4 }, 
-      { c: "Beige", s: 3 }
+      { c: "Beige", s: 2 }
     ]
   },
   {
@@ -313,7 +313,7 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 3 }, 
+      { c: "Blanca", s: 2 }, 
       { c: "Negra", s: 0 }, 
       { c: "Beige", s: 2 }, 
       { c: "Rosa", s: 1 }
@@ -330,9 +330,9 @@ const productos = [
     talle: "Único (Regulable)",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Beige", s: 6 },
+      { c: "Beige", s: 4 },
       { c: "Blanca", s: 3 },
-      { c: "Negra", s: 3 }
+      { c: "Negra", s: 2 }
     ]
   },
   {
@@ -346,7 +346,7 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Beige", s: 2 },
+      { c: "Beige", s: 1 },
       { c: "Blanca", s: 4 },
       { c: "Rosa", s: 5 }
     ]
@@ -726,7 +726,7 @@ const productos = [
       { id: "ln85be", l: "T.85 · Beige", s: 1 },
       { id: "ln90b", l: "T.90 · Blanco", s: 0 },
       { id: "ln95n", l: "T.95 · Negro", s: 0 },
-      { id: "ln95g", l: "T.95 · Gris", s: 1 },
+      { id: "ln95g", l: "T.95 · Gris", s: 0 },
       { id: "ln100b", l: "T.100 · Blanco", s: 0 },
       { id: "ln100be", l: "T.100 · Beige", s: 0 }
     ]
@@ -743,10 +743,10 @@ const productos = [
     var: [
       { id: "bd85be", l: "T.85 · Beige", s: 1 },
       { id: "bd85b", l: "T.85 · Blanco", s: 1 },
-      { id: "bd90be", l: "T.90 · Beige", s: 1 },
-      { id: "bd95b", l: "T.95 · Blanco", s: 1 },
+      { id: "bd90be", l: "T.90 · Beige", s: 0 },
+      { id: "bd95b", l: "T.95 · Blanco", s: 0 },
       { id: "bd100g", l: "T.100 · Gris", s: 0 },
-      { id: "bd100n", l: "T.100 · Negro", s: 1 }
+      { id: "bd100n", l: "T.100 · Negro", s: 0 }
     ]
   },
   {
@@ -760,8 +760,8 @@ const productos = [
     px: 11490,
     var: [
       { id: "az90be", l: "T.90 · Beige", s: 0 },
-      { id: "az95b", l: "T.95 · Blanco", s: 1 },
-      { id: "az100n", l: "T.100 · Negro", s: 1 }
+      { id: "az95b", l: "T.95 · Blanco", s: 0 },
+      { id: "az100n", l: "T.100 · Negro", s: 0 }
     ]
   },
   {
