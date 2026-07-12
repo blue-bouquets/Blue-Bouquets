@@ -194,7 +194,7 @@ const productos = [
       { c: "Negra", s: 0 }, 
       { c: "Blanca", s: 4 }, 
       { c: "Gris", s: 4 }, 
-      { c: "Beige", s: 2 }
+      { c: "Beige", s: 1 }
     ]
   },
   {
@@ -229,7 +229,7 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 1 }, 
+      { c: "Blanca", s: 0 }, 
       { c: "Roja", s: 0 }, 
       { c: "Negra", s: 0 }
     ]
@@ -247,7 +247,7 @@ const productos = [
     colores: [
       { c: "Rojo", s: 0 }, 
       { c: "Negra", s: 0 }, 
-      { c: "Blanco", s: 2 }, 
+      { c: "Blanco", s: 0 }, 
       { c: "Beige", s: 0 }, 
       { c: "Gris", s: 0 }
     ]
@@ -277,12 +277,12 @@ const productos = [
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Blanca", s: 4 }, 
+      { c: "Blanca", s: 3 }, 
       { c: "Beige", s: 5 }, 
       { c: "Negra", s: 0 }, 
       { c: "Crema", s: 0 }, 
-      { c: "Rojo", s: 2}, 
-      { c: "Gris", s: 0 }
+      { c: "Rojo", s: 1}, 
+      { c: "Gris", s: 1 }
     ]
   },
   {
@@ -388,7 +388,7 @@ const productos = [
     tipo: "var",
     px: 3000,
     var: [
-      { id: "mpn", 14: "Pack Surtido", s: 4 },
+      { id: "mpn", 14: "Pack Surtido", s: 1 },
     ]
   },
 
@@ -463,7 +463,7 @@ const productos = [
     tipo: "var",
     px: 9990,
     var: [
-      { id: "lv95n", l: "T.95 · Negro", s: 1 },
+      { id: "lv95n", l: "T.95 · Negro", s: 0 },
       { id: "lv100b", l: "T.100 · Blanco", s: 1 }
     ]
   },
@@ -644,7 +644,7 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "az85l", l: "T.85 · Lila", s: 1 },
+      { id: "az85l", l: "T.85 · Lila", s: 0 },
       { id: "az95c", l: "T.95 · Celeste", s: 1 },
       { id: "az95l", l: "T.95 · Lila", s: 0 },
       { id: "az100s", l: "T.100 · Salmón", s: 1 },
