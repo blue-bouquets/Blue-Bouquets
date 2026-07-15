@@ -75,7 +75,7 @@ const productos = [
     colores: [
     { c: "Blanca M", s: 0 },
     { c: "Roja M", s: 0 },
-    { c: "Beige M", s: 1 },
+    { c: "Beige M", s: 0 },
     { c: "Crema M", s: 0 },
     { c: "Beige L", s: 0 },
     { c: "Negra L", s: 0 },
@@ -192,9 +192,9 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Negra", s: 0 }, 
-      { c: "Blanca", s: 4 }, 
-      { c: "Gris", s: 4 }, 
-      { c: "Beige", s: 1 }
+      { c: "Blanca", s: 3 }, 
+      { c: "Gris", s: 3 }, 
+      { c: "Beige", s: 0 }
     ]
   },
   {
@@ -296,9 +296,9 @@ const productos = [
     talle: "regular",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Roja", s: 2 }, 
-      { c: "Beige", s: 1 }, 
-      { c: "Blanca", s: 1 }, 
+      { c: "Roja", s: 1 }, 
+      { c: "Beige", s: 2 }, 
+      { c: "Blanca", s: 0 }, 
       { c: "Negra", s: 0 }
     ]
   },
@@ -313,7 +313,7 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 2 }, 
+      { c: "Blanca", s: 1}, 
       { c: "Negra", s: 0 }, 
       { c: "Beige", s: 2 }, 
       { c: "Rosa", s: 1 }
@@ -347,8 +347,8 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Beige", s: 1 },
-      { c: "Blanca", s: 4 },
-      { c: "Rosa", s: 5 }
+      { c: "Blanca", s: 3 },
+      { c: "Rosa", s: 4 }
     ]
   },
   {
@@ -403,7 +403,7 @@ const productos = [
     tipo: "var",
     var: [
       { id: "mimosa_85_negro", l: "T.85 — Negro", s: 0 },
-      { id: "mimosa_85_celeste", l: "T.85 — Celeste", s: 1 },
+      { id: "mimosa_85_celeste", l: "T.85 — Celeste", s: 0 },
       { id: "mimosa_90_rosa", l: "T.90 — Rosa", s: 0 },
       { id: "mimosa_90_celeste", l: "T.90 — Celeste", s: 0 },
       { id: "mimosa_95_rosa", l: "T.95 — Rosa", s: 1 },
@@ -423,7 +423,7 @@ const productos = [
       { id: "crisantemo_85_celeste", l: "T.85 — Celeste", s: 0 },
       { id: "crisantemo_85_negro", l: "T.85 — Negro", s: 0 },
       { id: "crisantemo_100_celeste", l: "T.100 — Celeste", s: 1 },
-      { id: "crisantemo_100_negro", l: "T.100 — Negro", s: 1 }
+      { id: "crisantemo_100_negro", l: "T.100 — Negro", s: 0 }
     ],
     px: 11490
   },
@@ -631,7 +631,7 @@ const productos = [
       { id: "vl85b", l: "T.85 · Blanco", s: 1 },
       { id: "vl95r", l: "T.95 · Rojo", s: 1 },
       { id: "vl100r", l: "T.100 · Rojo", s: 1 },
-      { id: "vl100b", l: "T.100 · Blanco", s: 1 }
+      { id: "vl100b", l: "T.100 · Blanco", s: 0 }
     ]
   },
   {
@@ -661,8 +661,7 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "pn85b", l: "T.85 · Blanco", s: 0 },
-      { id: "pn90b", l: "T.90 · Blanco", s: 1 },
+      { id: "pn85b", l: "T.85 · Blanco", s: 1 },
       { id: "pn100r", l: "T.100 · Rosa", s: 1 }
     ]
   },
@@ -877,7 +876,7 @@ const productos = [
     desc: "...",
     tipo: "simple",
     px: 7490,
-    s: 1
+    s: 0
   },
   {
     id: "pijama2piezas",
