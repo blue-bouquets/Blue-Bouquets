@@ -330,9 +330,9 @@ const productos = [
     talle: "Único (Regulable)",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Beige", s: 4 },
-      { c: "Blanca", s: 3 },
-      { c: "Negra", s: 2 }
+      { c: "Beige", s: 3 },
+      { c: "Blanca", s: 2 },
+      { c: "Negra", s: 1 }
     ]
   },
   {
