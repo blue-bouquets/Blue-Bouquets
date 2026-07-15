@@ -661,6 +661,7 @@ const productos = [
     tipo: "var",
     px: 11990,
     var: [
+      { id: "girasol85n", l: "T.85 • Negro", s: 0 },
     ]
   },
   {
