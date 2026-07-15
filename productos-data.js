@@ -388,7 +388,7 @@ const productos = [
     tipo: "var",
     px: 3000,
     var: [
-      { id: "mpn", 14: "Pack Surtido", s: 1 },
+      { id: "mpn", l: "Pack Surtido", s: 1 },
     ]
   },
 
@@ -468,7 +468,7 @@ const productos = [
     tipo: "var",
     px: 9990,
     var: [
-      { id: "cl100be", l: "T.100 · Beige", s 1 },
+      { id: "cl100be", l: "T.100 · Beige", s: 1 },
     ]
   },
   {
