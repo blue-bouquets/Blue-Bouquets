@@ -93,11 +93,12 @@ const productos = [
     talle: "XL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Negra XL", s: 0 }, 
-      { c: "Beige XL", s: 0 }, 
-      { c: "Gris XL", s: 0 }, 
-      { c: "Blanca XL", s: 0 }, 
-      { c: "Roja XL", s: 0 }
+      { c: "Negra", s: 2 }, 
+      { c: "Beige", s: 2 }, 
+      { c: "Gris", s: 2 }, 
+      { c: "Blanca", s: 2 }, 
+      { c: "Roja", s: 2 },
+      { c: "Crema", s: 2 }
     ]
   },
   {
@@ -166,7 +167,7 @@ const productos = [
   },
   {
     id: "colalessdealgodon",
-    sku: "Colaless de algodon",
+    sku: "Colaless de algodon M y L",
     cat: "bombachas",
     name: "Colaless de Algodón",
     img: ["images/lessalgodon1.jpeg", "images/lessalgodon2.jpeg", "images/lessalgodon3.jpeg"],
@@ -175,9 +176,16 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 0 }, 
-      { c: "Negro", s: 0 }, 
-      { c: "Beige", s: 0 }
+      { c: "M Verde", s: 1 }, 
+      { c: "M Beige", s: 1 }, 
+      { c: "M Negra", s: 2 },
+      { c: "M Crema", s: 1 },
+      { c: "M Blanca", s: 1 },
+      { c: "L Verde", s: 1 },
+      { c: "L Negro", s: 2 },
+      { c: "L Beige", s: 1 },
+      { c: "L Crema", s: 1 },
+      { c: "L Blanco", s: 1 }
     ]
   },
   {
@@ -245,11 +253,11 @@ const productos = [
     talle: "XL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Rojo", s: 0 }, 
-      { c: "Negra", s: 0 }, 
-      { c: "Blanco", s: 0 }, 
-      { c: "Beige", s: 0 }, 
-      { c: "Gris", s: 0 }
+      { c: "Rojo", s: 2 }, 
+      { c: "Negra", s: 3 }, 
+      { c: "Blanco", s: 2 }, 
+      { c: "Crema", s: 4 }, 
+      { c: "Gris", s: 1 }
     ]
   },
   {
@@ -263,7 +271,12 @@ const productos = [
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Negra", s: 0 }, { c: "Roja", s: 0 }, { c: "Beige", s: 0 }, { c: "Blanca", s: 0 }, { c: "Crema", s: 0 }
+      { c: "Negra", s: 2 }, 
+      { c: "Roja", s: 2 }, 
+      { c: "Beige", s: 2 }, 
+      { c: "Blanca", s: 2 }, 
+      { c: "Crema", s: 2 }, 
+      { c: "Gris", s:3 }
     ]
   },
   {
@@ -786,7 +799,6 @@ const productos = [
     tipo: "var",
     px: 7490,
     var: [
-      { id: "bt4b", l: "Talle 4 · Blanco", s: 0 }
     ]
   },
   {
