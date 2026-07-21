@@ -865,9 +865,8 @@ const productos = [
     desc: "Calzas con efecto piel, ideales para el invierno.",
     tipo: "var",
     var: [
-      { id: "calza_piel_s", l: "S", s: 0 },
-      { id: "calza_piel_m", l: "M", s: 0 },
-      { id: "calza_piel_l", l: "L", s: 0 }
+      { id: "calza_piel_m", l: "M/L", s: 7 },
+      { id: "calza_piel_l", l: "XL/XXL", s: 10 }
     ],
     px: 13990
   }
