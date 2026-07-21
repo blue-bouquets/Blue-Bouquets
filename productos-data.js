@@ -191,10 +191,10 @@ const productos = [
     colores: [
       { c: "Leopardo", s: 2 }, 
       { c: "Rosa", s: 2 }, 
-      { c: "Dolar", s: 2 }
-      { c: "Corazon negro", s: 2 }
-      { c: "Negra con flor", s: 2 }
-      { c: "Blanca con Flor", s: 2 }
+      { c: "Dolar", s: 2 },
+      { c: "Corazon negro", s: 2 },
+      { c: "Negra con flor", s: 2 },
+      { c: "Blanca con Flor", s: 2 },
     ]
   },
   {
