@@ -35,10 +35,10 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Rosa", s: 2 },
-      { c: "Negra", s: 2 },
-      { c: "Gris", s: 2 },
-      { c: "Blanca", s: 2}
+      { c: "Rosa", s: 1 },
+      { c: "Negra", s: 1 },
+      { c: "Gris", s: 1 },
+      { c: "Blanca", s: 1 }
     ]
   },
   {
@@ -57,40 +57,17 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 3 },
-      { c: "Negra", s: 0 },
-      { c: "Roja", s: 0 },
-      { c: "Gris", s: 0 }
     ]
-  },
-  {
-    id: "vedetinasdealgodon",
-    sku: "Vedetinas de Algodon",
-    cat: "bombachas",
-    name: "Vedetinas de Algodón",
-    img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
-    desc: "Tela de algodon. Talle M Y L",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-    { c: "Blanca M", s: 0 },
-    { c: "Roja M", s: 0 },
-    { c: "Beige M", s: 0 },
-    { c: "Crema M", s: 0 },
-    { c: "Beige L", s: 0 },
-    { c: "Negra L", s: 0 },
-    { c: "Blanca L", s: 0 }
-  ]
   },
   {
     id: "vedetinas_xl",
     sku: "Vedetinas XL",
     cat: "bombachas",
-    name: "Vedetinas XL",
+    name: "Vedetinas XXL",
     img: ["images/vedetinasxl1.jpeg", "images/vedetinasxl2.jpeg"],
     desc: "Tela de Algodón, Talle 44-52",
     tipo: "multi",
-    talle: "XL",
+    talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
       { c: "Negra", s: 2 }, 
@@ -113,25 +90,7 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Piel", s: 2 }, 
-      { c: "Blanca", s: 1 }, 
-      { c: "Rosa", s: 0 }
-    ]
-  },
-  {
-    id: "lessanchasmorley",
-    sku: "Less anchas morley",
-    cat: "bombachas",
-    name: "Less Anchas de Morley",
-    img: ["images/lessanchamorley1.jpeg", "images/lessanchamorley2.jpeg", "images/lessanchamorley3.jpeg", "images/lessanchamorley4.jpeg"],
-    desc: "Tela de Morley y elastico ancho. Talle 36-44",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-      { c: "Beige", s: 0 }, 
-      { c: "Rojo", s: 0 }, 
-      { c: "Blanco", s: 0 }
-    ]
+      { c: "Blanca", s: 1 },     ]
   },
   {
     id: "lessanchasred",
@@ -146,7 +105,6 @@ const productos = [
     colores: [
       { c: "Negro", s: 3 }, 
       { c: "Blanco", s: 2 }, 
-      { c: "Rojo", s: 0 }
     ]
   },
   {
@@ -160,7 +118,6 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Blanca", s: 6 }, 
-      { c: "Bordo", s: 0 }, 
       { c: "Negra", s: 4 }, 
       { c: "Crema", s: 1 }
     ]
@@ -199,10 +156,8 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Negra", s: 0 }, 
       { c: "Blanca", s: 3 }, 
       { c: "Gris", s: 3 }, 
-      { c: "Beige", s: 0 }
     ]
   },
   {
@@ -219,9 +174,6 @@ const productos = [
       { qty: 2, px: 6000 }
     ],
     colores: [
-      { c: "Roja", s: 0 },
-      { c: "Negra", s: 0 },
-      { c: "Gris", s: 0 },
       { c: "Beige", s: 2 },
       { c: "Blanca", s: 1 }
     ]
@@ -237,9 +189,12 @@ const productos = [
     talle: "Regular",
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
-      { c: "Blanca", s: 0 }, 
-      { c: "Roja", s: 0 }, 
-      { c: "Negra", s: 0 }
+      { c: "Leopardo", s: 2 }, 
+      { c: "Rosa", s: 2 }, 
+      { c: "Dolar", s: 2 }
+      { c: "Corazon negro", s: 2 }
+      { c: "Negra con flor", s: 2 }
+      { c: "Blanca con Flor", s: 2 }
     ]
   },
   {
@@ -271,7 +226,6 @@ const productos = [
     talle: "XXL",
     precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
     colores: [
-      { c: "Negra", s: 2 }, 
       { c: "Roja", s: 2 }, 
       { c: "Beige", s: 2 }, 
       { c: "Blanca", s: 2 }, 
@@ -292,10 +246,7 @@ const productos = [
     colores: [
       { c: "Blanca", s: 3 }, 
       { c: "Beige", s: 5 }, 
-      { c: "Negra", s: 0 }, 
-      { c: "Crema", s: 0 }, 
       { c: "Rojo", s: 1}, 
-      { c: "Gris", s: 1 }
     ]
   },
   {
@@ -311,8 +262,6 @@ const productos = [
     colores: [
       { c: "Roja", s: 1 }, 
       { c: "Beige", s: 2 }, 
-      { c: "Blanca", s: 0 }, 
-      { c: "Negra", s: 0 }
     ]
   },
   {
@@ -327,7 +276,6 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Blanca", s: 1}, 
-      { c: "Negra", s: 0 }, 
       { c: "Beige", s: 2 }, 
       { c: "Rosa", s: 1 }
     ]
@@ -376,8 +324,6 @@ const productos = [
     precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
     colores: [
       { c: "Violeta", s: 3 },
-      { c: "Roja", s: 0 },
-      { c: "Negra", s: 0 }
     ]
   },
   {
@@ -576,19 +522,6 @@ const productos = [
     var: [
       { id: "an100a", l: "T.100 · Amarillo", s: 1 },
       { id: "an100v", l: "T.100 · Violeta", s: 1 }
-    ]
-  },
-  {
-    id: "clavel",
-    sku: "Clavel",
-    cat: "conjuntos",
-    name: "Clavel",
-    img: ["images/clavel1.jpeg", "images/clavel2.jpeg", "images/clavel3.jpeg", "images/clavel4.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-      { id: "cv90b", l: "T.90 · Blanco", s: 0 }
     ]
   },
   {
@@ -869,5 +802,45 @@ const productos = [
       { id: "calza_piel_l", l: "XL/XXL", s: 10 }
     ],
     px: 13990
-  }
+  },
+   {
+    id: "vedetinasdealgodon",
+    sku: "Vedetinas de Algodon",
+    cat: "bombachas",
+    name: "Vedetinas de Algodón",
+    img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
+    desc: "Tela de algodon. Talle M Y L",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    colores: [
+    { c: "Blanca M", s: 0 },
+  ]
+  },
+    {
+    id: "lessanchasmorley",
+    sku: "Less anchas morley",
+    cat: "bombachas",
+    name: "Less Anchas de Morley",
+    img: ["images/lessanchamorley1.jpeg", "images/lessanchamorley2.jpeg", "images/lessanchamorley3.jpeg", "images/lessanchamorley4.jpeg"],
+    desc: "Tela de Morley y elastico ancho. Talle 36-44",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    colores: [
+      { c: "Beige", s: 0 }, 
+    ]
+  },
+   {
+    id: "clavel",
+    sku: "Clavel",
+    cat: "conjuntos",
+    name: "Clavel",
+    img: ["images/clavel1.jpeg", "images/clavel2.jpeg", "images/clavel3.jpeg", "images/clavel4.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 11490,
+    var: [
+    ]
+  },
 ];
