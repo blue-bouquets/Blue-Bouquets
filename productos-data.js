@@ -183,7 +183,7 @@ const productos = [
     sku: "Less fru fru",
     cat: "bombachas",
     name: "Less Fru Fru",
-    img: ["images/lessfrufru1.jpeg", "images/lessfrufru2.jpeg", "images/lessfrufru3.jpeg"],
+    img: ["images/lessfrufruestampada1.jpeg", "images/lessfrufruestampada2.jpeg", "images/lessfrufruestampada3.jpeg"],
     desc: "Tela sintetica y brillosa. Talle 34-42",
     tipo: "multi",
     talle: "Regular",
@@ -377,6 +377,24 @@ const productos = [
       { id: "crisantemo_100_celeste", l: "T.100 — Celeste", s: 1 },
     ],
     px: 11490
+  },
+  {
+    id: "dientedeleon",
+    sku: "Diente de Leon",
+    cat: "conjuntos",
+    name: "Diente de León",
+    img: ["images/leon1.jpeg", "images/leon2.jpeg", "images/leon3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 9990,
+    var: [
+      { id: "dl85r", l: "T.85 · Rosa", s: 1 },
+      { id: "dl90n", l: "T.90 · Negro", s: 1 },
+      { id: "dl90c", l: "T.90 · Celeste", s: 1 },
+      { id: "dl95r", l: "T.95 · Rosa", s: 1 },
+      { id: "dl95be", l: "T.95 · Beige", s: 1 },
+      { id: "dl100n", l: "T.100 · Negro", s: 1 }
+    ]
   },
   {
     id: "begonia",
