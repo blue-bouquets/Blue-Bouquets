@@ -1,25 +1,6 @@
 // productos-data.js
 const productos = [
-  // --- BOMBACHAS ---
-  {
-    id: "colalessargentina",
-    sku: "Colaless Argentina!",
-    cat: "bombachas",
-    name: "Colaless Argentina!",
-    img: ["images/argentina1.jpeg", "images/argentina2.jpeg"],
-    desc: "Tela Morley, elastico ancho. Talle 36-44",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [
-      { qty: 1, px: 3000 },
-      { qty: 2, px: 5500 },
-      { qty: 3, px: 7000 }
-    ],
-    colores: [
-      { c: "Blanca", s: 7 },
-      { c: "Celeste", s: 4 }
-    ]
-  },
+  // --- Vedetinas ---
   {
     id: "vedetinasdealgodon",
     sku: "Vedetinas de Algodon",
@@ -45,7 +26,36 @@ const productos = [
       { c: "Blanca L", s: 2 },
       { c: "Crema L", s: 1 }
     ]
+    },
+    {
+    id: "vedetinas-m-encaje",
+    tipo: "var",
+    name: "Vedetinas M Encaje",
+    cat: "bombachas",
+    subcat: "vedetina",
+    px: 3000,
+    img: "👙", // Cambia esto por la ruta de la foto (ej: "img/vedetina-m-encaje.jpg")
+    var: [
+      { id: "v1", l: "T.M · Beige", s: 3 },
+      { id: "v2", l: "T.M · Negra", s: 3 },
+      { id: "v3", l: "T.M · Roja", s: 4 },
+      { id: "v4", l: "T.M · Blanca", s: 2 }
+    ]
   },
+    {
+    id: "vedetinas-morley-estampadas",
+    tipo: "var",
+    name: "Vedetinas Morley Estampadas",
+    cat: "bombachas",
+    subcat: "vedetina",
+    px: 3000,
+    img: ["images/vedetinasestampadasmorley1.jpeg", "images/vedetinasestampadasmorley2.jpeg", "images/vedetinasestampadasmorley3.jpeg", "images/vedetinasestampadasmorley4.jpeg"],
+    var: [
+      { id: "v1", l: "Piel Cerezas", s: 2 },
+      { id: "v2", l: "Blanca con moños", s: 1 }
+    ]
+  },
+    // --- Colaless ---
   {
     id: "colalesslavanda",
     sku: "Colaless Lavanda",
@@ -103,20 +113,6 @@ const productos = [
       { c: "Roja", s: 2 },
       { c: "Crema", s: 2 }
     ]
-  },
-  {
-    id: "vedetinasmorleyestampadas",
-    sku: "Vedetinas morley estampadas",
-    cat: "bombachas",
-    name: "Vedetinas de Morley Estampadas",
-    img: ["images/vedetinasestampadasmorley1.jpeg", "images/vedetinasestampadasmorley2.jpeg", "images/vedetinasestampadasmorley3.jpeg", "images/vedetinasestampadasmorley4.jpeg"],
-    desc: "Tela de Morley. Talle 36-44",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-      { c: "Piel", s: 2 }, 
-      { c: "Blanca", s: 1 },     ]
   },
   {
     id: "lessanchasred",
