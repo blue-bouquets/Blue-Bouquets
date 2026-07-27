@@ -179,8 +179,11 @@ function renderPaginaDetalle() {
       <button class="add-btn" id="btnAction" onclick="addMulti()" disabled>${tieneStockGlobal?'Selecciona cantidad':'Sin Stock'}</button>`;
   }
 
+  // Se añade la visualización de la subcategoría si el producto la contiene
+  const catText = p.subcat ? `${p.cat || 'Lencería'} ✦ ${p.subcat}` : (p.cat || 'Lencería');
+
   document.getElementById('infoSection').innerHTML = `
-    <div class="prod-cat">${p.cat || 'Lencería'}</div>
+    <div class="prod-cat">${catText}</div>
     <div class="prod-name">${p.name}</div>
     <div class="prod-price">$${(p.px || p.precios[0].px).toLocaleString('es-AR')} ${p.tipo==='multi'?'c/u':''}</div>
     <div class="prod-desc">
@@ -240,7 +243,7 @@ function upQty() {
 
 function addSimple() {
   const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, name:p.name, det:`x1`, px:p.px, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, subcat:p.subcat||'', name:p.name, det:`x1`, px:p.px, emoji:icon});
   upCart();
   toggleCart();
   toast(`✓ ${p.name}`);
@@ -249,7 +252,7 @@ function addSimple() {
 function addVar() {
   const variant = p.var.find(x => x.id === sel.var);
   const icon = p.img[0].includes('.') ? `<img src="${p.img[0]}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : p.img[0];
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:sel.var, name:p.name, det:variant.l, px:p.px || variant.px || 9990, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, subcat:p.subcat||'', varId:sel.var, name:p.name, det:variant.l, px:p.px || variant.px || 9990, emoji:icon});
   upCart();
   toggleCart();
   toast(`✓ ${p.name}`);
@@ -262,6 +265,7 @@ function addMulti() {
       id: p.id,
       tipo: 'multi_item',
       ofertaGrupo: p.cat,
+      subcat: p.subcat||'',
       name: p.name,
       det: `1x (${p.talle}) - Color: ${sel.cols[i]}`,
       pxBase: p.precios[0].px,
