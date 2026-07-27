@@ -29,13 +29,20 @@ const productos = [
     },
     {
     id: "vedetinas-m-encaje",
-    tipo: "var",
-    name: "Vedetinas M Encaje",
+    sku: "Vedetinas de Encaje talle M",
     cat: "bombachas",
-    subcat: "vedetina",
-    px: 3000,
+    subcat: "Vedetina",
+    name: "Vedetinas M de Encaje",
     img: "👙", // Cambia esto por la ruta de la foto (ej: "img/vedetina-m-encaje.jpg")
-    var: [
+    desc: "Vedetinas Talle M de Algodon con aleta de puntilla",
+    tipo: "var",
+    talle: "M",
+ precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],    
+      colores: [
       { id: "v1", l: "T.M · Beige", s: 3 },
       { id: "v2", l: "T.M · Negra", s: 3 },
       { id: "v3", l: "T.M · Roja", s: 4 },
@@ -147,6 +154,173 @@ const productos = [
   ]
 },
   {
+  id: "less-jacinto-regulable-art238",
+  tipo: "var",
+  name: "Less Jacinto Regulable (Art 238 Clara)",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+  var: [
+    { id: "v1", l: "Beige", s: 4 },
+    { id: "v2", l: "Rosa", s: 4 }, // Corregido el tipeo "Risa" por Rosa
+    { id: "v3", l: "Negra", s: 4 }
+  ]
+},
+  {
+  id: "less-peonia-regulable-art253",
+  tipo: "var",
+  name: "Less Peonía Regulable (Art 253 Clara)",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+  var: [
+    { id: "v1", l: "Gris", s: 4 },
+    { id: "v2", l: "Rosa", s: 4 },
+    { id: "v3", l: "Violeta", s: 4 }
+  ]
+},
+  {
+  id: "less-regulables-margarita-coquette",
+  tipo: "var",
+  name: "Less Regulables Margarita (Regulables Coquette)",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: ["images/regulablescoquette1.jpeg", "images/regulablescoquette2.jpeg"],
+  var: [
+    { id: "v1", l: "Beige", s: 3 },
+    { id: "v2", l: "Negra", s: 1 }
+  ]
+},
+  {
+  id: "less-regulables-argentina",
+  tipo: "var",
+  name: "Less Regulables Argentina",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+  var: [
+    { id: "v1", l: "Blanca", s: 7 },
+    { id: "v2", l: "Celeste", s: 4 }
+  ]
+},
+      // --- Colaless ---
+  {
+    id: "colaless-algodon-m-y-l",
+    tipo: "var",
+    name: "Colaless algodon M y L",
+    cat: "bombachas",
+    subcat: "colaless",
+    px: 3000,
+    img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+    var: [
+      { id: "v1", l: "T.M · Verde", s: 1 },
+      { id: "v2", l: "T.M · Beige", s: 1 },
+      { id: "v3", l: "T.M · Negra", s: 2 },
+      { id: "v4", l: "T.M · Crema", s: 1 },
+      { id: "v5", l: "T.M · Blanca", s: 1 },
+      { id: "v6", l: "T.L · Verde", s: 1 },
+      { id: "v7", l: "T.L · Beige", s: 1 },
+      { id: "v8", l: "T.L · Crema", s: 1 },
+      { id: "v9", l: "T.L · Blanco", s: 1 }
+    ]
+  },
+    {
+    id: "colaless-algodon",
+    tipo: "var",
+    name: "Colaless algodon",
+    cat: "bombachas",
+    subcat: "colaless",
+    px: 3000,
+    img: ["images/lessalgodon1.jpeg", "images/lessalgodon2.jpeg", "images/lessalgodon3.jpeg"],
+    var: [
+      { id: "v1", l: "Blanca", s: 4 },
+      { id: "v2", l: "Gris", s: 4 },
+      { id: "v3", l: "Negra", s: 4 }
+    ]
+  },
+    {
+    id: "colaless-jacinto-art246",
+    tipo: "var",
+    name: "Colaless Jacinto (Art. 246)",
+    cat: "bombachas",
+    subcat: "colaless",
+    px: 3000,
+    img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+    var: [
+      { id: "v1", l: "Negra", s: 4 },
+      { id: "v2", l: "Beige", s: 3 },
+      { id: "v3", l: "Rosa", s: 4 }
+    ]
+  },
+  {
+  id: "colaless-peonia-art242",
+  tipo: "var",
+  name: "Colaless Peonía (Art. 242)",
+  cat: "bombachas",
+  subcat: "colaless",
+  px: 3000,
+  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+  var: [
+    { id: "v1", l: "Gris", s: 4 },
+    { id: "v2", l: "Rosa", s: 4 },
+    { id: "v3", l: "Violeta", s: 4 }
+  ]
+},
+  {
+  id: "colaless-de-algodon-con-puntos",
+  tipo: "var",
+  name: "Colaless de algodon con Puntos",
+  cat: "bombachas",
+  subcat: "colaless",
+  px: 3000,
+  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+  var: [
+    { id: "v1", l: "Roja", s: 2 },
+    { id: "v2", l: "Blanca", s: 2 },
+    { id: "v3", l: "Negra", s: 2 },
+    { id: "v4", l: "Beige", s: 2 },
+    { id: "v5", l: "Gris", s: 2 },
+    { id: "v6", l: "Crema", s: 2 }
+  ]
+},
+  {
+  id: "colaless-xl",
+  tipo: "var",
+  name: "Colaless XL",
+  cat: "bombachas",
+  subcat: "colaless",
+  px: 4000,
+  img: ["images/lessxl1.jpeg", "images/lessxl2.jpeg", "images/lessxl3.jpeg"],
+  var: [
+    { id: "v1", l: "Negra", s: 3 },
+    { id: "v2", l: "Crema", s: 4 },
+    { id: "v3", l: "Blanca", s: 2 },
+    { id: "v4", l: "Roja", s: 2 },
+    { id: "v5", l: "Gris", s: 1 }
+  ]
+},
+  {
+  id: "colaless-xxl",
+  tipo: "var",
+  name: "Colaless XXL",
+  cat: "bombachas",
+  subcat: "colaless",
+  px: 4000,
+  img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
+  var: [
+    { id: "v1", l: "Blanca", s: 8 },
+    { id: "v2", l: "Beige", s: 11 },
+    { id: "v3", l: "Crema", s: 4 },
+    { id: "v4", l: "Rojo", s: 6 },
+    { id: "v5", l: "Gris", s: 5 },
+    { id: "v6", l: "Negra", s: 5 }
+  ]
+},
+  {
     id: "colalesslavanda",
     sku: "Colaless Lavanda",
     cat: "bombachas",
@@ -183,29 +357,6 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 3 },
-    ]
-  },
-  {
-    id: "colalessdealgodon",
-    sku: "Colaless de algodon M y L",
-    cat: "bombachas",
-    name: "Colaless de Algodón",
-    img: ["images/lessalgodon1.jpeg", "images/lessalgodon2.jpeg", "images/lessalgodon3.jpeg"],
-    desc: "Clasicas colaless de algodón, talle 36-44",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-      { c: "M Verde", s: 1 }, 
-      { c: "M Beige", s: 1 }, 
-      { c: "M Negra", s: 2 },
-      { c: "M Crema", s: 1 },
-      { c: "M Blanca", s: 1 },
-      { c: "L Verde", s: 1 },
-      { c: "L Negro", s: 2 },
-      { c: "L Beige", s: 1 },
-      { c: "L Crema", s: 1 },
-      { c: "L Blanco", s: 1 }
     ]
   },
   {
@@ -261,42 +412,6 @@ const productos = [
     ]
   },
   {
-    id: "lessxl",
-    sku: "Less XL",
-    cat: "bombachas",
-    name: "Colaless XL",
-    img: ["images/lessxl1.jpeg", "images/lessxl2.jpeg", "images/lessxl3.jpeg"],
-    desc: "Less de algodon. Talle 44-52",
-    tipo: "multi",
-    talle: "XL",
-    precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
-    colores: [
-      { c: "Rojo", s: 2 }, 
-      { c: "Negra", s: 3 }, 
-      { c: "Blanco", s: 2 }, 
-      { c: "Crema", s: 4 }, 
-      { c: "Gris", s: 1 }
-    ]
-  },
-  {
-    id: "lessxxlconencaje",
-    sku: "Less XXL con encaje",
-    cat: "bombachas",
-    name: "Less XXL con Encaje",
-    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
-    desc: "Less de algodon, con borde con encaje.",
-    tipo: "multi",
-    talle: "XXL",
-    precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
-    colores: [
-      { c: "Roja", s: 2 }, 
-      { c: "Beige", s: 2 }, 
-      { c: "Blanca", s: 2 }, 
-      { c: "Crema", s: 2 }, 
-      { c: "Gris", s:3 }
-    ]
-  },
-  {
     id: "lessxxldealgodon",
     sku: "Less XXL de algodon",
     cat: "bombachas",
@@ -326,22 +441,6 @@ const productos = [
       { c: "Blanca", s: 1}, 
       { c: "Beige", s: 2 }, 
       { c: "Rosa", s: 1 }
-    ]
-  },
-  {
-    id: "regulables_coquette",
-    sku: "Regulables Coquette",
-    cat: "bombachas",
-    name: "Regulables Coquette",
-    img: ["images/regulablescoquette1.jpeg", "images/regulablescoquette2.jpeg"],
-    desc: "tela de Morley, talle 36-44",
-    tipo: "multi",
-    talle: "Único (Regulable)",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-      { c: "Beige", s: 3 },
-      { c: "Blanca", s: 2 },
-      { c: "Negra", s: 1 }
     ]
   },
   {
