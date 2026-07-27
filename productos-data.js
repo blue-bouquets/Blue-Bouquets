@@ -1,6 +1,7 @@
 // productos-data.js
 const productos = [
-  // --- Vedetinas ---
+  
+ // --- Vedetinas ---
   {
     id: "vedetinasdealgodon",
     sku: "Vedetinas de Algodon",
@@ -26,300 +27,410 @@ const productos = [
       { c: "Blanca L", s: 2 },
       { c: "Crema L", s: 1 }
     ]
-    },
-    {
+  },
+  {
     id: "vedetinas-m-encaje",
     sku: "Vedetinas de Encaje talle M",
     cat: "bombachas",
     subcat: "Vedetina",
     name: "Vedetinas M de Encaje",
-    img: "👙", // Cambia esto por la ruta de la foto (ej: "img/vedetina-m-encaje.jpg")
+    img: "👙",
     desc: "Vedetinas Talle M de Algodon con aleta de puntilla",
-    tipo: "var",
+    tipo: "multi",
     talle: "M",
- precios: [
+    precios: [
       { qty: 1, px: 3000 },
       { qty: 2, px: 5500 },
       { qty: 3, px: 7000 }
-    ],    
-      colores: [
-      { id: "v1", l: "T.M · Beige", s: 3 },
-      { id: "v2", l: "T.M · Negra", s: 3 },
-      { id: "v3", l: "T.M · Roja", s: 4 },
-      { id: "v4", l: "T.M · Blanca", s: 2 }
+    ],
+    colores: [
+      { c: "T.M · Beige", s: 3 },
+      { c: "T.M · Negra", s: 3 },
+      { c: "T.M · Roja", s: 4 },
+      { c: "T.M · Blanca", s: 2 }
     ]
   },
-    {
+  {
     id: "vedetinas-morley-estampadas",
-    tipo: "var",
+    sku: "Vedetinas Morley Estampadas",
+    cat: "bombachas",
+    subcat: "vedetina",
     name: "Vedetinas Morley Estampadas",
-    cat: "bombachas",
-    subcat: "vedetina",
-    px: 3000,
     img: ["images/vedetinasestampadasmorley1.jpeg", "images/vedetinasestampadasmorley2.jpeg", "images/vedetinasestampadasmorley3.jpeg", "images/vedetinasestampadasmorley4.jpeg"],
-    var: [
-      { id: "v1", l: "Piel Cerezas", s: 2 },
-      { id: "v2", l: "Blanca con moños", s: 1 }
-    ]
-    },
-    {
-    id: "vedetinas-xl",
-    tipo: "var",
-    name: "Vedetinas XL",
-    cat: "bombachas",
-    subcat: "vedetina",
-    px: 4000,
-    img: ["images/vedetinasxl1.jpeg", "images/vedetinasxl2.jpeg"],
-    var: [
-      { id: "v1", l: "T.XL · Negro", s: 2 },
-      { id: "v2", l: "T.XL · Beige", s: 2 },
-      { id: "v3", l: "T.XL · Gris", s: 2 },
-      { id: "v4", l: "T.XL · Blanco", s: 2 },
-      { id: "v5", l: "T.XL · Rojo", s: 2 },
-      { id: "v6", l: "T.XL · Crema", s: 2 }
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Piel Cerezas", s: 2 },
+      { c: "Blanca con moños", s: 1 }
     ]
   },
-    {
+  {
+    id: "vedetinas-xl",
+    sku: "Vedetinas XL",
+    cat: "bombachas",
+    subcat: "vedetina",
+    name: "Vedetinas XL",
+    img: ["images/vedetinasxl1.jpeg", "images/vedetinasxl2.jpeg"],
+    tipo: "multi",
+    talle: "XL",
+    precios: [
+      { qty: 1, px: 4000 },
+      { qty: 2, px: 7500 },
+      { qty: 3, px: 10000 }
+    ],
+    colores: [
+      { c: "T.XL · Negro", s: 2 },
+      { c: "T.XL · Beige", s: 2 },
+      { c: "T.XL · Gris", s: 2 },
+      { c: "T.XL · Blanco", s: 2 },
+      { c: "T.XL · Rojo", s: 2 },
+      { c: "T.XL · Crema", s: 2 }
+    ]
+  },
+  {
     id: "culot-con-encaje",
-    tipo: "var",
-    name: "Culot con encaje",
+    sku: "Culot con encaje",
     cat: "bombachas",
     subcat: "culotte",
-    px: 4000,
+    name: "Culot con encaje",
     img: ["images/culotencaje1.jpeg", "images/culotencaje2.jpeg", "images/culotencaje2.jpeg"],
-    var: [
-      { id: "v1", l: "Roja", s: 1 },
-      { id: "v2", l: "Beige", s: 2 }
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 4000 },
+      { qty: 2, px: 7500 },
+      { qty: 3, px: 10000 }
+    ],
+    colores: [
+      { c: "Roja", s: 1 },
+      { c: "Beige", s: 2 }
     ]
   },
-    // --- Regulables ---
+
+  // --- Regulables ---
   {
-  id: "less-doble-tira",
-  tipo: "var",
-  name: "Less Doble Tira",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-  var: [
-    { id: "v1", l: "Crema", s: 2 },
-    { id: "v2", l: "Blanca", s: 2 },
-    { id: "v3", l: "Roja", s: 2 },
-    { id: "v4", l: "Negra", s: 2 },
-    { id: "v5", l: "Beige", s: 1 },
-    { id: "v6", l: "Verde", s: 1 },
-    { id: "v7", l: "Gris", s: 1 }
-  ]
-},
+    id: "less-doble-tira",
+    sku: "Less Doble Tira",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Doble Tira",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Crema", s: 2 },
+      { c: "Blanca", s: 2 },
+      { c: "Roja", s: 2 },
+      { c: "Negra", s: 2 },
+      { c: "Beige", s: 1 },
+      { c: "Verde", s: 1 },
+      { c: "Gris", s: 1 }
+    ]
+  },
   {
-  id: "less-regulable-clasicas-art30",
-  tipo: "var",
-  name: "Less Regulable Clasicas (Art. 30 Mi Utopia)",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-  var: [
-    { id: "v1", l: "Roja", s: 3 },
-    { id: "v2", l: "Negra", s: 3 },
-    { id: "v3", l: "Blanca", s: 3 },
-    { id: "v4", l: "Gris", s: 3 }
-  ]
-},
+    id: "less-regulable-clasicas-art30",
+    sku: "Less Regulable Clasicas (Art. 30)",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Regulable Clasicas (Art. 30 Mi Utopia)",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Roja", s: 3 },
+      { c: "Negra", s: 3 },
+      { c: "Blanca", s: 3 },
+      { c: "Gris", s: 3 }
+    ]
+  },
   {
-  id: "less-regulables-anchas-de-red",
-  tipo: "var",
-  name: "Less Regulables Anchas de Red",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "images/lessred3.jpeg"],
-  var: [
-    { id: "v1", l: "Negra", s: 3 },
-    { id: "v2", l: "Blanca", s: 2 }
-  ]
-},
+    id: "less-regulables-anchas-de-red",
+    sku: "Less Regulables Anchas de Red",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Regulables Anchas de Red",
+    img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "images/lessred3.jpeg"],
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Negra", s: 3 },
+      { c: "Blanca", s: 2 }
+    ]
+  },
   {
-  id: "less-regulables-encaje",
-  tipo: "var",
-  name: "Less Regulables Encaje",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: ["images/lessencaje4.jpeg", "images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg", "images/lessencaje4.jpeg"],
-  var: [
-    { id: "v1", l: "Negro", s: 4 },
-    { id: "v2", l: "Crema", s: 1 },
-    { id: "v3", l: "Blanca", s: 6 }
-  ]
-},
+    id: "less-regulables-encaje",
+    sku: "Less Regulables Encaje",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Regulables Encaje",
+    img: ["images/lessencaje4.jpeg", "images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg", "images/lessencaje4.jpeg"],
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Negro", s: 4 },
+      { c: "Crema", s: 1 },
+      { c: "Blanca", s: 6 }
+    ]
+  },
   {
-  id: "less-jacinto-regulable-art238",
-  tipo: "var",
-  name: "Less Jacinto Regulable (Art 238 Clara)",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-  var: [
-    { id: "v1", l: "Beige", s: 4 },
-    { id: "v2", l: "Rosa", s: 4 }, // Corregido el tipeo "Risa" por Rosa
-    { id: "v3", l: "Negra", s: 4 }
-  ]
-},
+    id: "less-jacinto-regulable-art238",
+    sku: "Less Jacinto Regulable",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Jacinto Regulable (Art 238 Clara)",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Beige", s: 4 },
+      { c: "Rosa", s: 4 },
+      { c: "Negra", s: 4 }
+    ]
+  },
   {
-  id: "less-peonia-regulable-art253",
-  tipo: "var",
-  name: "Less Peonía Regulable (Art 253 Clara)",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-  var: [
-    { id: "v1", l: "Gris", s: 4 },
-    { id: "v2", l: "Rosa", s: 4 },
-    { id: "v3", l: "Violeta", s: 4 }
-  ]
-},
+    id: "less-peonia-regulable-art253",
+    sku: "Less Peonía Regulable",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Peonía Regulable (Art 253 Clara)",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Gris", s: 4 },
+      { c: "Rosa", s: 4 },
+      { c: "Violeta", s: 4 }
+    ]
+  },
   {
-  id: "less-regulables-margarita-coquette",
-  tipo: "var",
-  name: "Less Regulables Margarita (Regulables Coquette)",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: ["images/regulablescoquette1.jpeg", "images/regulablescoquette2.jpeg"],
-  var: [
-    { id: "v1", l: "Beige", s: 3 },
-    { id: "v2", l: "Negra", s: 1 }
-  ]
-},
+    id: "less-regulables-margarita-coquette",
+    sku: "Less Regulables Margarita",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Regulables Margarita (Regulables Coquette)",
+    img: ["images/regulablescoquette1.jpeg", "images/regulablescoquette2.jpeg"],
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Beige", s: 3 },
+      { c: "Negra", s: 1 }
+    ]
+  },
   {
-  id: "less-regulables-argentina",
-  tipo: "var",
-  name: "Less Regulables Argentina",
-  cat: "bombachas",
-  subcat: "regulable",
-  px: 3000,
-  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-  var: [
-    { id: "v1", l: "Blanca", s: 7 },
-    { id: "v2", l: "Celeste", s: 4 }
-  ]
-},
-      // --- Colaless ---
+    id: "less-regulables-argentina",
+    sku: "Less Regulables Argentina",
+    cat: "bombachas",
+    subcat: "regulable",
+    name: "Less Regulables Argentina",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 7 },
+      { c: "Celeste", s: 4 }
+    ]
+  },
+
+  // --- Colaless ---
   {
     id: "colaless-algodon-m-y-l",
-    tipo: "var",
+    sku: "Colaless algodon M y L",
+    cat: "bombachas",
+    subcat: "colaless",
     name: "Colaless algodon M y L",
-    cat: "bombachas",
-    subcat: "colaless",
-    px: 3000,
-    img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-    var: [
-      { id: "v1", l: "T.M · Verde", s: 1 },
-      { id: "v2", l: "T.M · Beige", s: 1 },
-      { id: "v3", l: "T.M · Negra", s: 2 },
-      { id: "v4", l: "T.M · Crema", s: 1 },
-      { id: "v5", l: "T.M · Blanca", s: 1 },
-      { id: "v6", l: "T.L · Verde", s: 1 },
-      { id: "v7", l: "T.L · Beige", s: 1 },
-      { id: "v8", l: "T.L · Crema", s: 1 },
-      { id: "v9", l: "T.L · Blanco", s: 1 }
+    img: "👙",
+    tipo: "multi",
+    talle: "M y L",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "T.M · Verde", s: 1 },
+      { c: "T.M · Beige", s: 1 },
+      { c: "T.M · Negra", s: 2 },
+      { c: "T.M · Crema", s: 1 },
+      { c: "T.M · Blanca", s: 1 },
+      { c: "T.L · Verde", s: 1 },
+      { c: "T.L · Beige", s: 1 },
+      { c: "T.L · Crema", s: 1 },
+      { c: "T.L · Blanco", s: 1 }
     ]
   },
-    {
+  {
     id: "colaless-algodon",
-    tipo: "var",
+    sku: "Colaless algodon",
+    cat: "bombachas",
+    subcat: "colaless",
     name: "Colaless algodon",
-    cat: "bombachas",
-    subcat: "colaless",
-    px: 3000,
     img: ["images/lessalgodon1.jpeg", "images/lessalgodon2.jpeg", "images/lessalgodon3.jpeg"],
-    var: [
-      { id: "v1", l: "Blanca", s: 4 },
-      { id: "v2", l: "Gris", s: 4 },
-      { id: "v3", l: "Negra", s: 4 }
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 4 },
+      { c: "Gris", s: 4 },
+      { c: "Negra", s: 4 }
     ]
   },
-    {
+  {
     id: "colaless-jacinto-art246",
-    tipo: "var",
-    name: "Colaless Jacinto (Art. 246)",
+    sku: "Colaless Jacinto",
     cat: "bombachas",
     subcat: "colaless",
-    px: 3000,
-    img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-    var: [
-      { id: "v1", l: "Negra", s: 4 },
-      { id: "v2", l: "Beige", s: 3 },
-      { id: "v3", l: "Rosa", s: 4 }
+    name: "Colaless Jacinto (Art. 246)",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Negra", s: 4 },
+      { c: "Beige", s: 3 },
+      { c: "Rosa", s: 4 }
     ]
   },
   {
-  id: "colaless-peonia-art242",
-  tipo: "var",
-  name: "Colaless Peonía (Art. 242)",
-  cat: "bombachas",
-  subcat: "colaless",
-  px: 3000,
-  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-  var: [
-    { id: "v1", l: "Gris", s: 4 },
-    { id: "v2", l: "Rosa", s: 4 },
-    { id: "v3", l: "Violeta", s: 4 }
-  ]
-},
+    id: "colaless-peonia-art242",
+    sku: "Colaless Peonía",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless Peonía (Art. 242)",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Gris", s: 4 },
+      { c: "Rosa", s: 4 },
+      { c: "Violeta", s: 4 }
+    ]
+  },
   {
-  id: "colaless-de-algodon-con-puntos",
-  tipo: "var",
-  name: "Colaless de algodon con Puntos",
-  cat: "bombachas",
-  subcat: "colaless",
-  px: 3000,
-  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
-  var: [
-    { id: "v1", l: "Roja", s: 2 },
-    { id: "v2", l: "Blanca", s: 2 },
-    { id: "v3", l: "Negra", s: 2 },
-    { id: "v4", l: "Beige", s: 2 },
-    { id: "v5", l: "Gris", s: 2 },
-    { id: "v6", l: "Crema", s: 2 }
-  ]
-},
+    id: "colaless-de-algodon-con-puntos",
+    sku: "Colaless con Puntos",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless de algodon con Puntos",
+    img: "👙",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Roja", s: 2 },
+      { c: "Blanca", s: 2 },
+      { c: "Negra", s: 2 },
+      { c: "Beige", s: 2 },
+      { c: "Gris", s: 2 },
+      { c: "Crema", s: 2 }
+    ]
+  },
   {
-  id: "colaless-xl",
-  tipo: "var",
-  name: "Colaless XL",
-  cat: "bombachas",
-  subcat: "colaless",
-  px: 4000,
-  img: ["images/lessxl1.jpeg", "images/lessxl2.jpeg", "images/lessxl3.jpeg"],
-  var: [
-    { id: "v1", l: "Negra", s: 3 },
-    { id: "v2", l: "Crema", s: 4 },
-    { id: "v3", l: "Blanca", s: 2 },
-    { id: "v4", l: "Roja", s: 2 },
-    { id: "v5", l: "Gris", s: 1 }
-  ]
-},
+    id: "colaless-xl",
+    sku: "Colaless XL",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless XL",
+    img: ["images/lessxl1.jpeg", "images/lessxl2.jpeg", "images/lessxl3.jpeg"],
+    tipo: "multi",
+    talle: "XL",
+    precios: [
+      { qty: 1, px: 4000 },
+      { qty: 2, px: 7500 },
+      { qty: 3, px: 10000 }
+    ],
+    colores: [
+      { c: "Negra", s: 3 },
+      { c: "Crema", s: 4 },
+      { c: "Blanca", s: 2 },
+      { c: "Roja", s: 2 },
+      { c: "Gris", s: 1 }
+    ]
+  },
   {
-  id: "colaless-xxl",
-  tipo: "var",
-  name: "Colaless XXL",
-  cat: "bombachas",
-  subcat: "colaless",
-  px: 4000,
-  img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
-  var: [
-    { id: "v1", l: "Blanca", s: 8 },
-    { id: "v2", l: "Beige", s: 11 },
-    { id: "v3", l: "Crema", s: 4 },
-    { id: "v4", l: "Rojo", s: 6 },
-    { id: "v5", l: "Gris", s: 5 },
-    { id: "v6", l: "Negra", s: 5 }
-  ]
-},
+    id: "colaless-xxl",
+    sku: "Colaless XXL",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless XXL",
+    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
+    tipo: "multi",
+    talle: "XXL",
+    precios: [
+      { qty: 1, px: 4000 },
+      { qty: 2, px: 7500 },
+      { qty: 3, px: 10000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 8 },
+      { c: "Beige", s: 11 },
+      { c: "Crema", s: 4 },
+      { c: "Rojo", s: 6 },
+      { c: "Gris", s: 5 },
+      { c: "Negra", s: 5 }
+    ]
+  },
   {
     id: "colalesslavanda",
     sku: "Colaless Lavanda",
