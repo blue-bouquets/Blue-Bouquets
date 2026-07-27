@@ -414,7 +414,7 @@ const productos = [
     cat: "bombachas",
     subcat: "colaless",
     name: "Colaless XXL Algodon",
-    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
+    img: ["images/lessxxl1.jpeg", "images/lessxxl2.jpeg"],
     tipo: "multi",
     talle: "XXL",
     precios: [
@@ -480,7 +480,7 @@ const productos = [
     cat: "bombachas",
     subcat: "colaless",
     name: "Colaless Fru Fru",
-    img: ["images/lessfrufruestampada1.jpeg", "images/lessfrufruestampada2.jpeg", "images/lessfrufruestampada3.jpeg"],
+    img: ["images/frufruestampada1.jpeg", "images/frufruestampada2.jpeg", "images/frufruestampada3.jpeg"],
     desc: "Tela sintética y brillosa. Talle 34-42",
     tipo: "multi",
     talle: "Regular",
