@@ -282,8 +282,8 @@ const productos = [
     sku: "Colaless algodon M y L",
     cat: "bombachas",
     subcat: "colaless",
-    name: ["Colaless algodon M y L"],
-    img: "images/less1.jpeg", "images/less2.jpeg",
+    name: "Colaless algodon M y L",
+    img: ["images/less1.jpeg", "images/less2.jpeg"],
     tipo: "multi",
     talle: "M y L",
     precios: [
