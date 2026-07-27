@@ -21,6 +21,31 @@ const productos = [
     ]
   },
   {
+    id: "vedetinasdealgodon",
+    sku: "Vedetinas de Algodon",
+    cat: "bombachas",
+    name: "Vedetinas de Algodón",
+    img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
+    desc: "Tela de algodón. Talles M y L.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Blanca M", s: 2 },
+      { c: "Beige M", s: 2 },
+      { c: "Crema M", s: 1 },
+      { c: "Negra M", s: 1 },
+      { c: "Beige L", s: 2 },
+      { c: "Negra L", s: 1 },
+      { c: "Blanca L", s: 2 },
+      { c: "Crema L", s: 1 }
+    ]
+  },
+  {
     id: "colalesslavanda",
     sku: "Colaless Lavanda",
     cat: "bombachas",
@@ -820,20 +845,6 @@ const productos = [
       { id: "calza_piel_l", l: "XL/XXL", s: 10 }
     ],
     px: 13990
-  },
-   {
-    id: "vedetinasdealgodon",
-    sku: "Vedetinas de Algodon",
-    cat: "bombachas",
-    name: "Vedetinas de Algodón",
-    img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
-    desc: "Tela de algodon. Talle M Y L",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-    { c: "Blanca M", s: 0 },
-  ]
   },
     {
     id: "lessanchasmorley",
