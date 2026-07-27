@@ -32,7 +32,7 @@ const productos = [
     id: "vedetinas-m-encaje",
     sku: "Vedetinas de Encaje talle M",
     cat: "bombachas",
-    subcat: "Vedetina",
+    subcat: "vedetina",
     name: "Vedetinas M de Encaje",
     img: "👙",
     desc: "Vedetinas Talle M de Algodon con aleta de puntilla",
@@ -413,7 +413,7 @@ const productos = [
     sku: "Colaless XXL",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Colaless XXL",
+    name: "Colaless XXL Algodon",
     img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
     tipo: "multi",
     talle: "XXL",
@@ -432,33 +432,36 @@ const productos = [
     ]
   },
   {
-    id: "colalesslavanda",
-    sku: "Colaless Lavanda",
+    id: "colaless-xxl-con-encaje",
+    sku: "Colaless XXL con encaje",
     cat: "bombachas",
-    name: "Colaless Lavanda",
-    img: ["images/lesslavanda1.jpeg", "images/lesslavanda2.jpeg"],
-    desc: "Tela de algodón. Talle 36-44",
+    subcat: "colaless",
+    name: "Colaless XXL con encaje",
+    img: ["images/lessxxlencaje1.jpeg", "images/lessxxlencaje2.jpeg"],
+    desc: "Colaless XXL con encaje.",
     tipo: "multi",
-    talle: "Regular",
+    talle: "XXL",
     precios: [
-      { qty: 1, px: 3000 },
-      { qty: 2, px: 5500 },
-      { qty: 3, px: 7000 }
+      { qty: 1, px: 4000 },
+      { qty: 2, px: 7500 },
+      { qty: 3, px: 10000 }
     ],
     colores: [
-      { c: "Rosa", s: 1 },
-      { c: "Negra", s: 1 },
-      { c: "Gris", s: 1 },
-      { c: "Blanca", s: 1 }
+      { c: "Roja", s: 2 },
+      { c: "Beige", s: 2 },
+      { c: "Blanca", s: 2 },
+      { c: "Crema", s: 2 },
+      { c: "Gris", s: 2 }
     ]
   },
   {
-    id: "colalessazalea",
-    sku: "Colaless Azalea",
+    id: "colalessconpuntilla",
+    sku: "Colaless de Puntilla y Algodon",
     cat: "bombachas",
-    name: "Colaless Azalea",
-    img: ["images/lessazalea1.jpeg", "images/lessazalea2.jpeg"],
-    desc: "tela de algodón con puntilla. Talle 36-44",
+    subcat: "colaless",
+    name: "Colaless De Puntilla y Algodon",
+    img: ["images/lesspuntilla4.jpeg", "images/lesspuntilla1.jpeg", "images/lesspuntilla3.jpeg", "images/lesspuntilla2.jpeg"],
+    desc: "Frente de encaje, trasero de algodon. Talle 36-44",
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -468,89 +471,51 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 3 },
-    ]
-  },
-  {
-    id: "colalessconpuntilla",
-    sku: "Colaless con puntilla",
-    cat: "bombachas",
-    name: "Colaless con Puntilla",
-    img: ["images/lesspuntilla4.jpeg", "images/lesspuntilla1.jpeg", "images/lesspuntilla3.jpeg", "images/lesspuntilla2.jpeg"],
-    desc: "Frente de encaje, trasero de algodon. Talle 36-44",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-      { c: "Blanca", s: 3 }, 
-      { c: "Gris", s: 3 }, 
-    ]
-  },
-  {
-    id: "lesshilo",
-    sku: "Less Hilo",
-    cat: "bombachas",
-    name: "Less Hilo",
-    img: ["images/hilo1.jpeg", "images/hilo2.jpeg", "images/hilo3.jpeg"],
-    desc: "Less Hilo, frente encaje. Talle 36-44",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [
-      { qty: 1, px: 3500 },
-      { qty: 2, px: 6000 }
-    ],
-    colores: [
-      { c: "Beige", s: 2 },
-      { c: "Blanca", s: 1 }
+      { c: "Gris", s: 3 }
     ]
   },
   {
     id: "lessfrufru",
-    sku: "Less fru fru",
+    sku: "Colaless Fru Fru",
     cat: "bombachas",
-    name: "Less Fru Fru",
+    subcat: "colaless",
+    name: "Colaless Fru Fru",
     img: ["images/lessfrufruestampada1.jpeg", "images/lessfrufruestampada2.jpeg", "images/lessfrufruestampada3.jpeg"],
-    desc: "Tela sintetica y brillosa. Talle 34-42",
+    desc: "Tela sintética y brillosa. Talle 34-42",
     tipo: "multi",
     talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
     colores: [
-      { c: "Leopardo", s: 2 }, 
-      { c: "Rosa", s: 2 }, 
+      { c: "Leopardo", s: 2 },
+      { c: "Rosa", s: 2 },
       { c: "Dolar", s: 2 },
-      { c: "Corazon negro", s: 2 },
-      { c: "Negra con flor", s: 2 },
-      { c: "Blanca con Flor", s: 2 },
+      { c: "Corazon Negro", s: 2 },
+      { c: "Negra con Flor", s: 2 },
+      { c: "Blanca con flor", s: 2 }
     ]
   },
   {
-    id: "lessxxldealgodon",
-    sku: "Less XXL de algodon",
+    id: "colaless-begonia",
+    sku: "Colaless Begonia",
     cat: "bombachas",
-    name: "Less XXL de Algodón",
-    img: ["images/lessxxl1.jpeg", "images/lessxxl2.jpeg"],
-    desc: "...",
-    tipo: "multi",
-    talle: "XXL",
-    precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
-    colores: [
-      { c: "Blanca", s: 3 }, 
-      { c: "Beige", s: 5 }, 
-      { c: "Rojo", s: 1}, 
-    ]
-  },
-  {
-    id: "colalesscoquette",
-    sku: "Colaless Coquette",
-    cat: "bombachas",
-    name: "Colaless Coquette",
+    subcat: "colaless",
+    name: "Colaless Begonia (Vedetinas morley)",
     img: ["images/colalesscoquette1.jpeg", "images/colalesscoquette2.jpeg"],
-    desc: "Tela de Morley con diseño. talle 36-44",
+    desc: "Tela de Morley. Talle 36-44",
     tipo: "multi",
     talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
     colores: [
-      { c: "Blanca", s: 1}, 
-      { c: "Beige", s: 2 }, 
+      { c: "Blanca", s: 1 },
+      { c: "Beige", s: 2 },
       { c: "Rosa", s: 1 }
     ]
   },
@@ -558,12 +523,17 @@ const productos = [
     id: "less_lovely",
     sku: "Less Lovely",
     cat: "bombachas",
+    subcat: "colaless",
     name: "Less Lovely",
     img: ["images/lesslovely1.jpeg", "images/lesslovely2.jpeg"],
-    desc: "Tela con poliester, talle 36-44",
+    desc: "Tela con poliéster. Talle 36-44",
     tipo: "multi",
     talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
     colores: [
       { c: "Beige", s: 1 },
       { c: "Blanca", s: 3 },
@@ -574,23 +544,114 @@ const productos = [
     id: "less_rosa",
     sku: "Less Rosa",
     cat: "bombachas",
+    subcat: "colaless",
     name: "Less Rosa",
     img: ["images/lessrosa1.jpeg", "images/lessrosa2.jpeg"],
     desc: "Tela de morley. Talle 36-44",
     tipo: "multi",
     talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
     colores: [
       { c: "Violeta", s: 3 },
+      { c: "Roja", s: 0 },
+      { c: "Negra", s: 0 }
     ]
   },
+  {
+    id: "colalessazalea",
+    sku: "Colaless Azalea art 227 Clara",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless Azalea (Art. 227 Clara)",
+    img: ["images/lessazalea1.jpeg", "images/lessazalea2.jpeg"],
+    desc: "Tela de algodón con puntilla. Talle 36-44",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Gris", s: 0 },
+      { c: "Rojo", s: 0 },
+      { c: "Negro", s: 0 },
+      { c: "Blanco", s: 3 }
+    ]
+  },
+  {
+    id: "colalesslavanda",
+    sku: "Colaless Lavanda art 228 Clara",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless Lavanda (Art. 228 Clara)",
+    img: ["images/lesslavanda1.jpeg", "images/lesslavanda2.jpeg"],
+    desc: "Tela de algodón. Talle 36-44",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Gris", s: 1 },
+      { c: "Rosa", s: 1 },
+      { c: "Negra", s: 1 }
+    ]
+  },
+  // --- Hilo ---
+  {
+    id: "lesshilo",
+    sku: "Less de Hilo",
+    cat: "bombachas",
+    subcat: "hilo",
+    name: "Less de Hilo",
+    img: ["images/hilo1.jpeg", "images/hilo2.jpeg", "images/hilo3.jpeg"],
+    desc: "Less Hilo, frente encaje. Talle 36-44",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3500 },
+      { qty: 2, px: 6000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 1 },
+      { c: "Beige", s: 2 }
+    ]
+  },
+  {
+    id: "less-hilo-con-mono",
+    sku: "Less de Hilo con Moño",
+    cat: "bombachas",
+    subcat: "hilo",
+    name: "Less de Hilo con Moño",
+    img: ["images/hilomono1.jpeg", "images/hilomono2.jpeg"],
+    desc: "Less de hilo con detalle de moño. Talle 36-44",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3500 },
+      { qty: 2, px: 6000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 2 },
+      { c: "Negra", s: 2 },
+      { c: "Roja", s: 2 }
+    ]
+  },
+// --- Medias ---
   {
     id: "mediasmd",
     sku: "Medias MD",
     cat: "medias",
     name: "Medias MD (Pack x3 pares)",
     img: ["images/mediasmd1.jpeg"],
-    desc: "tallle 34-40. De Damas",
+    desc: "Talle 34-40. De Damas.",
     tipo: "simple",
     px: 3000,
     s: 3
@@ -601,13 +662,33 @@ const productos = [
     cat: "medias",
     name: "Medias de Plush (Pack x2 pares)",
     img: ["images/mediasplush1.jpeg", "images/mediasplush2.jpeg", "images/mediasplush3.jpeg", "images/mediasplush4.jpeg", "images/mediasplush5.jpeg", "images/mediasplush6.jpeg", "images/mediasplush7.jpeg"],
-    desc: "Talle unico, elastizadas, de morley con polar interior",
-    tipo: "var",
-    px: 3000,
-    var: [
-      { id: "mpn", l: "Pack Surtido", s: 1 },
-    ]
+    desc: "Talle único, elastizadas, de morley con polar interior.",
+    tipo: "simple",
+    px: 3500,
+    s: 13
   },
+  {
+    id: "soquetesclasicos",
+    sku: "Soquetes Clasicos",
+    cat: "medias",
+    name: "Soquetes Clásicos (Pack x3 pares)",
+    img: ["images/soquetesclasicos1.jpeg"],
+    desc: "Soquetes clásicos. Pack x3 pares.",
+    tipo: "simple",
+    px: 3000,
+    s: 4
+  },
+  {
+    id: "mediascapibaraceleste",
+    sku: "Medias Capibara Celeste",
+    cat: "medias",
+    name: "Medias Capibara Celeste",
+    img: ["images/mediascapibara1.jpeg"],
+    desc: "Medias estampadas diseño Capibara Celeste.",
+    tipo: "simple",
+    px: 3500,
+    s: 9
+  }
 
   // --- CONJUNTOS ---
   {
