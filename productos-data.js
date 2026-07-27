@@ -688,7 +688,7 @@ const productos = [
     tipo: "simple",
     px: 3500,
     s: 9
-  }
+  },
 
   // --- CONJUNTOS ---
   {
