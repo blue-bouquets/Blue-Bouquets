@@ -774,55 +774,237 @@ const productos = [
       { id: "cr100be", l: "T.100 · Beige", s: 1 }
     ]
   },
-  // --- fin ---
   {
-    id: "conjuntomimosa",
-    sku: "Mimosa",
+    id: "magnolia",
+    sku: "Magnolia Candy Minerva",
     cat: "conjuntos",
-    name: "Conjunto Mimosa",
-    img: ["images/mimosa1.jpeg", "images/mimosa2.jpeg"], // Reemplazá por tus imágenes reales
-    desc: "Mimosa, un diseño único y confortable.",
-    tipo: "var",
-    var: [
-      { id: "mimosa_95_rosa", l: "T.95 — Rosa", s: 1 },
-    ],
-    px: 11490
-  },
-  {
-    id: "dientedeleon",
-    sku: "Diente de Leon",
-    cat: "conjuntos",
-    name: "Diente de León",
-    img: ["images/leon1.jpeg", "images/leon2.jpeg", "images/leon3.jpeg"],
+    subcat: "triangulo-soft",
+    name: "Magnolia",
+    img: ["images/magnolia1.jpeg"],
     desc: "...",
     tipo: "var",
-    px: 9990,
+    px: 11990,
     var: [
-      { id: "dl85r", l: "T.85 · Rosa", s: 1 },
-      { id: "dl90n", l: "T.90 · Negro", s: 1 },
-      { id: "dl90c", l: "T.90 · Celeste", s: 1 },
-      { id: "dl95r", l: "T.95 · Rosa", s: 1 },
-      { id: "dl95be", l: "T.95 · Beige", s: 1 },
-      { id: "dl100n", l: "T.100 · Negro", s: 1 }
+      { id: "mg85r", l: "T.85 · Rosa", s: 1 },
+      { id: "mg85n", l: "T.85 · Negro", s: 1 },
+      { id: "mg90v", l: "T.90 · Violeta", s: 2 },
+      { id: "mg90b", l: "T.90 · Blanco", s: 1 },
+      { id: "mg90r", l: "T.90 · Rosa", s: 1 },
+      { id: "mg95n", l: "T.95 · Negro", s: 2 },
+      { id: "mg100v", l: "T.100 · Violeta", s: 1 },
+      { id: "mg100r", l: "T.100 · Rosa", s: 2 },
+      { id: "mg100b", l: "T.100 · Blanco", s: 1 }
     ]
   },
   {
-    id: "begonia",
-    sku: "Begonia",
+    id: "anturio",
+    sku: "Anturio Cherry Minerva",
     cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Anturio",
+    img: ["images/anturio1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 11990,
+    var: [
+      { id: "an85n", l: "T.85 · Negro", s: 1 },
+      { id: "an85rc", l: "T.85 · Rojo con crema", s: 1 },
+      { id: "an90rr", l: "T.90 · Rojo con rosa", s: 1 },
+      { id: "an95rr", l: "T.95 · Rojo con rosa", s: 1 },
+      { id: "an100rc", l: "T.100 · Rojo con crema", s: 2 }
+    ]
+  },
+  {
+    id: "amaranto",
+    sku: "Amaranto Art 337 Clara",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Amaranto",
+    img: ["images/amaranto1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 11490,
+    var: [
+      { id: "am85n", l: "T.85 · Negro", s: 1 },
+      { id: "am85b", l: "T.85 · Blanco", s: 1 },
+      { id: "am90be", l: "T.90 · Beige", s: 1 },
+      { id: "am95n", l: "T.95 · Negro", s: 1 },
+      { id: "am95b", l: "T.95 · Blanco", s: 1 },
+      { id: "am100be", l: "T.100 · Beige", s: 1 }
+    ]
+  },
+  {
+    id: "primula",
+    sku: "Primula Anne",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Primula",
+    img: ["images/primula1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "pr85g", l: "T.85 · Gris", s: 1 },
+      { id: "pr85n", l: "T.85 · Negro", s: 1 },
+      { id: "pr90be", l: "T.90 · Beige", s: 1 },
+      { id: "pr90g", l: "T.90 · Gris", s: 1 },
+      { id: "pr95n", l: "T.95 · Negro", s: 1 },
+      { id: "pr100b", l: "T.100 · Blanco", s: 1 }
+    ]
+  },
+  {
+    id: "campanilla",
+    sku: "Campanilla Zinnia",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Campanilla",
+    img: ["images/campanilla1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "cmp85be", l: "T.85 · Beige", s: 1 },
+      { id: "cmp85v", l: "T.85 · Violeta", s: 1 },
+      { id: "cmp90b", l: "T.90 · Blanco", s: 1 },
+      { id: "cmp95r", l: "T.95 · Rosa", s: 1 },
+      { id: "cmp100v", l: "T.100 · Violeta", s: 1 },
+      { id: "cmp100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
+  // --- Armados ---
+  {
+    id: "gardenia",
+    sku: "Gardenia Kim",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Gardenia",
+    img: ["images/gardenia1.jpeg", "images/gardenia2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "gd100b", l: "T.100 · Blanco", s: 1 }
+    ]
+  },
+  {
+    id: "camelia",
+    sku: "Camelia Theodora",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Camelia",
+    img: ["images/camelia1.jpeg", "images/camelia2.jpeg", "images/camelia3.jpeg", "images/camelia4.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "cm95be", l: "T.95 · Beige", s: 1 }
+    ]
+  },
+  {
+    id: "azalea",
+    sku: "Azalea Penny",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Azalea",
+    img: ["images/azalea1.jpeg", "images/azalea2.jpeg", "images/azalea3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12990,
+    var: [
+      { id: "az85n", l: "T.85 · Negro", s: 1 },
+      { id: "az90b", l: "T.90 · Blanco", s: 1 },
+      { id: "az90n", l: "T.90 · Negro", s: 1 },
+      { id: "az95bo", l: "T.95 · Bordo", s: 1 },
+      { id: "az95be", l: "T.95 · Beige", s: 1 },
+      { id: "az100r", l: "T.100 · Rosa", s: 1 }
+    ]
+  },
+  {
+    id: "iris",
+    sku: "Iris Corina",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Iris",
+    img: ["images/iris1.jpeg", "images/iris2.jpeg", "images/iris3.jpeg", "images/iris4.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "ir100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
+  {
+    id: "mimosa",
+    sku: "Mimosa Beatriz",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Mimosa",
+    img: ["images/mimosa1.jpeg", "images/mimosa2.jpeg"], // Reemplazá por tus imágenes reales
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "mm95r", l: "T.95 · Rosa", s: 1 }
+    ]
+  },
+  {
+    id: "hortensia",
+    sku: "Hortensia Art 317 Clara",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Hortensia",
+    img: ["images/hortensia1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12990,
+    var: [
+      { id: "ht85rj", l: "T.85 · Rojo", s: 1 },
+      { id: "ht90n", l: "T.90 · Negro", s: 1 },
+      { id: "ht90b", l: "T.90 · Blanco", s: 1 },
+      { id: "ht95rj", l: "T.95 · Rojo", s: 1 },
+      { id: "ht100b", l: "T.100 · Blanco", s: 1 },
+      { id: "ht100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
+  {
+    id: "madreselva",
+    sku: "Madreselva Art 334 Clara",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Madreselva",
+    img: ["images/madreselva1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12990,
+    var: [
+      { id: "ms85n", l: "T.85 · Negro", s: 1 },
+      { id: "ms85be", l: "T.85 · Beige", s: 1 },
+      { id: "ms90n", l: "T.90 · Negro", s: 1 },
+      { id: "ms90c", l: "T.90 · Celeste", s: 1 },
+      { id: "ms95be", l: "T.95 · Beige", s: 1 },
+      { id: "ms100b", l: "T.100 · Blanco", s: 1 }
+    ]
+  },
+  // --- Bralette ---
+  {
+    id: "begonia",
+    sku: "Begonia Alice",
+    cat: "conjuntos",
+    subcat: "bralette",
     name: "Begonia",
     img: ["images/alice1.jpeg", "images/alice2.jpeg"],
     desc: "...",
     tipo: "var",
     px: 9990,
     var: [
-      { id: "bg85b", l: "T.85 · Blanco", s: 1 },
+      { id: "bg85b", l: "T.85 · Blanco", s: 1 }
     ]
   },
   {
     id: "coral",
-    sku: "Coral",
+    sku: "Coral Marie",
     cat: "conjuntos",
+    subcat: "bralette",
     name: "Coral",
     img: ["images/coral1.jpeg"],
     desc: "...",
@@ -834,8 +1016,9 @@ const productos = [
   },
   {
     id: "lavanda",
-    sku: "Lavanda",
+    sku: "Lavanda Agatha",
     cat: "conjuntos",
+    subcat: "bralette",
     name: "Lavanda",
     img: ["images/lavanda1.jpeg", "images/lavanda2.jpeg", "images/lavanda3.jpeg", "images/lavanda4.jpeg"],
     desc: "...",
@@ -847,48 +1030,186 @@ const productos = [
   },
   {
     id: "alyssum",
-    sku: "Alyssum",
+    sku: "Alyssum Vilma",
     cat: "conjuntos",
+    subcat: "bralette",
     name: "Alyssum",
     img: ["images/alyssum.jpeg"],
     desc: "...",
     tipo: "var",
     px: 9990,
     var: [
-      { id: "al85n1", l: "T.85 · Negro", s: 2 },
+      { id: "al85n1", l: "T.85 · Negro", s: 1 },
+      { id: "al85n2", l: "T.85 · Negro", s: 1 },
       { id: "al90g", l: "T.90 · Gris", s: 1 }
     ]
   },
   {
-    id: "gardenia",
-    sku: "Gardenia",
+    id: "fressia",
+    sku: "Fressia Andy",
     cat: "conjuntos",
-    name: "Gardenia",
-    img: ["images/gardenia1.jpeg", "images/gardenia2.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-      { id: "gd100b", l: "T.100 · Blanco", s: 1 }
-    ]
-  },
-  {
-    id: "fresia",
-    sku: "Fresia",
-    cat: "conjuntos",
+    subcat: "bralette",
     name: "Fressia",
     img: ["images/fressia1.jpeg", "images/fressia2.jpeg"],
     desc: "...",
     tipo: "var",
     px: 9990,
     var: [
-      { id: "fr90n", l: "T.90 · Negro", s: 1 },
+      { id: "fr90n", l: "T.90 · Negro", s: 1 }
     ]
   },
   {
-    id: "loto",
-    sku: "Loto",
+    id: "dahlia",
+    sku: "Dahlia Valentina",
     cat: "conjuntos",
+    subcat: "bralette",
+    name: "Dahlia",
+    img: ["images/dahlia1.jpeg", "images/dahlia2.jpeg", "images/dahlia3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12990,
+    var: [
+      { id: "dh115r", l: "T.115 · Rosa", s: 1 }
+    ]
+  },
+  {
+    id: "lirio",
+    sku: "Lirio Aylin Juvenil",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Lirio",
+    img: ["images/lirio1.jpeg", "images/lirio2.jpeg", "images/lirio3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 9490,
+    var: [
+      { id: "lrT4b", l: "T.4 · Blanco", s: 1 },
+      { id: "lrT4a", l: "T.4 · Amarillo", s: 2 }
+    ]
+  },
+  {
+    id: "calvin-klein",
+    sku: "Calvin Klein",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Calvin Klein",
+    img: ["images/ck1.jpeg","images/ck2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 9990,
+    var: [
+      { id: "ck95g", l: "T.95 · Gris", s: 1 },
+      { id: "ck100b", l: "T.100 · Blanco", s: 1 }
+    ]
+  },
+  {
+    id: "azucena",
+    sku: "Azucena Lucille",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Azucena",
+    img: ["images/azucena1.jpeg", "images/azucena2.jpeg", "images/azucena3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 10990,
+    var: [
+      { id: "azc95c", l: "T.95 · Celeste", s: 1 },
+      { id: "azc100s", l: "T.100 · Salmon", s: 1 },
+      { id: "azc100c", l: "T.100 · Celeste", s: 1 }
+    ]
+  },
+  {
+    id: "rosa",
+    sku: "Rosa Rosetta",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Rosa",
+    img: ["images/rosa1.jpeg", "images/rosa2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 9990,
+    var: [
+      { id: "rs85rj", l: "T.85 · Rojo", s: 1 },
+      { id: "rs90rj", l: "T.90 · Rojo", s: 1 }
+    ]
+  },
+  {
+    id: "malva",
+    sku: "Malva Idara",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Malva",
+    img: ["images/malva1.jpeg", "images/malva2.jpeg", "images/malva3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 10990,
+    var: [
+      { id: "mv90v", l: "T.90 · Verde", s: 1 },
+      { id: "mv95r", l: "T.95 · Rosa", s: 1 },
+      { id: "mv95cr", l: "T.95 · Crema", s: 1 },
+      { id: "mv100v", l: "T.100 · Verde", s: 1 },
+      { id: "mv100cr", l: "T.100 · Crema", s: 1 }
+    ]
+  },
+  {
+    id: "amapola",
+    sku: "Amapola Loretta",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Amapola",
+    img: ["images/amapola1.jpeg", "images/amapola2.jpeg", "images/amapola3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 10990,
+    var: [
+      { id: "amp85m", l: "T.85 · Marron", s: 1 },
+      { id: "amp85n", l: "T.85 · Negro", s: 1 }
+    ]
+  },
+  {
+    id: "orquidea",
+    sku: "Orquidea Lupi Minerva",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Orquidea",
+    img: ["images/orquidea1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 11990,
+    var: [
+      { id: "orq85n", l: "T.85 · Negro", s: 1 },
+      { id: "orq85ro", l: "T.85 · Rosa oscuro", s: 1 },
+      { id: "orq90b", l: "T.90 · Blanco", s: 1 },
+      { id: "orq95r", l: "T.95 · Rosa", s: 1 },
+      { id: "orq100ro", l: "T.100 · Rosa oscuro", s: 1 },
+      { id: "orq100r", l: "T.100 · Rosa", s: 1 }
+    ]
+  },
+  {
+    id: "nenufar",
+    sku: "Nenufar Mavis",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Nenufar",
+    img: ["images/nenufar1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 9900,
+    var: [
+      { id: "nn90cr", l: "T.90 · Crema", s: 1 },
+      { id: "nn90n", l: "T.90 · Negro", s: 1 },
+      { id: "nn95rj", l: "T.95 · Rojo", s: 1 },
+      { id: "nn95b", l: "T.95 · Blanco", s: 1 },
+      { id: "nn100n", l: "T.100 · Negro", s: 1 },
+      { id: "nn100cr", l: "T.100 · Crema", s: 1 }
+    ]
+  },
+  // --- Bralette con Aro ---
+  {
+    id: "loto",
+    sku: "Loto Grecia 6",
+    cat: "conjuntos",
+    subcat: "bralette-con-aro",
     name: "Loto",
     img: ["images/loto1.jpeg", "images/loto2.jpeg", "images/loto3.jpeg"],
     desc: "...",
@@ -900,95 +1221,27 @@ const productos = [
     ]
   },
   {
-    id: "dahlia",
-    sku: "Dahlia",
-    cat: "conjuntos",
-    name: "Dahlia",
-    img: ["images/dahlia1.jpeg", "images/dahlia2.jpeg", "images/dahlia3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11990,
-    var: [
-      { id: "dh115r", l: "T.115 · Rosa", s: 1 }
-    ]
-  },
-  {
-    id: "camelia",
-    sku: "Camelia",
-    cat: "conjuntos",
-    name: "Camelia",
-    img: ["images/camelia1.jpeg", "images/camelia2.jpeg", "images/camelia3.jpeg", "images/camelia4.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-      { id: "cm95be", l: "T.95 · Beige", s: 1 }
-    ]
-  },
-  {
-    id: "lirio",
-    sku: "Lirio",
-    cat: "conjuntos",
-    name: "Lirio",
-    img: ["images/lirio1.jpeg", "images/lirio2.jpeg", "images/lirio3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 8990,
-    var: [
-      { id: "lr4b", l: "Talle 4 · Blanco", s: 1 },
-      { id: "lr4a", l: "Talle 4 · Amarillo", s: 2 }
-    ]
-  },
-  {
-    id: "calvinklein",
-    sku: "Calvin Klein",
-    cat: "conjuntos",
-    name: "Calvin Klein",
-    img: ["images/ck1.jpeg","images/ck2.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 9900,
-    var: [
-      { id: "ck95g", l: "T.95 · Gris", s: 1 },
-      { id: "ck100b", l: "T.100 · Blanco", s: 1 }
-    ]
-  },
-  {
     id: "violeta",
-    sku: "Violeta",
+    sku: "Violeta Alessia",
     cat: "conjuntos",
+    subcat: "bralette-con-aro",
     name: "Violeta",
     img: ["images/violeta1.jpeg", "images/violeta2.jpeg", "images/violeta3.jpeg", "images/violeta4.jpeg"],
     desc: "...",
     tipo: "var",
     px: 11490,
     var: [
-      { id: "vl85b", l: "T.85 · Blanco", s: 1 },
-      { id: "vl95r", l: "T.95 · Rojo", s: 1 },
-      { id: "vl100r", l: "T.100 · Rojo", s: 1 },
-    ]
-  },
-  {
-    id: "azucena",
-    sku: "Azucena",
-    cat: "conjuntos",
-    name: "Azucena",
-    img: ["images/azucena1.jpeg", "images/azucena2.jpeg", "images/azucena3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-
-      { id: "az95c", l: "T.95 · Celeste", s: 1 },
-      { id: "az100s", l: "T.100 · Salmón", s: 1 },
-      { id: "az100c", l: "T.100 · Celeste", s: 1 }
+      { id: "vt85b", l: "T.85 · Blanco", s: 1 },
+      { id: "vt95rj", l: "T.95 · Rojo", s: 1 },
+      { id: "vt100rj", l: "T.100 · Rojo", s: 1 }
     ]
   },
   {
     id: "peonia",
-    sku: "Peonia",
+    sku: "Peonia Linette",
     cat: "conjuntos",
-    name: "Peonía",
+    subcat: "bralette-con-aro",
+    name: "Peonia",
     img: ["images/peonia1.jpeg", "images/peonia2.jpeg"],
     desc: "...",
     tipo: "var",
@@ -999,53 +1252,10 @@ const productos = [
     ]
   },
   {
-    id: "girasol",
-    sku: "Girasol",
-    cat: "conjuntos",
-    name: "Girasol",
-    img: ["images/girasol1.jpeg", "images/girasol2.jpeg", "images/girasol3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11990,
-    var: [
-      { id: "girasol85n", l: "T.85 • Negro", s: 0 },
-    ]
-  },
-  {
-    id: "rosa",
-    sku: "Rosa",
-    cat: "conjuntos",
-    name: "Rosa",
-    img: ["images/rosa1.jpeg", "images/rosa2.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 9990,
-    var: [
-      { id: "rs85r", l: "T.85 · Rojo", s: 1 },
-      { id: "rs90r", l: "T.90 · Rojo", s: 1 },
-    ]
-  },
-  {
-    id: "malva",
-    sku: "Malva",
-    cat: "conjuntos",
-    name: "Malva",
-    img: ["images/malva1.jpeg", "images/malva2.jpeg", "images/malva3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-      { id: "mv90v", l: "T.90 · Verde", s: 1 },
-      { id: "mv95r", l: "T.95 · Rosa", s: 1 },
-      { id: "mv95c", l: "T.95 · Crema", s: 1 },
-      { id: "mv100v", l: "T.100 · Verde", s: 1 },
-      { id: "mv100c", l: "T.100 · Crema", s: 1 }
-    ]
-  },
-  {
     id: "belladona",
     sku: "Belladona Martha",
     cat: "conjuntos",
+    subcat: "bralette-con-aro",
     name: "Belladona",
     img: ["images/belladona1.jpeg", "images/belladona2.jpeg"],
     desc: "...",
@@ -1053,72 +1263,45 @@ const productos = [
     px: 11490,
     var: [
       { id: "bd85be", l: "T.85 · Beige", s: 1 },
-      { id: "bd85b", l: "T.85 · Blanco", s: 1 },
+      { id: "bd85b", l: "T.85 · Blanco", s: 1 }
     ]
   },
   {
-    id: "azalea",
-    sku: "Azalea Penny",
+    id: "diente-de-leon",
+    sku: "Diente de Leon Conj aro de morley",
     cat: "conjuntos",
-    name: "Azalea",
-    img: ["images/azalea1.jpeg", "images/azalea2.jpeg", "images/azalea3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-      { id: "az90be", l: "T.90 · Beige", s: 0 },
-    ]
-  },
-  {
-    id: "amapola",
-    sku: "Amapola Loretta",
-    cat: "conjuntos",
-    name: "Amapola",
-    img: ["images/amapola1.jpeg", "images/amapola2.jpeg", "images/amapola3.jpeg"],
+    subcat: "bralette-con-aro",
+    name: "Diente de Leon",
+    img: ["images/leon1.jpeg", "images/leon2.jpeg", "images/leon3.jpeg"],
     desc: "...",
     tipo: "var",
     px: 10990,
     var: [
-      { id: "am85m", l: "T.85 · Marrón", s: 1 },
-      { id: "am85n", l: "T.85 · Negro", s: 1 },
+      { id: "dl85r", l: "T.85 · Rosa", s: 1 },
+      { id: "dl90n", l: "T.90 · Negro", s: 1 },
+      { id: "dl90c", l: "T.90 · Celeste", s: 1 },
+      { id: "dl95r", l: "T.95 · Rosa", s: 1 },
+      { id: "dl95be", l: "T.95 · Beige", s: 1 },
+      { id: "dl100n", l: "T.100 · Negro", s: 1 }
     ]
   },
+  // --- Boxers ---
   {
-    id: "iris",
-    sku: "Iris Corina",
-    cat: "conjuntos",
-    name: "Iris",
-    img: ["images/iris1.jpeg", "images/iris2.jpeg", "images/iris3.jpeg", "images/iris4.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-      { id: "ir100n", l: "T.100 · Negro", s: 1 }
-    ]
-  },
-  {
-    id: "boxertommy",
-    sku: "Boxer Tommy",
+    id: "boxerck",
+    sku: "Boxer CK",
     cat: "boxers",
-    name: "Bóxer Tommy",
-    img: ["images/boxertommy.jpeg"],
+    name: "Bóxer CK",
+    img: ["images/boxerck1.jpeg"],
     desc: "...",
-    tipo: "var",
-    px: 7490,
-    var: [
-    ]
-  },
-  {
-    id: "boxerdufouralgodon",
-    sku: "Boxer Dufour de Algodon",
-    cat: "boxers",
-    name: "Bóxer Dufour Algodón",
-    img: ["images/dufouralgodon1.jpeg", "images/dufouralgodon2.jpeg", "images/dufouralgodon3.jpeg"],
-    desc: "75% algodón",
     tipo: "var",
     px: 7990,
     var: [
-      { id: "dfaxxln", l: "Talle XXL · Negro", s: 1 }
+      { id: "ckmb", l: "Talle M · Blanco", s: 1 },
+      { id: "ckmn", l: "Talle M · Negro", s: 1 },
+      { id: "cklaz", l: "Talle L · Azul", s: 1 },
+      { id: "ckxlg", l: "Talle XL · Gris", s: 1 },
+      { id: "ckxlaz", l: "Talle XL · Azul", s: 1 },
+      { id: "ckxxln", l: "Talle XXL · Negro", s: 1 }
     ]
   },
   {
@@ -1133,20 +1316,39 @@ const productos = [
     var: [
       { id: "dfmr", l: "Talle M · Rojo", s: 1 },
       { id: "dfmg", l: "Talle M · Gris", s: 1 },
-      { id: "dflg", l: "Talle L · Gris", s: 1 },
+      { id: "dflg", l: "Talle L · Gris", s: 1 }
     ]
   },
   {
-    id: "calzastermicas",
-    sku: "Calzas termicas",
-    cat: "prendas",
-    name: "Calzas Térmicas",
-    img: ["images/termica1.jpeg", "images/termica2.jpeg", "images/termica3.jpeg"],
-    desc: "...",
-    tipo: "simple",
-    px: 7490,
-    s: 0
+    id: "boxerdufouralgodon",
+    sku: "Boxer Dufour de Algodon",
+    cat: "boxers",
+    name: "Bóxer Dufour Algodón",
+    img: ["images/dufouralgodon1.jpeg", "images/dufouralgodon2.jpeg", "images/dufouralgodon3.jpeg"],
+    desc: "75% algodón",
+    tipo: "var",
+    px: 7990,
+    var: [
+      { id: "dfamn", l: "Talle M · Negro", s: 1 },
+      { id: "dfaln", l: "Talle L · Negro", s: 1 },
+      { id: "dfaxlg", l: "Talle XL · Gris", s: 1 },
+      { id: "dfaxxld", l: "Talle XXL · Bordo", s: 1 },
+      { id: "dfaxxlaz", l: "Talle XXL · Azul", s: 1 },
+      { id: "dfaxxln", l: "Talle XXL · Negro", s: 1 }
+    ]
   },
+  {
+    id: "boxertommy",
+    sku: "Boxer Tommy",
+    cat: "boxers",
+    name: "Bóxer Tommy",
+    img: ["images/boxertommy.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 7490,
+    var: []
+  },
+  // --- Prendas ---
   {
     id: "pijama2piezas",
     sku: "Pijama 2 piezas",
@@ -1157,7 +1359,6 @@ const productos = [
     tipo: "var",
     var: [
       { id: "pijama_95_rojo", l: "T.95 — Rojo", s: 1 },
-      { id: "pijama_95_rosa", l: "T.95 — Rosa", s: 1 },
       { id: "pijama_100_celeste", l: "T.100 — Celeste", s: 1 },
       { id: "pijama_100_marron", l: "T.100 — Marrón", s: 1 }
     ],
@@ -1200,6 +1401,42 @@ const productos = [
     desc: "...",
     tipo: "var",
     px: 11490,
+    var: [
+    ]
+  },
+   {
+    id: "girasol",
+    sku: "Girasol",
+    cat: "conjuntos",
+    name: "Girasol",
+    img: ["images/girasol1.jpeg", "images/girasol2.jpeg", "images/girasol3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 11990,
+    var: [
+      { id: "girasol85n", l: "T.85 • Negro", s: 0 },
+    ]
+  },
+  {
+    id: "calzastermicas",
+    sku: "Calzas termicas",
+    cat: "prendas",
+    name: "Calzas Térmicas",
+    img: ["images/termica1.jpeg", "images/termica2.jpeg", "images/termica3.jpeg"],
+    desc: "...",
+    tipo: "simple",
+    px: 7490,
+    s: 0
+  },
+   {
+    id: "boxertommy",
+    sku: "Boxer Tommy",
+    cat: "boxers",
+    name: "Bóxer Tommy",
+    img: ["images/boxertommy.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 7490,
     var: [
     ]
   },
