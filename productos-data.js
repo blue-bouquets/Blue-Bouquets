@@ -282,7 +282,7 @@ const productos = [
     sku: "Colaless algodon M y L",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Colaless algodon M y L",
+    name: ["Colaless algodon M y L"],
     img: "images/less1.jpeg", "images/less2.jpeg",
     tipo: "multi",
     talle: "M y L",
@@ -1337,17 +1337,6 @@ const productos = [
       { id: "dfaxxln", l: "Talle XXL · Negro", s: 1 }
     ]
   },
-  {
-    id: "boxertommy",
-    sku: "Boxer Tommy",
-    cat: "boxers",
-    name: "Bóxer Tommy",
-    img: ["images/boxertommy.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 7490,
-    var: []
-  },
   // --- Prendas ---
   {
     id: "pijama2piezas",
@@ -1436,7 +1425,7 @@ const productos = [
     img: ["images/boxertommy.jpeg"],
     desc: "...",
     tipo: "var",
-    px: 7490,
+    px: 6990,
     var: [
     ]
   },
