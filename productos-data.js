@@ -691,6 +691,90 @@ const productos = [
   },
 
   // --- CONJUNTOS ---
+// --- Triángulo Soft ---
+  {
+    id: "cala",
+    sku: "Cala Pia",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Cala",
+    img: ["images/cala1.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 9990,
+    var: [
+      { id: "cl100be", l: "T.100 · Beige", s: 1 }
+    ]
+  },
+  {
+    id: "anemona",
+    sku: "Anemona Fay",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Anemona",
+    img: ["images/anemona1.jpeg", "images/anemona2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "an100a", l: "T.100 · Amarillo", s: 1 },
+      { id: "an100v", l: "T.100 · Violeta", s: 1 }
+    ]
+  },
+  {
+    id: "lunaria",
+    sku: "Lunaria Star",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Lunaria",
+    img: ["images/lunaria1.jpeg", "images/lunaria2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 9990,
+    var: [
+      { id: "ln85b", l: "T.85 · Blanco", s: 1 },
+      { id: "ln90g", l: "T.90 · Gris", s: 1 },
+      { id: "ln95b", l: "T.95 · Blanco", s: 1 },
+      { id: "ln95g", l: "T.95 · Gris", s: 1 },
+      { id: "ln100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
+  {
+    id: "jacinto",
+    sku: "Jacinto Ximena",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Jacinto",
+    img: ["images/jacinto1.jpeg", "images/jacinto2.jpeg", "images/jacinto3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 10990,
+    var: [
+      { id: "jc85c", l: "T.85 · Celeste", s: 1 },
+      { id: "jc90b", l: "T.90 · Blanco", s: 1 }
+    ]
+  },
+  {
+    id: "conjuntocrisantemo",
+    sku: "Crisantemo Alessandra",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Crisantemo",
+    img: ["images/crisantemo1.jpeg", "images/crisantemo2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "crisantemo_100_celeste", l: "T.100 · Celeste", s: 1 },
+      { id: "cr85n", l: "T.85 · Negro", s: 1 },
+      { id: "cr85be", l: "T.85 · Beige", s: 1 },
+      { id: "cr90c", l: "T.90 · Celeste", s: 1 },
+      { id: "cr95n", l: "T.95 · Negro", s: 1 },
+      { id: "cr100b", l: "T.100 · Blanco", s: 1 },
+      { id: "cr100be", l: "T.100 · Beige", s: 1 }
+    ]
+  },
+  // --- fin ---
   {
     id: "conjuntomimosa",
     sku: "Mimosa",
@@ -701,19 +785,6 @@ const productos = [
     tipo: "var",
     var: [
       { id: "mimosa_95_rosa", l: "T.95 — Rosa", s: 1 },
-    ],
-    px: 11490
-  },
-  {
-    id: "conjuntocrisantemo",
-    sku: "Crisantemo",
-    cat: "conjuntos",
-    name: "Crisantemo",
-    img: ["images/crisantemo1.jpeg", "images/crisantemo2.jpeg"], // Reemplazá por tus imágenes reales
-    desc: "Conjunto Crisantemo, delicado y cómodo.",
-    tipo: "var",
-    var: [
-      { id: "crisantemo_100_celeste", l: "T.100 — Celeste", s: 1 },
     ],
     px: 11490
   },
@@ -772,19 +843,6 @@ const productos = [
     px: 9990,
     var: [
       { id: "lv100b", l: "T.100 · Blanco", s: 1 }
-    ]
-  },
-  {
-    id: "cala",
-    sku: "Cala",
-    cat: "conjuntos",
-    name: "Cala",
-    img: ["images/cala1.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 9990,
-    var: [
-      { id: "cl100be", l: "T.100 · Beige", s: 1 },
     ]
   },
   {
@@ -865,20 +923,6 @@ const productos = [
     px: 11490,
     var: [
       { id: "cm95be", l: "T.95 · Beige", s: 1 }
-    ]
-  },
-  {
-    id: "anemona",
-    sku: "Anemona",
-    cat: "conjuntos",
-    name: "Anemona",
-    img: ["images/anemona1.jpeg", "images/anemona2.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 11490,
-    var: [
-      { id: "an100a", l: "T.100 · Amarillo", s: 1 },
-      { id: "an100v", l: "T.100 · Violeta", s: 1 }
     ]
   },
   {
@@ -999,19 +1043,6 @@ const productos = [
     ]
   },
   {
-    id: "lunaria",
-    sku: "Lunaria Star",
-    cat: "conjuntos",
-    name: "Lunaria",
-    img: ["images/lunaria1.jpeg", "images/lunaria2.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 9990,
-    var: [
-      { id: "ln85be", l: "T.85 · Beige", s: 1 },
-    ]
-  },
-  {
     id: "belladona",
     sku: "Belladona Martha",
     cat: "conjuntos",
@@ -1036,20 +1067,6 @@ const productos = [
     px: 11490,
     var: [
       { id: "az90be", l: "T.90 · Beige", s: 0 },
-    ]
-  },
-  {
-    id: "jacinto",
-    sku: "Jacinto Ximena",
-    cat: "conjuntos",
-    name: "Jacinto",
-    img: ["images/jacinto1.jpeg", "images/jacinto2.jpeg", "images/jacinto3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 10990,
-    var: [
-      { id: "jc85c", l: "T.85 · Celeste", s: 1 },
-      { id: "jc90b", l: "T.90 · Blanco", s: 1 },
     ]
   },
   {
