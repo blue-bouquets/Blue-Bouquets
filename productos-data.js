@@ -24,6 +24,7 @@ const productos = [
     id: "vedetinasdealgodon",
     sku: "Vedetinas de Algodon",
     cat: "bombachas",
+    subcat: "vedetinas",
     name: "Vedetinas de Algodón",
     img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
     desc: "Tela de algodón. Talles M y L.",
