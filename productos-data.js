@@ -5,7 +5,7 @@ const productos = [
     id: "vedetinasdealgodon",
     sku: "Vedetinas de Algodon",
     cat: "bombachas",
-    subcat: "vedetinas",
+    subcat: "vedetina",
     name: "Vedetinas de Algodón",
     img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
     desc: "Tela de algodón. Talles M y L.",
@@ -54,8 +54,98 @@ const productos = [
       { id: "v1", l: "Piel Cerezas", s: 2 },
       { id: "v2", l: "Blanca con moños", s: 1 }
     ]
+    },
+    {
+    id: "vedetinas-xl",
+    tipo: "var",
+    name: "Vedetinas XL",
+    cat: "bombachas",
+    subcat: "vedetina",
+    px: 4000,
+    img: ["images/vedetinasxl1.jpeg", "images/vedetinasxl2.jpeg"],
+    var: [
+      { id: "v1", l: "T.XL · Negro", s: 2 },
+      { id: "v2", l: "T.XL · Beige", s: 2 },
+      { id: "v3", l: "T.XL · Gris", s: 2 },
+      { id: "v4", l: "T.XL · Blanco", s: 2 },
+      { id: "v5", l: "T.XL · Rojo", s: 2 },
+      { id: "v6", l: "T.XL · Crema", s: 2 }
+    ]
   },
-    // --- Colaless ---
+    {
+    id: "culot-con-encaje",
+    tipo: "var",
+    name: "Culot con encaje",
+    cat: "bombachas",
+    subcat: "culotte",
+    px: 4000,
+    img: ["images/culotencaje1.jpeg", "images/culotencaje2.jpeg", "images/culotencaje2.jpeg"],
+    var: [
+      { id: "v1", l: "Roja", s: 1 },
+      { id: "v2", l: "Beige", s: 2 }
+    ]
+  },
+    // --- Regulables ---
+  {
+  id: "less-doble-tira",
+  tipo: "var",
+  name: "Less Doble Tira",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+  var: [
+    { id: "v1", l: "Crema", s: 2 },
+    { id: "v2", l: "Blanca", s: 2 },
+    { id: "v3", l: "Roja", s: 2 },
+    { id: "v4", l: "Negra", s: 2 },
+    { id: "v5", l: "Beige", s: 1 },
+    { id: "v6", l: "Verde", s: 1 },
+    { id: "v7", l: "Gris", s: 1 }
+  ]
+},
+  {
+  id: "less-regulable-clasicas-art30",
+  tipo: "var",
+  name: "Less Regulable Clasicas (Art. 30 Mi Utopia)",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: "👙", // Reemplazar por la ruta de la imagen si la tienes
+  var: [
+    { id: "v1", l: "Roja", s: 3 },
+    { id: "v2", l: "Negra", s: 3 },
+    { id: "v3", l: "Blanca", s: 3 },
+    { id: "v4", l: "Gris", s: 3 }
+  ]
+},
+  {
+  id: "less-regulables-anchas-de-red",
+  tipo: "var",
+  name: "Less Regulables Anchas de Red",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "images/lessred3.jpeg"],
+  var: [
+    { id: "v1", l: "Negra", s: 3 },
+    { id: "v2", l: "Blanca", s: 2 }
+  ]
+},
+  {
+  id: "less-regulables-encaje",
+  tipo: "var",
+  name: "Less Regulables Encaje",
+  cat: "bombachas",
+  subcat: "regulable",
+  px: 3000,
+  img: ["images/lessencaje4.jpeg", "images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg", "images/lessencaje4.jpeg"],
+  var: [
+    { id: "v1", l: "Negro", s: 4 },
+    { id: "v2", l: "Crema", s: 1 },
+    { id: "v3", l: "Blanca", s: 6 }
+  ]
+},
   {
     id: "colalesslavanda",
     sku: "Colaless Lavanda",
@@ -93,55 +183,6 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 3 },
-    ]
-  },
-  {
-    id: "vedetinas_xl",
-    sku: "Vedetinas XL",
-    cat: "bombachas",
-    name: "Vedetinas XXL",
-    img: ["images/vedetinasxl1.jpeg", "images/vedetinasxl2.jpeg"],
-    desc: "Tela de Algodón, Talle 44-52",
-    tipo: "multi",
-    talle: "XXL",
-    precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
-    colores: [
-      { c: "Negra", s: 2 }, 
-      { c: "Beige", s: 2 }, 
-      { c: "Gris", s: 2 }, 
-      { c: "Blanca", s: 2 }, 
-      { c: "Roja", s: 2 },
-      { c: "Crema", s: 2 }
-    ]
-  },
-  {
-    id: "lessanchasred",
-    sku: "Less anchas red",
-    cat: "bombachas",
-    name: "Less Anchas de Red",
-    img: ["images/lessred1.jpeg", "images/lessred2.jpeg", "images/lessred3.jpeg"],
-    desc: "Tela de red y elastico ancho. Talle 36-44",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-      { c: "Negro", s: 3 }, 
-      { c: "Blanco", s: 2 }, 
-    ]
-  },
-  {
-    id: "less_regulable_encaje",
-    cat: "bombachas",
-    tipo: "multi",
-    name: "Less Regulable de Encaje",
-    talle: "Único (Regulable)",
-    img: ["images/lessencaje4.jpeg", "images/lessencaje1.jpeg", "images/lessencaje2.jpeg", "images/lessencaje3.jpeg", "images/lessencaje4.jpeg"],
-    desc: "Tela de encaje. Talle 36-44",
-    precios: [{ qty: 1, px: 3000 }, { qty: 2, px: 5500 }, { qty: 3, px: 7000 }],
-    colores: [
-      { c: "Blanca", s: 6 }, 
-      { c: "Negra", s: 4 }, 
-      { c: "Crema", s: 1 }
     ]
   },
   {
@@ -269,21 +310,6 @@ const productos = [
       { c: "Blanca", s: 3 }, 
       { c: "Beige", s: 5 }, 
       { c: "Rojo", s: 1}, 
-    ]
-  },
-  {
-    id: "culotconencaje",
-    sku: "Culot con encaje",
-    cat: "bombachas",
-    name: "Culot con Encaje",
-    img: ["images/culotencaje1.jpeg", "images/culotencaje2.jpeg", "images/culotencaje2.jpeg"],
-    desc: "Culot de algodon con laterales de encaje. Talle 36-42",
-    tipo: "multi",
-    talle: "regular",
-    precios: [{ qty: 1, px: 4000 }, { qty: 2, px: 7500 }, { qty: 3, px: 10000 }],
-    colores: [
-      { c: "Roja", s: 1 }, 
-      { c: "Beige", s: 2 }, 
     ]
   },
   {
