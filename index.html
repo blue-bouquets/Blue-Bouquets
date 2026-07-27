@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Bouquets — Lencería</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --verde: #37757d;
@@ -15,13 +15,12 @@
   --arena: #D4B8A0;
   --text: #017576;
   --text-light: #5a7a82;
-  --tarjeta-bg: #e2eef8; /* Fondo más oscuro para contraste */
+  --tarjeta-bg: #e2eef8;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; }
 header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; }
 
-/* Ajustado tamaño y estilos del logo para coincidir con producto.html */
 .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; letter-spacing: 0.5px; color: var(--menta); text-decoration: none; }
 .logo span { color: var(--turquesa); font-style: italic; }
 
@@ -35,17 +34,21 @@ header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 
 .filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
 .filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; text-transform: capitalize; }
 .filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
+
+/* Subcategorías */
+.subfilters { padding: 12px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
+.subfilter-btn { background: rgba(255, 255, 255, 0.7); border: 1.5px solid var(--turquesa); color: var(--azul-noche); padding: 5px 14px; border-radius: 50px; cursor: pointer; font-size: 0.82rem; font-weight: 500; }
+.subfilter-btn.active { background: var(--turquesa); color: white; border-color: var(--turquesa); }
+
 .size-filter-container { display: flex; align-items: center; gap: 6px; }
 .size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 12px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
 
-/* Catálogo con Fotos Verticales 4:5 */
 .catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
 .product-card { background: var(--tarjeta-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(26,58,74,0.08); display: flex; flex-direction: column; position: relative; }
 .card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
 .card-img { width: 100%; aspect-ratio: 4 / 5; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; position: relative; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Cartel de Sin Stock más visible */
 .stock-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(17, 53, 75, 0.85); color: white; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; border-radius: 4px; z-index: 2; pointer-events: none; border: 1px solid rgba(255,255,255,0.2); }
 
 .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
@@ -62,7 +65,7 @@ label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display:
 .unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
 .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
-.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7ºrem; font-size: 0.7rem; }
+.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 .unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
@@ -70,7 +73,6 @@ label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display:
 .add-btn:hover { background: var(--turquesa); }
 .add-btn:disabled { background: #b0c2c4; cursor: not-allowed; }
 
-/* Nueva sección Informativa "Sobre Mí" */
 .about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); }
 .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left; }
 .about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--azul-noche); margin-bottom: 12px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 4px; }
@@ -80,7 +82,6 @@ label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display:
 
 footer { background: var(--azul-noche); padding: 24px; text-align: center; color: var(--menta); font-size: 0.85rem; }
 
-/* Carrito */
 .cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
 .cart-overlay.open { opacity: 1; pointer-events: all; }
 .cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
@@ -127,7 +128,7 @@ footer { background: var(--azul-noche); padding: 24px; text-align: center; color
   
   <div class="size-filter-container" id="sizeFilterWrapper">
     <label for="sizeFilter" style="margin-bottom:0; color:var(--verde);">Talle:</label>
-    <select id="sizeFilter" class="size-select" onchange="aplicarFiltroTalle()">
+    <select id="sizeFilter" class="size-select" onchange="aplicarFiltros()">
       <option value="todos">Todos</option>
       <option value="85">85</option>
       <option value="90">90</option>
@@ -139,9 +140,10 @@ footer { background: var(--azul-noche); padding: 24px; text-align: center; color
   </div>
 </div>
 
+<div class="subfilters" id="subfilters" style="display: none;"></div>
+
 <div class="catalog" id="catalog"></div>
 
-<!-- NUEVA SECCIÓN: SOBRE MÍ & CONDICIONES -->
 <section class="about-section">
   <div class="about-container">
     <div class="about-col">
@@ -198,12 +200,20 @@ function renderImg(p) {
   return imgSrc || '';
 }
 
+// Función auxiliar para formatear texto con Mayúscula Inicial
+function capitalizarTexto(str) {
+  if (!str) return '';
+  return str.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+}
+
 let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
 let sel = {};
 let categoriaActual = 'todos';
+let subcategoriaActual = 'todas';
 
 function cardSimple(p) {
   const tieneStock = p.s > 0;
+  const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : p.cat.toUpperCase();
   return `<div class="product-card" style="${!tieneStock ? 'opacity: 0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
       <div class="card-img">
@@ -212,7 +222,7 @@ function cardSimple(p) {
       </div>
     </a>
     <div class="card-body">
-      <div class="card-category">${p.cat.toUpperCase()}</div>
+      <div class="card-category">${catText}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${p.px.toLocaleString('es-AR')}</div>
       <button class="add-btn" onclick="addSimple('${p.id}')" ${tieneStock?'':'disabled'}>${tieneStock?'+ Agregar':'Sin Stock'}</button>
@@ -223,8 +233,8 @@ function cardSimple(p) {
 function cardVar(p) {
   const talleFiltrado = document.getElementById('sizeFilter').value;
   const precioRender = p.px ? p.px.toLocaleString('es-AR') : (p.var[0] && p.var[0].px ? p.var[0].px.toLocaleString('es-AR') : 'Consultar');
-  
   const tieneStockGlobal = p.var.some(v => v.s > 0);
+  const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : p.cat.toUpperCase();
 
   const vars = p.var.map(v => {
     let ocultarPorTalle = false;
@@ -234,7 +244,6 @@ function cardVar(p) {
     }
     if (ocultarPorTalle) return '';
     
-    // Corrección para evitar "undefined" o etiquetas rotas en medias/accesorios sin variante limpia
     let labelVariante = v.l;
     if (!labelVariante || labelVariante.toLowerCase().includes('undefined')) {
       labelVariante = "Surtido";
@@ -250,7 +259,7 @@ function cardVar(p) {
       </div>
     </a>
     <div class="card-body">
-      <div class="card-category">${p.cat.toUpperCase()}</div>
+      <div class="card-category">${catText}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${precioRender}</div>
       <label>Talle y color</label>
@@ -263,9 +272,7 @@ function cardVar(p) {
 function cardMulti(p) {
   const tieneStockGlobal = p.colores.some(c => c.s > 0);
   const qtys = p.precios.map(pr => `<button class="variant-btn qty-btn-${p.id}" onclick="selQty('${p.id}',${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
-  
-  // Reemplazo de regular por talle 36-44
-  const talleMostrar = (p.talle && p.talle.toLowerCase() !== 'regular') ? p.talle : 'Talle 36-44';
+  const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : (p.talle && p.talle.toLowerCase() !== 'regular' ? p.talle.toUpperCase() : 'TALLE 36-44');
 
   return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
@@ -275,7 +282,7 @@ function cardMulti(p) {
       </div>
     </a>
     <div class="card-body">
-      <div class="card-category">${talleMostrar.toUpperCase()}</div>
+      <div class="card-category">${catText}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div>
       <label style="color: var(--text-light); font-weight: normal;">Cantidad (promo combinables)</label>
@@ -348,7 +355,7 @@ function addSimple(pid) {
   const p = productos.find(x=>x.id===pid);
   const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
   const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, name:p.name, det:`x1`, px:p.px, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, subcat:p.subcat||'', name:p.name, det:`x1`, px:p.px, emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
 }
@@ -366,7 +373,7 @@ function addVar(pid) {
     labelDetalle = "Surtido";
   }
 
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, varId:v.var, name:p.name, det:labelDetalle, px:p.px || variant.px || 9990, emoji:icon});
+  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, subcat:p.subcat||'', varId:v.var, name:p.name, det:labelDetalle, px:p.px || variant.px || 9990, emoji:icon});
   upCart();
   toast(`✓ ${p.name}`);
 }
@@ -384,10 +391,11 @@ function addMulti(pid) {
     carrito.push({
       id: p.id,
       tipo: 'multi_item',
-      ofertaGrupo: p.precios[0].px, // Corrección crítica: Agrupamos por precio base unitario (3000 o 4000) para permitir surtidos perfectos
+      ofertaGrupo: p.precios[0].px,
       promoNombre: p.name,
       talleDisplay: talleFormateado,
       name: p.name,
+      subcat: p.subcat||'',
       det: `Color: ${s.cols[i]}`,
       pxBase: p.precios[0].px,
       emoji: icon
@@ -416,7 +424,6 @@ function calcularEstructuraCarrito() {
     const list = itemsMulti[precioGrupo];
     const cant = list.length;
     
-    // Buscamos dinámicamente cualquier producto que contenga la matriz de reglas de precio para este nivel de valor unitario
     const prodBase = productos.find(x => x.precios && x.precios[0] && x.precios[0].px === parseInt(precioGrupo));
     
     if (prodBase && prodBase.precios) {
@@ -519,8 +526,9 @@ function toggleCart() {
   document.getElementById('cartOverlay').classList.toggle('open');
 }
 
-function filtrar(cat,btn) {
+function filtrar(cat, btn) {
   categoriaActual = cat;
+  subcategoriaActual = 'todas';
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
@@ -532,13 +540,51 @@ function filtrar(cat,btn) {
     document.getElementById('sizeFilter').value = 'todos';
   }
 
-  aplicarFiltroTalle();
+  generarSubfiltros();
+  aplicarFiltros();
 }
 
-function aplicarFiltroTalle() {
+function generarSubfiltros() {
+  const subContainer = document.getElementById('subfilters');
+  if (categoriaActual === 'todos') {
+    subContainer.style.display = 'none';
+    subContainer.innerHTML = '';
+    return;
+  }
+
+  const productosCat = productos.filter(p => p.cat === categoriaActual);
+  const subcats = [...new Set(productosCat.map(p => p.subcat).filter(Boolean))];
+
+  if (subcats.length === 0) {
+    subContainer.style.display = 'none';
+    subContainer.innerHTML = '';
+    return;
+  }
+
+  let html = `<button class="subfilter-btn active" onclick="filtrarSub('todas', this)">Todas</button>`;
+  subcats.forEach(sc => {
+    html += `<button class="subfilter-btn" onclick="filtrarSub('${sc}', this)">${capitalizarTexto(sc)}</button>`;
+  });
+
+  subContainer.innerHTML = html;
+  subContainer.style.display = 'flex';
+}
+
+function filtrarSub(subcat, btn) {
+  subcategoriaActual = subcat;
+  document.querySelectorAll('.subfilter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  aplicarFiltros();
+}
+
+function aplicarFiltros() {
   const talleSeleccionado = document.getElementById('sizeFilter').value;
   let productosFiltrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.cat === categoriaActual);
   
+  if (subcategoriaActual !== 'todas') {
+    productosFiltrados = productosFiltrados.filter(p => p.subcat === subcategoriaActual);
+  }
+
   if (talleSeleccionado !== 'todos') {
     productosFiltrados = productosFiltrados.filter(p => {
       if (p.cat !== 'conjuntos') return true; 
@@ -555,6 +601,10 @@ function aplicarFiltroTalle() {
 }
 
 function renderCatalog(lista) {
+  if (lista.length === 0) {
+    document.getElementById('catalog').innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-light); padding: 40px 0;">No se encontraron productos para esta categoría.</div>`;
+    return;
+  }
   const html = lista.map(p => {
     if(p.tipo === 'simple') return cardSimple(p);
     if(p.tipo === 'var') return cardVar(p);
