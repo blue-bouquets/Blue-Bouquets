@@ -750,7 +750,6 @@ const productos = [
     tipo: "var",
     px: 10990,
     var: [
-      { id: "jc85c", l: "T.85 · Celeste", s: 1 },
       { id: "jc90b", l: "T.90 · Blanco", s: 1 }
     ]
   },
@@ -766,7 +765,7 @@ const productos = [
     px: 12490,
     var: [
       { id: "crisantemo_100_celeste", l: "T.100 · Celeste", s: 1 },
-      { id: "cr85n", l: "T.85 · Negro", s: 1 },
+      { id: "cr85n", l: "T.85 · Negro", s: 0 },
       { id: "cr85be", l: "T.85 · Beige", s: 1 },
       { id: "cr90c", l: "T.90 · Celeste", s: 1 },
       { id: "cr95n", l: "T.95 · Negro", s: 1 },
@@ -786,7 +785,6 @@ const productos = [
     px: 11990,
     var: [
       { id: "mg85r", l: "T.85 · Rosa", s: 1 },
-      { id: "mg85n", l: "T.85 · Negro", s: 1 },
       { id: "mg90v", l: "T.90 · Violeta", s: 2 },
       { id: "mg90b", l: "T.90 · Blanco", s: 1 },
       { id: "mg90r", l: "T.90 · Rosa", s: 1 },
@@ -977,10 +975,9 @@ const productos = [
     tipo: "var",
     px: 12990,
     var: [
-      { id: "ms85n", l: "T.85 · Negro", s: 1 },
       { id: "ms85be", l: "T.85 · Beige", s: 1 },
       { id: "ms90n", l: "T.90 · Negro", s: 1 },
-      { id: "ms90c", l: "T.90 · Celeste", s: 1 },
+      { id: "ms90c", l: "T.90 · Celeste", s: 0 },
       { id: "ms95be", l: "T.95 · Beige", s: 1 },
       { id: "ms100b", l: "T.100 · Blanco", s: 1 }
     ]
@@ -1197,7 +1194,7 @@ const productos = [
     px: 9900,
     var: [
       { id: "nn90cr", l: "T.90 · Crema", s: 1 },
-      { id: "nn90n", l: "T.90 · Negro", s: 1 },
+      { id: "nn90n", l: "T.90 · Negro", s: 0 },
       { id: "nn95rj", l: "T.95 · Rojo", s: 1 },
       { id: "nn95b", l: "T.95 · Blanco", s: 1 },
       { id: "nn100n", l: "T.100 · Negro", s: 1 },
@@ -1362,7 +1359,7 @@ const productos = [
     desc: "Calzas con efecto piel, ideales para el invierno.",
     tipo: "var",
     var: [
-      { id: "calza_piel_m", l: "M/L", s: 7 },
+      { id: "calza_piel_m", l: "M/L", s: 5 },
       { id: "calza_piel_l", l: "XL/XXL", s: 10 }
     ],
     px: 13990
