@@ -119,7 +119,7 @@ const productos = [
     cat: "bombachas",
     subcat: "regulable",
     name: "Less Doble Tira",
-    img: "👙",
+    img: ["images/dobletira1.jpeg", "images/dobletira2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -142,8 +142,8 @@ const productos = [
     sku: "Less Regulable Clasicas (Art. 30)",
     cat: "bombachas",
     subcat: "regulable",
-    name: "Less Regulable Clasicas (Art. 30 Mi Utopia)",
-    img: "👙",
+    name: ["Less Regulable Clasicas"] ,
+    img: ["images/regulableclasicas1.jpeg", "images/regulableclasicas2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -202,8 +202,8 @@ const productos = [
     sku: "Less Jacinto Regulable",
     cat: "bombachas",
     subcat: "regulable",
-    name: "Less Jacinto Regulable (Art 238 Clara)",
-    img: "👙",
+    name: "Less Jacinto Regulable",
+    img: ["images/lessjacinto1.jpeg", "images/lessjacinto2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -222,8 +222,8 @@ const productos = [
     sku: "Less Peonía Regulable",
     cat: "bombachas",
     subcat: "regulable",
-    name: "Less Peonía Regulable (Art 253 Clara)",
-    img: "👙",
+    name: "Less Peonía Regulable",
+    img: ["images/lesspeonia1.jpeg", "images/lesspeonia2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -328,8 +328,8 @@ const productos = [
     sku: "Colaless Jacinto",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Colaless Jacinto (Art. 246)",
-    img: "👙",
+    name: "Colaless Jacinto",
+    img: ["images/colalessjacinto1.jpeg", "images/colalessjacinto2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -348,8 +348,8 @@ const productos = [
     sku: "Colaless Peonía",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Colaless Peonía (Art. 242)",
-    img: "👙",
+    name: "Colaless Peonía",
+    img: ["images/colalesspeonia1.jpeg", "images/colalesspeonia2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -369,7 +369,7 @@ const productos = [
     cat: "bombachas",
     subcat: "colaless",
     name: "Colaless de algodon con Puntos",
-    img: "👙",
+    img: ["images/colalesspuntos1.jpeg", "images/colalesspuntos2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
