@@ -142,8 +142,8 @@ const productos = [
     sku: "Less Regulable Clasicas (Art. 30)",
     cat: "bombachas",
     subcat: "regulable",
-    name: ["Less Regulable Clasicas"] ,
-    img: ["images/regulableclasicas1.jpeg", "images/regulableclasicas2.jpeg"],
+    name: "Less Regulable Clasicas",
+    img: ["images/regulableclasica1.jpeg", "images/regulableclasica2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
@@ -262,7 +262,7 @@ const productos = [
     cat: "bombachas",
     subcat: "regulable",
     name: "Less Regulables Argentina",
-    img: "👙",
+    img: ["images/argentina1.jpeg, "images/argentina2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
