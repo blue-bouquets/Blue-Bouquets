@@ -34,7 +34,7 @@ const productos = [
     cat: "bombachas",
     subcat: "vedetina",
     name: "Vedetinas M de Encaje",
-    img: "👙",
+    img: ["images/vedetinamencaje1.jpeg", "images/vedetinasmencaje2.jpeg"],
     desc: "Vedetinas Talle M de Algodon con aleta de puntilla",
     tipo: "multi",
     talle: "M",
