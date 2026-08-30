@@ -262,7 +262,7 @@ const productos = [
     cat: "bombachas",
     subcat: "regulable",
     name: "Less Regulables Argentina",
-    img: ["images/argentina1.jpeg, "images/argentina2.jpeg"],
+    img: ["images/argentina1.jpeg", "images/argentina2.jpeg"],
     tipo: "multi",
     talle: "Regular",
     precios: [
