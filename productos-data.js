@@ -766,7 +766,6 @@ const productos = [
     var: [
       { id: "crisantemo_100_celeste", l: "T.100 · Celeste", s: 1 },
       { id: "cr85n", l: "T.85 · Negro", s: 0 },
-      { id: "cr85be", l: "T.85 · Beige", s: 1 },
       { id: "cr90c", l: "T.90 · Celeste", s: 1 },
       { id: "cr95n", l: "T.95 · Negro", s: 1 },
       { id: "cr100b", l: "T.100 · Blanco", s: 1 },
@@ -823,8 +822,6 @@ const productos = [
     tipo: "var",
     px: 11490,
     var: [
-      { id: "am85n", l: "T.85 · Negro", s: 1 },
-      { id: "am85b", l: "T.85 · Blanco", s: 1 },
       { id: "am90be", l: "T.90 · Beige", s: 1 },
       { id: "am95n", l: "T.95 · Negro", s: 1 },
       { id: "am95b", l: "T.95 · Blanco", s: 1 },
@@ -911,7 +908,6 @@ const productos = [
     var: [
       { id: "az85n", l: "T.85 · Negro", s: 1 },
       { id: "az90b", l: "T.90 · Blanco", s: 1 },
-      { id: "az90n", l: "T.90 · Negro", s: 1 },
       { id: "az95bo", l: "T.95 · Bordo", s: 1 },
       { id: "az95be", l: "T.95 · Beige", s: 1 },
       { id: "az100r", l: "T.100 · Rosa", s: 1 }
@@ -957,9 +953,7 @@ const productos = [
     px: 12990,
     var: [
       { id: "ht85rj", l: "T.85 · Rojo", s: 1 },
-      { id: "ht90n", l: "T.90 · Negro", s: 1 },
       { id: "ht90b", l: "T.90 · Blanco", s: 1 },
-      { id: "ht95rj", l: "T.95 · Rojo", s: 1 },
       { id: "ht100b", l: "T.100 · Blanco", s: 1 },
       { id: "ht100n", l: "T.100 · Negro", s: 1 }
     ]
@@ -975,7 +969,6 @@ const productos = [
     tipo: "var",
     px: 12990,
     var: [
-      { id: "ms85be", l: "T.85 · Beige", s: 1 },
       { id: "ms90n", l: "T.90 · Negro", s: 1 },
       { id: "ms90c", l: "T.90 · Celeste", s: 0 },
       { id: "ms95be", l: "T.95 · Beige", s: 1 },
@@ -1141,7 +1134,6 @@ const productos = [
     tipo: "var",
     px: 10990,
     var: [
-      { id: "mv90v", l: "T.90 · Verde", s: 1 },
       { id: "mv95r", l: "T.95 · Rosa", s: 1 },
       { id: "mv95cr", l: "T.95 · Crema", s: 1 },
       { id: "mv100v", l: "T.100 · Verde", s: 1 },
