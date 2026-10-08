@@ -365,9 +365,7 @@ const productos = [
       { c: "T.M · Crema", s: 1 },
       { c: "T.M · Blanca", s: 1 },
       { c: "T.L · Verde", s: 1 },
-      { c: "T.L · Beige", s: 1 },
       { c: "T.L · Crema", s: 1 },
-      { c: "T.L · Blanco", s: 1 }
     ]
   },
   {
@@ -387,7 +385,7 @@ const productos = [
     colores: [
       { c: "Blanca", s: 4 },
       { c: "Gris", s: 4 },
-      { c: "Negra", s: 4 }
+      { c: "Negra", s: 1 }
     ]
   },
   {
@@ -405,9 +403,9 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Negra", s: 4 },
-      { c: "Beige", s: 3 },
-      { c: "Rosa", s: 4 }
+      { c: "Negra", s: 2 },
+      { c: "Beige", s: 1 },
+      { c: "Rosa", s: 1 }
     ]
   },
   {
@@ -445,11 +443,8 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Roja", s: 2 },
-      { c: "Blanca", s: 2 },
-      { c: "Negra", s: 2 },
+      { c: "Blanca", s: 1 },
       { c: "Beige", s: 2 },
-      { c: "Gris", s: 2 },
       { c: "Crema", s: 2 }
     ]
   },
@@ -468,11 +463,11 @@ const productos = [
       { qty: 3, px: 10000 }
     ],
     colores: [
-      { c: "Negra", s: 3 },
+      { c: "Negra", s: 4 },
       { c: "Crema", s: 4 },
-      { c: "Blanca", s: 2 },
-      { c: "Roja", s: 2 },
-      { c: "Gris", s: 1 }
+      { c: "Blanca", s: 4 },
+      { c: "Beige", s: 3 },
+      { c: "Gris", s: 3 }
     ]
   },
   {
@@ -492,7 +487,7 @@ const productos = [
     colores: [
       { c: "Blanca", s: 8 },
       { c: "Beige", s: 11 },
-      { c: "Crema", s: 4 },
+      { c: "Crema", s: 5 },
       { c: "Rojo", s: 6 },
       { c: "Gris", s: 5 },
       { c: "Negra", s: 5 }
@@ -514,11 +509,11 @@ const productos = [
       { qty: 3, px: 10000 }
     ],
     colores: [
-      { c: "Roja", s: 2 },
-      { c: "Beige", s: 2 },
+      { c: "Roja", s: 1 },
+      { c: "Beige", s: 1 },
       { c: "Blanca", s: 2 },
       { c: "Crema", s: 2 },
-      { c: "Gris", s: 2 }
+      { c: "Gris", s: 1 }
     ]
   },
   {
@@ -570,7 +565,7 @@ const productos = [
     sku: "Colaless Begonia",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Colaless Begonia (Vedetinas morley)",
+    name: "Colaless Begonia",
     img: ["images/colalesscoquette1.jpeg", "images/colalesscoquette2.jpeg"],
     desc: "Tela de Morley. Talle 36-44",
     tipo: "multi",
@@ -582,7 +577,7 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 1 },
-      { c: "Beige", s: 2 },
+      { c: "Beige", s: 1 },
       { c: "Rosa", s: 1 }
     ]
   },
@@ -591,7 +586,7 @@ const productos = [
     sku: "Less Lovely",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Less Lovely",
+    name: "Colaless Lovely",
     img: ["images/lesslovely1.jpeg", "images/lesslovely2.jpeg"],
     desc: "Tela con poliéster. Talle 36-44",
     tipo: "multi",
@@ -623,9 +618,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Violeta", s: 3 },
-      { c: "Roja", s: 0 },
-      { c: "Negra", s: 0 }
+      { c: "Violeta", s: 2 },
     ]
   },
   {
@@ -633,7 +626,7 @@ const productos = [
     sku: "Colaless Azalea art 227 Clara",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Colaless Azalea (Art. 227 Clara)",
+    name: "Colaless Azalea",
     img: ["images/lessazalea1.jpeg", "images/lessazalea2.jpeg"],
     desc: "Tela de algodón con puntilla. Talle 36-44",
     tipo: "multi",
@@ -644,10 +637,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Gris", s: 0 },
-      { c: "Rojo", s: 0 },
-      { c: "Negro", s: 0 },
-      { c: "Blanco", s: 3 }
+      { c: "Blanco", s: 2 }
     ]
   },
   {
@@ -655,7 +645,7 @@ const productos = [
     sku: "Colaless Lavanda art 228 Clara",
     cat: "bombachas",
     subcat: "colaless",
-    name: "Colaless Lavanda (Art. 228 Clara)",
+    name: "Colaless Lavanda",
     img: ["images/lesslavanda1.jpeg", "images/lesslavanda2.jpeg"],
     desc: "Tela de algodón. Talle 36-44",
     tipo: "multi",
@@ -666,11 +656,32 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Gris", s: 1 },
-      { c: "Rosa", s: 1 },
-      { c: "Negra", s: 1 }
+      { c: "Gris", s: 3 },
+      { c: "Rosa", s: 4 },
+      { c: "Negra", s: 2 }
+      { c: "Blanca", s: 4 }
+      {
+    id: "colaless-fressia",
+    sku: "Colaless Fressia",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless Fressia",
+    img: ["images/colaless-fressia1.jpeg", "images/colaless-fressia2.jpeg", "images/colaless-fressia3.jpeg"],
+    tipo: "multi",
+    talle: "Único",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "T.Único · Rosa", s: 2 },
+      { c: "T.Único · Crema", s: 1 },
+      { c: "T.Único · Negro", s: 2 },
+      { c: "T.Único · Beige", s: 1 }
     ]
   },
+      
   // --- Hilo ---
   {
     id: "lesshilo",
@@ -707,8 +718,8 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 2 },
-      { c: "Negra", s: 2 },
-      { c: "Roja", s: 2 }
+      { c: "Negra", s: 1 },
+      { c: "Roja", s: 1 }
     ]
   },
 // --- Medias ---
