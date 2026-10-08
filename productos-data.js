@@ -3,32 +3,6 @@ const productos = [
   
  // --- Vedetinas ---
   {
-    id: "vedetinasdealgodon",
-    sku: "Vedetinas de Algodon",
-    cat: "bombachas",
-    subcat: "vedetina",
-    name: "Vedetinas de Algodón",
-    img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
-    desc: "Tela de algodón. Talles M y L.",
-    tipo: "multi",
-    talle: "Regular",
-    precios: [
-      { qty: 1, px: 3000 },
-      { qty: 2, px: 5500 },
-      { qty: 3, px: 7000 }
-    ],
-    colores: [
-      { c: "Blanca M", s: 2 },
-      { c: "Beige M", s: 2 },
-      { c: "Crema M", s: 1 },
-      { c: "Negra M", s: 1 },
-      { c: "Beige L", s: 2 },
-      { c: "Negra L", s: 1 },
-      { c: "Blanca L", s: 2 },
-      { c: "Crema L", s: 1 }
-    ]
-  },
-  {
     id: "vedetinas-m-encaje",
     sku: "Vedetinas de Encaje talle M",
     cat: "bombachas",
@@ -44,30 +18,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "T.M · Beige", s: 3 },
-      { c: "T.M · Negra", s: 3 },
-      { c: "T.M · Roja", s: 4 },
-      { c: "T.M · Blanca", s: 2 }
-    ]
-  },
-  {
-    id: "vedetinas-morley-estampadas",
-    sku: "Vedetinas Morley Estampadas",
-    cat: "bombachas",
-    subcat: "vedetina",
-    name: "Vedetinas Morley Estampadas",
-    img: ["images/vedetinasestampadasmorley1.jpeg", "images/vedetinasestampadasmorley2.jpeg", "images/vedetinasestampadasmorley3.jpeg", "images/vedetinasestampadasmorley4.jpeg"],
-    tipo: "multi",
-    talle: "Regular",
-    precios: [
-      { qty: 1, px: 3000 },
-      { qty: 2, px: 5500 },
-      { qty: 3, px: 7000 }
-    ],
-    colores: [
-      { c: "Piel Cerezas", s: 2 },
-      { c: "Blanca con moños", s: 1 }
-    ]
+      { c: "T.M · Roja", s: 1 },    ]
   },
   {
     id: "vedetinas-xl",
@@ -84,12 +35,72 @@ const productos = [
       { qty: 3, px: 10000 }
     ],
     colores: [
-      { c: "T.XL · Negro", s: 2 },
+      { c: "T.XL · Crema", s: 1 }
+    ]
+  },
+  {
+    id: "vedetinas-xxl",
+    sku: "Vedetinas XXL",
+    cat: "bombachas",
+    subcat: "vedetina",
+    name: "Vedetinas XXL",
+    img: ["images/vedetinasxxl1.jpeg", "images/vedetinasxxl2.jpeg", "images/vedetinasxxl3.jpeg"],
+    tipo: "multi",
+    talle: "XXL",
+    precios: [
+      { qty: 1, px: 4500 },
+      { qty: 2, px: 8000 }
+    ],
+    colores: [
+      { c: "T.XXL · Crema", s: 1 },
+      { c: "T.XXL · Beige", s: 2 },
+      { c: "T.XXL · Roja", s: 2 },
+      { c: "T.XXL · Negra", s: 3 },
+      { c: "T.XXL · Gris", s: 2 },
+      { c: "T.XXL · Blanca", s: 2 }
+    ]
+  },
+  {
+    id: "culotte-xl",
+    sku: "Culotte XL",
+    cat: "bombachas",
+    subcat: "culotte",
+    name: "Culotte XL",
+    img: ["images/culottexl1.jpeg", "images/culottexl2.jpeg", "images/culottexl3.jpeg"],
+    tipo: "multi",
+    talle: "XL",
+    precios: [
+      { qty: 1, px: 4500 },
+      { qty: 2, px: 8000 }
+    ],
+    colores: [
+      { c: "T.XL · Crema", s: 2 },
       { c: "T.XL · Beige", s: 2 },
+      { c: "T.XL · Roja", s: 2 },
+      { c: "T.XL · Negra", s: 2 },
       { c: "T.XL · Gris", s: 2 },
-      { c: "T.XL · Blanco", s: 2 },
-      { c: "T.XL · Rojo", s: 2 },
-      { c: "T.XL · Crema", s: 2 }
+      { c: "T.XL · Blanca", s: 2 }
+    ]
+  },
+  {
+    id: "universales-de-senora",
+    sku: "Universales de Señora",
+    cat: "bombachas",
+    subcat: "universal",
+    name: "Universales de Señora",
+    img: ["images/universales-de-senora1.jpeg", "images/universales-de-senora2.jpeg", "images/universales-de-senora3.jpeg"],
+    tipo: "multi",
+    talle: "Único",
+    precios: [
+      { qty: 1, px: 4500 },
+      { qty: 2, px: 8000 }
+    ],
+    colores: [
+      { c: "T.Único · Gris", s: 2 },
+      { c: "T.Único · Blanco", s: 1 },
+      { c: "T.Único · Roja", s: 1 },
+      { c: "T.Único · Negra", s: 1 },
+      { c: "T.Único · Beige", s: 1 }
     ]
   },
   {
@@ -107,7 +118,6 @@ const productos = [
       { qty: 3, px: 10000 }
     ],
     colores: [
-      { c: "Roja", s: 1 },
       { c: "Beige", s: 2 }
     ]
   },
@@ -1416,6 +1426,52 @@ const productos = [
     tipo: "var",
     px: 6990,
     var: [
+    ]
+  },
+//Sin Stock//
+   {
+    id: "vedetinasdealgodon",
+    sku: "Vedetinas de Algodon",
+    cat: "bombachas",
+    subcat: "vedetina",
+    name: "Vedetinas de Algodón",
+    img: ["images/vedetinasalgodon1.jpeg", "images/vedetinasalgodon2.jpeg", "images/vedetinasalgodon3.jpeg", "images/vedetinasalgodon4.jpeg", "images/vedetinasalgodon5.jpeg", "images/vedetinasalgodon6.jpeg", "images/vedetinasalgodon7.jpeg"],
+    desc: "Tela de algodón. Talles M y L.",
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Blanca M", s: 2 },
+      { c: "Beige M", s: 2 },
+      { c: "Crema M", s: 1 },
+      { c: "Negra M", s: 1 },
+      { c: "Beige L", s: 2 },
+      { c: "Negra L", s: 1 },
+      { c: "Blanca L", s: 2 },
+      { c: "Crema L", s: 1 }
+    ]
+  },
+   {
+    id: "vedetinas-morley-estampadas",
+    sku: "Vedetinas Morley Estampadas",
+    cat: "bombachas",
+    subcat: "vedetina",
+    name: "Vedetinas Morley Estampadas",
+    img: ["images/vedetinasestampadasmorley1.jpeg", "images/vedetinasestampadasmorley2.jpeg", "images/vedetinasestampadasmorley3.jpeg", "images/vedetinasestampadasmorley4.jpeg"],
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Piel Cerezas", s: 2 },
+      { c: "Blanca con moños", s: 1 }
     ]
   },
 ];
