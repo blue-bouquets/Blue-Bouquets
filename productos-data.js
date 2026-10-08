@@ -765,7 +765,7 @@ const productos = [
     desc: "Medias estampadas diseño Capibara Celeste.",
     tipo: "simple",
     px: 3500,
-    s: 9
+    s: 0
   },
 
   // --- CONJUNTOS ---
