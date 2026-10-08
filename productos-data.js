@@ -140,16 +140,15 @@ const productos = [
     colores: [
       { c: "Crema", s: 2 },
       { c: "Blanca", s: 2 },
-      { c: "Roja", s: 2 },
-      { c: "Negra", s: 2 },
+      { c: "Roja", s: 1 },
+      { c: "Negra", s: 1 },
       { c: "Beige", s: 1 },
-      { c: "Verde", s: 1 },
       { c: "Gris", s: 1 }
     ]
   },
   {
     id: "less-regulable-clasicas-art30",
-    sku: "Less Regulable Clasicas (Art. 30)",
+    sku: "Less Regulable Clasicas",
     cat: "bombachas",
     subcat: "regulable",
     name: "Less Regulable Clasicas",
@@ -162,10 +161,9 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Roja", s: 3 },
-      { c: "Negra", s: 3 },
-      { c: "Blanca", s: 3 },
-      { c: "Gris", s: 3 }
+      { c: "Roja", s: 2 },
+      { c: "Blanca", s: 1 },
+      { c: "Gris", s: 1 }
     ]
   },
   {
@@ -202,9 +200,8 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Negro", s: 4 },
-      { c: "Crema", s: 1 },
-      { c: "Blanca", s: 6 }
+      { c: "Negro", s: 1 },
+      { c: "Blanca", s: 5 }
     ]
   },
   {
@@ -222,9 +219,9 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Beige", s: 4 },
-      { c: "Rosa", s: 4 },
-      { c: "Negra", s: 4 }
+      { c: "Beige", s: 2 },
+      { c: "Rosa", s: 2 },
+      { c: "Negra", s: 2 }
     ]
   },
   {
@@ -242,17 +239,17 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Gris", s: 4 },
+      { c: "Gris", s: 3 },
       { c: "Rosa", s: 4 },
       { c: "Violeta", s: 4 }
     ]
   },
   {
-    id: "less-regulables-margarita-coquette",
-    sku: "Less Regulables Margarita",
+    id: "less-regulables-margarita",
+    sku: "Less Margarita Regulable",
     cat: "bombachas",
     subcat: "regulable",
-    name: "Less Regulables Margarita (Regulables Coquette)",
+    name: "Less Margarita Regulable",
     img: ["images/regulablescoquette1.jpeg", "images/regulablescoquette2.jpeg"],
     tipo: "multi",
     talle: "Regular",
@@ -263,7 +260,6 @@ const productos = [
     ],
     colores: [
       { c: "Beige", s: 3 },
-      { c: "Negra", s: 1 }
     ]
   },
   {
@@ -281,8 +277,69 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Blanca", s: 7 },
-      { c: "Celeste", s: 4 }
+      { c: "Blanca", s: 6 },
+      { c: "Celeste", s: 3 }
+    ]
+  },
+  {
+    id: "less-de-encaje-elastico-ancho",
+    sku: "Less de Encaje Elastico Ancho",
+    cat: "bombachas",
+    subcat: "less",
+    name: "Less de Encaje Elastico Ancho",
+    img: ["images/less-de-encaje-elastico-ancho1.jpeg", "images/less-de-encaje-elastico-ancho2.jpeg", "images/less-de-encaje-elastico-ancho3.jpeg"],
+    tipo: "multi",
+    talle: "Único",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "T.Único · Beige", s: 2 },
+      { c: "T.Único · Rojo", s: 2 },
+      { c: "T.Único · Blanco", s: 1 },
+      { c: "T.Único · Negro", s: 1 }
+    ]
+  },
+  {
+    id: "less-de-algodon-elastico-ancho",
+    sku: "Less de Algodon Elastico Ancho",
+    cat: "bombachas",
+    subcat: "less",
+    name: "Less de Algodon Elastico Ancho",
+    img: ["images/less-de-algodon-elastico-ancho1.jpeg", "images/less-de-algodon-elastico-ancho2.jpeg", "images/less-de-algodon-elastico-ancho3.jpeg"],
+    tipo: "multi",
+    talle: "Único",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "T.Único · Beige", s: 3 },
+      { c: "T.Único · Rojo", s: 3 },
+      { c: "T.Único · Blanco", s: 3 },
+      { c: "T.Único · Negro", s: 3 }
+    ]
+  },
+  {
+    id: "less-tiras-brillosas",
+    sku: "Less Tiras Brillosas",
+    cat: "bombachas",
+    subcat: "less",
+    name: "Less Tiras Brillosas",
+    img: ["images/less-tiras-brillosas1.jpeg", "images/less-tiras-brillosas2.jpeg", "images/less-tiras-brillosas3.jpeg"],
+    tipo: "multi",
+    talle: "Único",
+    precios: [
+      { qty: 1, px: 3500 }
+    ],
+    colores: [
+      { c: "T.Único · Rojo", s: 1 },
+      { c: "T.Único · Negro", s: 2 },
+      { c: "T.Único · Blanco", s: 2 },
+      { c: "T.Único · Beige", s: 1 }
     ]
   },
 
