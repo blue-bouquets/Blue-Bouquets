@@ -756,18 +756,6 @@ const productos = [
     px: 3000,
     s: 4
   },
-  {
-    id: "mediascapibaraceleste",
-    sku: "Medias Capibara Celeste",
-    cat: "medias",
-    name: "Medias Capibara Celeste",
-    img: ["images/mediascapibara1.jpeg", "images/mediascapibara2.jpeg", "images/mediascapibara3.jpeg"],
-    desc: "Medias estampadas diseño Capibara Celeste.",
-    tipo: "simple",
-    px: 3500,
-    s: 0
-  },
-
   // --- CONJUNTOS ---
 // --- Triángulo Soft ---
   {
@@ -811,6 +799,7 @@ const productos = [
     px: 9990,
     var: [
       { id: "ln85b", l: "T.85 · Blanco", s: 1 },
+      { id: "ln85be", l: "T.85 · Beige", s: 1 },
       { id: "ln90g", l: "T.90 · Gris", s: 1 },
       { id: "ln95b", l: "T.95 · Blanco", s: 1 },
       { id: "ln95g", l: "T.95 · Gris", s: 1 },
@@ -843,11 +832,10 @@ const productos = [
     px: 12490,
     var: [
       { id: "crisantemo_100_celeste", l: "T.100 · Celeste", s: 1 },
-      { id: "cr85n", l: "T.85 · Negro", s: 0 },
-      { id: "cr90c", l: "T.90 · Celeste", s: 1 },
       { id: "cr95n", l: "T.95 · Negro", s: 1 },
       { id: "cr100b", l: "T.100 · Blanco", s: 1 },
       { id: "cr100be", l: "T.100 · Beige", s: 1 }
+      { id: "cr100ce", l: "T.100 · Celeste", s: 1 }
     ]
   },
   {
@@ -861,7 +849,6 @@ const productos = [
     tipo: "var",
     px: 11990,
     var: [
-      { id: "mg85r", l: "T.85 · Rosa", s: 1 },
       { id: "mg90v", l: "T.90 · Violeta", s: 2 },
       { id: "mg90b", l: "T.90 · Blanco", s: 1 },
       { id: "mg90r", l: "T.90 · Rosa", s: 1 },
@@ -882,7 +869,6 @@ const productos = [
     tipo: "var",
     px: 11990,
     var: [
-      { id: "an85n", l: "T.85 · Negro", s: 1 },
       { id: "an85rc", l: "T.85 · Rojo con crema", s: 1 },
       { id: "an90rr", l: "T.90 · Rojo con rosa", s: 1 },
       { id: "an95rr", l: "T.95 · Rojo con rosa", s: 1 },
@@ -918,7 +904,6 @@ const productos = [
     px: 12490,
     var: [
       { id: "pr85g", l: "T.85 · Gris", s: 1 },
-      { id: "pr85n", l: "T.85 · Negro", s: 1 },
       { id: "pr90be", l: "T.90 · Beige", s: 1 },
       { id: "pr90g", l: "T.90 · Gris", s: 1 },
       { id: "pr95n", l: "T.95 · Negro", s: 1 },
@@ -944,6 +929,25 @@ const productos = [
       { id: "cmp100n", l: "T.100 · Negro", s: 1 }
     ]
   },
+      {
+    id: "tiare",
+    sku: "Tiare Zinnia",
+    cat: "conjuntos",
+    subcat: "bralette",
+    name: "Tiare",
+    img: ["images/tiare1.jpeg", "images/tiare2.jpeg", "images/tiare3.jpeg", "images/tiare4.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "tia85g", l: "T.85 · Gris", s: 1 },
+      { id: "tia90n", l: "T.90 · Negro", s: 1 },
+      { id: "tia90g", l: "T.90 · Gris", s: 1 },
+      { id: "tia95be", l: "T.95 · Beige", s: 1 },
+      { id: "tia100b", l: "T.100 · Blanco", s: 1 },
+      { id: "tia100n", l: "T.100 · Negro", s: 1 }
+    ]
+  },
   // --- Armados ---
   {
     id: "gardenia",
@@ -956,21 +960,12 @@ const productos = [
     tipo: "var",
     px: 12490,
     var: [
-      { id: "gd100b", l: "T.100 · Blanco", s: 1 }
-    ]
-  },
-  {
-    id: "camelia",
-    sku: "Camelia Theodora",
-    cat: "conjuntos",
-    subcat: "armados",
-    name: "Camelia",
-    img: ["images/camelia1.jpeg", "images/camelia2.jpeg", "images/camelia3.jpeg", "images/camelia4.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 12490,
-    var: [
-      { id: "cm95be", l: "T.95 · Beige", s: 1 }
+      { id: "gd85b", l: "T.85 · Blanco", s: 1 },
+      { id: "gd85bo", l: "T.85 · Bordo", s: 1 },
+      { id: "gd90bo", l: "T.90 · Bordo", s: 1 },
+      { id: "gd90n", l: "T.90 · Negro", s: 1 },
+      { id: "gd95n", l: "T.95 · Negro", s: 1 },
+      { id: "gd100b", l: "T.100 · Blanco", s: 2 }
     ]
   },
   {
@@ -986,12 +981,12 @@ const productos = [
     var: [
       { id: "az85n", l: "T.85 · Negro", s: 1 },
       { id: "az90b", l: "T.90 · Blanco", s: 1 },
-      { id: "az95bo", l: "T.95 · Bordo", s: 1 },
+      { id: "az90n", l: "T.90 · Negro", s: 1 },
       { id: "az95be", l: "T.95 · Beige", s: 1 },
       { id: "az100r", l: "T.100 · Rosa", s: 1 }
     ]
   },
-  {
+ {
     id: "iris",
     sku: "Iris Corina",
     cat: "conjuntos",
@@ -1000,26 +995,18 @@ const productos = [
     img: ["images/iris1.jpeg", "images/iris2.jpeg", "images/iris3.jpeg", "images/iris4.jpeg"],
     desc: "...",
     tipo: "var",
-    px: 12490,
+    px: 12990,
     var: [
+      { id: "ir85br", l: "T.85 · Blanco y Rojo", s: 1 },
+      { id: "ir85bc", l: "T.85 · Blanco y Celeste", s: 1 },
+      { id: "ir90bo", l: "T.90 · Bordo", s: 1 },
+      { id: "ir95bc", l: "T.95 · Blanco y Celeste", s: 1 },
+      { id: "ir95bm", l: "T.95 · Blanco y Marron", s: 1 },
+      { id: "ir100bc", l: "T.100 · Blanco y Celeste", s: 1 },
       { id: "ir100n", l: "T.100 · Negro", s: 1 }
     ]
   },
-  {
-    id: "mimosa",
-    sku: "Mimosa Beatriz",
-    cat: "conjuntos",
-    subcat: "armados",
-    name: "Mimosa",
-    img: ["images/mimosa1.jpeg", "images/mimosa2.jpeg"], // Reemplazá por tus imágenes reales
-    desc: "...",
-    tipo: "var",
-    px: 12490,
-    var: [
-      { id: "mm95r", l: "T.95 · Rosa", s: 1 }
-    ]
-  },
-  {
+ {
     id: "hortensia",
     sku: "Hortensia Art 317 Clara",
     cat: "conjuntos",
@@ -1031,7 +1018,9 @@ const productos = [
     px: 12990,
     var: [
       { id: "ht85rj", l: "T.85 · Rojo", s: 1 },
+      { id: "ht90n", l: "T.90 · Negro", s: 1 },
       { id: "ht90b", l: "T.90 · Blanco", s: 1 },
+      { id: "ht95rj", l: "T.95 · Rojo", s: 1 },
       { id: "ht100b", l: "T.100 · Blanco", s: 1 },
       { id: "ht100n", l: "T.100 · Negro", s: 1 }
     ]
@@ -1048,9 +1037,64 @@ const productos = [
     px: 12990,
     var: [
       { id: "ms90n", l: "T.90 · Negro", s: 1 },
-      { id: "ms90c", l: "T.90 · Celeste", s: 0 },
-      { id: "ms95be", l: "T.95 · Beige", s: 1 },
       { id: "ms100b", l: "T.100 · Blanco", s: 1 }
+    ]
+  },
+      {
+    id: "sakura",
+    sku: "Sakura Sabina",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Sakura",
+    img: ["images/sakura1.jpeg", "images/sakura2.jpeg", "images/sakura3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12990,
+    var: [
+      { id: "sk85n", l: "T.85 · Negro", s: 1 },
+      { id: "sk90b", l: "T.90 · Blanco", s: 1 },
+      { id: "sk90bo", l: "T.90 · Bordo", s: 1 },
+      { id: "sk95bo", l: "T.95 · Bordo", s: 1 },
+      { id: "sk95n", l: "T.95 · Negro", s: 1 },
+      { id: "sk100b", l: "T.100 · Blanco", s: 1 }
+    ]
+  },
+  {
+    id: "manzanilla",
+    sku: "Manzanilla Art 367 Clara",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Manzanilla",
+    img: ["images/manzanilla1.jpeg", "images/manzanilla2.jpeg", "images/manzanilla3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "mzn85c", l: "T.85 · Crema", s: 1 },
+      { id: "mzn90bo", l: "T.90 · Bordo", s: 1 },
+      { id: "mzn90b", l: "T.90 · Blanco", s: 1 },
+      { id: "mzn95n", l: "T.95 · Negro", s: 1 },
+      { id: "mzn100c", l: "T.100 · Crema", s: 1 },
+      { id: "mzn100b", l: "T.100 · Blanco", s: 1 }
+    ]
+  },
+  {
+    id: "ipomea",
+    sku: "Ipomea Art 354 Clara",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Ipomea",
+    img: ["images/ipomea1.jpeg", "images/ipomea2.jpeg", "images/ipomea3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "ip85b", l: "T.85 · Blanco", s: 1 },
+      { id: "ip85rs", l: "T.85 · Rosa", s: 1 },
+      { id: "ip90cl", l: "T.90 · Celeste", s: 1 },
+      { id: "ip95rs", l: "T.95 · Rosa", s: 1 },
+      { id: "ip95b", l: "T.95 · Blanco", s: 1 },
+      { id: "ip100cl", l: "T.100 · Celeste", s: 1 }
     ]
   },
   // --- Bralette ---
@@ -1264,13 +1308,13 @@ const productos = [
     px: 9900,
     var: [
       { id: "nn90cr", l: "T.90 · Crema", s: 1 },
-      { id: "nn90n", l: "T.90 · Negro", s: 0 },
       { id: "nn95rj", l: "T.95 · Rojo", s: 1 },
       { id: "nn95b", l: "T.95 · Blanco", s: 1 },
       { id: "nn100n", l: "T.100 · Negro", s: 1 },
       { id: "nn100cr", l: "T.100 · Crema", s: 1 }
     ]
   },
+      
   // --- Bralette con Aro ---
   {
     id: "loto",
@@ -1352,7 +1396,24 @@ const productos = [
       { id: "dl100n", l: "T.100 · Negro", s: 1 }
     ]
   },
-  // --- Boxers ---
+      {
+    id: "liz",
+    sku: "Liz Art 510 Clara",
+    cat: "conjuntos",
+    subcat: "bralette-con-aro",
+    name: "Liz",
+    img: ["images/liz1.jpeg", "images/liz2.jpeg", "images/liz3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 14490,
+    var: [
+      { id: "liz105g", l: "T.105 · Gris", s: 1 },
+      { id: "liz110b", l: "T.110 · Blanco", s: 1 },
+      { id: "liz115n", l: "T.115 · Negro", s: 1 },
+      { id: "liz120c", l: "T.120 · Crema", s: 1 }
+    ]
+  },
+ // --- Boxers ---
   {
     id: "boxerck",
     sku: "Boxer CK",
@@ -1363,7 +1424,6 @@ const productos = [
     tipo: "var",
     px: 7990,
     var: [
-      { id: "ckmb", l: "Talle M · Blanco", s: 1 },
       { id: "ckmn", l: "Talle M · Negro", s: 1 },
       { id: "cklaz", l: "Talle L · Azul", s: 1 },
       { id: "ckxlg", l: "Talle XL · Gris", s: 1 },
@@ -1381,9 +1441,9 @@ const productos = [
     tipo: "var",
     px: 6990,
     var: [
-      { id: "dfmr", l: "Talle M · Rojo", s: 1 },
-      { id: "dfmg", l: "Talle M · Gris", s: 1 },
-      { id: "dflg", l: "Talle L · Gris", s: 1 }
+      { id: "dfmgo", l: "Talle M · Gris Oscuro", s: 1 },
+      { id: "dfmbo", l: "Talle M · Bordo", s: 1 },
+      { id: "dflgc", l: "Talle L · Gris Claro", s: 1 }
     ]
   },
   {
@@ -1398,10 +1458,10 @@ const productos = [
     var: [
       { id: "dfamn", l: "Talle M · Negro", s: 1 },
       { id: "dfaln", l: "Talle L · Negro", s: 1 },
-      { id: "dfaxlg", l: "Talle XL · Gris", s: 1 },
+      { id: "dfalxlg", l: "Talle L (XL) · Gris", s: 1 },
+      { id: "dfalxxln", l: "Talle L (XXL) · Negro", s: 1 },
       { id: "dfaxxld", l: "Talle XXL · Bordo", s: 1 },
-      { id: "dfaxxlaz", l: "Talle XXL · Azul", s: 1 },
-      { id: "dfaxxln", l: "Talle XXL · Negro", s: 1 }
+      { id: "dfaxxlaz", l: "Talle XXL · Azul", s: 1 }
     ]
   },
   // --- Prendas ---
@@ -1430,10 +1490,191 @@ const productos = [
     tipo: "var",
     var: [
       { id: "calza_piel_m", l: "M/L", s: 5 },
-      { id: "calza_piel_l", l: "XL/XXL", s: 10 }
+      { id: "calza_piel_l", l: "XL/XXL", s: 9 }
     ],
     px: 13990
   },
+      // --- Bikinis ---
+  {
+    id: "basica-estampada",
+    sku: "Basica Estampada",
+    cat: "bikinis",
+    name: "Basica Estampada",
+    img: ["images/basicaestampada1.jpeg", "images/basicaestampada2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "be85f", l: "T.85 · Flores", s: 1 },
+      { id: "be85n", l: "T.85 · Naranja", s: 1 }
+    ]
+  },
+  {
+    id: "alaska-print",
+    sku: "Alaska Print",
+    cat: "bikinis",
+    name: "Alaska Print",
+    img: ["images/alaskaprint1.jpeg", "images/alaskaprint2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 19000,
+    var: [
+      { id: "ap8590", l: "T.85/90 · Unico", s: 2 }
+    ]
+  },
+  {
+    id: "triangulito-vintage",
+    sku: "Triangulito Vintage",
+    cat: "bikinis",
+    name: "Triangulito Vintage",
+    img: ["images/triangulitovintage1.jpeg", "images/triangulitovintage2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "tvt2rs", l: "T.2 · Rosa", s: 2 }
+    ]
+  },
+  {
+    id: "cuba",
+    sku: "Cuba",
+    cat: "bikinis",
+    name: "Cuba",
+    img: ["images/cuba1.jpeg", "images/cuba2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "cb8590n", l: "T.85/90 · Negro", s: 2 }
+    ]
+  },
+  {
+    id: "microbikini",
+    sku: "Microbikini",
+    cat: "bikinis",
+    name: "Microbikini",
+    img: ["images/microbikini1.jpeg", "images/microbikini2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "mb8085rs", l: "T.80/85 · Rosa", s: 2 }
+    ]
+  },
+  {
+    id: "copacabana",
+    sku: "Copacabana",
+    cat: "bikinis",
+    name: "Copacabana",
+    img: ["images/copacabana1.jpeg", "images/copacabana2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 19000,
+    var: [
+      { id: "cpt2n", l: "T.2 · Negro", s: 1 }
+    ]
+  },
+  {
+    id: "california",
+    sku: "California",
+    cat: "bikinis",
+    name: "California",
+    img: ["images/california1.jpeg", "images/california2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "clf90r", l: "T.90 · Rojo", s: 1 },
+      { id: "clf100r", l: "T.100 · Rojo", s: 1 },
+      { id: "clf100v", l: "T.100 · Verde", s: 1 }
+    ]
+  },
+  {
+    id: "cancun",
+    sku: "Cancun",
+    cat: "bikinis",
+    name: "Cancun",
+    img: ["images/cancun1.jpeg", "images/cancun2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "cn95100a", l: "T.95/100 · Aqua", s: 1 },
+      { id: "cn105110a", l: "T.105/110 · Aqua", s: 1 }
+    ]
+  },
+  {
+    id: "basico-talle-amplio",
+    sku: "Basico Talle Amplio",
+    cat: "bikinis",
+    name: "Basico Talle Amplio",
+    img: ["images/basicotalleamplio1.jpeg", "images/basicotalleamplio2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "bta95100rs", l: "T.95/100 · Rosa", s: 1 },
+      { id: "bta100105rs", l: "T.100/105 · Rosa", s: 1 },
+      { id: "bta105110a", l: "T.105/110 · Aqua", s: 1 }
+    ]
+  },
+  {
+    id: "cancun-metalizada",
+    sku: "Cancun Metalizada",
+    cat: "bikinis",
+    name: "Cancun Metalizada",
+    img: ["images/cancunmetalizada1.jpeg", "images/cancunmetalizada2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 18000,
+    var: [
+      { id: "cm90az", l: "T.90 · Azul", s: 1 },
+      { id: "cm95v", l: "T.95 · Verde", s: 1 },
+      { id: "cm100az", l: "T.100 · Azul", s: 1 }
+    ]
+  },
+  {
+    id: "nudo",
+    sku: "Nudo",
+    cat: "bikinis",
+    name: "Nudo",
+    img: ["images/nudo1.jpeg", "images/nudo2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 19500,
+    var: [
+      { id: "nd95105b", l: "T.95 al 105 · Blanco", s: 1 },
+      { id: "nd105115b", l: "T.105/115 · Blanco", s: 1 }
+    ]
+  },
+  {
+    id: "santorini",
+    sku: "Santorini",
+    cat: "bikinis",
+    name: "Santorini",
+    img: ["images/santorini1.jpeg", "images/santorini2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 19000,
+    var: [
+      { id: "snt115b", l: "T.115 · Blanco", s: 1 },
+      { id: "snt115az", l: "T.115 · Azul", s: 1 }
+    ]
+  },
+  {
+    id: "enteriza-malibu",
+    sku: "Enteriza Malibu",
+    cat: "bikinis",
+    name: "Enteriza Malibu",
+    img: ["images/enterizamalibu1.jpeg", "images/enterizamalibu2.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 25000,
+    var: [
+      { id: "embm_nb", l: "Talle M · Negro b/blanco", s: 1 }
+    ]
+  },
+      // --- Sin Stock --- //
     {
     id: "lessanchasmorley",
     sku: "Less anchas morley",
@@ -1496,7 +1737,6 @@ const productos = [
     var: [
     ]
   },
-//Sin Stock//
    {
     id: "vedetinasdealgodon",
     sku: "Vedetinas de Algodon",
@@ -1541,5 +1781,44 @@ const productos = [
       { c: "Piel Cerezas", s: 2 },
       { c: "Blanca con moños", s: 1 }
     ]
+  },
+       {
+    id: "mimosa",
+    sku: "Mimosa Beatriz",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Mimosa",
+    img: ["images/mimosa1.jpeg", "images/mimosa2.jpeg"], // Reemplazá por tus imágenes reales
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "mm95r", l: "T.95 · Rosa", s: 0 }
+    ]
+  },
+       {
+    id: "camelia",
+    sku: "Camelia Theodora",
+    cat: "conjuntos",
+    subcat: "armados",
+    name: "Camelia",
+    img: ["images/camelia1.jpeg", "images/camelia2.jpeg", "images/camelia3.jpeg", "images/camelia4.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 12490,
+    var: [
+      { id: "cm95be", l: "T.95 · Beige", s: 0 }
+    ]
+  },
+       {
+    id: "mediascapibaraceleste",
+    sku: "Medias Capibara Celeste",
+    cat: "medias",
+    name: "Medias Capibara Celeste",
+    img: ["images/mediascapibara1.jpeg", "images/mediascapibara2.jpeg", "images/mediascapibara3.jpeg"],
+    desc: "Medias estampadas diseño Capibara Celeste.",
+    tipo: "simple",
+    px: 3500,
+    s: 0
   },
 ];
