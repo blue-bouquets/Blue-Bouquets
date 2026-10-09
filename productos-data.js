@@ -660,7 +660,9 @@ const productos = [
       { c: "Rosa", s: 4 },
       { c: "Negra", s: 2 }
       { c: "Blanca", s: 4 }
-      {
+      ],
+  },
+  {
     id: "colaless-fressia",
     sku: "Colaless Fressia",
     cat: "bombachas",
@@ -834,7 +836,7 @@ const productos = [
       { id: "crisantemo_100_celeste", l: "T.100 · Celeste", s: 1 },
       { id: "cr95n", l: "T.95 · Negro", s: 1 },
       { id: "cr100b", l: "T.100 · Blanco", s: 1 },
-      { id: "cr100be", l: "T.100 · Beige", s: 1 }
+      { id: "cr100be", l: "T.100 · Beige", s: 1 },
       { id: "cr100ce", l: "T.100 · Celeste", s: 1 }
     ]
   },
