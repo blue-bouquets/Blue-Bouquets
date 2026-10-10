@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Bouquets — Lencería</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --verde: #37757d;
@@ -32,49 +32,106 @@ header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 
 .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 300; color: white; margin-bottom: 8px; }
 .hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto; }
 
-.nav-bar { max-width: 900px; margin: 20px auto 0; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-.btn-back { background: var(--verde); color: white; border: none; padding: 8px 18px; border-radius: 50px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; }
-.btn-back:hover { background: var(--turquesa); }
+/* Botón Volver Flotante (te acompaña siempre) */
+.btn-back-floating {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: var(--azul-noche);
+  color: var(--menta);
+  border: 2px solid var(--turquesa);
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 150;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  transition: transform 0.2s, background 0.2s;
+}
+.btn-back-floating:hover { transform: scale(1.05); background: var(--verde); }
 
-.category-grid { max-width: 900px; margin: 24px auto 40px; padding: 0 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; }
-.category-card { background: white; border-radius: 16px; padding: 20px 12px; text-align: center; box-shadow: 0 4px 12px rgba(17,53,75,0.06); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
-.category-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(17,53,75,0.12); border-color: var(--turquesa); }
-.category-card .icon { font-size: 2.2rem; margin-bottom: 8px; display: block; }
-.category-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--azul-noche); text-transform: capitalize; }
+.nav-bar { max-width: 1000px; margin: 20px auto 0; padding: 0 16px; display: flex; align-items: center; justify-content: flex-end; }
 
-.subfilters-grid { max-width: 900px; margin: 15px auto 25px; padding: 0 16px; display: flex; gap: 12px; overflow-x: auto; scrollbar-width: none; }
+/* CATEGORÍAS PRINCIPALES MÁS GRANDES Y CON IMAGEN */
+.category-grid { max-width: 1000px; margin: 30px auto 40px; padding: 0 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.category-card { 
+  position: relative;
+  height: 180px; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  box-shadow: 0 6px 18px rgba(17,53,75,0.12); 
+  cursor: pointer; 
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--azul-noche);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  text-decoration: none;
+}
+.category-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(17,53,75,0.2); }
+.category-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.category-card:hover img { opacity: 0.8; transform: scale(1.04); }
+.category-card-overlay {
+  position: relative;
+  z-index: 2;
+}
+.category-card h3 { 
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 2rem; 
+  font-weight: 600; 
+  color: white; 
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Subcategorías Cuadradas Arriba */
+.subfilters-grid { max-width: 1000px; margin: 15px auto 25px; padding: 0 16px; display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; }
 .subfilters-grid::-webkit-scrollbar { display: none; }
-.subcard { background: white; border: 2px solid var(--menta); padding: 12px 18px; border-radius: 12px; cursor: pointer; text-align: center; font-weight: 600; font-size: 0.85rem; color: var(--azul-noche); flex-shrink: 0; min-width: 110px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+.subcard { background: white; border: 2px solid var(--menta); padding: 12px 20px; border-radius: 12px; cursor: pointer; text-align: center; font-weight: 600; font-size: 0.88rem; color: var(--azul-noche); flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
 .subcard.active { background: var(--turquesa); color: white; border-color: var(--turquesa); }
 
+/* Filtro de Talles */
 .size-filter-wrapper { display: flex; align-items: center; gap: 8px; margin-left: auto; }
-.size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 14px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
+.size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 7px 16px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; outline: none; }
 
-.catalog { max-width: 900px; margin: 0 auto; padding: 16px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-.product-card { background: var(--tarjeta-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(26,58,74,0.08); display: flex; flex-direction: column; position: relative; }
+/* CATÁLAGO: MÁS GRANDE EN COMPU (3 COLUMNAS) Y 2 EN CELULAR */
+.catalog { max-width: 1000px; margin: 0 auto; padding: 16px 16px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.product-card { background: var(--tarjeta-bg); border-radius: 18px; overflow: hidden; box-shadow: 0 4px 18px rgba(26,58,74,0.08); display: flex; flex-direction: column; position: relative; }
 .card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
 .card-img { width: 100%; aspect-ratio: 4 / 5; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; position: relative; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
-.stock-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(17, 53, 75, 0.88); color: white; padding: 6px 14px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; border-radius: 4px; z-index: 2; pointer-events: none; }
+.stock-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(17, 53, 75, 0.92); color: white; padding: 8px 18px; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; border-radius: 6px; z-index: 2; pointer-events: none; }
 
-.card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-.card-category { font-size: 0.7rem; color: var(--turquesa); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--azul-noche); line-height: 1.2; }
-.card-price { font-size: 1.1rem; font-weight: 700; color: var(--verde); }
+.card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.card-category { font-size: 0.72rem; color: var(--turquesa); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--azul-noche); line-height: 1.2; }
+.card-price { font-size: 1.2rem; font-weight: 700; color: var(--verde); }
 
-label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display: block; margin-top: 4px; }
+label { font-size: 0.78rem; font-weight: 600; color: var(--azul-noche); display: block; margin-top: 4px; }
 .variant-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-.variant-btn { border: 1.5px solid var(--menta); background: #fbfdff; color: var(--text); padding: 5px 10px; border-radius: 8px; cursor: pointer; font-size: 0.75rem; font-weight: 500; }
+.variant-btn { border: 1.5px solid var(--menta); background: #fbfdff; color: var(--text); padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.78rem; font-weight: 500; }
 .variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 .variant-btn:disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
 
 .unit-color-selector { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
 .unit-label { font-size: 0.7rem; font-weight: 700; color: var(--verde); min-width: 25px; }
 .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
-.unit-color-btn { border: 1px solid var(--turquesa); background: white; color: var(--text); padding: 3px 7px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
+.unit-color-btn { border: 1px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.72rem; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 
-.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 11px; cursor: pointer; font-weight: 600; width: 100%; transition: background 0.2s; font-size: 0.9rem; }
+.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 12px; padding: 13px; cursor: pointer; font-weight: 600; width: 100%; transition: background 0.2s; font-size: 0.95rem; }
 .add-btn:hover { background: var(--turquesa); }
 .add-btn:disabled { background: #cbd5e1; cursor: not-allowed; }
 
@@ -95,7 +152,6 @@ label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display:
 .delivery-title { font-weight: 700; color: #3b281c; }
 .delivery-select, .delivery-input { width: 100%; padding: 7px 10px; border-radius: 8px; border: 1px solid #ccc1a7; background: white; font-family: inherit; font-size: 0.82rem; outline: none; }
 
-/* Apartado de Cupón */
 .coupon-box { margin: 0 16px 12px; display: flex; gap: 6px; }
 .coupon-input { flex: 1; padding: 7px 10px; border-radius: 8px; border: 1px solid #ccc1a7; background: white; font-family: inherit; font-size: 0.82rem; outline: none; text-transform: uppercase; }
 .coupon-btn { background: #3b281c; color: white; border: none; border-radius: 8px; padding: 0 14px; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
@@ -124,16 +180,19 @@ label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display:
 .toast.show { transform: translateX(-50%) translateY(0); }
 
 .about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); margin-top: 40px; }
-.about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+.about-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
 .about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--azul-noche); margin-bottom: 10px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 2px; }
 .about-col p, .about-col ul { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; list-style: none; }
 .about-col a { color: var(--turquesa); text-decoration: none; font-weight: 600; }
 
 footer { background: var(--azul-noche); padding: 20px; text-align: center; color: var(--menta); font-size: 0.85rem; }
 
+@media (max-width: 820px) {
+  .catalog { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
 @media (max-width: 480px) {
-  .catalog { grid-template-columns: 1fr 1fr; gap: 10px; }
   .category-grid { grid-template-columns: repeat(2, 1fr); }
+  .category-card { height: 140px; }
 }
 </style>
 </head>
@@ -149,9 +208,10 @@ footer { background: var(--azul-noche); padding: 20px; text-align: center; color
   <p>Lencería, conjuntos, bikinis y más...</p>
 </div>
 
+<!-- BOTÓN VOLVER FLOTANTE (TE ACOMPAÑA SIEMPRE) -->
+<button class="btn-back-floating" id="btnBack" onclick="volverAtras()" style="display:none;">← Volver</button>
+
 <div class="nav-bar" id="navBar">
-  <button class="btn-back" id="btnBack" onclick="volverAtras()" style="display:none;">← Volver</button>
-  
   <div class="size-filter-wrapper" id="sizeFilterWrapper" style="display:none;">
     <label for="sizeFilter" style="margin-bottom:0; color:var(--verde);">Talle:</label>
     <select id="sizeFilter" class="size-select" onchange="aplicarFiltros()">
@@ -160,40 +220,43 @@ footer { background: var(--azul-noche); padding: 20px; text-align: center; color
       <option value="90">90</option>
       <option value="95">95</option>
       <option value="100">100</option>
+      <option value="105">105</option>
+      <option value="110">110</option>
       <option value="115">115</option>
+      <option value="120">120</option>
       <option value="4">Juvenil (T.4)</option>
     </select>
   </div>
 </div>
 
+<!-- CATEGORÍAS EN INICIO MÁS GRANDES Y CON IMAGEN -->
 <div class="category-grid" id="categoryGrid">
   <div class="category-card" onclick="seleccionarCategoria('bombachas')">
-    <span class="icon">🩲</span>
-    <h3>Bombachas</h3>
+    <img src="images/cat-bombachas.jpeg" onerror="this.src='images/less1.jpeg'" alt="Bombachas">
+    <div class="category-card-overlay"><h3>Bombachas</h3></div>
   </div>
   <div class="category-card" onclick="seleccionarCategoria('conjuntos')">
-    <span class="icon">👙</span>
-    <h3>Conjuntos</h3>
+    <img src="images/cat-conjuntos.jpeg" onerror="this.src='images/crisantemo1.jpeg'" alt="Conjuntos">
+    <div class="category-card-overlay"><h3>Conjuntos</h3></div>
   </div>
   <div class="category-card" onclick="seleccionarCategoria('boxers')">
-    <span class="icon">🩳</span>
-    <h3>Bóxers</h3>
+    <img src="images/cat-boxers.jpeg" onerror="this.src='images/boxerck1.jpeg'" alt="Bóxers">
+    <div class="category-card-overlay"><h3>Bóxers</h3></div>
   </div>
   <div class="category-card" onclick="seleccionarCategoria('prendas')">
-    <span class="icon">👗</span>
-    <h3>Prendas</h3>
+    <img src="images/cat-prendas.jpeg" onerror="this.src='images/pijama1.jpeg'" alt="Prendas">
+    <div class="category-card-overlay"><h3>Prendas</h3></div>
   </div>
   <div class="category-card" onclick="seleccionarCategoria('medias')">
-    <span class="icon">🧦</span>
-    <h3>Medias</h3>
+    <img src="images/cat-medias.jpeg" onerror="this.src='images/mediasmd1.jpeg'" alt="Medias">
+    <div class="category-card-overlay"><h3>Medias</h3></div>
   </div>
   <div class="category-card" onclick="seleccionarCategoria('bikinis')">
-    <span class="icon">🏖️</span>
-    <h3>Bikinis</h3>
+    <img src="images/cat-bikinis.jpeg" onerror="this.src='images/cuba1.jpeg'" alt="Bikinis">
+    <div class="category-card-overlay"><h3>Bikinis</h3></div>
   </div>
-  <div class="category-card" onclick="seleccionarCategoria('todos')" style="grid-column: 1 / -1; background: var(--menta);">
-    <span class="icon">✨</span>
-    <h3 style="color: var(--verde);">Ver Todo el Catálogo</h3>
+  <div class="category-card" onclick="seleccionarCategoria('todos')" style="grid-column: 1 / -1; height: 110px;">
+    <div class="category-card-overlay"><h3>Ver Todo el Catálogo ✨</h3></div>
   </div>
 </div>
 
@@ -249,7 +312,6 @@ footer { background: var(--azul-noche); padding: 20px; text-align: center; color
       <input type="text" id="envioDireccion" class="delivery-input" placeholder="Indicar tu barrio o dirección exacta para cotizar" oninput="guardarOpcionEnvio()">
     </div>
 
-    <!-- APARTADO DE CUPÓN -->
     <div class="coupon-box">
       <input type="text" id="couponInput" class="coupon-input" placeholder="Código de cupón (Ej: MAMA)">
       <button class="coupon-btn" onclick="aplicarCupon()">Aplicar</button>
@@ -285,13 +347,9 @@ let sel = {};
 let categoriaActual = null;
 let subcategoriaActual = 'todas';
 
-// -------------------------------------------------------------
-// CONFIGURACIÓN DE CUPONES DE DESCUENTO
-// -------------------------------------------------------------
 const CUPONES_DISPONIBLES = {
-  "MAMA": 0.10,    // 10% de descuento
-  "BLUE10": 0.10,  // 10% de descuento de ejemplo adicional
-  "VERANO20": 0.20 // 20% de descuento de ejemplo adicional
+  "MAMA": 0.10,
+  "BLUE10": 0.10
 };
 
 function aplicarCupon() {
@@ -323,8 +381,15 @@ function aplicarCupon() {
 }
 
 // -------------------------------------------------------------
-// ORDEN MEZCLADO Y SCROLL
+// REORDENAMIENTO CON MEMORIA Y SIN STOCK AL FINAL
 // -------------------------------------------------------------
+function tieneStockElProducto(p) {
+  if (p.s !== undefined) return p.s > 0;
+  if (p.var && p.var.length > 0) return p.var.some(v => v.s > 0);
+  if (p.colores && p.colores.length > 0) return p.colores.some(c => c.s > 0);
+  return false;
+}
+
 function obtenerProductosOrdenados() {
   let ordenGuardado = sessionStorage.getItem('bb_orden_productos');
   if (ordenGuardado) {
@@ -340,13 +405,19 @@ function obtenerProductosOrdenados() {
     mapaProds.forEach(p => reordenados.push(p));
     return reordenados;
   } else {
-    let copia = [...productos];
-    for (let i = copia.length - 1; i > 0; i--) {
+    let conStock = productos.filter(p => tieneStockElProducto(p));
+    let sinStock = productos.filter(p => !tieneStockElProducto(p));
+
+    // Mezclamos sólo los productos con stock
+    for (let i = conStock.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [copia[i], copia[j]] = [copia[j], copia[i]];
+      [conStock[i], conStock[j]] = [conStock[j], conStock[i]];
     }
-    sessionStorage.setItem('bb_orden_productos', JSON.stringify(copia.map(p => p.id)));
-    return copia;
+
+    // Unimos: Con Stock mezclados primero + Sin Stock al final
+    let resultado = [...conStock, ...sinStock];
+    sessionStorage.setItem('bb_orden_productos', JSON.stringify(resultado.map(p => p.id)));
+    return resultado;
   }
 }
 
@@ -418,8 +489,14 @@ function generarSubcategorias() {
     return;
   }
 
-  const prodsCat = productos.filter(p => p.cat === categoriaActual);
-  const subcats = [...new Set(prodsCat.map(p => p.subcat).filter(Boolean))];
+  // LISTA MANUAL DE SUBCATEGORÍAS SEGÚN CATEGORÍA PARA GARANTIZAR TODAS LAS OPCIONES
+  let subcats = [];
+  if (categoriaActual === 'bombachas') {
+    subcats = ['colaless', 'regulable', 'vedetina', 'culotte', 'universal', 'hilo'];
+  } else {
+    const prodsCat = productos.filter(p => p.cat === categoriaActual);
+    subcats = [...new Set(prodsCat.map(p => p.subcat).filter(Boolean))];
+  }
 
   if (subcats.length === 0) {
     container.style.display = 'none';
@@ -467,7 +544,7 @@ function aplicarFiltros() {
 
 function renderCatalog(lista) {
   if (lista.length === 0) {
-    document.getElementById('catalog').innerHTML = `<div style="grid-column:1/-1; text-align:center; color:var(--text-light); padding:40px 0;">No se encontraron productos disponibles en esta sección.</div>`;
+    document.getElementById('catalog').innerHTML = `<div style="grid-column:1/-1; text-align:center; color:var(--text-light); padding:40px 0;">No se encontraron productos en esta categoría.</div>`;
     return;
   }
   const html = lista.map(p => {
@@ -479,7 +556,7 @@ function renderCatalog(lista) {
 }
 
 function cardSimple(p) {
-  const tieneStock = p.s > 0;
+  const tieneStock = tieneStockElProducto(p);
   const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : p.cat.toUpperCase();
   return `<div class="product-card" style="${!tieneStock ? 'opacity:0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
@@ -497,7 +574,7 @@ function cardSimple(p) {
 function cardVar(p) {
   const talleFiltrado = document.getElementById('sizeFilter').value;
   const precioRender = p.px ? p.px.toLocaleString('es-AR') : (p.var[0] && p.var[0].px ? p.var[0].px.toLocaleString('es-AR') : 'Consultar');
-  const tieneStockGlobal = p.var.some(v => v.s > 0);
+  const tieneStockGlobal = tieneStockElProducto(p);
   const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : p.cat.toUpperCase();
 
   const vars = p.var.map(v => {
@@ -524,7 +601,7 @@ function cardVar(p) {
 }
 
 function cardMulti(p) {
-  const tieneStockGlobal = p.colores.some(c => c.s > 0);
+  const tieneStockGlobal = tieneStockElProducto(p);
   const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty('${p.id}',${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
   const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : (p.talle || 'ÚNICO');
 
