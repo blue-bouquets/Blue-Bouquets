@@ -161,9 +161,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Roja", s: 2 },
-      { c: "Blanca", s: 1 },
-      { c: "Gris", s: 1 }
+      { c: "Roja", s: 1 },
     ]
   },
   {
@@ -220,8 +218,8 @@ const productos = [
     ],
     colores: [
       { c: "Beige", s: 2 },
-      { c: "Rosa", s: 2 },
-      { c: "Negra", s: 2 }
+      { c: "Rosa", s: 1 },
+      { c: "Negra", s: 1 }
     ]
   },
   {
@@ -317,10 +315,10 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "T.Único · Beige", s: 3 },
-      { c: "T.Único · Rojo", s: 3 },
+      { c: "T.Único · Beige", s: 2 },
+      { c: "T.Único · Rojo", s: 1 },
       { c: "T.Único · Blanco", s: 3 },
-      { c: "T.Único · Negro", s: 3 }
+      { c: "T.Único · Negro", s: 1 }
     ]
   },
   {
@@ -337,8 +335,8 @@ const productos = [
     ],
     colores: [
       { c: "T.Único · Rojo", s: 1 },
-      { c: "T.Único · Negro", s: 2 },
-      { c: "T.Único · Blanco", s: 2 },
+      { c: "T.Único · Negro", s: 1 },
+      { c: "T.Único · Blanco", s: 1 },
       { c: "T.Único · Beige", s: 1 }
     ]
   },
@@ -429,26 +427,6 @@ const productos = [
     ]
   },
   {
-    id: "colaless-de-algodon-con-puntos",
-    sku: "Colaless con Puntos",
-    cat: "bombachas",
-    subcat: "colaless",
-    name: "Colaless de algodon con Puntos",
-    img: ["images/colalesspuntos1.jpeg", "images/colalesspuntos2.jpeg"],
-    tipo: "multi",
-    talle: "Regular",
-    precios: [
-      { qty: 1, px: 3000 },
-      { qty: 2, px: 5500 },
-      { qty: 3, px: 7000 }
-    ],
-    colores: [
-      { c: "Blanca", s: 1 },
-      { c: "Beige", s: 2 },
-      { c: "Crema", s: 2 }
-    ]
-  },
-  {
     id: "colaless-xl",
     sku: "Colaless XL",
     cat: "bombachas",
@@ -465,7 +443,7 @@ const productos = [
     colores: [
       { c: "Negra", s: 4 },
       { c: "Crema", s: 4 },
-      { c: "Blanca", s: 4 },
+      { c: "Blanca", s: 3 },
       { c: "Beige", s: 3 },
       { c: "Gris", s: 3 }
     ]
@@ -513,7 +491,6 @@ const productos = [
       { c: "Beige", s: 1 },
       { c: "Blanca", s: 2 },
       { c: "Crema", s: 2 },
-      { c: "Gris", s: 1 }
     ]
   },
   {
@@ -552,12 +529,9 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Leopardo", s: 2 },
-      { c: "Rosa", s: 2 },
-      { c: "Dolar", s: 2 },
-      { c: "Corazon Negro", s: 2 },
-      { c: "Negra con Flor", s: 2 },
-      { c: "Blanca con flor", s: 2 }
+      { c: "Corazon Negro", s: 1 },
+      { c: "Negra con Flor", s: 1 },
+      { c: "Blanca con flor", s: 1 }
     ]
   },
   {
@@ -599,7 +573,7 @@ const productos = [
     colores: [
       { c: "Beige", s: 1 },
       { c: "Blanca", s: 3 },
-      { c: "Rosa", s: 4 }
+      { c: "Rosa", s: 3 }
     ]
   },
   {
@@ -637,7 +611,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Blanco", s: 2 }
+      { c: "Blanco", s: 1 }
     ]
   },
   {
@@ -677,9 +651,9 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "T.Único · Rosa", s: 2 },
+      { c: "T.Único · Rosa", s: 1 },
       { c: "T.Único · Crema", s: 1 },
-      { c: "T.Único · Negro", s: 2 },
+      { c: "T.Único · Negro", s: 1 },
       { c: "T.Único · Beige", s: 1 }
     ]
   },
@@ -809,20 +783,6 @@ const productos = [
     ]
   },
   {
-    id: "jacinto",
-    sku: "Jacinto Ximena",
-    cat: "conjuntos",
-    subcat: "triangulo-soft",
-    name: "Jacinto",
-    img: ["images/jacinto1.jpeg", "images/jacinto2.jpeg", "images/jacinto3.jpeg"],
-    desc: "...",
-    tipo: "var",
-    px: 10990,
-    var: [
-      { id: "jc90b", l: "T.90 · Blanco", s: 1 }
-    ]
-  },
-  {
     id: "conjuntocrisantemo",
     sku: "Crisantemo Alessandra",
     cat: "conjuntos",
@@ -931,7 +891,7 @@ const productos = [
       { id: "cmp100n", l: "T.100 · Negro", s: 1 }
     ]
   },
-      {
+  {
     id: "tiare",
     sku: "Tiare Zinnia",
     cat: "conjuntos",
@@ -947,7 +907,6 @@ const productos = [
       { id: "tia90g", l: "T.90 · Gris", s: 1 },
       { id: "tia95be", l: "T.95 · Beige", s: 1 },
       { id: "tia100b", l: "T.100 · Blanco", s: 1 },
-      { id: "tia100n", l: "T.100 · Negro", s: 1 }
     ]
   },
   // --- Armados ---
@@ -964,8 +923,6 @@ const productos = [
     var: [
       { id: "gd85b", l: "T.85 · Blanco", s: 1 },
       { id: "gd85bo", l: "T.85 · Bordo", s: 1 },
-      { id: "gd90bo", l: "T.90 · Bordo", s: 1 },
-      { id: "gd90n", l: "T.90 · Negro", s: 1 },
       { id: "gd95n", l: "T.95 · Negro", s: 1 },
       { id: "gd100b", l: "T.100 · Blanco", s: 2 }
     ]
@@ -1038,7 +995,6 @@ const productos = [
     tipo: "var",
     px: 12990,
     var: [
-      { id: "ms90n", l: "T.90 · Negro", s: 1 },
       { id: "ms100b", l: "T.100 · Blanco", s: 1 }
     ]
   },
@@ -1093,7 +1049,6 @@ const productos = [
     var: [
       { id: "ip85b", l: "T.85 · Blanco", s: 1 },
       { id: "ip85rs", l: "T.85 · Rosa", s: 1 },
-      { id: "ip90cl", l: "T.90 · Celeste", s: 1 },
       { id: "ip95rs", l: "T.95 · Rosa", s: 1 },
       { id: "ip95b", l: "T.95 · Blanco", s: 1 },
       { id: "ip100cl", l: "T.100 · Celeste", s: 1 }
@@ -1822,5 +1777,39 @@ const productos = [
     tipo: "simple",
     px: 3500,
     s: 0
+  },
+   {
+    id: "colaless-de-algodon-con-puntos",
+    sku: "Colaless con Puntos",
+    cat: "bombachas",
+    subcat: "colaless",
+    name: "Colaless de algodon con Puntos",
+    img: ["images/colalesspuntos1.jpeg", "images/colalesspuntos2.jpeg"],
+    tipo: "multi",
+    talle: "Regular",
+    precios: [
+      { qty: 1, px: 3000 },
+      { qty: 2, px: 5500 },
+      { qty: 3, px: 7000 }
+    ],
+    colores: [
+      { c: "Blanca", s: 0 },
+      { c: "Beige", s: 0 },
+      { c: "Crema", s: 0 }
+    ]
+  },
+  {
+    id: "jacinto",
+    sku: "Jacinto Ximena",
+    cat: "conjuntos",
+    subcat: "triangulo-soft",
+    name: "Jacinto",
+    img: ["images/jacinto1.jpeg", "images/jacinto2.jpeg", "images/jacinto3.jpeg"],
+    desc: "...",
+    tipo: "var",
+    px: 10990,
+    var: [
+      { id: "jc90b", l: "T.90 · Blanco", s: 0 }
+    ]
   },
 ];
