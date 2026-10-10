@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Bouquets — Lencería</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --verde: #37757d;
@@ -15,95 +15,126 @@
   --arena: #D4B8A0;
   --text: #017576;
   --text-light: #5a7a82;
-  --tarjeta-bg: #e2eef8;
+  --tarjeta-bg: #ffffff;
+  --modal-bg: #f9f6f0;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--text); min-height: 100vh; }
-header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; }
 
-.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; letter-spacing: 0.5px; color: var(--menta); text-decoration: none; }
+header { background: var(--azul-noche); padding: 0 24px; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--menta); text-decoration: none; }
 .logo span { color: var(--turquesa); font-style: italic; }
 
-.cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 10px 20px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.cart-btn { background: var(--verde); border: none; border-radius: 50px; padding: 10px 20px; color: white; cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 500; }
 .cart-count { background: var(--arena); color: var(--azul-noche); border-radius: 50%; width: 20px; height: 20px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
 
-.hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 60px 24px 48px; text-align: center; }
-.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 300; color: white; margin-bottom: 12px; }
-.hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto 24px; }
+.hero { background: linear-gradient(135deg, var(--azul-noche) 0%, var(--verde) 100%); padding: 40px 24px 30px; text-align: center; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 300; color: white; margin-bottom: 8px; }
+.hero p { color: var(--menta); font-size: 0.95rem; margin: 0 auto; }
 
-.filters { padding: 20px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
-.filter-btn { background: white; border: 1.5px solid var(--menta); color: var(--verde); padding: 7px 16px; border-radius: 50px; cursor: pointer; text-transform: capitalize; }
-.filter-btn.active { background: var(--verde); border-color: var(--verde); color: white; }
+.nav-bar { max-width: 900px; margin: 20px auto 0; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.btn-back { background: var(--verde); color: white; border: none; padding: 8px 18px; border-radius: 50px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; }
+.btn-back:hover { background: var(--turquesa); }
 
-/* Subcategorías */
-.subfilters { padding: 12px 24px 0; display: flex; gap: 8px; flex-wrap: wrap; max-width: 900px; margin: 0 auto; align-items: center; }
-.subfilter-btn { background: rgba(255, 255, 255, 0.7); border: 1.5px solid var(--turquesa); color: var(--azul-noche); padding: 5px 14px; border-radius: 50px; cursor: pointer; font-size: 0.82rem; font-weight: 500; }
-.subfilter-btn.active { background: var(--turquesa); color: white; border-color: var(--turquesa); }
+.category-grid { max-width: 900px; margin: 24px auto 40px; padding: 0 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; }
+.category-card { background: white; border-radius: 16px; padding: 20px 12px; text-align: center; box-shadow: 0 4px 12px rgba(17,53,75,0.06); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
+.category-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(17,53,75,0.12); border-color: var(--turquesa); }
+.category-card .icon { font-size: 2.2rem; margin-bottom: 8px; display: block; }
+.category-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--azul-noche); text-transform: capitalize; }
 
-.size-filter-container { display: flex; align-items: center; gap: 6px; }
-.size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 12px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
+.subfilters-grid { max-width: 900px; margin: 15px auto 25px; padding: 0 16px; display: flex; gap: 12px; overflow-x: auto; scrollbar-width: none; }
+.subfilters-grid::-webkit-scrollbar { display: none; }
+.subcard { background: white; border: 2px solid var(--menta); padding: 12px 18px; border-radius: 12px; cursor: pointer; text-align: center; font-weight: 600; font-size: 0.85rem; color: var(--azul-noche); flex-shrink: 0; min-width: 110px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+.subcard.active { background: var(--turquesa); color: white; border-color: var(--turquesa); }
 
-.catalog { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+.size-filter-wrapper { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.size-select { background: white; border: 1.5px solid var(--verde); color: var(--text); padding: 6px 14px; border-radius: 50px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; outline: none; }
+
+.catalog { max-width: 900px; margin: 0 auto; padding: 16px 16px 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
 .product-card { background: var(--tarjeta-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(26,58,74,0.08); display: flex; flex-direction: column; position: relative; }
 .card-link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
-.card-img { width: 100%; aspect-ratio: 4 / 5; background: linear-gradient(135deg, #018587, var(--menta)); display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; position: relative; }
+.card-img { width: 100%; aspect-ratio: 4 / 5; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 3rem; overflow: hidden; position: relative; }
 .card-img img { width: 100%; height: 100%; object-fit: cover; }
+.stock-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(17, 53, 75, 0.88); color: white; padding: 6px 14px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; border-radius: 4px; z-index: 2; pointer-events: none; }
 
-.stock-badge { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(17, 53, 75, 0.85); color: white; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; border-radius: 4px; z-index: 2; pointer-events: none; border: 1px solid rgba(255,255,255,0.2); }
+.card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.card-category { font-size: 0.7rem; color: var(--turquesa); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--azul-noche); line-height: 1.2; }
+.card-price { font-size: 1.1rem; font-weight: 700; color: var(--verde); }
 
-.card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-.card-category { font-size: 0.7rem; color: var(--azul-noche); font-weight: 700; letter-spacing: 0.5px; }
-.card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--azul-noche); }
-.card-price { font-size: 1.15rem; font-weight: 600; color: var(--verde); }
-
-label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display: block; margin-bottom: 4px; }
+label { font-size: 0.75rem; font-weight: 600; color: var(--azul-noche); display: block; margin-top: 4px; }
 .variant-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-.variant-btn { border: 1.5px solid white; background: white; color: var(--text); padding: 5px 11px; border-radius: 8px; cursor: pointer; font-size: 0.78rem; }
+.variant-btn { border: 1.5px solid var(--menta); background: #fbfdff; color: var(--text); padding: 5px 10px; border-radius: 8px; cursor: pointer; font-size: 0.75rem; font-weight: 500; }
 .variant-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
 .variant-btn:disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
 
-.unit-color-selector { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-.unit-label { font-size: 0.7rem; font-weight: 600; color: var(--verde); min-width: 40px; }
+.unit-color-selector { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.unit-label { font-size: 0.7rem; font-weight: 700; color: var(--verde); min-width: 25px; }
 .unit-color-grid { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
-.unit-color-btn { border: 1.5px solid var(--turquesa); background: white; color: var(--text); padding: 4px 8px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
+.unit-color-btn { border: 1px solid var(--turquesa); background: white; color: var(--text); padding: 3px 7px; border-radius: 6px; cursor: pointer; font-size: 0.7rem; }
 .unit-color-btn.selected { background: var(--verde); border-color: var(--verde); color: white; }
-.unit-color-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
-.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: 600; width: 100%; transition: background 0.2s; }
+.add-btn { margin-top: auto; background: var(--verde); color: white; border: none; border-radius: 10px; padding: 11px; cursor: pointer; font-weight: 600; width: 100%; transition: background 0.2s; font-size: 0.9rem; }
 .add-btn:hover { background: var(--turquesa); }
-.add-btn:disabled { background: #b0c2c4; cursor: not-allowed; }
+.add-btn:disabled { background: #cbd5e1; cursor: not-allowed; }
 
-.about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); }
-.about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left; }
-.about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--azul-noche); margin-bottom: 12px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 4px; }
-.about-col p, .about-col ul { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; list-style: none; }
-.about-col ul li { margin-bottom: 6px; }
-.about-col a { color: var(--turquesa); text-decoration: none; font-weight: 500; }
-
-footer { background: var(--azul-noche); padding: 24px; text-align: center; color: var(--menta); font-size: 0.85rem; }
-
-.cart-overlay { position: fixed; inset: 0; background: rgba(26,58,74,0.5); z-index: 200; opacity: 0; pointer-events: none; }
+/* MODAL DE CARRITO ESTILIZADO */
+.cart-overlay { position: fixed; inset: 0; background: rgba(17, 53, 75, 0.65); backdrop-filter: blur(3px); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; padding: 16px; }
 .cart-overlay.open { opacity: 1; pointer-events: all; }
-.cart-panel { position: fixed; top: 0; right: 0; width: min(420px, 100vw); height: 100vh; background: var(--crema); z-index: 201; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s; }
-.cart-panel.open { transform: translateX(0); }
-.cart-header { background: var(--azul-noche); padding: 20px 24px; display: flex; justify-content: space-between; color: white; }
-.cart-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--menta); }
-.close-btn { background: none; border: none; color: var(--menta); font-size: 1.5rem; cursor: pointer; }
-.cart-items { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-.cart-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-light); font-size: 0.9rem; }
-.cart-item { background: white; border-radius: 12px; padding: 14px; display: flex; gap: 12px; box-shadow: 0 1px 6px rgba(26,58,74,0.06); }
-.cart-item-icon { width: 48px; height: 48px; background: #018587; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; overflow: hidden; }
-.cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--azul-noche); }
-.cart-item-variant { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
-.cart-item-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
-.remove-item { background: none; border: none; color: var(--arena); cursor: pointer; }
-.cart-footer { padding: 16px 20px; background: white; border-top: 1px solid var(--menta); }
-.cart-total-value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--azul-noche); }
-.whatsapp-btn { width: 100%; background: #25D366; color: white; border: none; border-radius: 12px; padding: 15px; cursor: pointer; font-weight: 600; margin-top: 10px; }
-.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 12px 24px; border-radius: 50px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s; }
+
+.cart-modal { background: var(--modal-bg); border-radius: 20px; width: min(480px, 100%); max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); transform: translateY(20px); transition: transform 0.3s; position: relative; border: 1px solid #e8e2d5; }
+.cart-overlay.open .cart-modal { transform: translateY(0); }
+
+.cart-modal-header { padding: 20px 20px 10px; text-align: center; position: relative; }
+.cart-modal-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: #3b281c; }
+.close-modal-btn { position: absolute; top: 14px; right: 14px; background: #e5dec9; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 1rem; cursor: pointer; color: #5a4b3f; display: flex; align-items: center; justify-content: center; }
+
+.cart-notice { background: #efe7d3; border-radius: 10px; padding: 8px 12px; margin: 0 16px 12px; font-size: 0.78rem; color: #6b5744; line-height: 1.4; display: flex; gap: 6px; align-items: flex-start; }
+
+.delivery-box { background: #f2ebda; border: 1px solid #e0d5bd; border-radius: 12px; padding: 10px 12px; margin: 0 16px 12px; display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem; }
+.delivery-title { font-weight: 700; color: #3b281c; }
+.delivery-select, .delivery-input { width: 100%; padding: 7px 10px; border-radius: 8px; border: 1px solid #ccc1a7; background: white; font-family: inherit; font-size: 0.82rem; outline: none; }
+
+/* Apartado de Cupón */
+.coupon-box { margin: 0 16px 12px; display: flex; gap: 6px; }
+.coupon-input { flex: 1; padding: 7px 10px; border-radius: 8px; border: 1px solid #ccc1a7; background: white; font-family: inherit; font-size: 0.82rem; outline: none; text-transform: uppercase; }
+.coupon-btn { background: #3b281c; color: white; border: none; border-radius: 8px; padding: 0 14px; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
+.coupon-msg { font-size: 0.75rem; margin: -6px 16px 10px; font-weight: 600; }
+
+.cart-items-list { flex: 1; overflow-y: auto; padding: 0 16px 12px; display: flex; flex-direction: column; gap: 10px; }
+.cart-item-row { background: #f2ebda; border-radius: 10px; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.cart-item-details h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #3b281c; font-weight: 600; }
+.cart-item-details p { font-size: 0.75rem; color: #706051; margin-top: 2px; }
+.cart-item-right { display: flex; align-items: center; gap: 8px; }
+.cart-item-price { font-weight: 700; color: #b25b29; font-size: 0.95rem; }
+.btn-delete-item { background: #ef4444; color: white; border: none; border-radius: 6px; width: 22px; height: 22px; cursor: pointer; font-weight: bold; font-size: 0.75rem; }
+
+.cart-modal-footer { padding: 14px 16px 18px; border-top: 1px solid #e5dec9; display: flex; flex-direction: column; gap: 10px; }
+.total-display { text-align: right; line-height: 1.3; }
+.total-display span { font-size: 1rem; color: #3b281c; font-weight: 500; }
+.total-display strong { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #3b281c; font-weight: 700; margin-left: 6px; }
+.discount-text { font-size: 0.8rem; color: #16a34a; font-weight: 700; display: block; }
+
+.modal-actions { display: flex; gap: 8px; }
+.btn-send-wa { flex: 1.4; background: #25D366; color: white; border: none; border-radius: 12px; padding: 12px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-send-wa:disabled { background: #ccc; cursor: not-allowed; }
+.btn-close-modal { flex: 1; background: #e2d9c4; color: #3b281c; border: none; border-radius: 12px; padding: 12px; font-weight: 700; font-size: 0.9rem; cursor: pointer; }
+
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--verde); color: white; padding: 10px 22px; border-radius: 50px; font-size: 0.85rem; font-weight: 500; z-index: 999; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-@media (max-width: 480px) { .catalog { grid-template-columns: 1fr 1fr; gap: 12px; } }
+.about-section { background: white; padding: 40px 24px; border-top: 1px solid var(--menta); margin-top: 40px; }
+.about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+.about-col h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--azul-noche); margin-bottom: 10px; border-bottom: 2px solid var(--arena); display: inline-block; padding-bottom: 2px; }
+.about-col p, .about-col ul { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; list-style: none; }
+.about-col a { color: var(--turquesa); text-decoration: none; font-weight: 600; }
+
+footer { background: var(--azul-noche); padding: 20px; text-align: center; color: var(--menta); font-size: 0.85rem; }
+
+@media (max-width: 480px) {
+  .catalog { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 </head>
 <body>
@@ -115,18 +146,13 @@ footer { background: var(--azul-noche); padding: 24px; text-align: center; color
 
 <div class="hero">
   <h1>Comodidad y estilo<br><em style="color: var(--turquesa); font-style: italic;">A tu medida</em></h1>
-  <p>Bombachas, medias, conjuntos y más...</p>
+  <p>Lencería, conjuntos, bikinis y más...</p>
 </div>
 
-<div class="filters">
-  <button class="filter-btn active" onclick="filtrar('todos', this)">Todo</button>
-  <button class="filter-btn" onclick="filtrar('conjuntos', this)">conjuntos</button>
-  <button class="filter-btn" onclick="filtrar('bombachas', this)">bombachas</button>
-  <button class="filter-btn" onclick="filtrar('medias', this)">medias</button>
-  <button class="filter-btn" onclick="filtrar('prendas', this)">prendas</button>
-  <button class="filter-btn" onclick="filtrar('boxers', this)">boxers</button>
+<div class="nav-bar" id="navBar">
+  <button class="btn-back" id="btnBack" onclick="volverAtras()" style="display:none;">← Volver</button>
   
-  <div class="size-filter-container" id="sizeFilterWrapper">
+  <div class="size-filter-wrapper" id="sizeFilterWrapper" style="display:none;">
     <label for="sizeFilter" style="margin-bottom:0; color:var(--verde);">Talle:</label>
     <select id="sizeFilter" class="size-select" onchange="aplicarFiltros()">
       <option value="todos">Todos</option>
@@ -140,27 +166,56 @@ footer { background: var(--azul-noche); padding: 24px; text-align: center; color
   </div>
 </div>
 
-<div class="subfilters" id="subfilters" style="display: none;"></div>
+<div class="category-grid" id="categoryGrid">
+  <div class="category-card" onclick="seleccionarCategoria('bombachas')">
+    <span class="icon">🩲</span>
+    <h3>Bombachas</h3>
+  </div>
+  <div class="category-card" onclick="seleccionarCategoria('conjuntos')">
+    <span class="icon">👙</span>
+    <h3>Conjuntos</h3>
+  </div>
+  <div class="category-card" onclick="seleccionarCategoria('boxers')">
+    <span class="icon">🩳</span>
+    <h3>Bóxers</h3>
+  </div>
+  <div class="category-card" onclick="seleccionarCategoria('prendas')">
+    <span class="icon">👗</span>
+    <h3>Prendas</h3>
+  </div>
+  <div class="category-card" onclick="seleccionarCategoria('medias')">
+    <span class="icon">🧦</span>
+    <h3>Medias</h3>
+  </div>
+  <div class="category-card" onclick="seleccionarCategoria('bikinis')">
+    <span class="icon">🏖️</span>
+    <h3>Bikinis</h3>
+  </div>
+  <div class="category-card" onclick="seleccionarCategoria('todos')" style="grid-column: 1 / -1; background: var(--menta);">
+    <span class="icon">✨</span>
+    <h3 style="color: var(--verde);">Ver Todo el Catálogo</h3>
+  </div>
+</div>
 
-<div class="catalog" id="catalog"></div>
+<div class="subfilters-grid" id="subfiltersGrid" style="display:none;"></div>
+
+<div class="catalog" id="catalog" style="display:none;"></div>
 
 <section class="about-section">
   <div class="about-container">
     <div class="about-col">
       <h3>Sobre Mí ✦</h3>
-      <p>¡Hola! Bienvenidos a Blue Bouquets. Nos apasiona ofrecerte prendas pensadas para tu comodidad diaria sin perder el diseño y la delicadeza. Cada artículo de nuestro catálogo está seleccionado con amor para asegurar la mejor calidad a tu medida.</p>
+      <p>Bienvenidos a Blue Bouquets. Ofrecemos prendas pensadas para tu comodidad diaria sin perder el diseño y la delicadeza.</p>
     </div>
     <div class="about-col">
       <h3>Envíos y Entregas 🚴</h3>
       <ul>
-        <li>• <strong>Envíos a domicilio:</strong> Coordinamos días y bandas horarias personalizadas según tu disponibilidad.</li>
-        <li>• <strong>Puntos de encuentro:</strong> Consultanos por zonas céntricas de retiro sin cargo adicional.</li>
-        <li>• Las condiciones finales se terminan de pactar de manera directa al enviar tu carrito por WhatsApp.</li>
+        <li>• <strong>Envíos a domicilio:</strong> Coordinamos bandas horarias personalizadas.</li>
+        <li>• <strong>Puntos de encuentro:</strong> Retiro en zonas céntricas sin cargo.</li>
       </ul>
     </div>
     <div class="about-col">
       <h3>Comunidad 💬</h3>
-      <p>Seguinos en nuestras redes para no perderte ningún ingreso, sorteo o promoción exclusiva:</p><br>
       <p><strong>Instagram:</strong> <a href="https://instagram.com/bluebouquets_" target="_blank">@bluebouquets_</a></p>
       <p><strong>WhatsApp:</strong> <a href="https://wa.me/5492944589885" target="_blank">+54 9 294 458-9885</a></p>
     </div>
@@ -171,19 +226,51 @@ footer { background: var(--azul-noche); padding: 24px; text-align: center; color
   <strong style="font-family:'Cormorant Garamond',serif;">Blue Bouquets 💙</strong> — Tienda de Lencería
 </footer>
 
-<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-<div class="cart-panel" id="cartPanel">
-  <div class="cart-header">
-    <h2>Tu carrito ✦</h2>
-    <button class="close-btn" onclick="toggleCart()">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems"></div>
-  <div class="cart-footer">
-    <div style="display:flex; justify-content:space-between;">
-      <span>Total Estimado:</span>
-      <span class="cart-total-value" id="cartTotal">$0</span>
+<!-- MODAL DE CARRITO -->
+<div class="cart-overlay" id="cartOverlay" onclick="cerrarSiClickAfuera(event)">
+  <div class="cart-modal">
+    <div class="cart-modal-header">
+      <h2>Tu Pedido Web</h2>
+      <button class="close-modal-btn" onclick="toggleCart()">✕</button>
     </div>
-    <button class="whatsapp-btn" id="waBtn" onclick="finalizarPedido()" disabled>Pedir por WhatsApp</button>
+
+    <div class="cart-notice">
+      <span>⚠️</span>
+      <div><em>Nota: Los pedidos se confirman vía WhatsApp según la disponibilidad de stock en el showroom.</em></div>
+    </div>
+
+    <div class="delivery-box">
+      <div class="delivery-title">📍 Seleccioná forma de entrega:</div>
+      <select id="envioTipo" class="delivery-select" onchange="actualizarOpcionEnvio()">
+        <option value="Retiro en domicilio (Barrio Frutillar)">Retiro en domicilio (Barrio Frutillar)</option>
+        <option value="Coordinar punto de encuentro céntrico">Coordinar punto de encuentro céntrico</option>
+        <option value="Envío a domicilio">Envío a domicilio (Indicar barrio abajo)</option>
+      </select>
+      <input type="text" id="envioDireccion" class="delivery-input" placeholder="Indicar tu barrio o dirección exacta para cotizar" oninput="guardarOpcionEnvio()">
+    </div>
+
+    <!-- APARTADO DE CUPÓN -->
+    <div class="coupon-box">
+      <input type="text" id="couponInput" class="coupon-input" placeholder="Código de cupón (Ej: MAMA)">
+      <button class="coupon-btn" onclick="aplicarCupon()">Aplicar</button>
+    </div>
+    <div class="coupon-msg" id="couponMsg"></div>
+
+    <div class="cart-items-list" id="cartItems"></div>
+
+    <div class="cart-modal-footer">
+      <div class="total-display">
+        <span id="discountLabel" class="discount-text" style="display:none;"></span>
+        <span>Total Estimado:</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-send-wa" id="waBtn" onclick="finalizarPedido()" disabled>
+          ✓ Enviar Pedido por WhatsApp
+        </button>
+        <button class="btn-close-modal" onclick="toggleCart()">Cerrar</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -192,34 +279,211 @@ footer { background: var(--azul-noche); padding: 24px; text-align: center; color
 <script src="productos-data.js"></script>
 
 <script>
-function renderImg(p) {
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  if (imgSrc && imgSrc.includes('.')) {
-    return `<img src="${imgSrc}" alt="${p.name}">`;
+let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
+let cuponAplicado = JSON.parse(sessionStorage.getItem('bb_cupon')) || null;
+let sel = {};
+let categoriaActual = null;
+let subcategoriaActual = 'todas';
+
+// -------------------------------------------------------------
+// CONFIGURACIÓN DE CUPONES DE DESCUENTO
+// -------------------------------------------------------------
+const CUPONES_DISPONIBLES = {
+  "MAMA": 0.10,    // 10% de descuento
+  "BLUE10": 0.10,  // 10% de descuento de ejemplo adicional
+  "VERANO20": 0.20 // 20% de descuento de ejemplo adicional
+};
+
+function aplicarCupon() {
+  const codigo = document.getElementById('couponInput').value.trim().toUpperCase();
+  const msgEl = document.getElementById('couponMsg');
+
+  if (!codigo) {
+    cuponAplicado = null;
+    sessionStorage.removeItem('bb_cupon');
+    msgEl.textContent = '';
+    upCart();
+    return;
   }
-  return imgSrc || '';
+
+  if (CUPONES_DISPONIBLES[codigo] !== undefined) {
+    const desc = CUPONES_DISPONIBLES[codigo];
+    cuponAplicado = { codigo, desc };
+    sessionStorage.setItem('bb_cupon', JSON.stringify(cuponAplicado));
+    msgEl.style.color = '#16a34a';
+    msgEl.textContent = `✓ ¡Cupón ${codigo} aplicado (${desc * 100}% OFF)!`;
+    toast(`¡Cupón aplicado con éxito!`);
+  } else {
+    cuponAplicado = null;
+    sessionStorage.removeItem('bb_cupon');
+    msgEl.style.color = '#ef4444';
+    msgEl.textContent = `✕ Cupón inválido o expirado.`;
+  }
+  upCart();
 }
 
-// Función auxiliar para formatear texto con Mayúscula Inicial
+// -------------------------------------------------------------
+// ORDEN MEZCLADO Y SCROLL
+// -------------------------------------------------------------
+function obtenerProductosOrdenados() {
+  let ordenGuardado = sessionStorage.getItem('bb_orden_productos');
+  if (ordenGuardado) {
+    const idsOrdenados = JSON.parse(ordenGuardado);
+    let mapaProds = new Map(productos.map(p => [p.id, p]));
+    let reordenados = [];
+    idsOrdenados.forEach(id => {
+      if (mapaProds.has(id)) {
+        reordenados.push(mapaProds.get(id));
+        mapaProds.delete(id);
+      }
+    });
+    mapaProds.forEach(p => reordenados.push(p));
+    return reordenados;
+  } else {
+    let copia = [...productos];
+    for (let i = copia.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copia[i], copia[j]] = [copia[j], copia[i]];
+    }
+    sessionStorage.setItem('bb_orden_productos', JSON.stringify(copia.map(p => p.id)));
+    return copia;
+  }
+}
+
+window.addEventListener('scroll', () => {
+  if (categoriaActual) {
+    sessionStorage.setItem('bb_scroll_pos', window.scrollY);
+  }
+});
+
 function capitalizarTexto(str) {
   if (!str) return '';
   return str.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
 }
 
-let carrito = JSON.parse(localStorage.getItem('bb_cart')) || [];
-let sel = {};
-let categoriaActual = 'todos';
-let subcategoriaActual = 'todas';
+function renderImg(p) {
+  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
+  if (imgSrc && imgSrc.includes('.')) {
+    return `<img src="${imgSrc}" alt="${p.name}">`;
+  }
+  return imgSrc || '👙';
+}
+
+function seleccionarCategoria(cat, esRestauración = false) {
+  categoriaActual = cat;
+  subcategoriaActual = 'todas';
+  sessionStorage.setItem('bb_cat_activa', cat);
+
+  document.getElementById('categoryGrid').style.display = 'none';
+  document.getElementById('catalog').style.display = 'grid';
+  document.getElementById('btnBack').style.display = 'inline-flex';
+  
+  const sizeWrapper = document.getElementById('sizeFilterWrapper');
+  if (cat === 'todos' || cat === 'conjuntos') {
+    sizeWrapper.style.display = 'flex';
+  } else {
+    sizeWrapper.style.display = 'none';
+  }
+
+  generarSubcategorias();
+  aplicarFiltros();
+
+  if (esRestauración) {
+    const scrollPos = sessionStorage.getItem('bb_scroll_pos');
+    if (scrollPos) {
+      setTimeout(() => window.scrollTo(0, parseInt(scrollPos)), 100);
+    }
+  }
+}
+
+function volverAtras() {
+  categoriaActual = null;
+  subcategoriaActual = 'todas';
+  sessionStorage.removeItem('bb_cat_activa');
+  sessionStorage.removeItem('bb_scroll_pos');
+
+  document.getElementById('categoryGrid').style.display = 'grid';
+  document.getElementById('catalog').style.display = 'none';
+  document.getElementById('subfiltersGrid').style.display = 'none';
+  document.getElementById('btnBack').style.display = 'none';
+  document.getElementById('sizeFilterWrapper').style.display = 'none';
+  document.getElementById('sizeFilter').value = 'todos';
+  window.scrollTo(0, 0);
+}
+
+function generarSubcategorias() {
+  const container = document.getElementById('subfiltersGrid');
+  if (categoriaActual === 'todos') {
+    container.style.display = 'none';
+    return;
+  }
+
+  const prodsCat = productos.filter(p => p.cat === categoriaActual);
+  const subcats = [...new Set(prodsCat.map(p => p.subcat).filter(Boolean))];
+
+  if (subcats.length === 0) {
+    container.style.display = 'none';
+    return;
+  }
+
+  let html = `<div class="subcard active" onclick="filtrarSub('todas', this)">Todas</div>`;
+  subcats.forEach(sc => {
+    html += `<div class="subcard" onclick="filtrarSub('${sc}', this)">${capitalizarTexto(sc)}</div>`;
+  });
+
+  container.innerHTML = html;
+  container.style.display = 'flex';
+}
+
+function filtrarSub(subcat, el) {
+  subcategoriaActual = subcat;
+  document.querySelectorAll('.subcard').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  aplicarFiltros();
+}
+
+function aplicarFiltros() {
+  const talle = document.getElementById('sizeFilter').value;
+  const listaOrdenada = obtenerProductosOrdenados();
+
+  let lista = categoriaActual === 'todos' ? listaOrdenada : listaOrdenada.filter(p => p.cat === categoriaActual);
+
+  if (subcategoriaActual !== 'todas') {
+    lista = lista.filter(p => p.subcat === subcategoriaActual);
+  }
+
+  if (talle !== 'todos') {
+    lista = lista.filter(p => {
+      if (p.cat !== 'conjuntos') return true;
+      return p.var.some(v => {
+        if (talle === '4') return v.l.includes('Talle 4');
+        return (v.l.includes(`T.${talle} `) || v.l.includes(`T.${talle}·`));
+      });
+    });
+  }
+
+  renderCatalog(lista);
+}
+
+function renderCatalog(lista) {
+  if (lista.length === 0) {
+    document.getElementById('catalog').innerHTML = `<div style="grid-column:1/-1; text-align:center; color:var(--text-light); padding:40px 0;">No se encontraron productos disponibles en esta sección.</div>`;
+    return;
+  }
+  const html = lista.map(p => {
+    if(p.tipo === 'simple') return cardSimple(p);
+    if(p.tipo === 'var') return cardVar(p);
+    if(p.tipo === 'multi') return cardMulti(p);
+  }).join('');
+  document.getElementById('catalog').innerHTML = html;
+}
 
 function cardSimple(p) {
   const tieneStock = p.s > 0;
   const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : p.cat.toUpperCase();
-  return `<div class="product-card" style="${!tieneStock ? 'opacity: 0.75;' : ''}">
+  return `<div class="product-card" style="${!tieneStock ? 'opacity:0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
-      <div class="card-img">
-        ${renderImg(p)}
-        ${!tieneStock ? '<div class="stock-badge">SIN STOCK</div>' : ''}
-      </div>
+      <div class="card-img">${renderImg(p)}${!tieneStock ? '<div class="stock-badge">SIN STOCK</div>' : ''}</div>
     </a>
     <div class="card-body">
       <div class="card-category">${catText}</div>
@@ -237,26 +501,16 @@ function cardVar(p) {
   const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : p.cat.toUpperCase();
 
   const vars = p.var.map(v => {
-    let ocultarPorTalle = false;
     if (p.cat === 'conjuntos' && talleFiltrado !== 'todos') {
-      if (talleFiltrado === '4' && !v.l.includes('Talle 4')) ocultarPorTalle = true;
-      if (talleFiltrado !== '4' && !v.l.includes(`T.${talleFiltrado} `) && !v.l.includes(`T.${talleFiltrado}·`)) ocultarPorTalle = true;
+      if (talleFiltrado === '4' && !v.l.includes('Talle 4')) return '';
+      if (talleFiltrado !== '4' && !v.l.includes(`T.${talleFiltrado} `) && !v.l.includes(`T.${talleFiltrado}·`)) return '';
     }
-    if (ocultarPorTalle) return '';
-    
-    let labelVariante = v.l;
-    if (!labelVariante || labelVariante.toLowerCase().includes('undefined')) {
-      labelVariante = "Surtido";
-    }
-    return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${labelVariante}</button>`;
+    return `<button class="variant-btn" onclick="selVar('${p.id}','${v.id}',this)" ${v.s?'':'disabled'}>${v.l || 'Surtido'}</button>`;
   }).join('');
 
-  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
+  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity:0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
-      <div class="card-img">
-        ${renderImg(p)}
-        ${!tieneStockGlobal ? '<div class="stock-badge">SIN STOCK</div>' : ''}
-      </div>
+      <div class="card-img">${renderImg(p)}${!tieneStockGlobal ? '<div class="stock-badge">SIN STOCK</div>' : ''}</div>
     </a>
     <div class="card-body">
       <div class="card-category">${catText}</div>
@@ -271,55 +525,52 @@ function cardVar(p) {
 
 function cardMulti(p) {
   const tieneStockGlobal = p.colores.some(c => c.s > 0);
-  const qtys = p.precios.map(pr => `<button class="variant-btn qty-btn-${p.id}" onclick="selQty('${p.id}',${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
-  const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : (p.talle && p.talle.toLowerCase() !== 'regular' ? p.talle.toUpperCase() : 'TALLE 36-44');
+  const qtys = p.precios.map(pr => `<button class="variant-btn" onclick="selQty('${p.id}',${pr.qty},this)" ${tieneStockGlobal?'':'disabled'}>${pr.qty} x $${pr.px.toLocaleString('es-AR')}</button>`).join('');
+  const catText = p.subcat ? `${capitalizarTexto(p.cat)} ✦ ${capitalizarTexto(p.subcat)}` : (p.talle || 'ÚNICO');
 
-  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity: 0.75;' : ''}">
+  return `<div class="product-card" style="${!tieneStockGlobal ? 'opacity:0.75;' : ''}">
     <a class="card-link" href="producto.html?id=${p.id}">
-      <div class="card-img">
-        ${renderImg(p)}
-        ${!tieneStockGlobal ? '<div class="stock-badge">SIN STOCK</div>' : ''}
-      </div>
+      <div class="card-img">${renderImg(p)}${!tieneStockGlobal ? '<div class="stock-badge">SIN STOCK</div>' : ''}</div>
     </a>
     <div class="card-body">
       <div class="card-category">${catText}</div>
       <a class="card-link" href="producto.html?id=${p.id}"><div class="card-name">${p.name}</div></a>
       <div class="card-price">$${p.precios[0].px.toLocaleString('es-AR')} c/u</div>
-      <label style="color: var(--text-light); font-weight: normal;">Cantidad (promo combinables)</label>
+      <label style="color:var(--text-light); font-weight:normal;">Promoción combinable</label>
       <div class="variant-grid">${qtys}</div>
-      <div id="cols${p.id}" style="display:none; margin-top: 8px;"><label>Color por unidad</label><div id="colslist${p.id}"></div></div>
+      <div id="cols${p.id}" style="display:none; margin-top:8px;"><label>Elegí Color</label><div id="colslist${p.id}"></div></div>
       <button class="add-btn" id="btn${p.id}" onclick="addMulti('${p.id}')" disabled>${tieneStockGlobal?'Selecciona':'Sin Stock'}</button>
     </div>
   </div>`;
 }
 
-function selVar(pid,vid,btn) {
+function selVar(pid, vid, btn) {
   btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
-  sel[pid] = {var:vid};
-  document.getElementById(`btn${pid}`).disabled = false;
-  document.getElementById(`btn${pid}`).textContent = "+ Agregar";
+  sel[pid] = { var: vid };
+  const b = document.getElementById(`btn${pid}`);
+  b.disabled = false;
+  b.textContent = "+ Agregar";
 }
 
-function selQty(pid,qty,btn) {
+function selQty(pid, qty, btn) {
   if (btn.classList.contains('selected')) {
     btn.classList.remove('selected');
     delete sel[pid];
     document.getElementById(`cols${pid}`).style.display = 'none';
-    document.getElementById(`colslist${pid}`).innerHTML = '';
-    const mainBtn = document.getElementById(`btn${pid}`);
-    mainBtn.disabled = true;
-    mainBtn.textContent = 'Selecciona';
+    const b = document.getElementById(`btn${pid}`);
+    b.disabled = true;
+    b.textContent = 'Selecciona';
     return;
   }
-
   btn.parentElement.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
-  sel[pid] = {qty,cols:{}};
-  document.getElementById(`cols${pid}`).style.display='block';
-  let html='';
-  const p = productos.find(x=>x.id===pid);
-  for(let i=1;i<=qty;i++) {
+  sel[pid] = { qty, cols: {} };
+  document.getElementById(`cols${pid}`).style.display = 'block';
+  
+  let html = '';
+  const p = productos.find(x => x.id === pid);
+  for(let i=1; i<=qty; i++) {
     html += `<div class="unit-color-selector"><span class="unit-label">U${i}</span><div class="unit-color-grid">`;
     p.colores.forEach(c => {
       html += `<button class="unit-color-btn" onclick="selCol('${pid}',${i},'${c.c}',this)" ${c.s?'':'disabled'}>${c.c}</button>`;
@@ -330,7 +581,7 @@ function selQty(pid,qty,btn) {
   upQty(pid);
 }
 
-function selCol(pid,u,col,btn) {
+function selCol(pid, u, col, btn) {
   btn.parentElement.querySelectorAll('.unit-color-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   sel[pid].cols[u] = col;
@@ -340,65 +591,47 @@ function selCol(pid,u,col,btn) {
 function upQty(pid) {
   const s = sel[pid];
   const btn = document.getElementById(`btn${pid}`);
-  const p = productos.find(x=>x.id===pid);
-  if(!s||!s.qty||Object.keys(s.cols).length !== s.qty) {
+  const p = productos.find(x => x.id === pid);
+  if(!s || !s.qty || Object.keys(s.cols).length !== s.qty) {
     btn.disabled = true;
     btn.textContent = 'Elige colores';
     return;
   }
-  const px = p.precios.find(x=>x.qty===s.qty).px;
+  const px = p.precios.find(x => x.qty === s.qty).px;
   btn.disabled = false;
   btn.textContent = `+ Agregar $${px.toLocaleString('es-AR')}`;
 }
 
 function addSimple(pid) {
-  const p = productos.find(x=>x.id===pid);
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, subcat:p.subcat||'', name:p.name, det:`x1`, px:p.px, emoji:icon});
+  const p = productos.find(x => x.id === pid);
+  carrito.push({ id: p.id, tipo: p.tipo, name: p.name, det: 'x1', px: p.px });
   upCart();
   toast(`✓ ${p.name}`);
 }
 
 function addVar(pid) {
-  const p = productos.find(x=>x.id===pid);
+  const p = productos.find(x => x.id === pid);
   const v = sel[pid];
-  if(!v||!v.var) return;
-  const variant = p.var.find(x=>x.id===v.var);
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
-  
-  let labelDetalle = variant.l;
-  if (!labelDetalle || labelDetalle.toLowerCase().includes('undefined')) {
-    labelDetalle = "Surtido";
-  }
-
-  carrito.push({id:p.id, tipo:p.tipo, cat:p.cat, subcat:p.subcat||'', varId:v.var, name:p.name, det:labelDetalle, px:p.px || variant.px || 9990, emoji:icon});
+  if(!v || !v.var) return;
+  const variant = p.var.find(x => x.id === v.var);
+  carrito.push({ id: p.id, tipo: p.tipo, name: p.name, det: variant.l || 'Surtido', px: p.px || variant.px || 0 });
   upCart();
   toast(`✓ ${p.name}`);
 }
 
 function addMulti(pid) {
-  const p = productos.find(x=>x.id===pid);
+  const p = productos.find(x => x.id === pid);
   const s = sel[pid];
-  if(!s||!s.qty) return;
-  const imgSrc = Array.isArray(p.img) ? p.img[0] : p.img;
-  const icon = imgSrc.includes('.') ? `<img src="${imgSrc}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">` : imgSrc;
+  if(!s || !s.qty) return;
   
-  const talleFormateado = (p.talle && p.talle.toLowerCase() !== 'regular') ? p.talle : 'Talle 36-44';
-
   for(let i=1; i<=s.qty; i++) {
     carrito.push({
       id: p.id,
       tipo: 'multi_item',
       ofertaGrupo: p.precios[0].px,
       promoNombre: p.name,
-      talleDisplay: talleFormateado,
-      name: p.name,
-      subcat: p.subcat||'',
       det: `Color: ${s.cols[i]}`,
-      pxBase: p.precios[0].px,
-      emoji: icon
+      pxBase: p.precios[0].px
     });
   }
   upCart();
@@ -423,7 +656,6 @@ function calcularEstructuraCarrito() {
   Object.keys(itemsMulti).forEach(precioGrupo => {
     const list = itemsMulti[precioGrupo];
     const cant = list.length;
-    
     const prodBase = productos.find(x => x.precios && x.precios[0] && x.precios[0].px === parseInt(precioGrupo));
     
     if (prodBase && prodBase.precios) {
@@ -432,10 +664,10 @@ function calcularEstructuraCarrito() {
       let costoGrupo = 0;
 
       while (resto > 0) {
-        const reglaAplicable = reglas.find(r => resto >= r.qty);
-        if (reglaAplicable) {
-          costoGrupo += reglaAplicable.px;
-          resto -= reglaAplicable.qty;
+        const regla = reglas.find(r => resto >= r.qty);
+        if (regla) {
+          costoGrupo += regla.px;
+          resto -= regla.qty;
         } else {
           costoGrupo += resto * list[0].pxBase;
           resto = 0;
@@ -449,181 +681,138 @@ function calcularEstructuraCarrito() {
 
   return { total, itemsMulti, itemsNormales };
 }
-  
+
 function upCart() {
   localStorage.setItem('bb_cart', JSON.stringify(carrito));
-  const cnt = carrito.length;
-  document.getElementById('cartCount').textContent = cnt;
+  document.getElementById('cartCount').textContent = carrito.length;
   
-  const { total } = calcularEstructuraCarrito();
+  let { total } = calcularEstructuraCarrito();
+  let totalFinal = total;
+  let descTexto = '';
 
-  let html = cnt===0 ? '<div class="cart-empty"><p>Tu carrito está vacío</p></div>' : carrito.map((item,i) => {
+  if (cuponAplicado) {
+    const montoDescuento = total * cuponAplicado.desc;
+    totalFinal = total - montoDescuento;
+    descTexto = `¡Descuento ${cuponAplicado.codigo} (${cuponAplicado.desc * 100}%) aplicado! (-$${montoDescuento.toLocaleString('es-AR')})`;
+    document.getElementById('discountLabel').style.display = 'block';
+    document.getElementById('discountLabel').textContent = descTexto;
+  } else {
+    document.getElementById('discountLabel').style.display = 'none';
+  }
+
+  let html = carrito.length === 0 ? '<div style="text-align:center; padding:30px 0; color:#706051;">Tu carrito está vacío 🛍️</div>' : carrito.map((item, i) => {
     const pstr = item.tipo === 'multi_item' ? `$${item.pxBase.toLocaleString('es-AR')}` : `$${item.px.toLocaleString('es-AR')}`;
-    const detDisplay = item.tipo === 'multi_item' ? `1x (${item.talleDisplay}) - ${item.det}` : item.det;
-    return `<div class="cart-item">
-      <div class="cart-item-icon">${item.emoji}</div>
-      <div style="flex:1">
-        <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-variant">${detDisplay}</div>
-        <div class="cart-item-bottom">
-          <span>${pstr}</span>
-          <button class="remove-item" onclick="carrito.splice(${i},1);upCart()">🗑</button>
-        </div>
+    return `<div class="cart-item-row">
+      <div class="cart-item-details">
+        <h4>${item.name}</h4>
+        <p>${item.det}</p>
+      </div>
+      <div class="cart-item-right">
+        <span class="cart-item-price">${pstr}</span>
+        <button class="btn-delete-item" onclick="carrito.splice(${i},1);upCart()">✕</button>
       </div>
     </div>`;
   }).join('');
   
   document.getElementById('cartItems').innerHTML = html;
-  document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
-  document.getElementById('waBtn').disabled = cnt===0;
+  document.getElementById('cartTotal').textContent = `$${Math.round(totalFinal).toLocaleString('es-AR')}`;
+  document.getElementById('waBtn').disabled = carrito.length === 0;
+}
+
+function guardarOpcionEnvio() {
+  const tipo = document.getElementById('envioTipo').value;
+  const dir = document.getElementById('envioDireccion').value;
+  sessionStorage.setItem('bb_envio_tipo', tipo);
+  sessionStorage.setItem('bb_envio_dir', dir);
+}
+
+function actualizarOpcionEnvio() {
+  guardarOpcionEnvio();
+}
+
+function cargarOpcionesEnvio() {
+  const tipo = sessionStorage.getItem('bb_envio_tipo');
+  const dir = sessionStorage.getItem('bb_envio_dir');
+  if (tipo) document.getElementById('envioTipo').value = tipo;
+  if (dir) document.getElementById('envioDireccion').value = dir;
+
+  if (cuponAplicado) {
+    document.getElementById('couponInput').value = cuponAplicado.codigo;
+    document.getElementById('couponMsg').style.color = '#16a34a';
+    document.getElementById('couponMsg').textContent = `✓ ¡Cupón ${cuponAplicado.codigo} activo!`;
+  }
 }
 
 function finalizarPedido() {
-  if(carrito.length===0) return;
-  
+  if(carrito.length === 0) return;
   const { total, itemsNormales, itemsMulti } = calcularEstructuraCarrito();
   
-  let msg = '¡Hola Blue Bouquets! ✨\n';
-  msg += 'Me gustaria hacerte este pedido. ¿Me confirmas la disponibilidad de stock?\n\n';
+  let totalFinal = total;
+  if (cuponAplicado) {
+    totalFinal = total - (total * cuponAplicado.desc);
+  }
+
+  const tipoEnvio = document.getElementById('envioTipo').value;
+  const dirEnvio = document.getElementById('envioDireccion').value;
+  
+  let msg = '✨ *NUEVO PEDIDO - BLUE BOUQUETS* ✨\n\n';
+  msg += 'Hola! Quiero encargar las siguientes prendas:\n';
+  msg += '────────────────────\n';
 
   if (itemsNormales.length > 0) {
     itemsNormales.forEach(i => {
-      msg += `💙 ${i.name} (${i.det}) — $${i.px.toLocaleString('es-AR')}\n`;
+      msg += `🛍️ *${i.name}*\n  └ ${i.det} → $${i.px.toLocaleString('es-AR')}\n\n`;
     });
   }
 
   Object.keys(itemsMulti).forEach(precioGrupo => {
     const list = itemsMulti[precioGrupo];
-    const prodBase = productos.find(x => x.precios && x.precios[0] && x.precios[0].px === parseInt(precioGrupo));
-    
-    let subtotalPromo = 0;
-    if (prodBase && prodBase.precios) {
-      const reglas = [...prodBase.precios].sort((a,b) => b.qty - a.qty);
-      let resto = list.length;
-      while (resto > 0) {
-        const regla = reglas.find(r => resto >= r.qty);
-        if (regla) { subtotalPromo += regla.px; resto -= regla.qty; }
-        else { subtotalPromo += resto * list[0].pxBase; resto = 0; }
-      }
-    } else {
-      subtotalPromo = list.length * list[0].pxBase;
-    }
-
-    msg += `💙 PROMO 3x$${subtotalPromo.toLocaleString('es-AR')}:\n`;
+    msg += `📦 *PROMO COMBINABLE*:\n`;
     list.forEach(i => {
-      msg += `        • ${i.promoNombre} — x1 - ${i.det}\n`;
+      msg += `  • ${i.promoNombre} — ${i.det}\n`;
     });
+    msg += `\n`;
   });
 
-  msg += `\nTOTAL: $${total.toLocaleString('es-AR')}\n\n`;
-  msg += 'Espero la confirmación del pedido. \n¿De casualidad haces envíos a domicilio?';
+  msg += '────────────────────\n';
+  msg += `📍 *Entrega:* ${tipoEnvio}\n`;
+  if (dirEnvio.trim()) {
+    msg += `🏠 *Barrio / Dirección:* ${dirEnvio}\n`;
+  }
+  if (cuponAplicado) {
+    msg += `🎟️ *Cupón aplicado:* ${cuponAplicado.codigo} (${cuponAplicado.desc * 100}% OFF)\n`;
+  }
+  msg += `💰 *TOTAL ESTIMADO:* $${Math.round(totalFinal).toLocaleString('es-AR')}\n\n`;
+  msg += '¿Me confirmás stock y disponibilidad para coordinar? ¡Muchas gracias! 💙';
 
   window.open(`https://wa.me/5492944589885?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
 function toggleCart() {
-  document.getElementById('cartPanel').classList.toggle('open');
   document.getElementById('cartOverlay').classList.toggle('open');
 }
 
-function filtrar(cat, btn) {
-  categoriaActual = cat;
-  subcategoriaActual = 'todas';
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  
-  const talleWrapper = document.getElementById('sizeFilterWrapper');
-  if(cat === 'todos' || cat === 'conjuntos') {
-    talleWrapper.style.display = 'flex';
-  } else {
-    talleWrapper.style.display = 'none';
-    document.getElementById('sizeFilter').value = 'todos';
+function cerrarSiClickAfuera(e) {
+  if (e.target.id === 'cartOverlay') {
+    toggleCart();
   }
-
-  generarSubfiltros();
-  aplicarFiltros();
-}
-
-function generarSubfiltros() {
-  const subContainer = document.getElementById('subfilters');
-  if (categoriaActual === 'todos') {
-    subContainer.style.display = 'none';
-    subContainer.innerHTML = '';
-    return;
-  }
-
-  const productosCat = productos.filter(p => p.cat === categoriaActual);
-  const subcats = [...new Set(productosCat.map(p => p.subcat).filter(Boolean))];
-
-  if (subcats.length === 0) {
-    subContainer.style.display = 'none';
-    subContainer.innerHTML = '';
-    return;
-  }
-
-  let html = `<button class="subfilter-btn active" onclick="filtrarSub('todas', this)">Todas</button>`;
-  subcats.forEach(sc => {
-    html += `<button class="subfilter-btn" onclick="filtrarSub('${sc}', this)">${capitalizarTexto(sc)}</button>`;
-  });
-
-  subContainer.innerHTML = html;
-  subContainer.style.display = 'flex';
-}
-
-function filtrarSub(subcat, btn) {
-  subcategoriaActual = subcat;
-  document.querySelectorAll('.subfilter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  aplicarFiltros();
-}
-
-function aplicarFiltros() {
-  const talleSeleccionado = document.getElementById('sizeFilter').value;
-  let productosFiltrados = categoriaActual === 'todos' ? productos : productos.filter(p => p.cat === categoriaActual);
-  
-  if (subcategoriaActual !== 'todas') {
-    productosFiltrados = productosFiltrados.filter(p => p.subcat === subcategoriaActual);
-  }
-
-  if (talleSeleccionado !== 'todos') {
-    productosFiltrados = productosFiltrados.filter(p => {
-      if (p.cat !== 'conjuntos') return true; 
-      return p.var.some(v => {
-        if (talleSeleccionado === '4') {
-          return v.l.includes('Talle 4');
-        } else {
-          return (v.l.includes(`T.${talleSeleccionado} `) || v.l.includes(`T.${talleSeleccionado}·`));
-        }
-      });
-    });
-  }
-  renderCatalog(productosFiltrados);
-}
-
-function renderCatalog(lista) {
-  if (lista.length === 0) {
-    document.getElementById('catalog').innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-light); padding: 40px 0;">No se encontraron productos para esta categoría.</div>`;
-    return;
-  }
-  const html = lista.map(p => {
-    if(p.tipo === 'simple') return cardSimple(p);
-    if(p.tipo === 'var') return cardVar(p);
-    if(p.tipo === 'multi') return cardMulti(p);
-  }).join('');
-  document.getElementById('catalog').innerHTML = html;
 }
 
 function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
+  setTimeout(() => t.classList.remove('show'), 2000);
 }
 
 function init() {
-  document.getElementById('sizeFilter').value = 'todos';
-  renderCatalog(productos);
   upCart();
+  cargarOpcionesEnvio();
+  
+  const catGuardada = sessionStorage.getItem('bb_cat_activa');
+  if (catGuardada) {
+    seleccionarCategoria(catGuardada, true);
+  }
 }
 
 init();
