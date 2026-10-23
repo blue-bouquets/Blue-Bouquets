@@ -54,8 +54,8 @@ const productos = [
     colores: [
       { c: "T.XXL · Crema", s: 1 },
       { c: "T.XXL · Beige", s: 2 },
-      { c: "T.XXL · Roja", s: 2 },
-      { c: "T.XXL · Negra", s: 3 },
+      { c: "T.XXL · Roja", s: 1 },
+      { c: "T.XXL · Negra", s: 2 },
       { c: "T.XXL · Gris", s: 2 },
       { c: "T.XXL · Blanca", s: 2 }
     ]
@@ -96,11 +96,6 @@ const productos = [
       { qty: 2, px: 8000 }
     ],
     colores: [
-      { c: "T.Único · Gris", s: 2 },
-      { c: "T.Único · Blanco", s: 1 },
-      { c: "T.Único · Roja", s: 1 },
-      { c: "T.Único · Negra", s: 1 },
-      { c: "T.Único · Beige", s: 1 }
     ]
   },
   {
@@ -217,7 +212,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Beige", s: 2 },
+      { c: "Beige", s: 1 },
       { c: "Rosa", s: 1 },
       { c: "Negra", s: 1 }
     ]
@@ -294,10 +289,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "T.Único · Beige", s: 2 },
-      { c: "T.Único · Rojo", s: 2 },
-      { c: "T.Único · Blanco", s: 1 },
-      { c: "T.Único · Negro", s: 1 }
+      { c: "T.Único · Rojo", s: 1 },
     ]
   },
   {
@@ -363,7 +355,6 @@ const productos = [
       { c: "T.M · Crema", s: 1 },
       { c: "T.M · Blanca", s: 1 },
       { c: "T.L · Verde", s: 1 },
-      { c: "T.L · Crema", s: 1 },
     ]
   },
   {
@@ -382,7 +373,7 @@ const productos = [
     ],
     colores: [
       { c: "Blanca", s: 4 },
-      { c: "Gris", s: 4 },
+      { c: "Gris", s: 3 },
       { c: "Negra", s: 1 }
     ]
   },
@@ -630,10 +621,10 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Gris", s: 3 },
+      { c: "Gris", s: 2 },
       { c: "Rosa", s: 4 },
-      { c: "Negra", s: 2 },
-      { c: "Blanca", s: 4 }
+      { c: "Negra", s: 1 },
+      { c: "Blanca", s: 3 }
       ],
   },
   {
@@ -651,7 +642,6 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "T.Único · Rosa", s: 1 },
       { c: "T.Único · Crema", s: 1 },
       { c: "T.Único · Negro", s: 1 },
       { c: "T.Único · Beige", s: 1 }
@@ -708,7 +698,7 @@ const productos = [
     desc: "Talle 34-40. De Damas.",
     tipo: "simple",
     px: 3000,
-    s: 3
+    s: 2
   },
   {
     id: "mediasdeplush",
@@ -774,7 +764,6 @@ const productos = [
     tipo: "var",
     px: 9990,
     var: [
-      { id: "ln85b", l: "T.85 · Blanco", s: 1 },
       { id: "ln85be", l: "T.85 · Beige", s: 1 },
       { id: "ln90g", l: "T.90 · Gris", s: 1 },
       { id: "ln95b", l: "T.95 · Blanco", s: 1 },
@@ -957,7 +946,6 @@ const productos = [
     px: 12990,
     var: [
       { id: "ir85br", l: "T.85 · Blanco y Rojo", s: 1 },
-      { id: "ir85bc", l: "T.85 · Blanco y Celeste", s: 1 },
       { id: "ir90bo", l: "T.90 · Bordo", s: 1 },
       { id: "ir95bc", l: "T.95 · Blanco y Celeste", s: 1 },
       { id: "ir95bm", l: "T.95 · Blanco y Marron", s: 1 },
@@ -1009,7 +997,6 @@ const productos = [
     tipo: "var",
     px: 12990,
     var: [
-      { id: "sk85n", l: "T.85 · Negro", s: 1 },
       { id: "sk90b", l: "T.90 · Blanco", s: 1 },
       { id: "sk90bo", l: "T.90 · Bordo", s: 1 },
       { id: "sk95bo", l: "T.95 · Bordo", s: 1 },
@@ -1381,7 +1368,6 @@ const productos = [
     tipo: "var",
     px: 7990,
     var: [
-      { id: "ckmn", l: "Talle M · Negro", s: 1 },
       { id: "cklaz", l: "Talle L · Azul", s: 1 },
       { id: "ckxlg", l: "Talle XL · Gris", s: 1 },
       { id: "ckxlaz", l: "Talle XL · Azul", s: 1 },
@@ -1398,8 +1384,6 @@ const productos = [
     tipo: "var",
     px: 6990,
     var: [
-      { id: "dfmgo", l: "Talle M · Gris Oscuro", s: 1 },
-      { id: "dfmbo", l: "Talle M · Bordo", s: 1 },
       { id: "dflgc", l: "Talle L · Gris Claro", s: 1 }
     ]
   },
@@ -1413,12 +1397,9 @@ const productos = [
     tipo: "var",
     px: 7990,
     var: [
-      { id: "dfamn", l: "Talle M · Negro", s: 1 },
       { id: "dfaln", l: "Talle L · Negro", s: 1 },
       { id: "dfalxlg", l: "Talle L (XL) · Gris", s: 1 },
-      { id: "dfalxxln", l: "Talle L (XXL) · Negro", s: 1 },
-      { id: "dfaxxld", l: "Talle XXL · Bordo", s: 1 },
-      { id: "dfaxxlaz", l: "Talle XXL · Azul", s: 1 }
+      { id: "dfalxxln", l: "Talle L (XXL) · Negro", s: 1}
     ]
   },
   // --- Prendas ---
@@ -1716,8 +1697,7 @@ const productos = [
       { c: "Negra M", s: 1 },
       { c: "Beige L", s: 2 },
       { c: "Negra L", s: 1 },
-      { c: "Blanca L", s: 2 },
-      { c: "Crema L", s: 1 }
+    
     ]
   },
    {
@@ -1735,8 +1715,6 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Piel Cerezas", s: 2 },
-      { c: "Blanca con moños", s: 1 }
     ]
   },
        {
