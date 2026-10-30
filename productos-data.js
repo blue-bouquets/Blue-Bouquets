@@ -912,7 +912,6 @@ const productos = [
     var: [
       { id: "gd85b", l: "T.85 · Blanco", s: 1 },
       { id: "gd85bo", l: "T.85 · Bordo", s: 1 },
-      { id: "gd95n", l: "T.95 · Negro", s: 1 },
       { id: "gd100b", l: "T.100 · Blanco", s: 2 }
     ]
   },
