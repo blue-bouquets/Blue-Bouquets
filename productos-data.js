@@ -270,7 +270,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Blanca", s: 6 },
+      { c: "Blanca", s: 5 },
       { c: "Celeste", s: 3 }
     ]
   },
@@ -392,7 +392,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Negra", s: 2 },
+      { c: "Negra", s: 1 },
       { c: "Beige", s: 1 },
       { c: "Rosa", s: 1 }
     ]
@@ -621,7 +621,7 @@ const productos = [
       { qty: 3, px: 7000 }
     ],
     colores: [
-      { c: "Gris", s: 2 },
+      { c: "Gris", s: 1 },
       { c: "Rosa", s: 4 },
       { c: "Negra", s: 1 },
       { c: "Blanca", s: 3 }
