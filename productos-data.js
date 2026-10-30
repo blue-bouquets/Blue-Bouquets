@@ -623,7 +623,7 @@ const productos = [
     colores: [
       { c: "Gris", s: 1 },
       { c: "Rosa", s: 4 },
-      { c: "Negra", s: 1 },
+      { c: "Negra", s: 0 },
       { c: "Blanca", s: 3 }
       ],
   },
@@ -946,7 +946,6 @@ const productos = [
     px: 12990,
     var: [
       { id: "ir85br", l: "T.85 · Blanco y Rojo", s: 1 },
-      { id: "ir90bo", l: "T.90 · Bordo", s: 1 },
       { id: "ir95bc", l: "T.95 · Blanco y Celeste", s: 1 },
       { id: "ir95bm", l: "T.95 · Blanco y Marron", s: 1 },
       { id: "ir100bc", l: "T.100 · Blanco y Celeste", s: 1 },
